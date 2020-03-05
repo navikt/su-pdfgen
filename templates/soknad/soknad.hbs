@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8"/>
     <style>
-        @page {
-            margin: 1cm;
-        }
         * {
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
         }
@@ -13,94 +10,115 @@
         td {
             font-size: 0.9em;
         }
-
         table {
             width: 100%;
             border: 1px black solid;
             margin-bottom: 0.5cm;
         }
-
         td {
             vertical-align: top;
             word-wrap: break-word;
         }
-
         table thead {
             background-color: lightblue;
         }
-
         table thead td {
             border: none;
         }
-
+        td h5 {
+            margin: 0;
+        }
         td h4 {
             margin: 0;
         }
-
-
-        body {
-            page-break-inside: avoid;
+        td h3 {
+            margin: 0;
         }
-
-
-        .tr10 {
-            width: 10%;
-        }
-
-        .tr65 {
-            width: 65%;
-        }
-
-        .tr75 {
-            width: 75%;
+        td p {
+            margin: 0;
         }
 
     </style>
     <title>SØKNAD {{personopplysninger.fnr}} {{personopplysninger.fornavn}} {{personopplysninger.etternavn}}</title>
 </head>
 <body>
-<div>
-    <img class="navlogo" src="{{ image "Navlogo.png" }}"/>
-</div>
-<table class="header">
-    <thead>
-    <tr>
-        <td class="tr75">SØKNAD {{personopplysninger.fnr}} {{personopplysninger.fornavn}} {{personopplysninger.etternavn}}</td>
-        <td>NAVs eksemplar</td>
-    </tr>
-    </thead>
-</table>
+    <table>
+        <thead>
+        <td class="tr75">Personopplysninger</td>
+        </thead>
 
-<table>
-    <thead>
-    <tr>
-        <td class="tr10"><h4>1</h4></td>
-        <td class="tr65"><h4>Personopplysninger</h4></td>
-        <td></td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><h4>1.1</h4></td>
-        <td>Etternavn</td>
-        <td>{{ personopplysninger.etternavn }}</td>
-    </tr>
-    <tr>
-        <td><h4>1.1</h4></td>
-        <td>Fornavn</td>
-        <td>{{ personopplysninger.fornavn }}</td>
-    </tr>
-    <tr>
-        <td><h4>1.2</h4></td>
-        <td>Fødselsnummer</td>
-        <td>{{ personopplysninger.fnr }}</td>
-    </tr>
-    <tr>
-        <td><h4>1.3</h4></td>
-        <td>Telefon</td>
-        <td>{{ personopplysninger.telefonnummer }}</td>
-    </tr>
-    </tbody>
-</table>
+        <tbody>
+        <tr>
+            <td>Fødselsnummer:</td>
+            <td>{{personopplysninger.fnr}}</td>
+        </tr>
+
+        <tr>
+            <td>Fornavn:</td>
+            <td>{{personopplysninger.fornavn}}</td>
+        </tr>
+
+        <tr>
+            <td>Mellomnavn:</td>
+            <td>{{personopplysninger.mellomnavn}}</td>
+        </tr>
+
+        <tr>
+            <td>Etternavn:</td>
+            <td>{{personopplysninger.etternavn}}</td>
+        </tr>
+
+        <tr>
+            <td>Fødselsnummer:</td>
+            <td>{{personopplysninger.fnr}}</td>
+        </tr>
+
+        <tr>
+            <td>Telefonnummer:</td>
+            <td>{{personopplysninger.telefonnummer}}</td>
+        </tr>
+
+        <tr>
+            <td>Gateadresse:</td>
+            <td>{{personopplysninger.gateadresse}}</td>
+        </tr>
+
+        <tr>
+            <td>Bruksenhet:</td>
+            <td>{{personopplysninger.bruksenhet}}</td>
+        </tr>
+
+        <tr>
+            <td>Postnummer:</td>
+            <td>{{personopplysninger.postnummer}}</td>
+        </tr>
+
+        <tr>
+            <td>Poststed:</td>
+            <td>{{personopplysninger.poststed}}</td>
+        </tr>
+
+        <tr>
+            <td>Bokommune:</td>
+            <td>{{personopplysninger.bokommune}}</td>
+        </tr>
+
+        <tr>
+            <td>Søkers statsborkerskap:</td>
+            <td>{{personopplysninger.statsborgerskap}}</td>
+        </tr>
+
+        <tr>
+            <td>Er søker registrert som flyktning?</td>
+            <td>{{personopplysninger.flyktning}}</td>
+        </tr>
+
+        <tr>
+            <td>Bor søker fast i Norge?</td>
+            <td id="bofastnorge">{{personopplysninger.bofastnorge}}</td>
+        </tr>
+
+        </tbody>
+    </table>
 </body>
 </html>
