@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @page {
+            margin: 1cm;
+        }
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        td {
+            font-size: 0.9em;
+        }
+
+        table {
+            width: 100%;
+            border: 1px black solid;
+            margin-bottom: 0.5cm;
+        }
+
+        td {
+            vertical-align: top;
+            word-wrap: break-word;
+        }
+
+        table thead {
+            background-color: lightblue;
+        }
+
+        table thead td {
+            border: none;
+        }
+
+        td h4 {
+            margin: 0;
+        }
+
+
+        body {
+            page-break-inside: avoid;
+        }
+
+
+        .tr10 {
+            width: 10%;
+        }
+
+        .tr65 {
+            width: 65%;
+        }
+
+        .tr75 {
+            width: 75%;
+        }
+
+    </style>
+    <title>SØKNAD {{personopplysninger.fnr}} {{personopplysninger.fornavn}} {{personopplysninger.etternavn}}</title>
+</head>
+<body>
+<div>
+    <img class="navlogo" src="{{ image "Navlogo.png" }}"/>
+</div>
+<table class="header">
+    <thead>
+    <tr>
+        <td class="tr75">SØKNAD {{personopplysninger.fnr}} {{personopplysninger.fornavn}} {{personopplysninger.etternavn}}</td>
+        <td>NAVs eksemplar</td>
+    </tr>
+    </thead>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <td class="tr10"><h4>1</h4></td>
+        <td class="tr65"><h4>Personopplysninger</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>1.1</h4></td>
+        <td>Etternavn</td>
+        <td>{{ personopplysninger.etternavn }}</td>
+    </tr>
+    <tr>
+        <td><h4>1.1</h4></td>
+        <td>Fornavn</td>
+        <td>{{ personopplysninger.fornavn }}</td>
+    </tr>
+    <tr>
+        <td><h4>1.2</h4></td>
+        <td>Fødselsnummer</td>
+        <td>{{ personopplysninger.fnr }}</td>
+    </tr>
+    <tr>
+        <td><h4>1.3</h4></td>
+        <td>Telefon</td>
+        <td>{{ personopplysninger.telefonnummer }}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
