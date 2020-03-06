@@ -37,88 +37,334 @@
         td p {
             margin: 0;
         }
+        .tr10 {
+            width: 10%;
+        }
+        .tr50 {
+            width: 50%;
+        }
+        body {
+            page-break-inside: avoid;
+        }
 
     </style>
     <title>SØKNAD {{personopplysninger.fnr}} {{personopplysninger.fornavn}} {{personopplysninger.etternavn}}</title>
 </head>
 <body>
-    <table>
-        <thead>
-        <td class="tr75">Personopplysninger</td>
-        </thead>
 
-        <tbody>
+<table>
+<thead>
+    {{#with forNAV}}
+    <tr>
+        <td class="tr50"><h4>For NAV</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Motatt dato</td>
+        <td>01-01-2020</td>
+    </tr>
+    <tr>
+        <td>Veileder</td>
+        <td>J123456 - Jens Jensen</td>
+    </tr>
+    <tr>
+        <td>Målform</td>
+        <td>{{maalform}}</td>
+    </tr>
+    <tr>
+        <td>Fullmektig møtt</td>
+        <td>{{fullmektigmote}}</td>
+    </tr>
+    <tr>
+        <td>Personlig oppmøte</td>
+        <td>{{personligmote}}</td>
+    </tr>
+    <tr>
+        <td>Pass sjekket</td>
+        <td>{{passsjekk}}</td>
+    </tr>
+    <tr>
+        <td>Merknader</td>
+        <td>{{forNAVmerknader}}</td>
+    </tr>
+    {{/with}}
+</tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Personopplysninger</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+
+    <tbody>
+    {{#with personopplysninger}}
         <tr>
             <td>Fødselsnummer:</td>
-            <td>{{personopplysninger.fnr}}</td>
+            <td>{{fnr}}</td>
         </tr>
 
         <tr>
             <td>Fornavn:</td>
-            <td>{{personopplysninger.fornavn}}</td>
+            <td>{{fornavn}}</td>
         </tr>
 
         <tr>
             <td>Mellomnavn:</td>
-            <td>{{personopplysninger.mellomnavn}}</td>
+            <td>{{mellomnavn}}</td>
         </tr>
 
         <tr>
             <td>Etternavn:</td>
-            <td>{{personopplysninger.etternavn}}</td>
+            <td>{{etternavn}}</td>
         </tr>
 
         <tr>
             <td>Fødselsnummer:</td>
-            <td>{{personopplysninger.fnr}}</td>
+            <td>{{fnr}}</td>
         </tr>
 
         <tr>
             <td>Telefonnummer:</td>
-            <td>{{personopplysninger.telefonnummer}}</td>
+            <td>{{telefonnummer}}</td>
         </tr>
 
         <tr>
             <td>Gateadresse:</td>
-            <td>{{personopplysninger.gateadresse}}</td>
+            <td>{{gateadresse}}</td>
         </tr>
 
         <tr>
             <td>Bruksenhet:</td>
-            <td>{{personopplysninger.bruksenhet}}</td>
+            <td>{{bruksenhet}}</td>
         </tr>
 
         <tr>
             <td>Postnummer:</td>
-            <td>{{personopplysninger.postnummer}}</td>
+            <td>{{postnummer}}</td>
         </tr>
 
         <tr>
             <td>Poststed:</td>
-            <td>{{personopplysninger.poststed}}</td>
+            <td>{{poststed}}</td>
         </tr>
 
         <tr>
             <td>Bokommune:</td>
-            <td>{{personopplysninger.bokommune}}</td>
+            <td>{{bokommune}}</td>
         </tr>
 
         <tr>
             <td>Søkers statsborkerskap:</td>
-            <td>{{personopplysninger.statsborgerskap}}</td>
+            <td>{{statsborgerskap}}</td>
         </tr>
 
         <tr>
             <td>Er søker registrert som flyktning?</td>
-            <td>{{personopplysninger.flyktning}}</td>
+            <td>{{flyktning}}</td>
         </tr>
 
         <tr>
             <td>Bor søker fast i Norge?</td>
-            <td id="bofastnorge">{{personopplysninger.bofastnorge}}</td>
+            <td id="bofastnorge">{{bofastnorge}}</td>
         </tr>
+    {{/with}}
+    </tbody>
+</table>
 
-        </tbody>
-    </table>
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Boforhold</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    {{#with boforhold}}
+        <tr>
+            <td>Bor sammen med</td>
+            <td>{{ borSammenMed }}</td>
+        </tr>
+        <tr>
+            <td>Deler bolig med</td>
+            <td>{{ delerBoligMed.fødselsnummer }} {{ delerBoligMed.navn }}</td>
+        </tr>
+        <tr>
+            <td>Deler bolig?</td>
+            <td>{{ delerDuBolig }}</td>
+        </tr>
+    {{/with}}
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Utenlandsopphold</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    {{#with utenlandsopphold }}
+        {{#if utenlandsopphold }}
+            <tr>
+                <td><h4>Registrerte utenlandsopphold</h4></td>
+                <td></td>
+            </tr>
+            {{#each utenlandsoppholdArray }}
+                <tr>
+                    <td>{{ utreisedato }}</td>
+                    <td>{{ innreisedato }}</td>
+                </tr>
+            {{/each}}
+        {{/if}}
+        {{#if planlagtUtenlandsopphold }}
+            <tr>
+                <td><h4>Planlagte utenlandsopphold</h4></td>
+                <td></td>
+            </tr>
+            {{#each PlanlagtUtenlandsoppholdArray }}
+                <tr>
+                    <td>{{ planlagtUtreisedato }}</td>
+                    <td>{{ planlagtInnreisedato }}</td>
+                </tr>
+            {{/each}}
+        {{/if}}
+    {{/with}}
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Oppholdstillatelse</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    {{#with oppholdstillatelse}}
+        <tr>
+            <td>Varig opphold</td>
+            <td>{{varigopphold}}</td>
+        </tr>
+        <tr>
+            <td>Utløpsdato</td>
+            <td>{{oppholdstillatelseUtløpsdato}}</td>
+        </tr>
+        <tr>
+            <td>Søkt forlengelse</td>
+            <td>{{soektforlengelse}}</td>
+        </tr>
+    {{/with}}
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Inntekter, pensjon og formue</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    {{#with inntektPensjonFormue}}
+        {{#if arbeidselleranneninntekt}}
+            <tr>
+                <td><h4>Inntekter</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Personinntekt</td>
+                <td>{{ sumPersoninntekt }}</td>
+            </tr>
+            <tr>
+                <td>Annen</td>
+                <td>{{ arbeidselleranneninntektBegrunnelse }}</td>
+            </tr>
+        {{/if}}
+        {{#if hardupensjon}}
+            <tr>
+                <td><h4>Pensjoner</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Har pensjon</td>
+                <td>{{ hardupensjon }}</td>
+            </tr>
+            {{#each pensjonsOrdning}}
+                <tr>
+                    <td>{{ordning}}</td>
+                    <td>{{beløp}}</td>
+                </tr>
+            {{/each}}
+        {{/if}}
+        {{#if harduformueeiendom}}
+            <tr>
+                <td><h4>Formue - eiendom</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Formue - eiendom</td>
+                <td>{{ harduformueeiendom }}</td>
+            </tr>
+            <tr>
+                <td>Beløp</td>
+                <td>{{ formueBeløp }}</td>
+            </tr>
+            {{#if harduannenformueeiendom}}
+                <tr>
+                    <td><h4>Formue - annen</h4></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Har du annen formue</td>
+                    <td>{{ harduannenformueeiendom }}</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>{{ typeFormue }}</td>
+                </tr>
+                <tr>
+                    <td>Skattetakst</td>
+                    <td>{{ samletSkattetakst }}</td>
+                </tr>
+            {{/if}}
+        {{/if}}
+        {{#if hardufinansformue}}
+            <tr>
+                <td><h4>Formue - finans</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Har du finansformue</td>
+                <td>{{ hardufinansformue }}</td>
+            </tr>
+        {{/if}}
+        {{#if kravannenytelse}}
+            <tr>
+                <td><h4>Krav andre ytelser</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Krav annen ytelse</td>
+                <td>{{ kravannenytelse }}</td>
+            </tr>
+            <tr>
+                <td>Begrunnelse</td>
+                <td>{{ kravannenytelseBegrunnelse }}</td>
+            </tr>
+        {{/if}}
+        <tr>
+            <td>Sosialstønad</td>
+            <td>{{ sosialstonad }}</td>
+        </tr>
+    {{/with}}
+    </tbody>
+</table>
+
 </body>
 </html>
