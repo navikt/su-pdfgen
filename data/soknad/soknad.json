@@ -11,12 +11,12 @@
     "poststed": "Oslo",
     "bokommune": "Oslo",
     "statsborgerskap": "Tunisisk",
-    "flyktning": "true",
-    "bofastnorge": "true"
+    "flyktning": true,
+    "borFastINorge": true
   },
   "boforhold": {
     "borSammenMed": [
-      "over18"
+      "Barn over 18"
     ],
     "delerBoligMed": [
       {
@@ -24,32 +24,32 @@
         "fødselsnummer": "12345678910"
       }
     ],
-    "delerDuBolig": "true"
+    "delerBolig": true
   },
   "utenlandsopphold": {
-    "utenlandsoppholdArray": [
+    "registrertePerioder": [
       {
         "utreisedato": "31122019",
         "innreisedato": "04012020"
       }
     ],
-    "PlanlagtUtenlandsoppholdArray": [
+    "planlagtePerioder": [
       {
-        "planlagtUtreisedato": "01032020",
-        "planlagtInnreisedato": "05032020"
+        "utreisedato": "01032020",
+        "innreisedato": "05032020"
       },
       {
-        "planlagtUtreisedato": "01042020",
-        "planlagtInnreisedato": "05042020"
+        "utreisedato": "01042020",
+        "innreisedato": "05042020"
       }
     ],
-    "utenlandsopphold": "true",
-    "planlagtUtenlandsopphold": "true"
+    "utenlandsopphold": true,
+    "planlagtUtenlandsopphold": true
   },
   "oppholdstillatelse": {
-    "varigopphold": "false",
-    "oppholdstillatelseUtløpsdato": "30/10/2024",
-    "soektforlengelse": "false"
+    "harVarigOpphold": false,
+    "utløpsDato": "30/10/2024",
+    "søktOmForlengelse": false
   },
   "inntektPensjonFormue": {
     "pensjonsOrdning": [
@@ -62,25 +62,25 @@
         "beløp": "98"
       }
     ],
-    "kravannenytelse": "true",
-    "kravannenytelseBegrunnelse": "Hundepensjon",
-    "arbeidselleranneninntekt": "true",
-    "arbeidselleranneninntektBegrunnelse": "2500",
-    "hardupensjon": "true",
+    "framsattKravAnnenYtelse": true,
+    "framsattKravAnnenYtelseBegrunnelse": "Hundepensjon",
+    "harInntekt": true,
+    "inntektBeløp": "2500",
+    "harPensjon": true,
     "sumPersoninntekt": "30000",
-    "harduformueeiendom": "true",
+    "harFormueEiendom": true,
     "formueBeløp": "2323",
-    "hardufinansformue": "false",
-    "harduannenformueeiendom": "true",
+    "harFinansFormue": false,
+    "harAnnenFormue": true,
     "typeFormue": "hytte i afrika",
     "samletSkattetakst": "3500",
-    "sosialstonad": "true"
+    "harSosialStønad": true
   },
   "forNAV": {
-    "maalform": "nynorsk",
-    "personligmote": "ja",
-    "fullmektigmote": "ja",
-    "passsjekk": "ja",
+    "målform": "Nynorsk",
+    "søkerMøttPersonlig": true,
+    "harFullmektigMøtt": true,
+    "erPassSjekket": true,
     "forNAVmerknader": "Trivelig type"
   }
 }
