@@ -48,7 +48,6 @@
         }
 
 
-
     </style>
     <title>SØKNAD {{personopplysninger.fnr}} {{personopplysninger.fornavn}} {{personopplysninger.etternavn}}</title>
 </head>
@@ -65,53 +64,21 @@
 
     <tbody>
     <tr>
-        <td>Motatt dato</td>
-        <td>01-01-2020</td>
-    </tr>
-    <tr>
-        <td>Veileder</td>
-        <td>J123456 - Jens Jensen</td>
-    </tr>
-    <tr>
         <td>Målform</td>
         <td>{{målform}}</td>
     </tr>
-        {{#if søkerMøttPersonlig }}
-        <tr>
-            <td>Har søker møtt personlig</td>
-            <td>Ja</td>
-        </tr>
-        {{else}}
-        <tr>
-            <td>Har søker møtt personlig</td>
-            <td>Nei</td>
-        </tr>
-        {{/if}}
-
-        {{#if harFullmektigMøtt }}
-        <tr>
-            <td>Fullmektig møtt</td>
-            <td>Ja</td>
-        </tr>
-        {{else}}
-        <tr>
-            <td>Fullmektig møtt</td>
-            <td>Nei</td>
-        </tr>
-        {{/if}}
-
-        {{#if erPassSjekket }}
-        <tr>
-            <td>Pass sjekket</td>
-            <td>Ja</td>
-        </tr>
-        {{else}}
-        <tr>
-            <td>Pass sjekket</td>
-            <td>Nei</td>
-        </tr>
-        {{/if}}
-
+    <tr>
+        <td>Har søker møtt personlig</td>
+        <td>{{#if søkerMøttPersonlig}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    <tr>
+        <td>Fullmektig møtt</td>
+        <td>{{#if harFullmektigMøtt}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    <tr>
+        <td>Pass sjekket</td>
+        <td>{{#if erPassSjekket}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
     <tr>
         <td>Merknader</td>
         <td>{{merknader}}</td>
@@ -178,29 +145,15 @@
             <td>{{statsborgerskap}}</td>
         </tr>
 
-        {{#if flyktning }}
-            <tr>
-                <td>Er søker registrert som flyktning?</td>
-                <td>Ja</td>
-            </tr>
-        {{else}}
-            <tr>
-                <td>Er søker registrert som flyktning?</td>
-                <td>Nei</td>
-            </tr>
-        {{/if}}
+        <tr>
+            <td>Er søker registrert som flyktning?</td>
+            <td>{{#if flyktning}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
 
-        {{#if borFastINorge }}
-            <tr>
-                <td>Bor søker fast i Norge?</td>
-                <td>Ja</td>
-            </tr>
-        {{else}}
-            <tr>
-                <td>Bor søker fast i Norge?</td>
-                <td>Nei</td>
-            </tr>
-        {{/if}}
+        <tr>
+            <td>Bor søker fast i Norge?</td>
+            <td>{{#if borFastINorge}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
 
     {{/with}}
     </tbody>
@@ -215,18 +168,11 @@
     </thead>
     <tbody>
     {{#with boforhold}}
-        {{#if delerBoligMed }}
-            <tr>
-                <td>Deler bolig</td>
-                <td>Ja</td>
-            </tr>
-        {{else}}
-            <tr>
-                <td>Deler bolig?</td>
-                <td>Nei</td>
-            </tr>
-        {{/if}}
-        {{#if delerBoligMed }}
+        <tr>
+            <td>Deler bolig</td>
+            <td>{{#if delerBolig}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
+        {{#if delerBolig }}
             <tr>
                 <td>Bor sammen med</td>
                 {{#each borSammenMed }}
@@ -299,7 +245,6 @@
     </thead>
     <tbody>
     {{#with oppholdstillatelse}}
-
         <tr>
             <td>Har søker varig opphold</td>
             <td>{{#if harVarigOpphold}} Ja {{else}} Nei {{/if}}</td>
@@ -409,6 +354,5 @@
     {{/with}}
     </tbody>
 </table>
-
 </body>
 </html>
