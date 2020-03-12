@@ -48,6 +48,7 @@
         }
 
 
+
     </style>
     <title>SØKNAD {{personopplysninger.fnr}} {{personopplysninger.fornavn}} {{personopplysninger.etternavn}}</title>
 </head>
@@ -55,7 +56,7 @@
 
 <table>
 <thead>
-    {{#with forNAV}}
+    {{#with forNav}}
     <tr>
         <td class="tr50"><h4>For NAV</h4></td>
         <td></td>
@@ -113,7 +114,7 @@
 
     <tr>
         <td>Merknader</td>
-        <td>{{forNAVmerknader}}</td>
+        <td>{{merknader}}</td>
     </tr>
     {{/with}}
 </tbody>
@@ -391,6 +392,20 @@
                 </tr>
             {{/each}}
         {{/if}}
+        <tr>
+            <td>Depositumskonto</td>
+            <td>{{#if harDepositumskonto}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
+        {{#if harDepositumskonto }}
+            <tr>
+                <td>Depositumsbeløp</td>
+                <td>{{depositumBeløp}}</td>
+            </tr>
+        {{/if}}
+        <tr>
+            <td>Sosialstønad</td>
+            <td>{{#if harSosialStønad}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
     {{/with}}
     </tbody>
 </table>
