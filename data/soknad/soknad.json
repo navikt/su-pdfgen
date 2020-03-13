@@ -34,7 +34,7 @@
       "utreisedato": "2020-02-01",
       "innreisedato": "2020-02-05"
     }],
-    "planlagteUtenlandsopphold": true,
+    "planlagtUtenlandsopphold": true,
     "planlagtePerioder": [{
       "utreisedato": "2020-07-01",
       "innreisedato": "2020-07-31"
