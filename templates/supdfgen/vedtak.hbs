@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        @page {
+            @bottom-right {
+                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+                font-size: 15px;
+                content: "side "counter(page) " av "counter(pages);
+            }
+        }
+
+        .navLogo {
+            height: 75px;
+            width: 125px;
+        }
+
+        .personInfo p {
+            padding: 0;
+            margin: 0;
+            clear: both;
+        }
+
+        .personInfo {
+            margin-bottom: 5em;
+        }
+
+        .boldText {
+            font-weight: bold;
+        }
+
+        .personInfoMainContent p {
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+            color: grey;
+        }
+
+        .hilsen p {
+            padding: 0;
+            margin: 0
+        }
+    </style>
+    <title>Supplerende stønad</title>
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="header">
+            <div style="float:right">
+                <img class="navLogo" src="{{image "Navlogo.png"}}">
+                <p>Dato: {{dato}}</p>
+            </div>
+        </div>
+
+        <div class="personInfo">
+            <p>{{fornavn}} {{etternavn}}</p>
+            <p>{{adresse}}</p>
+            <p>{{postnummer}} {{poststed}}</p>
+        </div>
+
+        <div class="mainContent">
+            <h3>Vi har avslått søknaden din om supplerende stønad</h3>
+
+            <div class="personInfoMainContent">
+                <p>Navn: {{fornavn}} {{etternavn}}</p>
+                <p>Fødselsnummer: {{fødselsnummer}}</p>
+            </div>
+
+            <p>Du har ikke rett til supplerende stønad fordi vi har avslått søknaden din om uføretrygd etter ett eller
+                flere av vilkårene i folketrygdloven §§ 12-4 til 12-7. Du kan se det i ditt vedtak om uføretrygd.</p>
+
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
+            </p>
+            <p class="boldText">DU HAR RETT TIL Å KLAGE</p>
+            <p>Du kan klage innen seks uker fra den datoen du mottok vedtaket. Du finner skjema og informasjon på
+                nav.no/klage. 
+            </p>
+
+            <p class="boldText">DU HAR RETT TIL INNSYN</p>
+            <p>På nav.no/DittNAV kan du se dokumentene i saken din.</p>
+
+            <p class="boldText">HAR DU SPØRSMÅL?</p>
+            <p>Du finner nyttig informasjon på nav.no/supplerende. </p>
+            <p>Du kan også kontakte oss på 55 55 33 34.</p>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
