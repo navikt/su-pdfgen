@@ -6,7 +6,6 @@ metadata:
   labels:
     team: supstonad
 spec:
-  port: 8081
   image: { { image } }
   replicas:
     min: 1
