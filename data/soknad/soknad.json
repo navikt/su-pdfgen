@@ -1,86 +1,61 @@
 {
-  "personopplysninger": {
-    "fnr": "12345678910",
-    "fornavn": "fornavn",
-    "mellomnavn": "ØÆÅ",
-    "etternavn": "etternavn",
-    "telefonnummer": "90011900",
-    "gateadresse": "storgata 1",
-    "bruksenhet": "20e",
-    "postnummer": "0909",
-    "poststed": "Oslo",
-    "bokommune": "Oslo",
-    "statsborgerskap": "Tunisisk",
-    "flyktning": true,
-    "borFastINorge": true
+  "forNAV": {
+    "målform": "Bokmål",
+    "erPassSjekket": true,
+    "søkerMøttPersonlig": true,
+    "harFullmektigMøtt": false,
+    "forNAVmerknader": "Alt er fint"
   },
   "boforhold": {
-    "borSammenMed": [
-      "Barn over 18"
-    ],
+    "borSammenMed": ["Ektefelle/Partner/Samboer", "Barn over 18"],
+    "delerBolig": true,
     "delerBoligMed": [
-      {
-        "navn": "Turid Schønberg",
-        "fødselsnummer": "12345678910"
-      }
-    ],
-    "delerBolig": true
+      { "navn": "Pluto", "fødselsnummer": "12345678901" },
+      { "navn": "Jupiter", "fødselsnummer": "10987654321" },
+      { "navn": "Saturn", "fødselsnummer": "10987654321" },
+      { "navn": "Merkus", "fødselsnummer": "10987654321" },
+      { "navn": "Venus", "fødselsnummer": "10987654321" }
+    ]
   },
   "utenlandsopphold": {
-    "registrertePerioder": [
-      {
-        "utreisedato": "31122019",
-        "innreisedato": "04012020"
-      }
-    ],
-    "planlagtePerioder": [
-      {
-        "utreisedato": "01032020",
-        "innreisedato": "05032020"
-      },
-      {
-        "utreisedato": "01042020",
-        "innreisedato": "05042020"
-      }
-    ],
     "utenlandsopphold": true,
-    "planlagtUtenlandsopphold": true
+    "registrertePerioder": [{ "utreisedato": "2020-02-01", "innreisedato": "2020-02-02" }],
+    "planlagtUtenlandsopphold": true,
+    "planlagtePerioder": [{ "utreisedato": "2020-02-04", "innreisedato": "2020-02-06" }]
   },
-  "oppholdstillatelse": {
-    "harVarigOpphold": false,
-    "utløpsDato": "30/10/2024",
-    "søktOmForlengelse": false
+  "oppholdstillatelse": { "harVarigOpphold": false, "søktOmForlengelse": true, "utløpsDato": "2020-02-21" },
+  "personopplysninger": {
+    "fnr": "12345678901",
+    "fornavn": "Planet",
+    "poststed": "Melk",
+    "bokommune": "Veien",
+    "etternavn": "Planetetus",
+    "flyktning": true,
+    "bruksenhet": "H105",
+    "mellomnavn": "Planetus",
+    "postnummer": "0985",
+    "borFastINorge": true,
+    "gateadresse": "Melkeveien 5",
+    "telefonnummer": "12345678",
+    "statsborgerskap": "Solen, Uranus"
   },
   "inntektPensjonFormue": {
-    "pensjonsOrdning": [
-      {
-        "ordning": "KLP",
-        "beløp": "99"
-      },
-      {
-        "ordning": "SPK",
-        "beløp": "98"
-      }
-    ],
-    "framsattKravAnnenYtelse": true,
-    "framsattKravAnnenYtelseBegrunnelse": "Hundepensjon",
-    "harInntekt": true,
-    "inntektBeløp": "2500",
+    "sumInntektOgPensjon": 750,
+    "formueBeløp": "100",
     "harPensjon": true,
-    "sumPersoninntekt": "30000",
-    "harFormueEiendom": true,
-    "formueBeløp": "2323",
+    "harSosialStønad": false,
+    "framsattKravAnnenYtelse": true,
+    "pensjonsOrdning": [{ "beløp": "250", "ordning": "PensjonsOrdningen" }],
     "harFinansFormue": false,
+    "annenFormueEiendom": [{ "typeFormue": "Hytte", "skattetakst": "50" },
+      { "typeFormue": "kek", "skattetakst": "20" },
+      { "typeFormue": "lul", "skattetakst": "30" },
+      { "typeFormue": "bur", "skattetakst": "40" }],
+    "harFormueEiendom": true,
     "harAnnenFormue": true,
-    "typeFormue": "hytte i afrika",
-    "samletSkattetakst": "3500",
-    "harSosialStønad": true
-  },
-  "forNAV": {
-    "målform": "Nynorsk",
-    "søkerMøttPersonlig": true,
-    "harFullmektigMøtt": true,
-    "erPassSjekket": true,
-    "forNAVmerknader": "Trivelig type"
+    "harInntekt": true,
+    "harDepositumskonto": false,
+    "framsattKravAnnenYtelseBegrunnelse": "penjon",
+    "inntektBeløp": "500"
   }
 }
