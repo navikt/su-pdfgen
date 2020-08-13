@@ -1,56 +1,4 @@
-<!DOCTYPE html>
-<html lang="no">
-
-<head>
-    <meta charset="UTF-8" />
-    <style>
-        * {
-            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-        }
-
-        @page {
-            @bottom-right {
-                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-                font-size: 15px;
-                content: "side "counter(page) " av "counter(pages);
-            }
-        }
-
-        .navLogo {
-            height: 75px;
-            width: 125px;
-        }
-
-        .personInfo p {
-            padding: 0;
-            margin: 0;
-            clear: both;
-        }
-
-        .personInfo {
-            margin-bottom: 5em;
-        }
-
-        .boldText {
-            font-weight: bold;
-        }
-
-        .personInfoMainContent p {
-            padding: 0;
-            margin: 0;
-            font-size: 12px;
-            color: grey;
-        }
-
-        .hilsen p {
-            padding: 0;
-            margin: 0
-        }
-    </style>
-    <title>Supplerende stønad</title>
-</head>
-
-<body>
+{{#> supdfgen/partials/base}}
     <div class="main">
 
         <div class="header">
@@ -95,6 +43,4 @@
 
 
     </div>
-</body>
-
-</html>
+    {{/supdfgen/partials/base}}
