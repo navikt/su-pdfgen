@@ -10,6 +10,8 @@
   "fradato": "oktober 2020",
   "tildato": "september 2021",
   "nysøkdato": "september 2021",
-  "sats": "høy sats",
-  "satsbeløp": "høy sats"
+  "sats": "høy",
+  "satsbeløp": "20637",
+  "fradrag": [{"id": 0, "type": "Pensjon","beløp": 3000}, {"id": 1, "type": "Arbeidsinntekt","beløp": 1500}],
+  "fradragSum": 4500
 }
