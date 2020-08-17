@@ -9,9 +9,14 @@
   "månedsbeløp": "12000",
   "fradato": "oktober 2020",
   "tildato": "september 2021",
-  "nysøkdato": "september 2021",
   "sats": "høy",
   "satsbeløp": "20637",
-  "fradrag": [{"id": 0, "type": "Pensjon","beløp": 3000}, {"id": 1, "type": "Arbeidsinntekt","beløp": 1500}],
+  "satsGrunn": "din ektefelle ikke er 67 år",
+  "redusertStønadStatus": true,
+  "redusertStønadGrunn": "har annen inntekt",
+  "fradrag": [
+    { "id": 0, "type": "Pensjon", "beløp": 3000 },
+    { "id": 1, "type": "Arbeidsinntekt", "beløp": 1500 }
+  ],
   "fradragSum": 4500
 }

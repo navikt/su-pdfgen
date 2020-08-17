@@ -1,67 +1,70 @@
 {{#> supdfgen/partials/innvilgelseBase}}
-    <div class="main">
-        <div class="header">
-            <div style="float:right">
-                <img class="navLogo" src="{{image "Navlogo.png"}}">
-                <p>Dato: {{dato}}</p>
-            </div>
+<div class="main">
+    <div class="header">
+        <div style="float:right">
+            <img class="navLogo" src="{{image "Navlogo.png"}}">
+            <p>Dato: {{dato}}</p>
+        </div>
+    </div>
+
+    <div class="personInfo">
+        <p>{{fornavn}} {{etternavn}}</p>
+        <p>{{adresse}}</p>
+        <p>{{postnummer}} {{poststed}}</p>
+    </div>
+
+    <div class="mainContent">
+        <h3>Du får supplerende stønad</h3>
+
+        <div class="personInfoMainContent">
+            <p>Navn: {{fornavn}} {{etternavn}}</p>
+            <p>Fødselsnummer: {{fødselsnummer}}</p>
         </div>
 
-        <div class="personInfo">
-            <p>{{fornavn}} {{etternavn}}</p>
-            <p>{{adresse}}</p>
-            <p>{{postnummer}} {{poststed}}</p>
-        </div>
+        <p>
+            Du får {{månedsbeløp}} kroner i måneden fra {{fradato}} til og med {{tildato}} fordi du er ufør flykting.
+            Du kan søke på nytt i {{tildato}}.
+        <p>
 
-        <div class="mainContent">
-            <h3>Du får supplerende stønad</h3>
+        <p>
+            Vedtaket er gjort etter loven om supplerende stønad til personer med kort botid i Norge, §§ 3, 5, 6 og 7.
+        <p>
 
-            <div class="personInfoMainContent">
-                <p>Navn: {{fornavn}} {{etternavn}}</p>
-                <p>Fødselsnummer: {{fødselsnummer}}</p>
-            </div>
+        <p class="boldText">BEREGNING</p>
+        <p>
+            Du får {{sats}} sats fordi {{satsGrunn}}. {{capitalize sats}} sats er {{satsbeløp}} kroner i
+            måneden.
+            {{#if redusertStønadStatus}}
+            Vi har redusert stønaden fordi du {{redusertStønadGrunn}}.
+            {{/if}}
+        </p>
 
-            <p>
-                Du får {{månedsbeløp}} kroner i måneden fra {{fradato}} til og med {{tildato}} fordi du er ufør flykting.
-                Du kan søke på nytt i {{nysøkdato}}.
-            <p>
+        {{#if fradrag}}
+        <p>
+            Stønaden din beregnes slik: <br />
+            {{#each fradrag}}
+            {{#with fradrag}}
+            {{type}} {{beløp}} kroner
+            {{/with}}
+            <br />
+            {{/each}}
+        </p>
 
-            <p>
-                Vedtaket er gjort etter loven om supplerende stønad til personer med kort botid i Norge, §§ 3, 5, 6 og 7.
-            <p>
+        <p>
+            <hr />
+            Sum inntekter: {{fradragSum}} kroner
+            <hr />
+        </p>
 
-            <p class="boldText">BEREGNING</p>
-            <p>
-                {{! begrunnelsen for satsen må endres senere. }}
-               Du får {{sats}} sats fordi din ektefelle ikke er 67 år. {{capitalize sats}} sats er {{satsbeløp}} kroner i måneden.
-            </p>
-
-            {{#if fradrag}}
-                <p>
-                Stønaden din beregnes slik: <br />
-                {{#each fradrag}}
-                    {{#with fradrag}}
-                        {{type}} {{beløp}} kroner
-                    {{/with}}
-                    <br />
-                {{/each}}
-                </p>
-
-            <p>
-                <hr />
-                Sum inntekter: {{fradragSum}} kroner
-                <hr />
-            </p>
-
-            <p>
+        <p>
             Stønadssatsen {{satsbeløp}} <br />
             - Sum inntekter {{fradragSum}}
             <hr />
-                Din supplerende stønad i måneden {{månedsbeløp}}
+            Din supplerende stønad i måneden {{månedsbeløp}}
             <hr />
-            </p>
-            {{/if}}
+        </p>
+        {{/if}}
 
-        </div>
     </div>
+</div>
 {{/supdfgen/partials/innvilgelseBase}}
