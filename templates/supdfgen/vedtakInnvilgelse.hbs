@@ -40,6 +40,14 @@
         </p>
 
         {{#if fradrag}}
+        {{#each fradrag}}
+        {{#with fradrag}}
+        {{#eq type "UtenlandskInntekt" }}
+        <p>{{beskrivelse}}</p>
+        {{/eq}}
+        {{/with}}
+        {{/each}}
+
         <p>
             Stønaden din beregnes slik: <br />
             {{#each fradrag}}

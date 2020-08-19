@@ -16,7 +16,8 @@
   "redusertStønadGrunn": "har annen inntekt",
   "fradrag": [
     { "id": 0, "type": "Pensjon", "beløp": 3000 },
-    { "id": 1, "type": "Arbeidsinntekt", "beløp": 1500 }
+    { "id": 1, "type": "Arbeidsinntekt", "beløp": 1500 },
+    { "id": 2, "type": "UtenlandskInntekt", "beløp": 1000, "beskrivelse": "Svenske kroner" }
   ],
   "fradragSum": 4500
 }
