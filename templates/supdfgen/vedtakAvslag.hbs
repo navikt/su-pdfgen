@@ -22,12 +22,100 @@
                 <p>Fødselsnummer: {{fødselsnummer}}</p>
             </div>
 
-            <p>Du har ikke rett til supplerende stønad fordi vi har avslått søknaden din om uføretrygd etter ett eller
-                flere av vilkårene i folketrygdloven §§ 12-4 til 12-7. Du kan se det i ditt vedtak om uføretrygd.</p>
+            {{#eq avslagsgrunn "UFØRHET" }}
+                <p>Du har ikke rett til supplerende stønad fordi vi har avslått søknaden
+                    din om uføretrygd etter ett eller flere av vilkårene i folketrygdloven
+                    §§ 12-4 til 12-7. Du kan se det i ditt vedtak om uføretrygd.
+                </p>
+            {{/eq}}
 
-            <p>
-                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
-            </p>
+            {{#eq avslagsgrunn "FLYKTNING" }}
+                <p>Du har ikke rett til supplerende stønad fordi du ikke er flyktning etter
+                    utlendingsloven § 28. Du kan se det i ditt vedtak om avslag om flyktningstatus.
+                </p>
+            {{/eq}}
+
+            {{#eq avslagsgrunn "FORMUE" }}
+                <p>Du har ikke rett til supplerende stønad fordi du eller din ektefelle har formue
+                    som overstiger halvparten av folketrygdlovens grunnbeløp. Dette er for tiden xx kr.
+                </p>
+            {{/eq}}
+
+            {{#eq avslagsgrunn "BOR_OG_OPPHOLDER_SEG_I_NORGE" }}
+                <p>Du har ikke rett til supplerende stønad fordi du ikke er registret bosatt i Norge og
+                    heller ikke oppholder deg i Norge.
+                </p>
+            {{/eq}}
+
+            {{#eq avslagsgrunn "PERSONLIG_OPPMØTE" }}
+                <p>
+                    [[PERSONLIG_OPPMØTE AVSLAGSTEKST]]
+                </p>
+            {{/eq}}
+
+            {{#eq avslagsgrunn "OPPHOLDSTILLATELSE" }}
+                <p>
+                    [[OPPHOLDSTILLATELSE AVSLAGSTEKST]]
+                </p>
+            {{/eq}}
+
+            {{! TODO: ha et avslag på grunn av utenlandsopphold mer enn 90 dager}}
+            {{#eq avslagsgrunn "UTENLANDSOPPHOLD_OVER_90_DAGER" }}
+                <p>
+                    [[utenlandsopphold på mer enn 90 dager tekst]]
+                </p>
+            {{/eq}}
+
+            {{! TODO: ha et avslag på grunn av inntekt fra backend}}
+            {{#eq avslagsgrunn "FOR_HØY_INNTEKT" }}
+                <p>Du har ikke rett til supplerende stønad fordi du eller din ektefelle har formue
+                    som overstiger halvparten av folketrygdlovens grunnbeløp. Dette er for tiden xx kr.
+                </p>
+                <p>
+                    Du har ikke rett til supplerende stønad fordi du eller din ektefelle sammen eller
+                    hver for dere har for høy inntekt. Inntekten kan ikke være høyere enn den satsen
+                    du kan få i supplerende stønad. Inntekten er på kr xx som er høyere enn xxx
+                    (den aktuelle satsen for SU)
+                </p>
+            {{/eq}}
+
+            {{! TODO: ha et avslag på grunn av Innlagt på institusjon  }}
+            {{#eq avslagsgrunn "INNLAGT_PÅ_INSTITUSJON" }}
+                <p>
+                    [[INNLAGT PÅ INSTITUSJON AVSLAGSTEKST]]
+                </p>
+            {{/eq}}
+
+            {{! TODO: ha et avslag på grunn av SU_UNDER_MINSTEGRENSE}}
+            {{#eq avslagsgrunn "SU_UNDER_MINSTEGRENSE" }}
+                <p>
+                    [[SU_UNDER_MINSTEGRENSE AVSLAGSTEKST]]
+                </p>
+            {{/eq}}
+
+
+            {{#eq avslagsgrunnBeskrivelse "UFØRHET_FLYKTNING" }}
+                <p>
+                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
+                </p>
+            {{/eq}}
+            {{#eq avslagsgrunnBeskrivelse "FORMUE" }}
+                <p>
+                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
+                </p>
+            {{/eq}}
+            {{#eq avslagsgrunnBeskrivelse "HØY_INNTEKT" }}
+                <p>
+                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
+                </p>
+            {{/eq}}
+            {{#eq avslagsgrunnBeskrivelse "UTLAND_OG_OPPHOLD" }}
+                <p>
+                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
+                </p>
+            {{/eq}}
+
+
             <p class="boldText">DU HAR RETT TIL Å KLAGE</p>
             <p>Du kan klage innen seks uker fra den datoen du mottok vedtaket. Du finner skjema og informasjon på
                 nav.no/klage. 

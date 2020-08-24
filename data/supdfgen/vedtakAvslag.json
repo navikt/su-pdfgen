@@ -5,5 +5,7 @@
   "etternavn": "Planetus",
   "adresse": "Melkeveien 20",
   "postnummer": "9807",
-  "poststed": "Uranus"
+  "poststed": "Uranus",
+  "avslagsgrunn": "UFØRHET",
+  "avslagsgrunnBeskrivelse": "UFØRHET_FLYKTNING"
 }
