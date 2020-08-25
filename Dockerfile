@@ -1,4 +1,4 @@
-FROM navikt/pdfgen:1c6efbd2191888aebadf82ea10e3e744cbdc1ed7
+FROM docker.pkg.github.com/navikt/pdfgen/pdfgen:0073e78ea89798dc8b24900ea2b500f2efa3ca97
 
 COPY templates /app/templates
 COPY fonts /app/fonts

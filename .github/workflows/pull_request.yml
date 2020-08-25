@@ -1,0 +1,19 @@
+name: Bygg og test ved pr
+
+on: pull_request
+
+env:
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/su-pdfgen:${{ github.sha }}
+
+jobs:
+  build:
+    name: Build and push Docker container
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build Docker image
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
+          docker build --pull --tag ${IMAGE} .
