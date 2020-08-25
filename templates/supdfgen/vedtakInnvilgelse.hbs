@@ -22,7 +22,7 @@
         </div>
 
         <p>
-            Du får {{månedsbeløp}} kroner i måneden fra {{fradato}} til og med {{tildato}} fordi du er ufør flyktning.
+            Du får {{currency_no månedsbeløp true}} kroner i måneden fra {{fradato}} til og med {{tildato}} fordi du er ufør flyktning.
             Du kan søke på nytt i {{tildato}}.
         <p>
 
@@ -32,7 +32,7 @@
 
         <p class="boldText">BEREGNING</p>
         <p>
-            Du får {{sats}} sats fordi {{satsGrunn}}. {{capitalize sats}} sats er {{satsbeløp}} kroner i
+            Du får {{sats}} sats fordi {{satsGrunn}}. {{capitalize sats}} sats er {{currency_no satsbeløp true}} kroner i
             måneden.
             {{#if redusertStønadStatus}}
             Vi har redusert stønaden fordi du {{redusertStønadGrunn}}.
@@ -52,7 +52,7 @@
             Stønaden din beregnes slik: <br />
             {{#each fradrag}}
             {{#with fradrag}}
-            {{type}} {{beløp}} kroner
+            {{type}} {{currency_no beløp true}} kroner
             {{/with}}
             <br />
             {{/each}}
@@ -60,15 +60,15 @@
 
         <p>
             <hr />
-            Sum inntekter: {{fradragSum}} kroner
+            Sum inntekter: {{currency_no fradragSum true}} kroner
             <hr />
         </p>
 
         <p>
-            Stønadssatsen {{satsbeløp}} <br />
-            - Sum inntekter {{fradragSum}}
+            Stønadssatsen {{currency_no satsbeløp true}} <br />
+            - Sum inntekter {{currency_no fradragSum true}}
             <hr />
-            Din supplerende stønad i måneden {{månedsbeløp}}
+            Din supplerende stønad i måneden {{currency_no månedsbeløp true}}
             <hr />
         </p>
         {{/if}}
