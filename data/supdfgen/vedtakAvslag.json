@@ -6,6 +6,7 @@
   "adresse": "Melkeveien 20",
   "postnummer": "9807",
   "poststed": "Uranus",
-  "avslagsgrunn": "UFØRHET",
-  "avslagsgrunnBeskrivelse": "UFØRHET_FLYKTNING"
+  "avslagsgrunn": "FOR_HØY_INNTEKT",
+  "avslagsgrunnBeskrivelse": "FOR_HØY_INNTEKT",
+  "halvGrunnbeløp": 49980
 }

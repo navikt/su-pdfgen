@@ -37,7 +37,7 @@
 
             {{#eq avslagsgrunn "FORMUE" }}
                 <p>Du har ikke rett til supplerende stønad fordi du eller din ektefelle har formue
-                    som overstiger halvparten av folketrygdlovens grunnbeløp. Dette er for tiden xx kr.
+                    som overstiger halvparten av folketrygdlovens grunnbeløp. Dette er for tiden {{halvGrunnbeløp}} kr.
                 </p>
             {{/eq}}
 
@@ -68,9 +68,6 @@
 
             {{! TODO: ha et avslag på grunn av inntekt fra backend}}
             {{#eq avslagsgrunn "FOR_HØY_INNTEKT" }}
-                <p>Du har ikke rett til supplerende stønad fordi du eller din ektefelle har formue
-                    som overstiger halvparten av folketrygdlovens grunnbeløp. Dette er for tiden xx kr.
-                </p>
                 <p>
                     Du har ikke rett til supplerende stønad fordi du eller din ektefelle sammen eller
                     hver for dere har for høy inntekt. Inntekten kan ikke være høyere enn den satsen
