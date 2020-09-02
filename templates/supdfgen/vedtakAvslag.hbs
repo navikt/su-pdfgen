@@ -30,21 +30,17 @@
             {{/eq}}
 
             {{#eq avslagsgrunn "FLYKTNING" }}
-                <p>Du har ikke rett til supplerende stønad fordi du ikke er flyktning etter
-                    utlendingsloven § 28. Du kan se det i ditt vedtak om avslag om flyktningstatus.
-                </p>
+                <p>Du har ikke rett til supplerende stønad fordi du ikke er flyktning etter utlendingsloven § 28.</p>
             {{/eq}}
 
             {{#eq avslagsgrunn "FORMUE" }}
                 <p>Du har ikke rett til supplerende stønad fordi du eller din ektefelle har formue
-                    som overstiger halvparten av folketrygdlovens grunnbeløp. Dette er for tiden {{halvGrunnbeløp}} kr.
+                    som overstiger halvparten av folketrygdlovens grunnbeløp. Dette er for tiden {{currency_no halvGrunnbeløp true}} kr.
                 </p>
             {{/eq}}
 
             {{#eq avslagsgrunn "BOR_OG_OPPHOLDER_SEG_I_NORGE" }}
-                <p>Du har ikke rett til supplerende stønad fordi du ikke er registret bosatt i Norge og
-                    heller ikke oppholder deg i Norge.
-                </p>
+                <p>Du har ikke rett til supplerende stønad fordi du ikke er registrert bosatt i Norge og/eller ikke oppholder deg i Norge.</p>
             {{/eq}}
 
             {{#eq avslagsgrunn "PERSONLIG_OPPMØTE" }}
