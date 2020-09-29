@@ -45,30 +45,26 @@
 
             {{#eq avslagsgrunn "PERSONLIG_OPPMØTE" }}
                 <p>
-                    [[PERSONLIG_OPPMØTE AVSLAGSTEKST]]
+                    Du har ikke rett til supplerende stønad fordi du ikke har møtt opp selv, eller med gyldig fullmektig eller verge.
                 </p>
             {{/eq}}
 
             {{#eq avslagsgrunn "OPPHOLDSTILLATELSE" }}
                 <p>
-                    [[OPPHOLDSTILLATELSE AVSLAGSTEKST]]
+                    Du har ikke rett til supplerende stønad fordi du ikke har oppholdstillatelse i Norge.
                 </p>
             {{/eq}}
 
-            {{! TODO: ha et avslag på grunn av utenlandsopphold mer enn 90 dager}}
             {{#eq avslagsgrunn "UTENLANDSOPPHOLD_OVER_90_DAGER" }}
                 <p>
                     Du har ikke rett til supplerende stønad fordi du skal oppholde deg i utlandet i mer enn 90 dager.
                 </p>
             {{/eq}}
 
-            {{! TODO: ha et avslag på grunn av inntekt fra backend}}
             {{#eq avslagsgrunn "FOR_HØY_INNTEKT" }}
                 <p>
-                    Du har ikke rett til supplerende stønad fordi du eller din ektefelle sammen eller
-                    hver for dere har for høy inntekt. Inntekten kan ikke være høyere enn den satsen
-                    du kan få i supplerende stønad. Inntekten er på kr xx som er høyere enn xxx
-                    (den aktuelle satsen for SU)
+                    Du har ikke rett til supplerende stønad fordi du eller din ektefelle sammen har for høy inntekt. Inntekten kan ikke være høyere enn den satsen
+                    du kan få i supplerende stønad. Inntekten per måned er på kr {{ currency_no fradragSum true }} som er høyere enn {{currency_no satsbeløp true}} (den aktuelle satsen for SU).
                 </p>
             {{/eq}}
 
@@ -79,10 +75,9 @@
                 </p>
             {{/eq}}
 
-            {{! TODO: ha et avslag på grunn av SU_UNDER_MINSTEGRENSE}}
             {{#eq avslagsgrunn "SU_UNDER_MINSTEGRENSE" }}
                 <p>
-                    [[SU_UNDER_MINSTEGRENSE AVSLAGSTEKST]]
+                    Du har ikke rett til supplerende stønad fordi beløpet ville vært under minstegrensen, det vil si under to prosent av full supplerende stønad.
                 </p>
             {{/eq}}
 
@@ -105,6 +100,11 @@
             {{#eq avslagsgrunnBeskrivelse "UTLAND_OG_OPPHOLD" }}
                 <p>
                     Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 4.
+                </p>
+            {{/eq}}
+            {{#eq avslagsgrunnBeskrivelse "UNDER_MINSTEGRENSE" }}
+                <p>
+                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 9.
                 </p>
             {{/eq}}
 
