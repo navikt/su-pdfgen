@@ -15,7 +15,7 @@
   "satsbeløp": "20637",
   "satsGrunn": "din ektefelle ikke er 67 år",
   "redusertStønadStatus": true,
-  "redusertStønadGrunn": "har annen inntekt",
+  "harEktefelle": true,
   "fradrag": [
     { "id": 0, "type": "Pensjon", "beløp": 3000 },
     { "id": 1, "type": "Arbeidsinntekt", "beløp": 1500 },

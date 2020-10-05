@@ -28,8 +28,9 @@
         <span>
             {{#if satsGrunn}}
                 Du får {{sats}} sats fordi
-                {{#eq satsGrunn "DELER_BOLIG_MED_VOKSNE_BARN"}}du deler bolig med voksne barn.{{/eq}}
-                {{#eq satsGrunn "DELER_BOLIG_MED_ANNEN_VOKSEN"}}du deler bolig med en annen voksen.{{/eq}}
+                {{#eq satsGrunn "ENSLIG"}}du ikke deler bolig med voksne barn eller andre voksne.{{/eq}}
+                {{#eq satsGrunn "DELER_BOLIG_MED_VOKSNE_BARN_ELLER_ANNEN_VOKSEN"}}du deler bolig med voksne barn eller andre voksne.{{/eq}}
+                {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67"}}din ektefelle ikke er 67 år.{{/eq}}
                 {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_OVER_67"}}du deler bolig med ektemake eller samboer over 67 år.{{/eq}}
                 {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67_UFØR_FLYKTNING"}}du deler bolig med ektemake eller samboer under 67 år som er ufør flyktning.{{/eq}}
             {{/if}}
@@ -37,7 +38,7 @@
             {{capitalize sats}} sats er {{currency_no satsbeløp true}} kroner i måneden.
 
             {{#if redusertStønadStatus}}
-                Vi har redusert stønaden fordi du {{redusertStønadGrunn}}.
+                Vi har redusert stønaden fordi du {{#if harEktefelle}}og/eller ektefelle{{/if}} har annen inntekt.
             {{/if}}
         </span>
 
