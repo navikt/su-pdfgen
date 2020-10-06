@@ -35,8 +35,9 @@
             margin-bottom: 2em;
         }
 
-        .mainContent {
+        .personalia {
             clear: both;
+            padding-bottom: 1em;
         }
 
         .personInfoMainContent p {
@@ -59,7 +60,21 @@
 </head>
 
 <body>
-{{> @partial-block}}
+    <div class="main">
+        <div class="header">
+            <div style="float:right">
+                <img class="navLogo" src="{{image "Navlogo.png"}}">
+                <p>Dato: {{dato}}</p>
+            </div>
+
+            <div class="personalia">
+                <p>{{fornavn}} {{etternavn}}</p>
+            </div>
+        </div>
+
+        {{> @partial-block}}
+
+    </div>
 </body>
 
 </html>

@@ -1,19 +1,6 @@
 {{#> supdfgen/partials/innvilgelseBase}}
-<div class="main">
-    <div class="header">
-        <div style="float:right">
-            <img class="navLogo" src="{{image "Navlogo.png"}}">
-            <p>Dato: {{dato}}</p>
-        </div>
-    </div>
-
     <div class="mainContent">
         <h3>Du får supplerende stønad</h3>
-
-        <div class="personInfoMainContent">
-            <p>Navn: {{fornavn}} {{etternavn}}</p>
-            <p>Fødselsnummer: {{fødselsnummer}}</p>
-        </div>
 
         <p>
             Du får {{currency_no månedsbeløp true}} kroner i måneden fra {{fradato}} til og med {{tildato}} fordi du er ufør flyktning.
@@ -77,5 +64,5 @@
         {{/if}}
 
     </div>
-</div>
+
 {{/supdfgen/partials/innvilgelseBase}}

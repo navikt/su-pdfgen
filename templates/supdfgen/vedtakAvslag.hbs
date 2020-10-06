@@ -1,107 +1,93 @@
 {{#> supdfgen/partials/avslagBase}}
-    <div class="main">
+    <div class="mainContent">
+        <h3>Vi har avslått søknaden din om supplerende stønad</h3>
 
-        <div class="header">
-            <div style="float:right">
-                <img class="navLogo" src="{{image "Navlogo.png"}}">
-                <p>Dato: {{dato}}</p>
-            </div>
-        </div>
+        {{#eq avslagsgrunn "UFØRHET" }}
+            <p>
+                Du har ikke rett til supplerende stønad fordi vi har avslått søknaden din om uføretrygd etter ett eller flere
+                av vilkårene i folketrygdloven §§ 12-4 til 12-7. Du kan se det i ditt vedtak om uføretrygd.
+            </p>
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
+            </p>
+        {{/eq}}
 
-        <div class="mainContent">
-            <h3>Vi har avslått søknaden din om supplerende stønad</h3>
+        {{#eq avslagsgrunn "FLYKTNING" }}
+            <p>Du har ikke rett til supplerende stønad fordi du ikke er flyktning etter utlendingsloven § 28.</p>
+            <p>Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.</p>
+        {{/eq}}
 
-            <div class="personInfoMainContent">
-                <p>Navn: {{fornavn}} {{etternavn}}</p>
-                <p>Fødselsnummer: {{fødselsnummer}}</p>
-            </div>
+        {{#eq avslagsgrunn "FORMUE" }}
+            <p>
+                Du har ikke rett til supplerende stønad fordi du eller din ektefelle har formue
+                som overstiger halvparten av folketrygdlovens grunnbeløp. Dette er for tiden {{currency_no halvGrunnbeløp true}} kr.
+            </p>
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2, 3 og 8.
+            </p>
+        {{/eq}}
 
-            {{#eq avslagsgrunn "UFØRHET" }}
-                <p>
-                    Du har ikke rett til supplerende stønad fordi vi har avslått søknaden din om uføretrygd etter ett eller flere
-                    av vilkårene i folketrygdloven §§ 12-4 til 12-7. Du kan se det i ditt vedtak om uføretrygd.
-                </p>
-                <p>
-                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
-                </p>
-            {{/eq}}
+        {{#eq avslagsgrunn "BOR_OG_OPPHOLDER_SEG_I_NORGE" }}
+            <p>Du har ikke rett til supplerende stønad fordi du ikke er registrert bosatt i Norge og/eller ikke oppholder deg i Norge.</p>
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2, 3 og 4.
+            </p>
+        {{/eq}}
 
-            {{#eq avslagsgrunn "FLYKTNING" }}
-                <p>Du har ikke rett til supplerende stønad fordi du ikke er flyktning etter utlendingsloven § 28.</p>
-                <p>Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.</p>
-            {{/eq}}
+        {{#eq avslagsgrunn "PERSONLIG_OPPMØTE" }}
+            <p>
+                Du har ikke rett til supplerende stønad fordi du ikke har møtt opp selv. Du har heller ikke levert legeattest slik at fullmektig kan møte for deg.
+            </p>
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 17.
+            </p>
+        {{/eq}}
 
-            {{#eq avslagsgrunn "FORMUE" }}
-                <p>
-                    Du har ikke rett til supplerende stønad fordi du eller din ektefelle har formue
-                    som overstiger halvparten av folketrygdlovens grunnbeløp. Dette er for tiden {{currency_no halvGrunnbeløp true}} kr.
-                </p>
-                <p>
-                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2, 3 og 8.
-                </p>
-            {{/eq}}
+        {{#eq avslagsgrunn "OPPHOLDSTILLATELSE" }}
+            <p>
+                Du har ikke rett til supplerende stønad fordi du ikke har gyldig oppholdstillatelse i Norge.
+            </p>
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 3.
+            </p>
+        {{/eq}}
 
-            {{#eq avslagsgrunn "BOR_OG_OPPHOLDER_SEG_I_NORGE" }}
-                <p>Du har ikke rett til supplerende stønad fordi du ikke er registrert bosatt i Norge og/eller ikke oppholder deg i Norge.</p>
-                <p>
-                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2, 3 og 4.
-                </p>
-            {{/eq}}
+        {{#eq avslagsgrunn "UTENLANDSOPPHOLD_OVER_90_DAGER" }}
+            <p>
+                Du har ikke rett til supplerende stønad fordi du skal oppholde deg i utlandet i mer enn 90 dager.
+            </p>
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 4.
+            </p>
+        {{/eq}}
 
-            {{#eq avslagsgrunn "PERSONLIG_OPPMØTE" }}
-                <p>
-                    Du har ikke rett til supplerende stønad fordi du ikke har møtt opp selv. Du har heller ikke levert legeattest slik at fullmektig kan møte for deg.
-                </p>
-                <p>
-                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 17.
-                </p>
-            {{/eq}}
+        {{#eq avslagsgrunn "FOR_HØY_INNTEKT" }}
+            <p>
+                Du har ikke rett til supplerende stønad fordi du eller din ektefelle sammen har for høy inntekt. Inntekten kan ikke være høyere enn den satsen
+                du kan få i supplerende stønad. Inntekten per måned er på kr {{ currency_no fradragSum true }} som er høyere enn {{currency_no satsbeløp true}} (den aktuelle satsen for SU).
+            </p>
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2, 5, 6 og 7.
+            </p>
+        {{/eq}}
 
-            {{#eq avslagsgrunn "OPPHOLDSTILLATELSE" }}
-                <p>
-                    Du har ikke rett til supplerende stønad fordi du ikke har gyldig oppholdstillatelse i Norge.
-                </p>
-                <p>
-                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 3.
-                </p>
-            {{/eq}}
+        {{#eq avslagsgrunn "INNLAGT_PÅ_INSTITUSJON" }}
+            <p>
+                Du har ikke rett til supplerende stønad fordi du oppholder deg på institusjon.
+            </p>
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 12.
+            </p>
+        {{/eq}}
 
-            {{#eq avslagsgrunn "UTENLANDSOPPHOLD_OVER_90_DAGER" }}
-                <p>
-                    Du har ikke rett til supplerende stønad fordi du skal oppholde deg i utlandet i mer enn 90 dager.
-                </p>
-                <p>
-                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 4.
-                </p>
-            {{/eq}}
-
-            {{#eq avslagsgrunn "FOR_HØY_INNTEKT" }}
-                <p>
-                    Du har ikke rett til supplerende stønad fordi du eller din ektefelle sammen har for høy inntekt. Inntekten kan ikke være høyere enn den satsen
-                    du kan få i supplerende stønad. Inntekten per måned er på kr {{ currency_no fradragSum true }} som er høyere enn {{currency_no satsbeløp true}} (den aktuelle satsen for SU).
-                </p>
-                <p>
-                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2, 5, 6 og 7.
-                </p>
-            {{/eq}}
-
-            {{#eq avslagsgrunn "INNLAGT_PÅ_INSTITUSJON" }}
-                <p>
-                    Du har ikke rett til supplerende stønad fordi du oppholder deg på institusjon.
-                </p>
-                <p>
-                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 12.
-                </p>
-            {{/eq}}
-
-            {{#eq avslagsgrunn "SU_UNDER_MINSTEGRENSE" }}
-                <p>
-                    Du har ikke rett til supplerende stønad fordi beløpet ville vært under to prosent av full supplerende stønad.
-                </p>
-                <p>
-                    Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 9.
-                </p>
-            {{/eq}}
-        </div>
+        {{#eq avslagsgrunn "SU_UNDER_MINSTEGRENSE" }}
+            <p>
+                Du har ikke rett til supplerende stønad fordi beløpet ville vært under to prosent av full supplerende stønad.
+            </p>
+            <p>
+                Dette vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og 9.
+            </p>
+        {{/eq}}
     </div>
+
 {{/supdfgen/partials/avslagBase}}
