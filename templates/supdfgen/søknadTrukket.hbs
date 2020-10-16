@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        @page {
+            @bottom-right {
+                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+                font-size: 15px;
+                content: "side "counter(page) " av "counter(pages);
+            }
+        }
+    </style>
+    <title>Supplerende stønad</title>
+</head>
+
+<body>
+    <div>
+        <h1>Dette er et brev om at du har trekt søknaden din</h1>
+        <p>Søknads id: {{søknadId}}</p>
+    </div>
+</body>
