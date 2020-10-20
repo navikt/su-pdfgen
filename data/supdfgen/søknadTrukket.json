@@ -1,4 +1,15 @@
 {
-  "sakId": "a2f2ed55-fff4-4051-8383-fae53ee0ecbb",
-  "søknadId": "7558892f-16dc-4cfc-90db-d1d03177fc2e"
+  "dato": "05.08.2020",
+  "datoSøknadOpprettet": "01.08.2020",
+  "datoSøkerTrakkSøknad": "03.08.2020",
+  "fødselsnummer": "12345678901",
+  "fornavn": "Tore",
+  "mellomnavn": "Johnas",
+  "etternavn": "Strømøy",
+  "adresse": "en Adresse",
+  "bruksenhet": "H102",
+  "husnummer": "4C",
+  "postnummer": "0186",
+  "poststed": "Oslo",
+  "typeLukking": "Trukket"
 }
