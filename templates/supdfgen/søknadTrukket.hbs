@@ -2,7 +2,7 @@
 <html lang="no">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <style>
         * {
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
@@ -12,16 +12,86 @@
             @bottom-right {
                 font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
                 font-size: 15px;
-                content: "side "counter(page) " av "counter(pages);
+                content: "side " counter(page) " av " counter(pages);
             }
+        }
+
+        .navLogo {
+            height: 75px;
+            width: 125px;
+        }
+
+        .personalia {
+            clear: both;
+            padding-bottom: 1em;
+        }
+
+        .personaliaInfo {
+            display: block;
         }
     </style>
     <title>Supplerende stønad</title>
 </head>
 
 <body>
-    <div>
-        <h1>Dette er et brev om at du har trekt søknaden din</h1>
-        <p>Søknads id: {{søknadId}}</p>
+<div class="main">
+    <div class="header">
+        <div style="float:right">
+            <img class="navLogo" src="{{image "Navlogo.png"}}">
+            <p>Dato: {{dato}}</p>
+        </div>
+
+        <div class="personalia">
+            <span class="personaliaInfo">
+                {{fornavn}} {{mellomnavn}} {{etternavn}}
+            </span>
+            <span class="personaliaInfo">
+                {{adresse}} {{husnummer}} {{bruksenhet}}
+            </span>
+            <span class="personaliaInfo">
+                {{postnummer}} {{poststed}}
+            </span>
+        </div>
     </div>
+
+    <div class="mainContent">
+        <h3>Søknaden din om supplerende stønad er trukket</h3>
+
+        <p>
+            NAV viser til søknaden din om supplerende stønad mottatt {{datoSøknadOpprettet}}.
+            Du har i henvendelse av {{datoSøkerTrakkSøknad}} opplyst at du ønsker å trekke søknaden.
+        </p>
+        <p>
+            Vi vil med dette bekrefte at søknaden om supplerende stønad er trukket, og ikke vil bli ytterligere
+            behandlet.
+        </p>
+        <p>
+            Du må levere ny søknad hvis du på et senere tidspunkt likevel ønsker å søke supplerende stønad.
+        </p>
+        <p>
+            Supplerende stønad kan innvilges inntil 3 måneder forut for søknadstidspunktet hvis vilkårene var oppfylt i
+            hele denne perioden. Ved en ny søknad blir den nye søknaden utgangspunktet for det tidspunktet du kan
+            innvilges supplerende stønad fra.
+        </p>
+        <p>
+            Vi gjør oppmerksom på at du etter forvaltningsloven § 18 har rett til å se sakens dokumenter.
+        </p>
+        <p>
+            Skulle du ha spørsmål, er du velkommen til å kontakte oss på telefon 55 55 33 34.
+        </p>
+        <p>
+            Husk at du også kan finne mer informasjon på våre hjemmesider nav.no.
+        </p>
+    </div>
+    <div class="hilsen">
+        <p>
+            Med vennlig hilsen <br/>
+            NAV Familie- og pensjonsytelser Ålesund
+        </p>
+    </div>
+
+
+</div>
 </body>
+
+</html>
