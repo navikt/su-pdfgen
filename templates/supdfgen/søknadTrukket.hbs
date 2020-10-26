@@ -1,65 +1,10 @@
-<!DOCTYPE html>
-<html lang="no">
-
-<head>
-    <meta charset="UTF-8"/>
-    <style>
-        * {
-            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-        }
-
-        @page {
-            @bottom-right {
-                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-                font-size: 15px;
-                content: "side " counter(page) " av " counter(pages);
-            }
-        }
-
-        .navLogo {
-            height: 75px;
-            width: 125px;
-        }
-
-        .personalia {
-            clear: both;
-            padding-bottom: 1em;
-        }
-
-        .personaliaInfo {
-            display: block;
-        }
-    </style>
-    <title>Supplerende stønad</title>
-</head>
-
-<body>
-<div class="main">
-    <div class="header">
-        <div style="float:right">
-            <img class="navLogo" src="{{image "Navlogo.png"}}">
-            <p>Dato: {{dato}}</p>
-        </div>
-
-        <div class="personalia">
-            <span class="personaliaInfo">
-                {{fornavn}} {{mellomnavn}} {{etternavn}}
-            </span>
-            <span class="personaliaInfo">
-                {{adresse}} {{husnummer}} {{bruksenhet}}
-            </span>
-            <span class="personaliaInfo">
-                {{postnummer}} {{poststed}}
-            </span>
-        </div>
-    </div>
-
+{{#> supdfgen/partials/base}}
     <div class="mainContent">
         <h3>Søknaden din om supplerende stønad er trukket</h3>
 
         <p>
             NAV viser til søknaden din om supplerende stønad mottatt {{datoSøknadOpprettet}}.
-            Du har i henvendelse av {{datoSøkerTrakkSøknad}} opplyst at du ønsker å trekke søknaden.
+            Du har i henvendelse av {{trukketDato}} opplyst at du ønsker å trekke søknaden.
         </p>
         <p>
             Vi vil med dette bekrefte at søknaden om supplerende stønad er trukket, og ikke vil bli ytterligere
@@ -89,9 +34,4 @@
             NAV Familie- og pensjonsytelser Ålesund
         </p>
     </div>
-
-
-</div>
-</body>
-
-</html>
+{{/supdfgen/partials/base}}
