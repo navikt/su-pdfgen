@@ -12,6 +12,29 @@
   },
   "satsbeløp": 31,
   "fradragSum": 566,
-  "avslagsgrunn": "FLYKTNING",
+  "fradragPerMåned": [
+    {
+      "id": 0,
+      "type": "Pensjon",
+      "beløp": 3000
+    },
+    {
+      "id": 1,
+      "type": "Arbeidsinntekt",
+      "beløp": 1500
+    },
+    {
+      "id": 2,
+      "type": "UtenlandskInntekt",
+      "beløp": 1000,
+      "beskrivelse": "Svenske kroner"
+    }
+  ],
+  "avslagsgrunner": [
+    "FOR_HØY_INNTEKT",
+    "SU_UNDER_MINSTEGRENSE"
+  ],
+  "avslagsgrunnerLength": "2",
+  "harEktefelle": true,
   "halvGrunnbeløp": 10
 }

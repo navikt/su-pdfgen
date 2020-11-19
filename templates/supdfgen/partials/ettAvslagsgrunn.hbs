@@ -1,0 +1,85 @@
+{{#eq avslagsgrunner.[0] "UFØRHET" }}
+    <p>Vi har tidligere avslått søknaden din om uføretrygd.</p>
+    <p>
+        Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
+    </p>
+{{/eq}}
+
+{{#eq avslagsgrunner.[0] "FLYKTNING" }}
+    <p>Du har ikke status som flyktning etter § 28 i Utlendingsloven.</p>
+    <p>
+        Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2.
+    </p>
+{{/eq}}
+
+{{#eq avslagsgrunner.[0] "OPPHOLDSTILLATELSE" }}
+    <p>Du har ikke lovlig opphold i Norge.</p>
+    <p>
+        Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1 og 2
+    </p>
+{{/eq}}
+
+{{#eq avslagsgrunner.[0] "BOR_OG_OPPHOLDER_SEG_I_NORGE" }}
+    <p>Du er ikke registrert bosatt i Norge.</p>
+    <p>
+        Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2, 3
+        og 4.
+    </p>
+{{/eq}}
+
+{{#eq avslagsgrunner.[0] "INNLAGT_PÅ_INSTITUSJON" }}
+    <p>TODO</p>
+    <p>TODO</p>
+{{/eq}}
+
+{{#eq avslagsgrunner.[0] "UTENLANDSOPPHOLD_OVER_90_DAGER" }}
+    <p>Du skal oppholde deg utenfor Norge i mer enn 90 dager.</p>
+    <p>
+        Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 1, 2 og
+        4.
+    </p>
+    <p>Du kan søke om supplerende stønad fra måneden etter du kommer til Norge.</p>
+{{/eq}}
+
+{{#eq avslagsgrunner.[0] "FORMUE" }}
+    {{#if harEktefelle}}
+        <p>
+            Du og ektefellen/samboeren din har formue som til sammen overstiger halvparten av folketrygdens
+            grunnbeløp.
+        </p>
+    {{else}}
+        <p>
+            Formuen din overstiger halvparten av grunnbeløpet, som for tiden er {{currency_no halvGrunnbeløp true}} kr.
+        </p>
+    {{/if}}
+    <p>
+        Hvis formuen blir mindre kan du søke om supplerende stønad på nytt. Da må du dokumentere at formuen
+        din er redusert. Du kan ikke gi bort formuen din for å få rett til supplerende stønad. §§ 8
+    </p>
+{{/eq}}
+
+{{#eq avslagsgrunner.[0] "PERSONLIG_OPPMØTE" }}
+    <p>Du møtte ikke personlig og har ikke sendt inn nok dokumentasjon på hvorfor du ikke møtte.</p>
+    <p>Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 17.</p>
+{{/eq}}
+
+{{#eq avslagsgrunner.[0] "FOR_HØY_INNTEKT" }}
+    {{#if harEktefelle}}
+        <p>Du og ektefellen/samboeren din har til sammen for høy inntekt.</p>
+    {{else}}
+        <p>Du har for høy inntekt.</p>
+    {{/if}}
+    <p>Inntekten er {{ currency_no fradragSum true }} kroner i måneden. Dette er høyere enn det du kan få i
+        supplerende stønad, som er {{currency_no satsbeløp true}} kroner.
+    </p>
+    <p>Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 5, 6 og 7.</p>
+{{/eq}}
+
+{{#eq avslagsgrunner.[0] "SU_UNDER_MINSTEGRENSE" }}
+    <p>
+        Beløpet er under 2% av det du kan få i supplerende stønad.
+    </p>
+    <p>
+        Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 5, 6, og 9
+    </p>
+{{/eq}}
