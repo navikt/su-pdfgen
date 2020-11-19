@@ -15,7 +15,7 @@
   "tildato": "september 2021",
   "sats": "høy",
   "satsbeløp": "20637",
-  "satsGrunn": "din ektefelle ikke er 67 år",
+  "satsGrunn": "ENSLIG",
   "redusertStønadStatus": true,
   "harEktefelle": true,
   "fradrag": [
@@ -32,8 +32,7 @@
     {
       "id": 2,
       "type": "UtenlandskInntekt",
-      "beløp": 1000,
-      "beskrivelse": "Svenske kroner"
+      "beløp": 1000
     }
   ],
   "fradragSum": 4500

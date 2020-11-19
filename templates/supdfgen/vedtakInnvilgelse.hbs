@@ -1,17 +1,19 @@
 {{#> supdfgen/partials/innvilgelseBase}}
     <div class="mainContent">
-        <h3>Du får supplerende stønad</h3>
+        <h2>Du får supplerende stønad</h2>
 
-        <p>
-            Du får {{currency_no månedsbeløp true}} kroner i måneden fra {{fradato}} til og med {{tildato}} fordi du er ufør flyktning.
-            Du kan søke på nytt i {{tildato}}.
-        <p>
+        <div class="info">
+            <p>
+                Du får {{currency_no månedsbeløp true}} kroner i måneden fra {{fradato}} til og med {{tildato}} fordi du er ufør flyktning.
+                Du kan søke på nytt i {{tildato}}.
+            <p>
 
-        <p>
-            Vedtaket er gjort etter loven om supplerende stønad til personer med kort botid i Norge, §§ 3, 5, 6 og 7.
-        <p>
+            <p>
+                Vedtaket er gjort etter loven om supplerende stønad til personer med kort botid i Norge, §§ 3, 5, 6 og 7.
+            <p>
+        </div>
 
-        <span class="paragraphHeading">BEREGNING</span>
+        <h3>Beregning</h3>
         <span>
             {{#if satsGrunn}}
                 Du får {{sats}} sats fordi
@@ -30,14 +32,6 @@
         </span>
 
         {{#if fradrag}}
-        {{#each fradrag}}
-        {{#with fradrag}}
-        {{#eq type "UtenlandskInntekt" }}
-        <p>{{beskrivelse}}</p>
-        {{/eq}}
-        {{/with}}
-        {{/each}}
-
         <p>
             Stønaden din beregnes slik: <br />
             {{#each fradrag}}

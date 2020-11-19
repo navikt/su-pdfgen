@@ -11,40 +11,47 @@
         @page {
             @bottom-right {
                 font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-                font-size: 15px;
-                content: "side "counter(page) " av "counter(pages);
+                font-size: 12px;
+                content: "Side "counter(page) " av "counter(pages);
             }
         }
 
-        .paragraphHeading {
-            display: block;
-            font-weight: bold;
-        }
-
-        .paragraphText{
-            display: block;
-            padding-bottom: 16px;
+        .header {
+            margin-bottom: 40px;
         }
 
         .navLogo {
             height: 75px;
-            width: 125px;
-        }
-
-        .header {
-            margin-bottom: 2em;
+            margin-bottom: 128px;
         }
 
         .personalia {
             clear: both;
-            padding-bottom: 1em;
+            padding-bottom: 16px;
         }
 
-        .personInfoMainContent p {
-            padding: 0;
+        .personalia p {
             margin: 0;
-            font-size: 12px;
-            color: grey;
+        }
+
+        .mainContent {
+            margin-bottom: 40px;
+        }
+
+        .info {
+            margin-bottom: 40px;
+        }
+
+        .info p {
+            margin-top: 0;
+        }
+
+        h3 {
+            margin-bottom: 4px;
+        }
+
+        .hilsen {
+            margin-top: 64px;
         }
 
         .hilsen p {
@@ -60,13 +67,12 @@
     <div class="main">
         {{#with personalia}}
         <div class="header">
-            <div style="float:right">
-                <img class="navLogo" src="{{image "Navlogo.png"}}">
-                <p>Dato: {{dato}}</p>
-            </div>
+            <img class="navLogo" src="{{image "Navlogo.png"}}">
 
             <div class="personalia">
                 <p>{{fornavn}} {{etternavn}}</p>
+                <p>{{fødselsnummer}}</p>
+                <p>Dato: {{dato}}</p>
             </div>
         </div>
         {{/with}}
