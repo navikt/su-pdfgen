@@ -31,31 +31,7 @@
             {{/if}}
         </span>
 
-        {{#if fradrag}}
-        <p>
-            Stønaden din beregnes slik: <br />
-            {{#each fradrag}}
-            {{#with fradrag}}
-            {{type}} {{currency_no beløp true}} kroner
-            {{/with}}
-            <br />
-            {{/each}}
-        </p>
-
-        <p>
-            <hr />
-            Sum inntekter: {{currency_no fradragSum true}} kroner
-            <hr />
-        </p>
-
-        <p>
-            Stønadssatsen {{currency_no satsbeløp true}} kroner <br />
-            - Sum inntekter {{currency_no fradragSum true}} kroner
-            <hr />
-            Din supplerende stønad i måneden {{currency_no månedsbeløp true}} kroner
-            <hr />
-        </p>
-        {{/if}}
+        {{> supdfgen/partials/beregning}}
 
     </div>
 

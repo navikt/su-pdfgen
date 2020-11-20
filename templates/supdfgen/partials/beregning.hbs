@@ -1,35 +1,27 @@
 <div>
-    {{#if fradragPerMåned}}
-        {{#each fradragPerMåned}}
-            {{#with fradragPerMåned}}
-                {{#eq type "UtenlandskInntekt" }}
-                    <p>{{beskrivelse}}</p>
-                {{/eq}}
-            {{/with}}
-        {{/each}}
-
+    {{#if fradrag}}
         <p>
-            Stønaden din beregnes slik: <br/>
-            {{#each fradragPerMåned}}
-                {{#with fradragPerMåned}}
+            Stønaden din beregnes slik: <br />
+            {{#each fradrag}}
+                {{#with fradrag}}
                     {{type}} {{currency_no beløp true}} kroner
                 {{/with}}
-                <br/>
+                <br />
             {{/each}}
         </p>
 
         <p>
-        <hr/>
+        <hr />
         Sum inntekter: {{currency_no fradragSum true}} kroner
-        <hr/>
+        <hr />
         </p>
 
         <p>
-            Stønadssatsen {{currency_no satsbeløp true}} kroner <br/>
+            Stønadssatsen {{currency_no satsbeløp true}} kroner <br />
             - Sum inntekter {{currency_no fradragSum true}} kroner
-        <hr/>
+        <hr />
         Din supplerende stønad i måneden {{currency_no månedsbeløp true}} kroner
-        <hr/>
+        <hr />
         </p>
     {{/if}}
 </div>

@@ -12,7 +12,7 @@
   },
   "satsbeløp": 31,
   "fradragSum": 566,
-  "fradragPerMåned": [
+  "fradrag": [
     {
       "id": 0,
       "type": "Pensjon",
@@ -31,6 +31,7 @@
     }
   ],
   "avslagsgrunner": [
+    "UFØRHET",
     "FOR_HØY_INNTEKT",
     "SU_UNDER_MINSTEGRENSE"
   ],
