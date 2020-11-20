@@ -10,31 +10,43 @@
     "postnummer": "0186",
     "poststed": "Oslo"
   },
-  "satsbeløp": 31,
-  "fradragSum": 566,
-  "fradrag": [
-    {
-      "id": 0,
-      "type": "Pensjon",
-      "beløp": 3000
-    },
-    {
-      "id": 1,
-      "type": "Arbeidsinntekt",
-      "beløp": 1500
-    },
-    {
-      "id": 2,
-      "type": "UtenlandskInntekt",
-      "beløp": 1000,
-      "beskrivelse": "Svenske kroner"
-    }
-  ],
   "avslagsgrunner": [
     "UFØRHET",
     "FOR_HØY_INNTEKT"
   ],
-  "harFlereAvslagsgrunner": false,
   "harEktefelle": true,
-  "halvGrunnbeløp": 10
+  "halvGrunnbeløp": 10,
+  "beregning": {
+    "ytelsePerMåned": "12000",
+    "satsbeløpPerMåned": "20637",
+    "epsFribeløp": 12000,
+    "fradrag": {
+      "bruker": {
+        "fradrag": [
+          {
+            "type": "Pensjon",
+            "beløp": 3000
+          },
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          },
+          {
+            "type": "UtenlandskInntekt",
+            "beløp": 1000
+          }
+        ],
+        "sum": 5000
+      },
+      "eps": {
+        "fradrag": [
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          }
+        ],
+        "sum": 0
+      }
+    }
+  }
 }

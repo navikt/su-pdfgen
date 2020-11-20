@@ -87,15 +87,14 @@
             {{/if}}
             <br/>
             <span>
-                Inntekten er {{currency_no fradragSum true }} kroner i måneden. Dette er høyere enn det du kan
-                få i supplerende stønad, som er {{currency_no satsbeløp true}} kroner.
+                Inntekten er høyere enn det du kan få i supplerende stønad, som er {{currency_no beregning.satsbeløpPerMåned true}} kroner.
             </span>
             <br/>
             <span>
                 Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§
                 5, 6 og 7.
             </span>
-            {{> supdfgen/partials/beregning}}
+            {{> supdfgen/partials/beregning beregning}}
 
         </div>
     {{/eq}}
@@ -107,7 +106,7 @@
                 Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§
                 5, 6, og 9
             </span>
-            {{> supdfgen/partials/beregning}}
+            {{> supdfgen/partials/beregning beregning}}
         </div>
     {{/eq}}
 {{/each}}

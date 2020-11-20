@@ -10,30 +10,42 @@
     "postnummer": "9807",
     "poststed": "Uranus"
   },
-  "månedsbeløp": "12000",
   "fradato": "oktober 2020",
   "tildato": "september 2021",
   "sats": "høy",
-  "satsbeløp": "20637",
-  "satsGrunn": "ENSLIG",
-  "redusertStønadStatus": true,
+  "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67",
   "harEktefelle": true,
-  "fradrag": [
-    {
-      "id": 0,
-      "type": "Pensjon",
-      "beløp": 3000
-    },
-    {
-      "id": 1,
-      "type": "Arbeidsinntekt",
-      "beløp": 1500
-    },
-    {
-      "id": 2,
-      "type": "UtenlandskInntekt",
-      "beløp": 1000
+  "beregning": {
+    "ytelsePerMåned": "12000",
+    "satsbeløpPerMåned": "20637",
+    "epsFribeløp": 12000,
+    "fradrag": {
+      "bruker": {
+        "fradrag": [
+          {
+            "type": "Pensjon",
+            "beløp": 3000
+          },
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          },
+          {
+            "type": "UtenlandskInntekt",
+            "beløp": 1000
+          }
+        ],
+        "sum": 5000
+      },
+      "eps": {
+        "fradrag": [
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          }
+        ],
+        "sum": 0
+      }
     }
-  ],
-  "fradragSum": 4500
+  }
 }
