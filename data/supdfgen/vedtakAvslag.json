@@ -32,10 +32,9 @@
   ],
   "avslagsgrunner": [
     "UFØRHET",
-    "FOR_HØY_INNTEKT",
-    "SU_UNDER_MINSTEGRENSE"
+    "FOR_HØY_INNTEKT"
   ],
-  "avslagsgrunnerLength": "2",
+  "harFlereAvslagsgrunner": false,
   "harEktefelle": true,
   "halvGrunnbeløp": 10
 }

@@ -1,14 +1,12 @@
 {{#> supdfgen/partials/avslagBase}}
     <div class="mainContent">
-        <h3>Vi har avslått søknaden din om supplerende stønad</h3>
+        <h2>Vi har avslått søknaden din om supplerende stønad</h2>
 
-        {{#eq avslagsgrunnerLength "1"}}
-            {{> supdfgen/partials/ettAvslagsgrunn}}
-        {{/eq}}
-
-        {{#not_eq avslagsgrunnerLength "1"}}
+        {{#if harFlereAvslagsgrunner}}
             <p>Du har ikke rett til supplerende stønad fordi:</p>
             {{> supdfgen/partials/flereAvslagsgrunner}}
-        {{/not_eq}}
+        {{else}}
+            {{> supdfgen/partials/ettAvslagsgrunn}}
+        {{/if}}
     </div>
 {{/supdfgen/partials/avslagBase}}
