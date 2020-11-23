@@ -35,6 +35,7 @@
             "beløp": 1000
           }
         ],
+        "harBruktForventetInntektIStedetForArbeidsinntekt": true,
         "sum": 5000
       },
       "eps": {

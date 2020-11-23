@@ -69,10 +69,11 @@
     {{else}}
         <p>Du har for høy inntekt.</p>
     {{/if}}
-    <p>Inntekten er {{ currency_no fradragSum true }} kroner i måneden. Dette er høyere enn det du kan få i
-        supplerende stønad, som er {{currency_no satsbeløp true}} kroner.
+    <p>Inntekten er høyere enn det du kan få i supplerende stønad, som er {{currency_no beregning.satsbeløpPerMåned true}} kroner.
     </p>
     <p>Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 5, 6 og 7.</p>
+
+    {{> supdfgen/partials/beregning beregning}}
 {{/eq}}
 
 {{#eq avslagsgrunner.[0] "SU_UNDER_MINSTEGRENSE" }}
@@ -82,4 +83,6 @@
     <p>
         Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ 5, 6, og 9
     </p>
+
+    {{> supdfgen/partials/beregning beregning}}
 {{/eq}}
