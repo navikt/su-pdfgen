@@ -1,6 +1,6 @@
 {
   "personalia": {
-    "dato":"01.01.2020",
+    "dato": "01.01.2020",
     "fødselsnummer": "12345678901",
     "fornavn": "Tore",
     "etternavn": "Strømøy",
@@ -11,9 +11,19 @@
     "poststed": "Oslo"
   },
   "avslagsgrunner": [
-    "UFØRHET",
+    "INNLAGT_PÅ_INSTITUSJON",
+    "BOR_OG_OPPHOLDER_SEG_I_NORGE",
+    "PERSONLIG_OPPMØTE",
     "FOR_HØY_INNTEKT"
   ],
+  "avslagsparagrafer": [
+    1,
+    2,
+    5,
+    6,
+    7
+  ],
+  "harFlereAvslagsgrunner": false,
   "harEktefelle": true,
   "halvGrunnbeløp": 10,
   "beregning": {

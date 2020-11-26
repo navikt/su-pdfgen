@@ -2,11 +2,96 @@
     <div class="mainContent">
         <h2>Vi har avslått søknaden din om supplerende stønad</h2>
 
-        {{#if harFlereAvslagsgrunner}}
-            <p>Du har ikke rett til supplerende stønad fordi:</p>
-            {{> supdfgen/partials/flereAvslagsgrunner}}
-        {{else}}
-            {{> supdfgen/partials/ettAvslagsgrunn}}
-        {{/if}}
+        <p>Du har ikke rett til supplerende stønad fordi:</p>
+
+        {{#each avslagsgrunner}}
+            {{#eq this "UFØRHET" }}
+                <div class="avslagsgrunnContainer">
+                    <span>Vi har tidligere avslått søknaden din om uføretrygd.</span><br/>
+                </div>
+            {{/eq}}
+
+            {{#eq this "FLYKTNING" }}
+                <div class="avslagsgrunnContainer">
+                    <span>Du har ikke status som flyktning etter § 28 i Utlendingsloven.</span><br/>
+                </div>
+            {{/eq}}
+
+            {{#eq this "OPPHOLDSTILLATELSE" }}
+                <div class="avslagsgrunnContainer">
+                    <span>Du har ikke lovlig opphold i Norge.</span><br/>
+                </div>
+            {{/eq}}
+
+            {{#eq this "BOR_OG_OPPHOLDER_SEG_I_NORGE" }}
+                <div class="avslagsgrunnContainer">
+                    <span>Du er ikke registrert bosatt i Norge.</span><br/>
+                </div>
+            {{/eq}}
+
+            {{#eq this "INNLAGT_PÅ_INSTITUSJON" }}
+                <div class="avslagsgrunnContainer">
+                    <span>Du oppholder deg på institusjon.</span><br/>
+                </div>
+            {{/eq}}
+
+            {{#eq this "UTENLANDSOPPHOLD_OVER_90_DAGER" }}
+                <div class="avslagsgrunnContainer">
+                    <span>Du skal oppholde deg utenfor Norge i mer enn 90 dager.</span><br/>
+                </div>
+            {{/eq}}
+
+            {{#eq this "FORMUE" }}
+                <div class="avslagsgrunnContainer">
+                    {{#if harEktefelle}}
+                        <span>Du og ektefellen/samboeren din har formue som til sammen overstiger halvparten av folketrygdens grunnbeløp.</span>
+                    {{else}}
+                        <span>
+                    Formuen din overstiger halvparten av grunnbeløpet,
+                    som for tiden er {{currency_no halvGrunnbeløp true}} kr.
+                </span>
+                    {{/if}}
+                    <br/>
+                    <span>
+                Hvis formuen blir mindre kan du søke om supplerende stønad på nytt. Da må du dokumentere at
+                formuen din er redusert. Du kan ikke gi bort formuen din for å få rett til supplerende stønad.
+            </span>
+                </div>
+            {{/eq}}
+
+            {{#eq this "PERSONLIG_OPPMØTE" }}
+                <div class="avslagsgrunnContainer">
+                    <span>Du møtte ikke personlig og har ikke sendt inn nok dokumentasjon på hvorfor du ikke møtte.</span><br/>
+                </div>
+            {{/eq}}
+
+            {{#eq this "FOR_HØY_INNTEKT" }}
+                <div class="avslagsgrunnContainer">
+                    {{#if harEktefelle}}
+                        <span>Du og ektefellen/samboeren din har til sammen for høy inntekt.</span>
+                    {{else}}
+                        <span>Du har for høy inntekt.</span>
+                    {{/if}}
+                    <br/>
+                    <span>
+                Inntekten er høyere enn det du kan få i supplerende stønad, som er {{currency_no beregning.satsbeløpPerMåned true}} kroner.
+            </span>
+                    <br/>
+                    {{> supdfgen/partials/beregning beregning}}
+                </div>
+            {{/eq}}
+
+            {{#eq this "SU_UNDER_MINSTEGRENSE" }}
+                <div class="avslagsgrunnContainer">
+                    <span>Beløpet er under 2% av det du kan få i supplerende stønad.</span><br/>
+                    {{> supdfgen/partials/beregning beregning}}
+                </div>
+            {{/eq}}
+        {{/each}}
+
+        <span>
+            Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ {{> supdfgen/partials/commaSeparate avslagsparagrafer}}
+        </span>
+
     </div>
 {{/supdfgen/partials/avslagBase}}
