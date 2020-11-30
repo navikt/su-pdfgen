@@ -6,50 +6,37 @@
         * {
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
         }
+        td {
+            font-size: 0.9em;
+            vertical-align: top;
+            word-wrap: break-word;
+        }
 
+        table {
+            width: 100%;
+            border: 1px black solid;
+            margin-bottom: 0.5cm;
+        }
 
-            td {
-                font-size: 0.9em;
-            }
-            table {
-                width: 100%;
-                border: 1px black solid;
-                margin-bottom: 0.5cm;
-            }
-            td {
-                vertical-align: top;
-                word-wrap: break-word;
-            }
-            table thead {
-                background-color: lightblue;
-            }
-            table thead td {
-                border: none;
-            }
-            td h5 {
-                margin: 0;
-            }
-            td h4 {
-                margin: 0;
-            }
-            td h3 {
-                margin: 0;
-            }
-            td p {
-                margin: 0;
-            }
-            .tr10 {
-                width: 10%;
-            }
-            .tr50 {
-                width: 50%;
-            }
-            body {
-                page-break-inside: avoid;
-            }
+        table thead {
+            background-color: lightblue;
+        }
 
+        td h4 {
+            margin: 0;
+        }
 
+        .tr50 {
+            width: 50%;
+        }
 
+        .signaturHeader {
+            margin-bottom: 3em;
+        }
+
+        body {
+            page-break-inside: avoid;
+        }
     </style>
     <title>SØKNAD</title>
 </head>
@@ -68,7 +55,7 @@
         {{#with søknadInnhold.forNav}}
             <tr>
                 <td>Saksnummer:</td>
-                <td>{{sakId}}</td>
+                <td>{{saksnummer.nummer}}</td>
             </tr>
             <tr>
                 <td>Søknadsdato:</td>
@@ -476,208 +463,212 @@
     </tbody>
 </table>
 
-<table>
-    <thead>
-    <tr>
-        <td class="tr50"><h4>Ektefelle/samboers formue</h4></td>
-        <td></td>
-    </tr>
-    </thead>
 
-    <tbody>
-    {{#with søknadInnhold.ektefelle.formue}}
-        <tr>
-            <td>Eier du en bolig?</td>
-            <td>{{#if this.eierBolig}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.eierBolig}}
+{{#with søknadInnhold.boforhold}}
+    {{#eq this.delerBoligMed "EKTEMAKE_SAMBOER"}}
+        <table>
+            <thead>
             <tr>
-                <td>Bor du i boligen?</td>
-                <td>{{#if this.borIBolig}} Ja {{else}} Nei {{/if}}</td>
+                <td class="tr50"><h4>Ektefelle/samboers formue</h4></td>
+                <td></td>
             </tr>
-        {{/if}}
-        {{#unless this.borIBolig}}
-            <tr>
-                <td>Formuesverdi på boligen</td>
-                <td>{{verdiPåBolig}}</td>
-            </tr>
-            <tr>
-                <td>Hva brukes boligen til?</td>
-                <td>{{boligBrukesTil}}</td>
-            </tr>
-        {{/unless}}
-        {{#unless this.eierBolig}}
-            {{#if this.depositumsBeløp}}
-                <tr>
-                    <td>Har du en depositumskonto som leietaker?</td>
-                    <td>Ja</td>
-                </tr>
-                <tr>
-                    <td>Beløp på depositumskontoen</td>
-                    <td>{{depositumsBeløp}}</td>
-                </tr>
-                <tr>
-                    <td>Kontonummer</td>
-                    <td>{{kontonummer}}</td>
-                </tr>
-            {{/if}}
-        {{/unless}}
-        <tr>
-            <td>Eier du bil, campingvogn eller andre kjøretøy?</td>
-            <td>{{#if this.kjøretøy}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.kjøretøy}}
-            {{#each this.kjøretøy}}
-                <tr>
-                    <td>Registreringsnummer:</td>
-                    <td>{{kjøretøyDeEier}}</td>
-                </tr>
-                <tr>
-                    <td>Verdien av kjøretøyet:</td>
-                    <td>{{verdiPåKjøretøy}}</td>
-                </tr>
-            {{/each}}
-        {{/if}}
-        <tr>
-            <td>Har du penger på konto?</td>
-            <td>{{#if this.innskuddsBeløp}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.innskuddsBeløp}}
-            <tr>
-                <td>Samlet verdi i kroner</td>
-                <td>{{this.innskuddsBeløp}}</td>
-            </tr>
-        {{/if}}
-        <tr>
-            <td>Har du aksjer, aksjefond eller verdipapir?</td>
-            <td>{{#if this.verdipapirBeløp}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.verdipapirBeløp}}
-            <tr>
-                <td>Samlet verdi i kroner</td>
-                <td>{{this.verdipapirBeløp}}</td>
-            </tr>
-        {{/if}}
-        <tr>
-            <td>Skylder noen deg mer enn 5000 kr?</td>
-            <td>{{#if this.skylderNoenMegPengerBeløp}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.skylderNoenMegPengerBeløp}}
-            <tr>
-                <td>Beløp i kroner</td>
-                <td>{{this.skylderNoenMegPengerBeløp}}</td>
-            </tr>
-        {{/if}}
-        <tr>
-            <td>Har du mer enn 5000 kr i kontanter?</td>
-            <td>{{#if this.kontanterBeløp}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.skylderNoenMegPengerBeløp}}
-            <tr>
-                <td>Beløp i kroner</td>
-                <td>{{this.kontanterBeløp}}</td>
-            </tr>
-        {{/if}}
-    {{/with}}
-    </tbody>
-</table>
+            </thead>
 
-<table>
-    <thead>
-    <tr>
-        <td class="tr50"><h4>Ektefelle/samboers inntekt</h4></td>
-        <td></td>
-    </tr>
-    </thead>
-    <tbody>
-    {{#with søknadInnhold.ektefelle.inntektOgPensjon}}
-        <tr>
-            <td>Forventer du å ha arbeidsinntekt fremover?</td>
-            <td>{{#if this.forventetInntekt}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.forventetInntekt}}
-            <tr>
-                <td>Forventet arbeidsinntekt i kroner per måned</td>
-                <td>{{this.forventetInntekt}}</td>
-            </tr>
-        {{/if}}
-        <tr>
-            <td>Har du andre ytelser i NAV?</td>
-            <td>{{#if this.andreYtelserINav}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.andreYtelserINav}}
-            <tr>
-                <td>Hvilke ytelser?</td>
-                <td>{{this.andreYtelserINav}}</td>
-            </tr>
-            <tr>
-                <td>Beløp i kroner per måned</td>
-                <td>{{this.andreYtelserINavBeløp}}</td>
-            </tr>
-        {{/if}}
-        <tr>
-            <td>Har du søkt om andre trygdeytelser som ikke er behandlet?</td>
-            <td>{{#if this.søktAndreYtelserIkkeBehandletBegrunnelse}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.søktAndreYtelserIkkeBehandletBegrunnelse}}
-            <tr>
-                <td>Hvilke?</td>
-                <td>{{this.søktAndreYtelserIkkeBehandletBegrunnelse}}</td>
-            </tr>
-        {{/if}}
+            <tbody>
+            {{#with søknadInnhold.ektefelle.formue}}
+                <tr>
+                    <td>Eier du en bolig?</td>
+                    <td>{{#if this.eierBolig}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.eierBolig}}
+                    <tr>
+                        <td>Bor du i boligen?</td>
+                        <td>{{#if this.borIBolig}} Ja {{else}} Nei {{/if}}</td>
+                    </tr>
+                {{/if}}
+                {{#unless this.borIBolig}}
+                    <tr>
+                        <td>Formuesverdi på boligen</td>
+                        <td>{{verdiPåBolig}}</td>
+                    </tr>
+                    <tr>
+                        <td>Hva brukes boligen til?</td>
+                        <td>{{boligBrukesTil}}</td>
+                    </tr>
+                {{/unless}}
+                {{#unless this.eierBolig}}
+                    {{#if this.depositumsBeløp}}
+                        <tr>
+                            <td>Har du en depositumskonto som leietaker?</td>
+                            <td>Ja</td>
+                        </tr>
+                        <tr>
+                            <td>Beløp på depositumskontoen</td>
+                            <td>{{depositumsBeløp}}</td>
+                        </tr>
+                        <tr>
+                            <td>Kontonummer</td>
+                            <td>{{kontonummer}}</td>
+                        </tr>
+                    {{/if}}
+                {{/unless}}
+                <tr>
+                    <td>Eier du bil, campingvogn eller andre kjøretøy?</td>
+                    <td>{{#if this.kjøretøy}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.kjøretøy}}
+                    {{#each this.kjøretøy}}
+                        <tr>
+                            <td>Registreringsnummer:</td>
+                            <td>{{kjøretøyDeEier}}</td>
+                        </tr>
+                        <tr>
+                            <td>Verdien av kjøretøyet:</td>
+                            <td>{{verdiPåKjøretøy}}</td>
+                        </tr>
+                    {{/each}}
+                {{/if}}
+                <tr>
+                    <td>Har du penger på konto?</td>
+                    <td>{{#if this.innskuddsBeløp}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.innskuddsBeløp}}
+                    <tr>
+                        <td>Samlet verdi i kroner</td>
+                        <td>{{this.innskuddsBeløp}}</td>
+                    </tr>
+                {{/if}}
+                <tr>
+                    <td>Har du aksjer, aksjefond eller verdipapir?</td>
+                    <td>{{#if this.verdipapirBeløp}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.verdipapirBeløp}}
+                    <tr>
+                        <td>Samlet verdi i kroner</td>
+                        <td>{{this.verdipapirBeløp}}</td>
+                    </tr>
+                {{/if}}
+                <tr>
+                    <td>Skylder noen deg mer enn 5000 kr?</td>
+                    <td>{{#if this.skylderNoenMegPengerBeløp}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.skylderNoenMegPengerBeløp}}
+                    <tr>
+                        <td>Beløp i kroner</td>
+                        <td>{{this.skylderNoenMegPengerBeløp}}</td>
+                    </tr>
+                {{/if}}
+                <tr>
+                    <td>Har du mer enn 5000 kr i kontanter?</td>
+                    <td>{{#if this.kontanterBeløp}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.skylderNoenMegPengerBeløp}}
+                    <tr>
+                        <td>Beløp i kroner</td>
+                        <td>{{this.kontanterBeløp}}</td>
+                    </tr>
+                {{/if}}
+            {{/with}}
+            </tbody>
+        </table>
 
-        <tr>
-            <td>Har du mottatt sosialstønad i løpet av de siste tre månedene?</td>
-            <td>{{#if this.sosialstønadBeløp}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.sosialstønadBeløp}}
+        <table>
+            <thead>
             <tr>
-                <td>Beløp i kroner for alle tre månedene (valgfri)</td>
-                <td>{{this.sosialstønadBeløp}}</td>
+                <td class="tr50"><h4>Ektefelle/samboers inntekt</h4></td>
+                <td></td>
             </tr>
-        {{/if}}
+            </thead>
+            <tbody>
+            {{#with søknadInnhold.ektefelle.inntektOgPensjon}}
+                <tr>
+                    <td>Forventer du å ha arbeidsinntekt fremover?</td>
+                    <td>{{#if this.forventetInntekt}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.forventetInntekt}}
+                    <tr>
+                        <td>Forventet arbeidsinntekt i kroner per måned</td>
+                        <td>{{this.forventetInntekt}}</td>
+                    </tr>
+                {{/if}}
+                <tr>
+                    <td>Har du andre ytelser i NAV?</td>
+                    <td>{{#if this.andreYtelserINav}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.andreYtelserINav}}
+                    <tr>
+                        <td>Hvilke ytelser?</td>
+                        <td>{{this.andreYtelserINav}}</td>
+                    </tr>
+                    <tr>
+                        <td>Beløp i kroner per måned</td>
+                        <td>{{this.andreYtelserINavBeløp}}</td>
+                    </tr>
+                {{/if}}
+                <tr>
+                    <td>Har du søkt om andre trygdeytelser som ikke er behandlet?</td>
+                    <td>{{#if this.søktAndreYtelserIkkeBehandletBegrunnelse}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.søktAndreYtelserIkkeBehandletBegrunnelse}}
+                    <tr>
+                        <td>Hvilke?</td>
+                        <td>{{this.søktAndreYtelserIkkeBehandletBegrunnelse}}</td>
+                    </tr>
+                {{/if}}
 
-        <tr>
-            <td>Har du trygdeytelser i utlandet?</td>
-            <td>{{#if this.trygdeytelseIUtlandet}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.trygdeytelseIUtlandet}}
-            {{#each this.trygdeytelseIUtlandet}}
                 <tr>
-                    <td>Beløp i lokal valuta per måned:</td>
-                    <td>{{this.trygdeytelseIUtlandet.beløp}}</td>
+                    <td>Har du mottatt sosialstønad i løpet av de siste tre månedene?</td>
+                    <td>{{#if this.sosialstønadBeløp}} Ja {{else}} Nei {{/if}}</td>
                 </tr>
-                <tr>
-                    <td>Valuta</td>
-                    <td>{{this.trygdeytelseIUtlandet.valuta}}</td>
-                </tr>
-                <tr>
-                    <td>Type ytelse</td>
-                    <td>{{this.trygdeytelseIUtlandet.type}}</td>
-                </tr>
-            {{/each}}
-        {{/if}}
+                {{#if this.sosialstønadBeløp}}
+                    <tr>
+                        <td>Beløp i kroner for alle tre månedene (valgfri)</td>
+                        <td>{{this.sosialstønadBeløp}}</td>
+                    </tr>
+                {{/if}}
 
-        <tr>
-            <td>Mottar du tjenestepensjon eller pensjon?</td>
-            <td>{{#if this.pensjon}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.trygdeytelseIUtlandet}}
-            {{#each this.pensjon}}
                 <tr>
-                    <td>Pensjonsgiver</td>
-                    <td>{{this.pensjon.ordning}}</td>
+                    <td>Har du trygdeytelser i utlandet?</td>
+                    <td>{{#if this.trygdeytelseIUtlandet}} Ja {{else}} Nei {{/if}}</td>
                 </tr>
-                <tr>
-                    <td>Beløp per måned</td>
-                    <td>{{this.pensjon.beløp}}</td>
-                </tr>
-            {{/each}}
-        {{/if}}
-    {{/with}}
-    </tbody>
-</table>
+                {{#if this.trygdeytelseIUtlandet}}
+                    {{#each this.trygdeytelseIUtlandet}}
+                        <tr>
+                            <td>Beløp i lokal valuta per måned:</td>
+                            <td>{{this.trygdeytelseIUtlandet.beløp}}</td>
+                        </tr>
+                        <tr>
+                            <td>Valuta</td>
+                            <td>{{this.trygdeytelseIUtlandet.valuta}}</td>
+                        </tr>
+                        <tr>
+                            <td>Type ytelse</td>
+                            <td>{{this.trygdeytelseIUtlandet.type}}</td>
+                        </tr>
+                    {{/each}}
+                {{/if}}
 
+                <tr>
+                    <td>Mottar du tjenestepensjon eller pensjon?</td>
+                    <td>{{#if this.pensjon}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if this.trygdeytelseIUtlandet}}
+                    {{#each this.pensjon}}
+                        <tr>
+                            <td>Pensjonsgiver</td>
+                            <td>{{this.pensjon.ordning}}</td>
+                        </tr>
+                        <tr>
+                            <td>Beløp per måned</td>
+                            <td>{{this.pensjon.beløp}}</td>
+                        </tr>
+                    {{/each}}
+                {{/if}}
+            {{/with}}
+            </tbody>
+        </table>
+    {{/eq}}
+{{/with }}
 
 <table>
     <thead>
@@ -724,290 +715,13 @@
     </tbody>
 </table>
 
-{{!--
 
 
-data class Utenlandsopphold(
-    val registrertePerioder: List<UtenlandsoppholdPeriode>? = null,
-    val planlagtePerioder: List<UtenlandsoppholdPeriode>? = null
-)
+<div>
+    <p class="signaturHeader">Signartur, {{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}, {{dagensDato}}</p>
+    <p>--------------------------------------------------</p>
+</div>
 
-data class UtenlandsoppholdPeriode(
-    val utreisedato: LocalDate,
-    val innreisedato: LocalDate
-)
 
-<table>
-    <thead>
-    <tr>
-        <td class="tr50"><h4>Personopplysninger</h4></td>
-        <td></td>
-    </tr>
-    </thead>
-    <tbody>
-    {{#with personopplysninger}}
-        <tr>
-            <td>Fødselsnummer:</td>
-            <td>{{fnr}}</td>
-        </tr>
-        <tr>
-            <td>Fornavn:</td>
-            <td>{{fornavn}}</td>
-        </tr>
-        <tr>
-            <td>Mellomnavn:</td>
-            <td>{{mellomnavn}}</td>
-        </tr>
-        <tr>
-            <td>Etternavn:</td>
-            <td>{{etternavn}}</td>
-        </tr>
-        <tr>
-            <td>Fødselsnummer:</td>
-            <td>{{fnr}}</td>
-        </tr>
-        <tr>
-            <td>Telefonnummer:</td>
-            <td>{{telefonnummer}}</td>
-        </tr>
-        <tr>
-            <td>Gateadresse:</td>
-            <td>{{gateadresse}}</td>
-        </tr>
-        <tr>
-            <td>Bruksenhet:</td>
-            <td>{{bruksenhet}}</td>
-        </tr>
-        <tr>
-            <td>Postnummer:</td>
-            <td>{{postnummer}}</td>
-        </tr>
-        <tr>
-            <td>Poststed:</td>
-            <td>{{poststed}}</td>
-        </tr>
-        <tr>
-            <td>Bokommune:</td>
-            <td>{{bokommune}}</td>
-        </tr>
-        <tr>
-            <td>Søkers statsborkerskap:</td>
-            <td>{{statsborgerskap}}</td>
-        </tr>
-
-        <tr>
-            <td>Er søker registrert som flyktning?</td>
-            <td>{{#if flyktning}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-
-        <tr>
-            <td>Bor søker fast i Norge?</td>
-            <td>{{#if borFastINorge}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-
-    {{/with}}
-    </tbody>
-</table>
-
-<table>
-    <thead>
-    <tr>
-        <td class="tr50"><h4>Boforhold</h4></td>
-        <td></td>
-    </tr>
-    </thead>
-    <tbody>
-    {{#with boforhold}}
-        <tr>
-            <td>Deler bolig</td>
-            <td>{{#if delerBolig}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if delerBolig }}
-            <tr>
-                <td>Bor sammen med</td>
-                {{#each borSammenMed }}
-                    <td>{{this}}</td>
-                {{/each}}
-            </tr>
-            <tr>
-                <td>Deler bolig med</td>
-                {{#each delerBoligMed }}
-                    <tr>
-                        <td></td>
-                        <td>{{ fødselsnummer }} {{ navn }}</td>
-                    </tr>
-                {{/each}}
-            </tr>
-        {{/if}}
-    {{/with}}
-    </tbody>
-</table>
-
-<table>
-    <thead>
-    <tr>
-        <td class="tr50"><h4>Utenlandsopphold</h4></td>
-        <td></td>
-    </tr>
-    </thead>
-    <tbody>
-    {{#with utenlandsopphold }}
-        {{#if utenlandsopphold }}
-            <tr>
-                <td><h4>Registrerte utenlandsopphold</h4></td>
-                <td></td>
-            </tr>
-            {{#each registrertePerioder }}
-                <tr>
-                    <td>{{ utreisedato }}</td>
-                    <td>{{ innreisedato }}</td>
-                </tr>
-            {{/each}}
-        {{else}}
-            <tr>
-                <td>Ingen registrerte utreiser</td>
-            </tr>
-        {{/if}}
-
-        {{#if planlagtUtenlandsopphold }}
-            <tr>
-                <td><h4>Planlagte utenlandsopphold</h4></td>
-                <td></td>
-            </tr>
-            {{#each planlagtePerioder }}
-                <tr>
-                    <td>{{ utreisedato }}</td>
-                    <td>{{ innreisedato }}</td>
-                </tr>
-            {{/each}}
-        {{else}}
-            <tr>
-                <td>Ingen planlagte utreiser</td>
-            </tr>
-        {{/if}}
-    {{/with}}
-    </tbody>
-</table>
-
-<table>
-    <thead>
-    <tr>
-        <td class="tr50"><h4>Oppholdstillatelse</h4></td>
-        <td></td>
-    </tr>
-    </thead>
-    <tbody>
-    {{#with oppholdstillatelse}}
-        <tr>
-            <td>Har søker varig opphold</td>
-            <td>{{#if harVarigOpphold}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#unless harVarigOpphold }}
-            <tr>
-                <td>Utløpsdato</td>
-                <td>{{utløpsdato}}</td>
-            </tr>
-            <tr>
-                <td>Søkt forlengelse</td>
-                <td>{{#if søktOmForlengelse}} Ja {{else}} Nei {{/if}}</td>
-            </tr>
-        {{/unless}}
-    {{/with}}
-    </tbody>
-</table>
-
-<table>
-    <thead>
-    <tr>
-        <td class="tr50"><h4>Inntekter, pensjon og formue</h4></td>
-        <td></td>
-    </tr>
-    </thead>
-    <tbody>
-    {{#with inntektPensjonFormue}}
-        <tr>
-            <td>Framsatt krav om annen ytelse</td>
-            <td>{{#if framsattKravAnnenYtelse}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if harInntekt}}
-            <tr>
-                <td>Beskrivelse</td>
-                <td>{{ framsattKravAnnenYtelseBegrunnelse }}</td>
-            </tr>
-        {{/if}}
-
-        <tr>
-            <td>Inntekter</td>
-            <td>{{#if harInntekt}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if harInntekt}}
-            <tr>
-                <td>Personinntekt</td>
-                <td>{{ inntektBeløp }}</td>
-            </tr>
-        {{/if}}
-
-        <tr>
-            <td>Pensjon</td>
-            <td>{{#if harPensjon}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if harPensjon}}
-            <tr>
-            {{#each pensjonsOrdning}}
-                <tr>
-                    <td>{{ordning}}</td>
-                    <td>{{beløp}}</td>
-                </tr>
-            {{/each}}
-            </tr>
-        {{/if}}
-
-        <tr>
-            <td>Totalbeløp inntekter og pensjon</td>
-            <td>{{sumInntektOgPensjon}}</td>
-        </tr>
-        <tr>
-            <td>Formue - eiendom</td>
-            <td>{{#if harFormueEiendom}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        <tr>
-            <td>Formue - finans</td>
-            <td>{{#if harFinansFormue}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        <tr>
-            <td>Totalbeløp formue</td>
-            <td>{{ formueBeløp}} </td>
-        </tr>
-        <tr>
-            <td>Formue - annen</td>
-            <td>{{#if harAnnenFormue}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if harAnnenFormue }}
-            {{#each annenFormue}}
-                <tr>
-                    <td>{{typeFormue}}</td>
-                    <td>{{skattetakst}}</td>
-                </tr>
-            {{/each}}
-        {{/if}}
-        <tr>
-            <td>Depositumskonto</td>
-            <td>{{#if harDepositumskonto}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if harDepositumskonto }}
-            <tr>
-                <td>Depositumsbeløp</td>
-                <td>{{depositumBeløp}}</td>
-            </tr>
-        {{/if}}
-        <tr>
-            <td>Sosialstønad</td>
-            <td>{{#if harSosialStønad}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-    {{/with}}
-    </tbody>
-
-</table>
---}}
 </body>
 </html>

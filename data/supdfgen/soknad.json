@@ -1,5 +1,8 @@
 {
-  "sakId": "7a28b6f2-a30d-43c4-82a9-1da9b4d01fcd",
+  "saksnummer": {
+    "nummer": 2021
+  },
+  "dagensDato": "01.01.2021",
   "søknadOpprettet": "01.01.2021",
   "navn": {
     "fornavn": "Tore",
