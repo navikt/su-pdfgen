@@ -58,6 +58,10 @@
                 <td>{{saksnummer.nummer}}</td>
             </tr>
             <tr>
+                <td>Søknads-id:</td>
+                <td>{{søknadsId}}</td>
+            </tr>
+            <tr>
                 <td>Søknadsdato:</td>
                 <td>{{søknadOpprettet}}</td>
             </tr>
@@ -86,10 +90,6 @@
 
         <tbody>
         {{#with søknadInnhold.personopplysninger}}
-            <tr>
-                <td>Saksnummer:</td>
-                <td>{{sakId}}</td>
-            </tr>
             <tr>
                 <td>Søknadsdato:</td>
                 <td>{{søknadOpprettet}}</td>
@@ -715,10 +715,8 @@
     </tbody>
 </table>
 
-
-
 <div>
-    <p class="signaturHeader">Signartur, {{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}, {{dagensDato}}</p>
+    <p class="signaturHeader">Signatur, {{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}, {{dagensDatoOgTidspunkt}}</p>
     <p>--------------------------------------------------</p>
 </div>
 
