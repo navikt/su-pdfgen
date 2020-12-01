@@ -48,5 +48,7 @@
         "sum": 0
       }
     }
-  }
+  },
+  "saksbehandlerNavn": "Sak Saksbehandlersen",
+  "attestantNavn": "Attestant Attestantsen"
 }

@@ -23,7 +23,6 @@
     6,
     7
   ],
-  "harFlereAvslagsgrunner": false,
   "harEktefelle": true,
   "halvGrunnbeløp": 10,
   "beregning": {
@@ -59,5 +58,7 @@
         "sum": 0
       }
     }
-  }
+  },
+  "saksbehandlerNavn": "Sak Saksbehandlersen",
+  "attestantNavn": "Attestant Attestantsen"
 }
