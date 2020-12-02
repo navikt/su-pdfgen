@@ -33,10 +33,11 @@
         "datoForUtskrivelse": "2020-01-31",
         "fortsattInnlagt": false
       },
-      "borPåAdresse": {
-         "adresselinje": "Adresse 26",
-         "postnummer": "0123",
-         "poststed": "Oslo"
+      "oppgittAdresse":{
+        "type":"BorPåAdresse",
+        "poststed":"OSLO",
+        "postnummer":"0050",
+        "adresselinje":"Oslogata 12"
       }
     },
     "utenlandsopphold": {
@@ -94,7 +95,7 @@
       ]
     },
     "formue": {
-      "eierBolig": true,
+      "eierBolig": false,
       "borIBolig": false,
       "verdiPåBolig": 600000,
       "boligBrukesTil": "Mine barn bor der",
@@ -137,13 +138,13 @@
         "kontanterBeløp": 0
       },
       "inntektOgPensjon": {
+        "pensjon": [],
         "forventetInntekt": null,
         "andreYtelserINav": null,
         "andreYtelserINavBeløp": null,
         "søktAndreYtelserIkkeBehandletBegrunnelse": null,
         "sosialstønadBeløp": null,
-        "trygdeytelserIUtlandet": null,
-        "pensjon": null
+        "trygdeytelserIUtlandet": null
       }
     }
   }

@@ -112,11 +112,11 @@
                 <td>Adresse:</td>
                 <td>
                     {{#if this}}
-                        {{this.borPåAdresse.adresselinje}},
-                        {{this.borPåAdresse.postnummer}}
-                        {{this.borPåAdresse.poststed}}
+                        {{this.oppgittAdresse.adresselinje}},
+                        {{this.oppgittAdresse.postnummer}}
+                        {{this.oppgittAdresse.poststed}}
                     {{else}}
-                        {{this.borPåAdresse}}
+                        {{this.oppgittAdresse.grunn}}
                     {{/if}}
                 </td>
             </tr>
@@ -177,7 +177,7 @@
         {{/unless}}
         <tr>
             <td>Har du statsborgerskap i andre land enn Norge?</td>
-            <td>{{#if this.registrertFlyktning}} Ja {{else}} Nei {{/if}}</td>
+            <td>{{#if this.statsborgerskapAndreLand}} Ja {{else}} Nei {{/if}}</td>
         </tr>
         {{#if this.statsborgerskapAndreLand}}
             <tr>
@@ -281,16 +281,16 @@
                 <td>{{#if this.borIBolig}} Ja {{else}} Nei {{/if}}</td>
             </tr>
         {{/if}}
-        {{#unless this.borIBolig}}
+        {{#if this.boligBrukesTil}}
             <tr>
                 <td>Formuesverdi på boligen</td>
-                <td>{{verdiPåBolig}}</td>
+                <td>{{currency_no verdiPåBolig}}</td>
             </tr>
             <tr>
                 <td>Hva brukes boligen til?</td>
                 <td>{{boligBrukesTil}}</td>
             </tr>
-        {{/unless}}
+        {{/if}}
         {{#unless this.eierBolig}}
             {{#if this.depositumsBeløp}}
                 <tr>
@@ -299,7 +299,7 @@
                 </tr>
                 <tr>
                     <td>Beløp på depositumskontoen</td>
-                    <td>{{depositumsBeløp}}</td>
+                    <td>{{currency_no depositumsBeløp}}</td>
                 </tr>
                 <tr>
                     <td>Kontonummer</td>
@@ -319,7 +319,7 @@
                 </tr>
                 <tr>
                     <td>Verdien av kjøretøyet:</td>
-                    <td>{{verdiPåKjøretøy}}</td>
+                    <td>{{currency_no verdiPåKjøretøy}}</td>
                 </tr>
             {{/each}}
         {{/if}}
@@ -330,7 +330,7 @@
         {{#if this.innskuddsBeløp}}
             <tr>
                 <td>Samlet verdi i kroner</td>
-                <td>{{this.innskuddsBeløp}}</td>
+                <td>{{currency_no this.innskuddsBeløp}}</td>
             </tr>
         {{/if}}
         <tr>
@@ -340,27 +340,27 @@
         {{#if this.verdipapirBeløp}}
             <tr>
                 <td>Samlet verdi i kroner</td>
-                <td>{{this.verdipapirBeløp}}</td>
+                <td>{{currency_no this.verdipapirBeløp}}</td>
             </tr>
         {{/if}}
         <tr>
-            <td>Skylder noen deg mer enn 5000 kr?</td>
+            <td>Skylder noen deg mer enn 1000 kr?</td>
             <td>{{#if this.skylderNoenMegPengerBeløp}} Ja {{else}} Nei {{/if}}</td>
         </tr>
         {{#if this.skylderNoenMegPengerBeløp}}
             <tr>
                 <td>Beløp i kroner</td>
-                <td>{{this.skylderNoenMegPengerBeløp}}</td>
+                <td>{{currency_no this.skylderNoenMegPengerBeløp}}</td>
             </tr>
         {{/if}}
         <tr>
-            <td>Har du mer enn 5000 kr i kontanter?</td>
+            <td>Har du mer enn 1000 kr i kontanter?</td>
             <td>{{#if this.kontanterBeløp}} Ja {{else}} Nei {{/if}}</td>
         </tr>
         {{#if this.skylderNoenMegPengerBeløp}}
             <tr>
                 <td>Beløp i kroner</td>
-                <td>{{this.kontanterBeløp}}</td>
+                <td>{{currency_no this.kontanterBeløp}}</td>
             </tr>
         {{/if}}
     {{/with}}
@@ -383,7 +383,7 @@
         {{#if this.forventetInntekt}}
             <tr>
                 <td>Forventet arbeidsinntekt i kroner per måned</td>
-                <td>{{this.forventetInntekt}}</td>
+                <td>{{currency_no this.forventetInntekt}}</td>
             </tr>
         {{/if}}
         <tr>
@@ -397,7 +397,7 @@
             </tr>
             <tr>
                 <td>Beløp i kroner per måned</td>
-                <td>{{this.andreYtelserINavBeløp}}</td>
+                <td>{{currency_no this.andreYtelserINavBeløp}}</td>
             </tr>
         {{/if}}
         <tr>
@@ -418,7 +418,7 @@
         {{#if this.sosialstønadBeløp}}
             <tr>
                 <td>Beløp i kroner for alle tre månedene (valgfri)</td>
-                <td>{{this.sosialstønadBeløp}}</td>
+                <td>{{currency_no this.sosialstønadBeløp}}</td>
             </tr>
         {{/if}}
 
@@ -430,7 +430,7 @@
             {{#each this.trygdeytelseIUtlandet}}
                 <tr>
                     <td>Beløp i lokal valuta per måned:</td>
-                    <td>{{this.trygdeytelseIUtlandet.beløp}}</td>
+                    <td>{{currency_no this.trygdeytelseIUtlandet.beløp}}</td>
                 </tr>
                 <tr>
                     <td>Valuta</td>
@@ -442,20 +442,19 @@
                 </tr>
             {{/each}}
         {{/if}}
-
         <tr>
             <td>Mottar du tjenestepensjon eller pensjon?</td>
             <td>{{#if this.pensjon}} Ja {{else}} Nei {{/if}}</td>
         </tr>
-        {{#if this.trygdeytelseIUtlandet}}
+        {{#if this.pensjon}}
             {{#each this.pensjon}}
                 <tr>
                     <td>Pensjonsgiver</td>
-                    <td>{{this.pensjon.ordning}}</td>
+                    <td>{{this.ordning}}</td>
                 </tr>
                 <tr>
                     <td>Beløp per måned</td>
-                    <td>{{this.pensjon.beløp}}</td>
+                    <td>{{currency_no this.beløp}}</td>
                 </tr>
             {{/each}}
         {{/if}}
@@ -489,7 +488,7 @@
                 {{#unless this.borIBolig}}
                     <tr>
                         <td>Formuesverdi på boligen</td>
-                        <td>{{verdiPåBolig}}</td>
+                        <td>{{currency_no this.verdiPåBolig}}</td>
                     </tr>
                     <tr>
                         <td>Hva brukes boligen til?</td>
@@ -504,7 +503,7 @@
                         </tr>
                         <tr>
                             <td>Beløp på depositumskontoen</td>
-                            <td>{{depositumsBeløp}}</td>
+                            <td>{{currency_no this.depositumsBeløp}}</td>
                         </tr>
                         <tr>
                             <td>Kontonummer</td>
@@ -524,7 +523,7 @@
                         </tr>
                         <tr>
                             <td>Verdien av kjøretøyet:</td>
-                            <td>{{verdiPåKjøretøy}}</td>
+                            <td>{{currency_no verdiPåKjøretøy}}</td>
                         </tr>
                     {{/each}}
                 {{/if}}
@@ -535,7 +534,7 @@
                 {{#if this.innskuddsBeløp}}
                     <tr>
                         <td>Samlet verdi i kroner</td>
-                        <td>{{this.innskuddsBeløp}}</td>
+                        <td>{{currency_no this.innskuddsBeløp}}</td>
                     </tr>
                 {{/if}}
                 <tr>
@@ -545,7 +544,7 @@
                 {{#if this.verdipapirBeløp}}
                     <tr>
                         <td>Samlet verdi i kroner</td>
-                        <td>{{this.verdipapirBeløp}}</td>
+                        <td>{{currency_no this.verdipapirBeløp}}</td>
                     </tr>
                 {{/if}}
                 <tr>
@@ -555,7 +554,7 @@
                 {{#if this.skylderNoenMegPengerBeløp}}
                     <tr>
                         <td>Beløp i kroner</td>
-                        <td>{{this.skylderNoenMegPengerBeløp}}</td>
+                        <td>{{currency_no this.skylderNoenMegPengerBeløp}}</td>
                     </tr>
                 {{/if}}
                 <tr>
@@ -565,7 +564,7 @@
                 {{#if this.skylderNoenMegPengerBeløp}}
                     <tr>
                         <td>Beløp i kroner</td>
-                        <td>{{this.kontanterBeløp}}</td>
+                        <td>{{currency_no this.kontanterBeløp}}</td>
                     </tr>
                 {{/if}}
             {{/with}}
@@ -588,7 +587,7 @@
                 {{#if this.forventetInntekt}}
                     <tr>
                         <td>Forventet arbeidsinntekt i kroner per måned</td>
-                        <td>{{this.forventetInntekt}}</td>
+                        <td>{{currency_no this.forventetInntekt}}</td>
                     </tr>
                 {{/if}}
                 <tr>
@@ -602,7 +601,7 @@
                     </tr>
                     <tr>
                         <td>Beløp i kroner per måned</td>
-                        <td>{{this.andreYtelserINavBeløp}}</td>
+                        <td>{{currency_no this.andreYtelserINavBeløp}}</td>
                     </tr>
                 {{/if}}
                 <tr>
@@ -623,7 +622,7 @@
                 {{#if this.sosialstønadBeløp}}
                     <tr>
                         <td>Beløp i kroner for alle tre månedene (valgfri)</td>
-                        <td>{{this.sosialstønadBeløp}}</td>
+                        <td>{{currency_no this.sosialstønadBeløp}}</td>
                     </tr>
                 {{/if}}
 
@@ -635,7 +634,7 @@
                     {{#each this.trygdeytelseIUtlandet}}
                         <tr>
                             <td>Beløp i lokal valuta per måned:</td>
-                            <td>{{this.trygdeytelseIUtlandet.beløp}}</td>
+                            <td>{{currency_no this.trygdeytelseIUtlandet.beløp}}</td>
                         </tr>
                         <tr>
                             <td>Valuta</td>
@@ -652,15 +651,15 @@
                     <td>Mottar du tjenestepensjon eller pensjon?</td>
                     <td>{{#if this.pensjon}} Ja {{else}} Nei {{/if}}</td>
                 </tr>
-                {{#if this.trygdeytelseIUtlandet}}
+                {{#if this.pensjon}}
                     {{#each this.pensjon}}
                         <tr>
                             <td>Pensjonsgiver</td>
-                            <td>{{this.pensjon.ordning}}</td>
+                            <td>{{this.ordning}}</td>
                         </tr>
                         <tr>
                             <td>Beløp per måned</td>
-                            <td>{{this.pensjon.beløp}}</td>
+                            <td>{{currency_no this.beløp}}</td>
                         </tr>
                     {{/each}}
                 {{/if}}
