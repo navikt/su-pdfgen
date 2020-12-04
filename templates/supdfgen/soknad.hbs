@@ -91,20 +91,13 @@
         <tbody>
         {{#with søknadInnhold.personopplysninger}}
             <tr>
-                <td>Søknadsdato:</td>
-                <td>{{søknadOpprettet}}</td>
+                <td>Fødselsnummer:</td>
+                <td>{{this.fnr}}</td>
             </tr>
             <tr>
-                <td>Har søker møtt personlig:</td>
-                <td>{{#if harFullmektigEllerVerge}} Nei {{else}} Ja {{/if}}</td>
+                <td>Navn: </td>
+                <td>{{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}</td>
             </tr>
-
-            {{#if harFullmektigEllerVerge}}
-                <tr>
-                    <td>Har søker fullmektig eller verge?</td>
-                    <td>{{harFullmektigEllerVerge}}</td>
-                </tr>
-            {{/if}}
         {{/with}}
 
         {{#with søknadInnhold.boforhold}}
@@ -210,13 +203,13 @@
         {{#if this.innlagtPåInstitusjon.datoForInnleggelse}}
             <tr>
                 <td>Dato for innleggelse:</td>
-                <td>{{this.innlagtPåInstitusjon.datoForInnleggelse}}</td>
+                <td>{{iso_to_date this.innlagtPåInstitusjon.datoForInnleggelse}}</td>
             </tr>
             <tr>
                 <td>Dato for utskrivelse:</td>
             <td>
             {{#if this.innlagtPåInstitusjon.datoForUtskrivelse}}
-                {{this.innlagtPåInstitusjon.datoForUtskrivelse}}
+                {{iso_to_date this.innlagtPåInstitusjon.datoForUtskrivelse}}
             {{else}}
                     Fortsatt innlagt
                 </td>
@@ -430,15 +423,15 @@
             {{#each this.trygdeytelseIUtlandet}}
                 <tr>
                     <td>Beløp i lokal valuta per måned:</td>
-                    <td>{{currency_no this.trygdeytelseIUtlandet.beløp}}</td>
+                    <td>{{currency_no this.beløp}}</td>
                 </tr>
                 <tr>
                     <td>Valuta</td>
-                    <td>{{this.trygdeytelseIUtlandet.valuta}}</td>
+                    <td>{{this.valuta}}</td>
                 </tr>
                 <tr>
                     <td>Type ytelse</td>
-                    <td>{{this.trygdeytelseIUtlandet.type}}</td>
+                    <td>{{this.type}}</td>
                 </tr>
             {{/each}}
         {{/if}}
@@ -485,16 +478,16 @@
                         <td>{{#if this.borIBolig}} Ja {{else}} Nei {{/if}}</td>
                     </tr>
                 {{/if}}
-                {{#unless this.borIBolig}}
+                {{#if this.boligBrukesTil}}
                     <tr>
                         <td>Formuesverdi på boligen</td>
-                        <td>{{currency_no this.verdiPåBolig}}</td>
+                        <td>{{currency_no verdiPåBolig}}</td>
                     </tr>
                     <tr>
                         <td>Hva brukes boligen til?</td>
                         <td>{{boligBrukesTil}}</td>
                     </tr>
-                {{/unless}}
+                {{/if}}
                 {{#unless this.eierBolig}}
                     {{#if this.depositumsBeløp}}
                         <tr>
@@ -548,7 +541,7 @@
                     </tr>
                 {{/if}}
                 <tr>
-                    <td>Skylder noen deg mer enn 5000 kr?</td>
+                    <td>Skylder noen deg mer enn 1000 kr?</td>
                     <td>{{#if this.skylderNoenMegPengerBeløp}} Ja {{else}} Nei {{/if}}</td>
                 </tr>
                 {{#if this.skylderNoenMegPengerBeløp}}
@@ -558,10 +551,10 @@
                     </tr>
                 {{/if}}
                 <tr>
-                    <td>Har du mer enn 5000 kr i kontanter?</td>
+                    <td>Har du mer enn 1000 kr i kontanter?</td>
                     <td>{{#if this.kontanterBeløp}} Ja {{else}} Nei {{/if}}</td>
                 </tr>
-                {{#if this.skylderNoenMegPengerBeløp}}
+                {{#if this.kontanterBeløp}}
                     <tr>
                         <td>Beløp i kroner</td>
                         <td>{{currency_no this.kontanterBeløp}}</td>
@@ -634,15 +627,15 @@
                     {{#each this.trygdeytelseIUtlandet}}
                         <tr>
                             <td>Beløp i lokal valuta per måned:</td>
-                            <td>{{currency_no this.trygdeytelseIUtlandet.beløp}}</td>
+                            <td>{{currency_no this.beløp}}</td>
                         </tr>
                         <tr>
                             <td>Valuta</td>
-                            <td>{{this.trygdeytelseIUtlandet.valuta}}</td>
+                            <td>{{this.valuta}}</td>
                         </tr>
                         <tr>
                             <td>Type ytelse</td>
-                            <td>{{this.trygdeytelseIUtlandet.type}}</td>
+                            <td>{{this.type}}</td>
                         </tr>
                     {{/each}}
                 {{/if}}
@@ -686,11 +679,11 @@
             {{#each this.registrertePerioder}}
                 <tr>
                     <td>Utreisedato</td>
-                    <td>{{utreisedato}}</td>
+                    <td>{{iso_to_date utreisedato}}</td>
                 </tr>
                 <tr>
                     <td>Innreisedato</td>
-                    <td>{{innreisedato}}</td>
+                    <td>{{iso_to_date innreisedato}}</td>
                 </tr>
             {{/each}}
         {{/if}}
@@ -702,11 +695,11 @@
             {{#each this.planlagtePerioder}}
                 <tr>
                     <td>Utreisedato</td>
-                    <td>{{utreisedato}}</td>
+                    <td>{{iso_to_date utreisedato}}</td>
                 </tr>
                 <tr>
                     <td>Innreisedato</td>
-                    <td>{{innreisedato}}</td>
+                    <td>{{iso_to_date innreisedato}}</td>
                 </tr>
             {{/each}}
         {{/if}}

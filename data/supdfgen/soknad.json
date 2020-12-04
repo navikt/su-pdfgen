@@ -22,7 +22,7 @@
     },
     "boforhold": {
       "borOgOppholderSegINorge": true,
-      "delerBolig": false,
+      "delerBolig": true,
       "delerBoligMed": "EKTEMAKE_SAMBOER",
       "ektefellePartnerSamboer": {
         "fnr": "01010101010",
@@ -71,7 +71,7 @@
       "andreYtelserINavBeløp": 33,
       "søktAndreYtelserIkkeBehandletBegrunnelse": "uføre",
       "sosialstønadBeløp": 7000.0,
-      "trygdeytelserIUtlandet": [
+      "trygdeytelseIUtlandet": [
         {
           "beløp": 200,
           "type": "trygd",
@@ -134,8 +134,8 @@
         "kjøretøy": [],
         "innskuddsBeløp": 0,
         "verdipapirBeløp": 0,
-        "skylderNoenMegPengerBeløp": 0,
-        "kontanterBeløp": 0
+        "skylderNoenMegPengerBeløp": 100,
+        "kontanterBeløp": 50
       },
       "inntektOgPensjon": {
         "pensjon": [],
@@ -144,7 +144,18 @@
         "andreYtelserINavBeløp": null,
         "søktAndreYtelserIkkeBehandletBegrunnelse": null,
         "sosialstønadBeløp": null,
-        "trygdeytelserIUtlandet": null
+        "trygdeytelseIUtlandet": [
+          {
+            "beløp": 200,
+            "type": "trygd",
+            "valuta": "En valuta"
+          },
+          {
+            "beløp": 500,
+            "type": "Annen trygd",
+            "valuta": "En annen valuta"
+          }
+        ]
       }
     }
   }
