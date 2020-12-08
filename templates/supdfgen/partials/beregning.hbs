@@ -1,8 +1,9 @@
 {{#if fradrag.bruker.harBruktForventetInntektIStedetForArbeidsinntekt}}
-    <p>I beregningen har vi brukt din forventede inntekt etter uførhet fordi den er høyere enn arbeidsinntekten din. Vi bruker alltid det høyeste beløpet av de to.</p>
+    <p>I beregningen har vi brukt din forventede inntekt etter uførhet fordi den er høyere enn arbeidsinntekten din. Vi
+        bruker alltid det høyeste beløpet av de to.</p>
 {{/if}}
 
-<h4>Slik beregnes stønaden din:</h4>
+<h3 class="beregning__heading">Slik beregnes stønaden din:</h3>
 
 <table class="beregning">
     {{#if fradrag.bruker.fradrag}}
@@ -14,6 +15,16 @@
                 <td>{{type}}</td>
                 <td class="beregning__beløp">{{currency_no beløp}}</td>
             </tr>
+            {{#if utenlandskInntekt}}
+                <tr>
+                    <td colspan="2">
+                        <ol class="beregning__utenlandsk">
+                            <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no utenlandskInntekt.beløpIUtenlandskValuta}}</li>
+                            <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
+                        </ol>
+                    </td>
+                </tr>
+            {{/if}}
         {{/each}}
         <tr class="beregning__sum">
             <td>Sum</td>
@@ -30,6 +41,16 @@
                 <td>{{type}}</td>
                 <td class="beregning__beløp">{{currency_no beløp}}</td>
             </tr>
+            {{#if utenlandskInntekt}}
+                <tr>
+                    <td colspan="2">
+                        <ol class="beregning__utenlandsk">
+                            <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no utenlandskInntekt.beløpIUtenlandskValuta}}</li>
+                            <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
+                        </ol>
+                    </td>
+                </tr>
+            {{/if}}
         {{/each}}
         <tr>
             <td>Fribeløp</td>
