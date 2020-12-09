@@ -104,12 +104,17 @@
             <tr>
                 <td>Adresse:</td>
                 <td>
-                    {{#if this}}
+                    {{#if this.oppgittAdresse.adresselinje}}
                         {{this.oppgittAdresse.adresselinje}},
                         {{this.oppgittAdresse.postnummer}}
                         {{this.oppgittAdresse.poststed}}
                     {{else}}
-                        {{this.oppgittAdresse.grunn}}
+                        {{#eq this.oppgittAdresse.grunn "HAR_IKKE_FAST_BOSTED"}}
+                            Har ikke fast bosted
+                        {{/eq}}
+                        {{#eq this.oppgittAdresse.grunn "BOR_PÅ_ANNEN_ADRESSE"}}
+                            Bor på en annen adresse
+                        {{/eq}}
                     {{/if}}
                 </td>
             </tr>
