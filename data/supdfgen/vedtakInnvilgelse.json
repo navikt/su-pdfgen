@@ -31,6 +31,24 @@
             "beløp": 1500
           },
           {
+            "type": "Bidrag etter ekteskapsloven — fra utlandet",
+            "beløp": 50,
+            "utenlandskInntekt": {
+              "beløpIUtenlandskValuta": 100,
+              "valuta": "SEK",
+              "kurs": 0.5
+            }
+          },
+          {
+            "type": "Arbeidsinntekt — fra utlandet",
+            "beløp": 50,
+            "utenlandskInntekt": {
+              "beløpIUtenlandskValuta": 100,
+              "valuta": "SEK",
+              "kurs": 0.5
+            }
+          },
+          {
             "type": "UtenlandskInntekt",
             "beløp": 1000
           }
