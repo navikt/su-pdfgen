@@ -289,6 +289,20 @@
                 <td>{{boligBrukesTil}}</td>
             </tr>
         {{/if}}
+        <tr>
+            <td>Eier du andre eiendommer i Norge eller utlandet?</td>
+            <td>{{#if this.verdiPåEiendom}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
+        {{#if this.verdiPåEiendom}}
+            <tr>
+                <td>Samlet formuesverdi av eiendommene</td>
+                <td>{{currency_no this.verdiPåEiendom}}</td>
+            </tr>
+            <tr>
+                <td>Hva brukes eiendommene til?</td>
+                <td>{{this.eiendomBrukesTil}}</td>
+            </tr>
+        {{/if}}
         {{#unless this.eierBolig}}
             {{#if this.depositumsBeløp}}
                 <tr>
