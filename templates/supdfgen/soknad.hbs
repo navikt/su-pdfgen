@@ -6,6 +6,7 @@
         * {
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
         }
+
         td {
             font-size: 0.9em;
             vertical-align: top;
@@ -95,19 +96,22 @@
                 <td>{{this.fnr}}</td>
             </tr>
             <tr>
-                <td>Navn: </td>
+                <td>Navn:</td>
                 <td>{{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}</td>
             </tr>
         {{/with}}
 
         {{#with søknadInnhold.boforhold}}
             <tr>
-                <td>Adresse:</td>
+                <td>Address:</td>
                 <td>
                     {{#if this.oppgittAdresse.adresselinje}}
-                        {{this.oppgittAdresse.adresselinje}},
-                        {{this.oppgittAdresse.postnummer}}
-                        {{this.oppgittAdresse.poststed}}
+                        {{#if this.oppgittAdresse.bruksenhet}}
+                            {{this.oppgittAdresse.adresselinje}} {{this.oppgittAdresse.bruksenhet}},
+                        {{else}}
+                            {{this.oppgittAdresse.adresselinje}},
+                        {{/if}}
+                        {{this.oppgittAdresse.postnummer}} {{this.oppgittAdresse.poststed}}
                     {{else}}
                         {{#eq this.oppgittAdresse.grunn "HAR_IKKE_FAST_BOSTED"}}
                             Har ikke fast bosted
@@ -727,7 +731,8 @@
 </table>
 
 <div>
-    <p class="signaturHeader">Signatur, {{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}, {{dagensDatoOgTidspunkt}}</p>
+    <p class="signaturHeader">Signatur, {{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}
+        , {{dagensDatoOgTidspunkt}}</p>
     <p>--------------------------------------------------</p>
 </div>
 
