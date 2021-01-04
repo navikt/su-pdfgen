@@ -66,17 +66,47 @@
                 <td>Søknadsdato:</td>
                 <td>{{søknadOpprettet}}</td>
             </tr>
-            <tr>
-                <td>Har søker møtt personlig:</td>
-                <td>{{#if harFullmektigEllerVerge}} Nei {{else}} Ja {{/if}}</td>
-            </tr>
 
-            {{#if harFullmektigEllerVerge}}
+            {{#eq type "DigitalSøknad"}}
                 <tr>
-                    <td>Har søker fullmektig eller verge?</td>
-                    <td>{{harFullmektigEllerVerge}}</td>
+                    <td>Har søker møtt personlig:</td>
+                    <td>{{#if harFullmektigEllerVerge}} Nei {{else}} Ja {{/if}}</td>
                 </tr>
-            {{/if}}
+                {{#if harFullmektigEllerVerge}}
+                    <tr>
+                        <td>Har søker fullmektig eller verge?</td>
+                        <td>{{harFullmektigEllerVerge}}</td>
+                    </tr>
+                {{/if}}
+            {{/eq}}
+
+            {{#eq type "PapirSøknad"}}
+                <tr>
+                    <td>Mottaksdato for Søknad:</td>
+                    <td>{{mottaksdatoForSøknad}}</td>
+                </tr>
+                <tr>
+                    <td>Grunn for papirinnsending:</td>
+                    <td>
+                        {{#eq grunnForPapirinnsending "VergeHarSøktPåVegneAvBruker"}}
+                            Verge har søkt på vegne av bruker
+                        {{/eq}}
+                        {{#eq grunnForPapirinnsending "MidlertidigUnntakFraOppmøteplikt"}}
+                            Midlertidig unntak fra oppmøteplikt
+                        {{/eq}}
+                        {{#eq grunnForPapirinnsending "Annet"}}
+                            Annet
+                        {{/eq}}
+                    </td>
+                </tr>
+                {{#eq grunnForPapirinnsending "Annet"}}
+                    <tr>
+                        <td>Grunn:</td>
+                        <td>{{annenGrunn}}</td>
+                    </tr>
+                {{/eq}}
+            {{/eq}}
+
         {{/with}}
         </tbody>
     </table>

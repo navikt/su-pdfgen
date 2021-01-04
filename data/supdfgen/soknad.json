@@ -116,8 +116,11 @@
       "kontanterBeløp": 40
     },
     "forNav": {
-      "harFullmektigEllerVerge": "verge",
-      "type": "DigitalSøknad"
+      "type": "DigitalSøknad",
+      "harFullmektigEllerVerge": "Verge",
+      "mottaksdatoForSøknad": "01.01.2021",
+      "grunnForPapirinnsending": "VergeHarSøktPåVegneAvBruker",
+      "annenGrunn": "null"
     },
     "ektefelle": {
       "formue": {
