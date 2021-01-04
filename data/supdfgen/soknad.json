@@ -115,9 +115,15 @@
       "skylderNoenMegPengerBeløp": 30,
       "kontanterBeløp": 40
     },
-    "forNav": {
+    "forNav2": {
       "harFullmektigEllerVerge": "verge",
       "type": "DigitalSøknad"
+    },
+    "forNav": {
+      "mottaksdatoForSøknad": "13.12.2020",
+      "grunnForPapirinnsending": "VergeHarSøktPåVegneAvBruker",
+      "annenGrunn": "",
+      "type": "Papirsøknad"
     },
     "ektefelle": {
       "formue": {
