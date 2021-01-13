@@ -15,58 +15,85 @@
   "sats": "høy",
   "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67",
   "harEktefelle": true,
-  "beregning": {
-    "ytelsePerMåned": "12000",
-    "satsbeløpPerMåned": "20637",
-    "epsFribeløp": 12000,
-    "fradrag": {
-      "bruker": {
-        "fradrag": [
-          {
-            "type": "Pensjon",
-            "beløp": 3000
-          },
-          {
-            "type": "Arbeidsinntekt",
-            "beløp": 1500
-          },
-          {
-            "type": "Bidrag etter ekteskapsloven — fra utlandet",
-            "beløp": 50,
-            "utenlandskInntekt": {
-              "beløpIUtenlandskValuta": 100,
-              "valuta": "SEK",
-              "kurs": 0.5
-            }
-          },
-          {
-            "type": "Arbeidsinntekt — fra utlandet",
-            "beløp": 50,
-            "utenlandskInntekt": {
-              "beløpIUtenlandskValuta": 100,
-              "valuta": "SEK",
-              "kurs": 0.5
-            }
-          },
-          {
-            "type": "UtenlandskInntekt",
-            "beløp": 1000
-          }
-        ],
-        "harBruktForventetInntektIStedetForArbeidsinntekt": true,
-        "sum": 5000
+  "beregningsperioder": [
+    {
+      "periode": {
+        "fraOgMed": "01.01.2021",
+        "tilOgMed": "31.05.2021"
       },
-      "eps": {
-        "fradrag": [
-          {
-            "type": "Arbeidsinntekt",
-            "beløp": 1500
-          }
-        ],
-        "sum": 0
+      "ytelsePerMåned": "12000",
+      "satsbeløpPerMåned": "20637",
+      "epsFribeløp": 12000,
+      "fradrag": {
+        "bruker": {
+          "fradrag": [
+            {
+              "type": "Pensjon",
+              "beløp": 3000
+            },
+            {
+              "type": "Arbeidsinntekt",
+              "beløp": 1500
+            },
+            {
+              "type": "Bidrag etter ekteskapsloven — fra utlandet",
+              "beløp": 50,
+              "utenlandskInntekt": {
+                "beløpIUtenlandskValuta": 100,
+                "valuta": "SEK",
+                "kurs": 0.5
+              }
+            },
+            {
+              "type": "Arbeidsinntekt — fra utlandet",
+              "beløp": 50,
+              "utenlandskInntekt": {
+                "beløpIUtenlandskValuta": 100,
+                "valuta": "SEK",
+                "kurs": 0.5
+              }
+            },
+            {
+              "type": "UtenlandskInntekt",
+              "beløp": 1000
+            }
+          ],
+          "harBruktForventetInntektIStedetForArbeidsinntekt": true,
+          "sum": 5000
+        },
+        "eps": {
+          "fradrag": [
+            {
+              "type": "Arbeidsinntekt",
+              "beløp": 1500
+            }
+          ],
+          "sum": 0
+        }
+      }
+    },
+    {
+      "periode": {
+        "fraOgMed": "01.06.2021",
+        "tilOgMed": "31.12.2021"
+      },
+      "ytelsePerMåned": "20500",
+      "satsbeløpPerMåned": "20637",
+      "epsFribeløp": 15000,
+      "fradrag": {
+        "bruker": {
+          "fradrag": [
+            {
+              "type": "Arbeidsinntekt",
+              "beløp": 1500
+            }
+          ],
+          "harBruktForventetInntektIStedetForArbeidsinntekt": false,
+          "sum": 1500
+        }
       }
     }
-  },
+  ],
   "saksbehandlerNavn": "Sak Saksbehandlersen",
   "attestantNavn": "Attestant Attestantsen"
 }

@@ -6,83 +6,56 @@
 <h3 class="beregning__heading">Slik beregnes stønaden din:</h3>
 
 <table class="beregning">
-    {{#if fradrag.bruker.fradrag}}
+    {{#each beregningsperioder}}
         <tr>
-            <td colspan="2"><h4 class="beregning__title">Inntektene dine hver måned</h4></td>
+            <td><h4>{{periode.fraOgMed}}-{{periode.tilOgMed}} får du</h4></td>
+            <td class="beregning__beløp"><h4>{{currency_no ytelsePerMåned}}</h4></td>
         </tr>
-        {{#each fradrag.bruker.fradrag}}
-            <tr>
-                <td>{{type}}</td>
-                <td class="beregning__beløp">{{currency_no beløp}}</td>
-            </tr>
-            {{#if utenlandskInntekt}}
-                <tr>
-                    <td colspan="2">
-                        <ol class="beregning__utenlandsk">
-                            <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no utenlandskInntekt.beløpIUtenlandskValuta}}</li>
-                            <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
-                        </ol>
-                    </td>
-                </tr>
-            {{/if}}
-        {{/each}}
-        <tr class="beregning__sum">
-            <td>Sum</td>
-            <td class="beregning__beløp">{{currency_no fradrag.bruker.sum}}</td>
-        </tr>
-    {{/if}}
 
-    {{#if fradrag.eps.fradrag}}
         <tr>
-            <td colspan="2"><h4 class="beregning__title">Ektefelle/samboers inntekt hver måned</h4></td>
+            <td>Maksimalt beløp for supplerende stønad</td>
+            <td class="beregning__beløp">{{currency_no satsbeløpPerMåned}}</td>
         </tr>
-        {{#each fradrag.eps.fradrag}}
-            <tr>
-                <td>{{type}}</td>
-                <td class="beregning__beløp">{{currency_no beløp}}</td>
-            </tr>
-            {{#if utenlandskInntekt}}
-                <tr>
-                    <td colspan="2">
-                        <ol class="beregning__utenlandsk">
-                            <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no utenlandskInntekt.beløpIUtenlandskValuta}}</li>
-                            <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
-                        </ol>
-                    </td>
-                </tr>
-            {{/if}}
-        {{/each}}
-        <tr>
-            <td>Fribeløp</td>
-            <td class="beregning__beløp">-{{currency_no epsFribeløp}}</td>
-        </tr>
-        <tr class="beregning__sum">
-            <td>Sum</td>
-            <td class="beregning__beløp">{{currency_no fradrag.eps.sum}}</td>
-        </tr>
-    {{/if}}
 
-    <tr>
-        <td colspan="2"><h4 class="beregning__title">Utbetaling til deg</h4></td>
-    </tr>
-    <tr>
-        <td>Maksimalt beløp for supplerende stønad</td>
-        <td class="beregning__beløp">{{currency_no satsbeløpPerMåned}}</td>
-    </tr>
-    {{#if fradrag.bruker.fradrag}}
-        <tr>
-            <td>Inntektene dine</td>
-            <td class="beregning__beløp">-{{currency_no fradrag.bruker.sum}}</td>
-        </tr>
-    {{/if}}
-    {{#if fradrag.eps.fradrag}}
-        <tr>
-            <td>Ektefelle/samboers inntekter</td>
-            <td class="beregning__beløp">-{{currency_no fradrag.eps.sum}}</td>
-        </tr>
-    {{/if}}
-    <tr class="beregning__sum">
-        <td>Sum (avrundet til nærmeste krone)</td>
-        <td class="beregning__beløp">{{currency_no ytelsePerMåned}}</td>
-    </tr>
+        {{#if fradrag.bruker.fradrag}}
+            {{#each fradrag.bruker.fradrag}}
+                <tr>
+                    <td>{{type}}</td>
+                    <td class="beregning__beløp">- {{currency_no beløp}}</td>
+                </tr>
+                {{#if utenlandskInntekt}}
+                    <tr>
+                        <td colspan="2">
+                            <ol class="beregning__utenlandsk">
+                                <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no utenlandskInntekt.beløpIUtenlandskValuta}}</li>
+                                <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
+                            </ol>
+                        </td>
+                    </tr>
+                {{/if}}
+            {{/each}}
+        {{/if}}
+        {{#if fradrag.eps.fradrag}}
+            {{#each fradrag.eps.fradrag}}
+                <tr>
+                    <td>{{type}} (Ektefelle/samboer)</td>
+                    <td class="beregning__beløp">- {{currency_no beløp}}</td>
+                </tr>
+                {{#if utenlandskInntekt}}
+                    <tr>
+                        <td colspan="2">
+                            <ol class="beregning__utenlandsk">
+                                <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no utenlandskInntekt.beløpIUtenlandskValuta}}</li>
+                                <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
+                            </ol>
+                        </td>
+                    </tr>
+                {{/if}}
+            {{/each}}
+            <tr>
+                <td>Fribeløp (Ektefelle/samboer)</td>
+                <td class="beregning__beløp">{{currency_no epsFribeløp}}</td>
+            </tr>
+        {{/if}}
+    {{/each}}
 </table>
