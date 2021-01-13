@@ -15,6 +15,7 @@
   "sats": "høy",
   "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67",
   "harEktefelle": true,
+  "totalSumForBeregningsperioder": 163479,
   "beregningsperioder": [
     {
       "periode": {

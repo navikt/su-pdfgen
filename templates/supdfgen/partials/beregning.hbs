@@ -6,6 +6,12 @@
 <h3 class="beregning__heading">Slik beregnes stønaden din:</h3>
 
 <table class="beregning">
+    {{#if totalSumForBeregningsperioder}}
+        <tr>
+            <td><h4>Totalt beløp:</h4></td>
+            <td class="beregning__beløp"><h4>{{currency_no totalSumForBeregningsperioder}}</h4></td>
+        </tr>
+    {{/if}}
     {{#each beregningsperioder}}
         <tr>
             <td><h4>{{periode.fraOgMed}}-{{periode.tilOgMed}} får du</h4></td>
@@ -27,7 +33,8 @@
                     <tr>
                         <td colspan="2">
                             <ol class="beregning__utenlandsk">
-                                <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no utenlandskInntekt.beløpIUtenlandskValuta}}</li>
+                                <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no
+                                        utenlandskInntekt.beløpIUtenlandskValuta}}</li>
                                 <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
                             </ol>
                         </td>
@@ -45,7 +52,8 @@
                     <tr>
                         <td colspan="2">
                             <ol class="beregning__utenlandsk">
-                                <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no utenlandskInntekt.beløpIUtenlandskValuta}}</li>
+                                <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no
+                                        utenlandskInntekt.beløpIUtenlandskValuta}}</li>
                                 <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
                             </ol>
                         </td>
