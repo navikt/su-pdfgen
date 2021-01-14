@@ -26,48 +26,44 @@
       "satsbeløpPerMåned": "20637",
       "epsFribeløp": 12000,
       "fradrag": {
-        "bruker": {
-          "fradrag": [
-            {
-              "type": "Pensjon",
-              "beløp": 3000
-            },
-            {
-              "type": "Arbeidsinntekt",
-              "beløp": 1500
-            },
-            {
-              "type": "Bidrag etter ekteskapsloven — fra utlandet",
-              "beløp": 50,
-              "utenlandskInntekt": {
-                "beløpIUtenlandskValuta": 100,
-                "valuta": "SEK",
-                "kurs": 0.5
-              }
-            },
-            {
-              "type": "Arbeidsinntekt — fra utlandet",
-              "beløp": 50,
-              "utenlandskInntekt": {
-                "beløpIUtenlandskValuta": 100,
-                "valuta": "SEK",
-                "kurs": 0.5
-              }
-            },
-            {
-              "type": "UtenlandskInntekt",
-              "beløp": 1000
+        "bruker": [
+          {
+            "type": "Pensjon",
+            "beløp": 3000
+          },
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          },
+          {
+            "type": "Bidrag etter ekteskapsloven — fra utlandet",
+            "beløp": 50,
+            "utenlandskInntekt": {
+              "beløpIUtenlandskValuta": 100,
+              "valuta": "SEK",
+              "kurs": 0.5
             }
-          ]
-        },
-        "eps": {
-          "fradrag": [
-            {
-              "type": "Arbeidsinntekt",
-              "beløp": 1500
+          },
+          {
+            "type": "Arbeidsinntekt — fra utlandet",
+            "beløp": 50,
+            "utenlandskInntekt": {
+              "beløpIUtenlandskValuta": 100,
+              "valuta": "SEK",
+              "kurs": 0.5
             }
-          ]
-        }
+          },
+          {
+            "type": "UtenlandskInntekt",
+            "beløp": 1000
+          }
+        ],
+        "eps": [
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          }
+        ]
       }
     },
     {
@@ -79,14 +75,12 @@
       "satsbeløpPerMåned": "20637",
       "epsFribeløp": 15000,
       "fradrag": {
-        "bruker": {
-          "fradrag": [
-            {
-              "type": "Arbeidsinntekt",
-              "beløp": 1500
-            }
-          ]
-        }
+        "bruker": [
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          }
+        ]
       }
     }
   ],

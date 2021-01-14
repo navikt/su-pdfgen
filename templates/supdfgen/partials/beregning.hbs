@@ -23,8 +23,8 @@
             <td class="beregning__beløp">{{currency_no satsbeløpPerMåned}}</td>
         </tr>
 
-        {{#if fradrag.bruker.fradrag}}
-            {{#each fradrag.bruker.fradrag}}
+        {{#if fradrag.bruker}}
+            {{#each fradrag.bruker}}
                 <tr>
                     <td>{{type}}</td>
                     <td class="beregning__beløp">- {{currency_no beløp}}</td>
@@ -42,8 +42,8 @@
                 {{/if}}
             {{/each}}
         {{/if}}
-        {{#if fradrag.eps.fradrag}}
-            {{#each fradrag.eps.fradrag}}
+        {{#if fradrag.eps}}
+            {{#each fradrag.eps}}
                 <tr>
                     <td>{{type}} (Ektefelle/samboer)</td>
                     <td class="beregning__beløp">- {{currency_no beløp}}</td>

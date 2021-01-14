@@ -35,30 +35,26 @@
       "satsbeløpPerMåned": "20637",
       "epsFribeløp": 12000,
       "fradrag": {
-        "bruker": {
-          "fradrag": [
-            {
-              "type": "Pensjon",
-              "beløp": 3000
-            },
-            {
-              "type": "Arbeidsinntekt",
-              "beløp": 1500
-            },
-            {
-              "type": "UtenlandskInntekt",
-              "beløp": 1000
-            }
-          ]
-        },
-        "eps": {
-          "fradrag": [
-            {
-              "type": "Arbeidsinntekt",
-              "beløp": 1500
-            }
-          ]
-        }
+        "bruker": [
+          {
+            "type": "Pensjon",
+            "beløp": 3000
+          },
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          },
+          {
+            "type": "UtenlandskInntekt",
+            "beløp": 1000
+          }
+        ],
+        "eps": [
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          }
+        ]
       }
     }
   ],
