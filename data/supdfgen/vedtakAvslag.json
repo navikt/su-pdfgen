@@ -49,12 +49,15 @@
             "beløp": 1000
           }
         ],
-        "eps": [
-          {
-            "type": "Arbeidsinntekt",
-            "beløp": 1500
-          }
-        ]
+        "eps": {
+          "fradrag": [
+            {
+              "type": "Arbeidsinntekt",
+              "beløp": 1500
+            }
+          ],
+          "harFradragMedSumSomErLavereEnnFribeløp": false
+        }
       }
     }
   ],
