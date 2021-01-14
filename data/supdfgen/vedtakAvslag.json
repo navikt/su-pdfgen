@@ -49,8 +49,7 @@
               "type": "UtenlandskInntekt",
               "beløp": 1000
             }
-          ],
-          "sum": 5000
+          ]
         },
         "eps": {
           "fradrag": [
@@ -58,8 +57,7 @@
               "type": "Arbeidsinntekt",
               "beløp": 1500
             }
-          ],
-          "sum": 0
+          ]
         }
       }
     }
