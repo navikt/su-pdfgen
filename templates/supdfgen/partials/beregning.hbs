@@ -14,8 +14,7 @@
 {{#each beregningsperioder}}
     <table class="beregning">
         <tr>
-            <td><h4>{{periode.fraOgMed}}-{{periode.tilOgMed}} får du</h4></td>
-            <td class="beregning__beløp"><h4>{{currency_no ytelsePerMåned}}</h4></td>
+            <td><b>{{periode.fraOgMed}}-{{periode.tilOgMed}}</b></td>
         </tr>
 
         <tr>
@@ -66,6 +65,10 @@
                 <td class="beregning__beløp">{{currency_no epsFribeløp}}</td>
             </tr>
         {{/if}}
+        <tr>
+            <td><b>Sum per måned</b></td>
+            <td class="beregning__beløp"><b>{{currency_no ytelsePerMåned}}</b></td>
+        </tr>
     </table>
     {{#if fradrag.eps.harFradragMedSumSomErLavereEnnFribeløp}}
         <p>
