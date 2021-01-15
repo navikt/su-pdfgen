@@ -10,8 +10,8 @@
     "postnummer": "9807",
     "poststed": "Uranus"
   },
-  "fradato": "oktober 2020",
-  "tildato": "september 2021",
+  "fradato": "januar 2021",
+  "tildato": "desember 2021",
   "sats": "høy",
   "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67",
   "harEktefelle": true,
@@ -19,8 +19,8 @@
   "beregningsperioder": [
     {
       "periode": {
-        "fraOgMed": "01.01.2021",
-        "tilOgMed": "31.05.2021"
+        "fraOgMed": "januar 2021",
+        "tilOgMed": "mai 2021"
       },
       "ytelsePerMåned": "12000",
       "satsbeløpPerMåned": "20637",
@@ -66,8 +66,8 @@
     },
     {
       "periode": {
-        "fraOgMed": "01.06.2021",
-        "tilOgMed": "31.12.2021"
+        "fraOgMed": "juni 2021",
+        "tilOgMed": "desember 2021"
       },
       "ytelsePerMåned": "20500",
       "satsbeløpPerMåned": "20637",

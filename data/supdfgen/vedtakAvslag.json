@@ -28,8 +28,8 @@
   "beregningsperioder": [
     {
       "periode": {
-        "fraOgMed": "01.01.2021",
-        "tilOgMed": "31.12.2021"
+        "fraOgMed": "januar 2021",
+        "tilOgMed": "desember 2021"
       },
       "ytelsePerMåned": "12000",
       "satsbeløpPerMåned": "20637",
