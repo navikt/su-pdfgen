@@ -1,9 +1,28 @@
+<h3 class="beregning__heading">Slik beregner vi stønaden din:</h3>
+
 <p>
-    Ved beregning av fradag benyttes alltid det høyeste beløpet av forventet inntekt etter uførhet og arbeidsinntekt.
-    Hvilket av disse beløpene som går til fradrag vil derfor kunne variere fra periode til periode.
+    {{#if satsGrunn}}
+        Du får {{sats}} sats fordi
+        {{#eq satsGrunn "ENSLIG"}}du ikke deler bolig med voksne barn eller andre voksne.{{/eq}}
+        {{#eq satsGrunn "DELER_BOLIG_MED_VOKSNE_BARN_ELLER_ANNEN_VOKSEN"}}
+            du deler bolig med voksne barn eller andre voksne.{{/eq}}
+        {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67"}}din ektefelle ikke er 67 år.{{/eq}}
+        {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_OVER_67"}}
+            du deler bolig med ektemake eller samboer over 67 år.{{/eq}}
+        {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67_UFØR_FLYKTNING"}}
+            du deler bolig med ektemake eller samboer under 67 år som er ufør flyktning.{{/eq}}
+    {{/if}}
+
+    {{capitalize sats}} sats er {{currency_no satsBeløp true}} kroner i måneden.
+
+    {{#if harFradrag}}
+        Vi har redusert stønaden fordi du {{#if harEktefelle}}  og/eller ektefelle{{/if}} har annen inntekt.
+    {{/if}}
 </p>
 
-<h3 class="beregning__heading">Slik beregnes stønaden din:</h3>
+<p>
+    Vi bruker alltid det høyeste beløpet av arbeidsinntekten din og din forventede inntekt etter uførhet når vi beregner stønaden din. Du ser i beregningen hvilket beløp vi bruker.
+</p>
 
 {{#each beregningsperioder}}
     <table class="beregning">

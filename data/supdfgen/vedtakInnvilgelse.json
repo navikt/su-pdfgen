@@ -16,6 +16,7 @@
   "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67",
   "satsBeløp": 100,
   "harEktefelle": true,
+  "harFradrag": true,
   "beregningsperioder": [
     {
       "periode": {
