@@ -5,12 +5,6 @@
 
 <h3 class="beregning__heading">Slik beregnes stønaden din:</h3>
 
-{{#if totalSumForBeregningsperioder}}
-    <div>
-        <h4 style="float: left">Totalt beløp:</h4>
-        <h4 style="float: right">{{currency_no totalSumForBeregningsperioder}}</h4>
-    </div>
-{{/if}}
 {{#each beregningsperioder}}
     <table class="beregning">
         <tr>
