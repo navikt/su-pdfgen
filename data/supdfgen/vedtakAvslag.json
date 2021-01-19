@@ -25,13 +25,17 @@
   ],
   "harEktefelle": true,
   "halvGrunnbeløp": 10,
-  "beregning": {
-    "ytelsePerMåned": "12000",
-    "satsbeløpPerMåned": "20637",
-    "epsFribeløp": 12000,
-    "fradrag": {
-      "bruker": {
-        "fradrag": [
+  "beregningsperioder": [
+    {
+      "periode": {
+        "fraOgMed": "januar 2021",
+        "tilOgMed": "desember 2021"
+      },
+      "ytelsePerMåned": "12000",
+      "satsbeløpPerMåned": "20637",
+      "epsFribeløp": 12000,
+      "fradrag": {
+        "bruker": [
           {
             "type": "Pensjon",
             "beløp": 3000
@@ -45,20 +49,18 @@
             "beløp": 1000
           }
         ],
-        "harBruktForventetInntektIStedetForArbeidsinntekt": true,
-        "sum": 5000
-      },
-      "eps": {
-        "fradrag": [
-          {
-            "type": "Arbeidsinntekt",
-            "beløp": 1500
-          }
-        ],
-        "sum": 0
+        "eps": {
+          "fradrag": [
+            {
+              "type": "Arbeidsinntekt",
+              "beløp": 1500
+            }
+          ],
+          "harFradragMedSumSomErLavereEnnFribeløp": false
+        }
       }
     }
-  },
+  ],
   "saksbehandlerNavn": "Sak Saksbehandlersen",
   "attestantNavn": "Attestant Attestantsen"
 }
