@@ -17,3 +17,4 @@ spec:
   prometheus:
     enabled: true
     path: /prometheus
+  webproxy: true
