@@ -62,5 +62,6 @@
     }
   ],
   "saksbehandlerNavn": "Sak Saksbehandlersen",
-  "attestantNavn": "Attestant Attestantsen"
+  "attestantNavn": "Attestant Attestantsen",
+  "fritekst": "Dette er noe fritekst som saksbehandler har lagt inn."
 }
