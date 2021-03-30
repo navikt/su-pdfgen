@@ -1,0 +1,28 @@
+{{#> supdfgen/partials/avslagBase}}
+    <div class="mainContent">
+        <h3>Vedtak om opphør av supplerende stønad</h3>
+        {{> supdfgen/partials/fnr personalia }}
+
+        <p class="fritekst">{{fritekst}}</p>
+
+        {{#each avslagsgrunner}}
+            {{#eq this "FOR_HØY_INNTEKT"}}
+                {{#if harEktefelle}}
+                    <p>Inntekten du og ektefellen/samboeren din har til sammen er for høy.</p>
+                {{else}}
+                    <p>Du har for høy inntekt. </p>
+                {{/if}}
+            {{/eq}}
+            {{#eq this "SU_UNDER_MINSTEGRENSE" }}
+                <p>
+                    Stønaden vi har beregnet til deg er for lav til at den kan utbetales.
+                    Vi kan ikke utbetale stønad som er under to prosent av den høyeste stønadssatsen.
+                </p>
+            {{/eq}}
+        {{/each}}
+        {{#if beregningsperioder }}
+            {{> supdfgen/partials/beregning beregningsperioder }}
+        {{/if}}
+
+    </div>
+{{/supdfgen/partials/avslagBase}}
