@@ -1,0 +1,42 @@
+{{#> supdfgen/partials/base}}
+    <div class="mainContent">
+        <h2>Varsel om at vi vil ta opp stønaden din til ny vurdering</h2>
+        {{> supdfgen/partials/fnr personalia }}
+
+        <p>Vi har fått opplysninger som gjør det nødvendig å vurdere saken din på nytt.</p>
+
+        <p class="fritekst">{{fritekst}}</p>
+
+        <div class="info">
+            <h3>Du kan uttale deg i saken</h3>
+            <p>
+                Før vi gjør vedtak i saken, har du rett til å uttale deg. Fristen for å uttale seg er 14 dager etter at du har mottatt dette brevet.
+                Uttalelsen bør være skriftlig. Kontakt oss gjerne på telefon 55 55 33 34 for råd og veiledning.
+            </p>
+            <p>
+                Hvis du vil sende din uttalelse pr post kan du finne forside med adresse på nav.no under «Søknad og skjema»,
+                og «Pensjon», «Supplerende stønad til personer over 67 år» og «Ettersendelse».
+            </p>
+        </div>
+
+        <div class="info">
+            <h3>Plikt til å melde fra</h3>
+            <p>
+                Du har i tidligere vedtak blitt orientert om plikten din til å melde fra om endringer i forhold som kan ha betydning for retten til eller størrelsen på ytelsen din.
+            </p>
+        </div>
+
+        <div class="hilsen">
+            <p>
+                Med vennlig hilsen <br/>
+                {{#if saksbehandlerNavn}}{{saksbehandlerNavn}} hos {{/if}}NAV Familie- og pensjonsytelser Ålesund<br/>
+                <br />
+                Postadresse:<br />
+                NAV Familie- og pensjonsytelser Ålesund<br />
+                Postboks 6600 Etterstad<br />
+                0607 OSLO
+            </p>
+        </div>
+    </div>
+
+{{/supdfgen/partials/base}}
