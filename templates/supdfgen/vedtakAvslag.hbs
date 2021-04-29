@@ -79,17 +79,16 @@
             {{/each}}
         </ul>
 
-    {{#if beregningsperioder }}
-        {{> supdfgen/partials/beregning beregningsperioder }}
-    {{/if}}
-
-        <span>
-        Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ {{> supdfgen/partials/commaSeparate avslagsparagrafer}}.
-        </span>
-
-
         {{#if fritekst}}
             <p class="fritekst">{{fritekst}}</p>
         {{/if}}
+
+        {{#if beregningsperioder }}
+            {{> supdfgen/partials/beregning beregningsperioder }}
+        {{/if}}
+
+        <span>
+            Vedtaket er gjort etter loven om supplerende stønad for personer med kort botid i Norge §§ {{> supdfgen/partials/commaSeparate avslagsparagrafer}}.
+        </span>
     </div>
 {{/supdfgen/partials/avslagBase}}
