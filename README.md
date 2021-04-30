@@ -5,3 +5,17 @@ PDFene kan testes lokalt på `http://localhost:8081/api/v1/genpdf/<application>/
 http://localhost:8081/api/v1/genpdf/supdfgen/vedtakInnvilgelse
 
 Templatene vil bruke flettedata fra json-fil med samme navn som template i `data/supdfgen`
+
+## Hjelpefunksjoner
+
+https://github.com/navikt/pdfgen/blob/master/src/main/kotlin/no/nav/pdfgen/template/Helpers.kt
+
+### Stor forbokstav
+
+Eksempel `{{capitalize sats}}`
+
+### Kronebeløp
+
+Eksempel `{{currency_no satsBeløp true}}`
+
+Boolean-parameteret angir om beløpet skal avrundes til nærmeste hele krone.
