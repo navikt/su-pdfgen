@@ -18,4 +18,5 @@ Eksempel `{{capitalize sats}}`
 
 Eksempel `{{currency_no satsBeløp true}}`
 
-Boolean-parameteret angir om beløpet skal avrundes til nærmeste hele krone.
+Boolean-parameteret angir om beløpet skal avkortes til heltall, altså uten desimaler/øre. Merk at det ikke skjer noen avrunding,
+desimalene/ørene fjernes bare.
