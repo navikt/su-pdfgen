@@ -15,6 +15,7 @@
   "sats": "høy",
   "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67",
   "satsBeløp": 100,
+  "satsGjeldendeFraDato": "01.05.2020",
   "harEktefelle": true,
   "harFradrag": true,
   "beregningsperioder": [
