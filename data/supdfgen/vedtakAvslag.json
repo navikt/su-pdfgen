@@ -25,6 +25,9 @@
   ],
   "harEktefelle": true,
   "halvGrunnbeløp": 10,
+  "sats": "høy",
+  "satsBeløp": 100,
+  "satsGjeldendeFraDato": "01.05.2020",
   "beregningsperioder": [
     {
       "periode": {
