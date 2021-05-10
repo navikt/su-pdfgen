@@ -20,9 +20,13 @@
     {{/if}}
 </p>
 
-<p>
-    Vi bruker alltid det høyeste beløpet av arbeidsinntekten din og din forventede inntekt etter uførhet når vi beregner stønaden din. Du ser i beregningen hvilket beløp vi bruker.
-</p>
+{{#if forventetInntektStørreEnn0}}
+    <p>
+        Vi bruker alltid det høyeste beløpet av arbeidsinntekten din og din forventede inntekt etter uførhet når vi
+        beregner
+        stønaden din. Du ser i beregningen hvilket beløp vi bruker.
+    </p>
+{{/if}}
 
 {{#each beregningsperioder}}
     <table class="beregning">
