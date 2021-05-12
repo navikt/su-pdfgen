@@ -248,14 +248,15 @@
             </tr>
             <tr>
                 <td>Dato for utskrivelse:</td>
-            <td>
-            {{#if this.innlagtPåInstitusjon.datoForUtskrivelse}}
-                {{iso_to_date this.innlagtPåInstitusjon.datoForUtskrivelse}}
-            {{else}}
-                    Fortsatt innlagt
+                <td>
+                    {{#if this.innlagtPåInstitusjon.datoForUtskrivelse}}
+                        {{iso_to_date this.innlagtPåInstitusjon.datoForUtskrivelse}}
+                    {{else}}
+                        Fortsatt innlagt
+                    {{/if}}
                 </td>
-                </tr>
-            {{/if}}
+            </tr>
+
         {{/if}}
         <tr>
             <td>Deler du bolig med noen over 18 år?</td>
