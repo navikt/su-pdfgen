@@ -18,6 +18,7 @@
   "satsGjeldendeFraDato": "01.05.2020",
   "harEktefelle": true,
   "harFradrag": true,
+  "forventetInntektStørreEnn0": true,
   "beregningsperioder": [
     {
       "periode": {
