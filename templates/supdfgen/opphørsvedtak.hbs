@@ -5,25 +5,31 @@
 
         <p class="fritekst">{{fritekst}}</p>
 
-        {{#each avslagsgrunner}}
-            {{#eq this "UFØRHET"}}
-                <p>Mister uføretrygd </p>
-            {{/eq}}
+        <p>Vi har opphørt fordi:</p>
 
-            {{#eq this "FOR_HØY_INNTEKT"}}
-                {{#if harEktefelle}}
-                    <p>Inntekten du og ektefellen/samboeren din har til sammen er for høy.</p>
-                {{else}}
-                    <p>Du har for høy inntekt. </p>
-                {{/if}}
-            {{/eq}}
-            {{#eq this "SU_UNDER_MINSTEGRENSE" }}
-                <p>
-                    Stønaden vi har beregnet til deg er for lav til at den kan utbetales.
-                    Vi kan ikke utbetale stønad som er under to prosent av den høyeste stønadssatsen.
-                </p>
-            {{/eq}}
-        {{/each}}
+        <ul>
+            {{#each avslagsgrunner}}
+                {{#eq this "UFØRHET"}}
+                    <li>Du mister uføretrygd</li>
+                {{/eq}}
+
+                {{#eq this "FOR_HØY_INNTEKT"}}
+                    {{#if harEktefelle}}
+                        <li>Inntekten du og ektefellen/samboeren din har til sammen er for høy.</li>
+                    {{else}}
+                        <li>Du har for høy inntekt.</li>
+                    {{/if}}
+                {{/eq}}
+                {{#eq this "SU_UNDER_MINSTEGRENSE" }}
+                    <li>
+                        Stønaden vi har beregnet til deg er for lav til at den kan utbetales.
+                        Vi kan ikke utbetale stønad som er under to prosent av den høyeste stønadssatsen.
+                    </li>
+                {{/eq}}
+            {{/each}}
+        </ul>
+
+
         {{#if beregningsperioder }}
             {{> supdfgen/partials/beregning beregningsperioder }}
         {{/if}}
