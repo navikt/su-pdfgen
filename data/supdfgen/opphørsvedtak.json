@@ -11,6 +11,7 @@
     "poststed": "Oslo"
   },
   "avslagsgrunner": [
+    "UFØRHET",
     "SU_UNDER_MINSTEGRENSE"
   ],
   "avslagsparagrafer": [

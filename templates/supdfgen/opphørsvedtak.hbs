@@ -6,6 +6,10 @@
         <p class="fritekst">{{fritekst}}</p>
 
         {{#each avslagsgrunner}}
+            {{#eq this "UFØRHET"}}
+                <p>Mister uføretrygd </p>
+            {{/eq}}
+
             {{#eq this "FOR_HØY_INNTEKT"}}
                 {{#if harEktefelle}}
                     <p>Inntekten du og ektefellen/samboeren din har til sammen er for høy.</p>
