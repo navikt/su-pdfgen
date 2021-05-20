@@ -10,7 +10,7 @@
     "postnummer": "0186",
     "poststed": "Oslo"
   },
-  "avslagsgrunner": [
+  "opphørsgrunner": [
     "UFØRHET",
     "SU_UNDER_MINSTEGRENSE"
   ],
