@@ -5,15 +5,7 @@
 
         <p class="fritekst">{{fritekst}}</p>
 
-        <p>
-            Med vennlig hilsen <br/>
-            {{#if saksbehandlerNavn}}{{saksbehandlerNavn}} hos {{/if}}NAV Familie- og pensjonsytelser Ålesund<br/>
-            <br />
-            Postadresse:<br />
-            NAV Familie- og pensjonsytelser Ålesund<br />
-            Postboks 6600 Etterstad<br />
-            0607 OSLO
-        </p>
+    {{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
     </div>
 
 {{/supdfgen/partials/base}}
