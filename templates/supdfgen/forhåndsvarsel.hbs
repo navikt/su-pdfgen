@@ -11,7 +11,7 @@
             <h3>Du kan uttale deg i saken</h3>
             <p>
                 Før vi gjør vedtak i saken, har du rett til å uttale deg. Fristen for å uttale seg er 14 dager etter at du har mottatt dette brevet.
-                Uttalelsen bør være skriftlig. Kontakt oss gjerne på telefon 55 55 33 34 for råd og veiledning.
+                Uttalelsen bør være skriftlig. Kontakt oss gjerne på telefon 55 55 33 33 for råd og veiledning.
             </p>
             <p>
                 Hvis du vil sende din uttalelse pr post kan du finne forside med adresse på nav.no under «Søknad og skjema»,
@@ -26,17 +26,7 @@
             </p>
         </div>
 
-        <div class="hilsen">
-            <p>
-                Med vennlig hilsen <br/>
-                {{#if saksbehandlerNavn}}{{saksbehandlerNavn}} hos {{/if}}NAV Familie- og pensjonsytelser Ålesund<br/>
-                <br />
-                Postadresse:<br />
-                NAV Familie- og pensjonsytelser Ålesund<br />
-                Postboks 6600 Etterstad<br />
-                0607 OSLO
-            </p>
-        </div>
+    {{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
     </div>
 
 {{/supdfgen/partials/base}}
