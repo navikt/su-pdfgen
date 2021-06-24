@@ -12,7 +12,8 @@
   },
   "opphørsgrunner": [
     "UFØRHET",
-    "SU_UNDER_MINSTEGRENSE"
+    "SU_UNDER_MINSTEGRENSE",
+    "FORMUE"
   ],
   "avslagsparagrafer": [
     1,
@@ -63,5 +64,6 @@
   "sats": "høy",
   "satsBeløp": "19257",
   "satsGjeldendeFraDato": "01.05.2020",
-  "fritekst": "Her er friteksten jeg la til....."
+  "fritekst": "Her er friteksten jeg la til.....",
+  "halvGrunnbeløp": 50000
 }

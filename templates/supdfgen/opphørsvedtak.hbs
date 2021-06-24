@@ -10,22 +10,59 @@
         <ul>
             {{#each opphørsgrunner}}
                 {{#eq this "UFØRHET"}}
-                    <li>Vi har mottatt informasjon om at uføretrygden din er opphørt. Vilkårene i folketrygdloven §§ 12-4 til 12-7 er ikke lenger oppfylt.</li>
+                    <li>
+                        <p>
+                            Vi har mottatt opplysninger om at uføretrygden din er opphørt etter paragrafene 12-4 til
+                            12-7. Vi har derfor opphørt din supplerende stønad som ufør flyktning.
+                        </p>
+                    </li>
                 {{/eq}}
 
                 {{#eq this "FOR_HØY_INNTEKT"}}
                     {{#if harEktefelle}}
-                        <li>Inntekten du og ektefellen/samboeren din har til sammen er for høy.</li>
+                        <li>
+                            Nye opplysninger viser at inntekten du og ektefellen/samboeren din har til sammen er for
+                            høy. Vi har derfor opphørt din supplerende stønad som ufør flyktning.
+                        </li>
                     {{else}}
-                        <li>Du har for høy inntekt.</li>
+                        <li>
+                            Nye opplysninger viser at du har for høy inntekt. Vi har derfor opphørt din supplerende
+                            stønad som ufør flyktning.
+                        </li>
                     {{/if}}
                 {{/eq}}
                 {{#eq this "SU_UNDER_MINSTEGRENSE" }}
                     <li>
-                        Stønaden vi har beregnet til deg er for lav til at den kan utbetales.
-                        Vi kan ikke utbetale stønad som er under to prosent av den høyeste stønadssatsen.
+                        <p>
+                            Nye opplysninger viser at inntekten din er økt. Ny beregning av av stønaden viser at den er
+                            for lav til at den kan utbetales.
+                            Vi kan ikke utbetale stønad som er under to prosent av den høyeste stønadssatsen. Vi har
+                            derfor opphørt din supplerende stønad som ufør flyktning.
+                        </p>
                     </li>
                 {{/eq}}
+                {{#eq this "FORMUE" }}
+                    {{#if harEktefelle}}
+                        <li>
+                            <p> Nye opplysninger viser at formuen du og ektefellen/samboeren din har til sammen er mer
+                                enn halvparten av folketrygdens grunnbeløp.
+                                For tiden er dette {{halvGrunnbeløp}} kroner. Vi har derfor opphørt din supplerende
+                                stønad som ufør flyktning.
+                            </p>
+                        </li>
+                    {{else}}
+                        <li>
+                            <p>Nye opplysninger viser at formuen din er mer enn halvparten av grunnbeløpet, som for
+                                tiden er {{halvGrunnbeløp}} kroner. Vi har derfor opphørt din supplerende stønad som
+                                ufør flyktning.</p>
+                            <p> Hvis formuen din blir mindre, kan du søke om supplerende stønad på nytt.
+                                Du kan ikke gi bort formuen din for å få rett til supplerende stønad.
+                                Derfor må du dokumentere hva du har brukt formuen til hvis du søker på nytt.</p>
+                        </li>
+                    {{/if}}
+                {{/eq}}
+
+
             {{/each}}
         </ul>
 
