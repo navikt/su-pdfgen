@@ -53,5 +53,6 @@
     "harEktefelle": true,
     "satsBeløp": 20637,
     "satsGjeldendeFraDato": "01.05.2020",
-    "harFradrag": true
+    "harFradrag": true,
+    "gjeldendeMånedsutbetaling": 17083
 }
