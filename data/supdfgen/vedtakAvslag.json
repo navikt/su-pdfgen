@@ -14,14 +14,16 @@
     "INNLAGT_PÅ_INSTITUSJON",
     "BOR_OG_OPPHOLDER_SEG_I_NORGE",
     "PERSONLIG_OPPMØTE",
-    "FOR_HØY_INNTEKT"
+    "FOR_HØY_INNTEKT",
+    "MANGLENDE_DOKUMENTASJON"
   ],
   "avslagsparagrafer": [
     1,
     2,
     5,
     6,
-    7
+    7,
+    18
   ],
   "harEktefelle": true,
   "halvGrunnbeløp": 10,
