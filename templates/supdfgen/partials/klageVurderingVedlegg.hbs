@@ -1,0 +1,18 @@
+<div className="mainContent">
+    <h2>OVERSENDELSE TIL NAV KLAGEINSTANS/ NOTAT/ SUPPLERENDE STØNAD</h2>
+    <div class="preline">
+        Klager: {{personalia.fornavn}} {{personalia.etternavn}}
+        Fødselsnr: {{personalia.fødselsnummer}}
+    </div>
+
+    <pre>
+    HVA KLAGESAKEN GJELDER
+    …………
+    KLAGERS ANFØRSLER
+    …………
+    VURDERING AV KLAGEN
+    …………
+    </pre>
+    <p> fritekst: {{fritekst}} </p>
+    <p> Hjemler: §§ {{> supdfgen/partials/commaSeparate hjemler}}. </p>
+</div>
