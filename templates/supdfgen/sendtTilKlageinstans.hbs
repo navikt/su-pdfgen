@@ -2,36 +2,23 @@
     <div class="mainContent">
         <h2>Vi har sendt saken til NAV Klageinstans</h2>
         {{> supdfgen/partials/fnr personalia }}
-        <div class="preline">
-            «KLAGE - SUPPLERENDE STØNAD
-            KLAGER: {{personalia.fornavn}} {{personalia.etternavn}}
-            F.NR: {{personalia.fødselsnummer}}
-        </div>
-
         <p>Vi viser til din klage av {{klageDato}} på vedtak av {{vedtakDato}}.</p>
+        <p>Vi har vurdert klagen på vedtaket om supplerende stønad, og kommet fram til at
+            vedtaket ikke endres. NAV Klageinstans skal derfor vurdere saken på nytt.</p>
 
-        <p>Vi har tatt vedtaket opp til ny vurdering, men ikke funnet grunnlag for å gjøre det om.</p>
+        <p>Saksbehandlingstiden i NAV Klageinstans er vanligvis 12 uker</p>
 
-        <p>Saken er derfor oversendt til NAV Klageinstans for klagebehandling. Kopi av vårt oversendelsesbrev med vår
-            vurdering av din klage følger vedlagt.</p>
 
-        <p>Klageinstansen kan prøve alle sider av saken på et selvstendig grunnlag. Resultatet av klagebehandlingen kan
-            bli at vårt vedtak ikke blir endret eller at det blir endret helt eller delvis. Klageinstansen kan også
-            oppheve vedtaket vårt og sende saken tilbake til oss for helt eller delvis ny behandling. </p>
+        <h2>Dette har vi lagt vekt på vurderingen vår</h2>
+        <p> {{fritekst}} </p>
+        <p> hjemler: {{> supdfgen/partials/commaSeparate hjemler}}</p>
 
-        <p>Du vil få melding fra NAV Klageinstans når saken er avgjort.</p>
+        <p>Du kan sende merknader og dokumentasjon til NAV Klageinstans. Du finner første side for innsending på
+            nav.no/klage. Velg NAV Klageinstans.</p>
 
-        <p>Saksbehandlingstiden i NAV Klageinstans er vanligvis X uker</p>
-
-        <p>Har du spørsmål eller kommentarer til vårt oversendelsesbrev?
-            Kontakt NAV Klageinstans på nav.no eller på telefon 21 07 17 30. Vi kan lettere gi deg rask og god hjelp
+        <h2>Har du spørsmål?</h2>
+        <p>Kontakt NAV Klageinstans på nav.no eller på telefon 21 07 17 30. Vi kan lettere gi deg rask og god hjelp
             hvis du oppgir fødselsnummeret ditt når du tar kontakt med NAV. </p>
-
-        {{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
     </div>
-
-    <div class="pagebreak"/>
-    {{>supdfgen/partials/klageVurderingVedlegg }}
-
 {{/supdfgen/partials/base}}
 
