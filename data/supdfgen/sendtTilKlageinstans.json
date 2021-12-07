@@ -11,7 +11,7 @@
     "poststed": "Oslo"
   },
   "fritekst": "Her kommer det en lang fritekst om hvorfor saken din er sendt til klageinstansen.",
-  "hjemler": ["2, 3"],
+  "hjemler": ["2", "3"],
   "vedtakDato": "01-12-2021",
   "klageDato": "20-12-2021"
 }
