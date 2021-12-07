@@ -1,7 +1,13 @@
 <div class="hilsen">
     <p>
         Med vennlig hilsen <br/>
-        {{#if saksbehandler}}{{saksbehandler}}{{#if attestant}} og {{attestant}}{{/if}} hos {{/if}}NAV Familie- og pensjonsytelser Ålesund<br/>
+        {{#if saksbehandler}}
+            {{saksbehandler}}
+            {{#if attestant}}
+                {{#not_eq saksbehandler attestant}} og {{attestant}}{{/not_eq}}
+            {{/if}} hos
+        {{/if}}
+        NAV Familie- og pensjonsytelser Ålesund <br/>
         <br />
         Postadresse:<br />
         NAV Familie- og pensjonsytelser Ålesund<br />
