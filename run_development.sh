@@ -2,7 +2,7 @@
 
 CURRENT_PATH="$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
 
-docker pull navikt/pdfgen
+docker pull navikt/pdfgen:d84f2a198a1b05af62b87ce994f0a23e22260bca
 docker run \
         -v $CURRENT_PATH/templates:/app/templates \
         -v $CURRENT_PATH/fonts:/app/fonts \
