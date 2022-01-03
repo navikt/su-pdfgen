@@ -76,12 +76,12 @@
                     </tr>
                 {{/if}}
             {{/each}}
-        {{#not_eq 0.0 epsFribeløp}}
-            <tr>
-                <td>Fribeløp (Ektefelle/samboer)</td>
-                <td class="beregning__beløp">{{currency_no epsFribeløp}}</td>
-            </tr>
-        {{/not_eq}}
+            {{#gt epsFribeløp 0}}
+                <tr>
+                    <td>Fribeløp (Ektefelle/samboer)</td>
+                    <td class="beregning__beløp">{{currency_no epsFribeløp}}</td>
+                </tr>
+            {{/gt}}
         {{/if}}
         <tr>
             <td><b>Sum per måned</b></td>
