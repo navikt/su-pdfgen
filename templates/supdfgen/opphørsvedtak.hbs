@@ -3,8 +3,6 @@
         <h3>Vedtak om opphør av supplerende stønad</h3>
         {{> supdfgen/partials/fnr personalia }}
 
-        <p class="fritekst">{{fritekst}}</p>
-
         <p>Vi har opphørt fordi:</p>
 
         <ul>
@@ -69,11 +67,14 @@
                         </li>
                     {{/if}}
                 {{/eq}}
-
-
             {{/each}}
         </ul>
 
+        <span>
+            Vedtaket er gjort etter lov om supplerende stønad for personer med kort botid i Norge §§ {{> supdfgen/partials/commaSeparate avslagsparagrafer}}.
+        </span>
+
+        <p class="fritekst">{{fritekst}}</p>
 
         {{#if beregningsperioder }}
             {{> supdfgen/partials/beregning beregningsperioder }}
