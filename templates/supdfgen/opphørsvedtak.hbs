@@ -42,7 +42,7 @@
                 {{#eq this "UTENLANDSOPPHOLD" }}
                     <li>
                         <p>
-                            Nye opplysninger viser at du har vært mer enn 90 dager i utlandet.
+                            Nye opplysninger viser at du har vært eller planlegger å være mer enn 90 dager i utlandet. 
                             Vi har derfor opphørt din supplerende stønad som ufør flyktning.
                         </p>
                     </li>
@@ -69,6 +69,11 @@
                 {{/eq}}
             {{/each}}
         </ul>
+
+        <p>
+            Stønaden din blir derfor opphørt fra {{opphørsdato}}.
+            {{#if avkortingsBeløp}} Du har fått {{currency_no avkortingsBeløp}} for mye og det blir trukket fra ny stønadsperiode.{{/if}}
+        </p>
 
         <span>
             Vedtaket er gjort etter lov om supplerende stønad for personer med kort botid i Norge §§ {{> supdfgen/partials/commaSeparate avslagsparagrafer}}.
