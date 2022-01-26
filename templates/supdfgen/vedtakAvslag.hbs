@@ -5,10 +5,13 @@
 
         <p>Vi har avslått fordi:</p>
 
-        <ul class="avslagsgrunnContainer">
+        <ul>
             {{#each avslagsgrunner}}
                 {{#eq this "UFØRHET" }}
-                    <li>Du har ikke fått vedtak om uføretrygd der vilkårene i folketrygdloven §§ 12-4 til 12-7 er oppfylte. Dersom du ikke har søkt uføretrygd, kan du kontakte NAV lokalt for å få vurdert om det er aktuelt.</li>
+                    <li>Du har ikke fått vedtak om uføretrygd der vilkårene i folketrygdloven §§ 12-4 til 12-7 er
+                        oppfylte. Dersom du ikke har søkt uføretrygd, kan du kontakte NAV lokalt for å få vurdert om
+                        det er aktuelt.
+                    </li>
                 {{/eq}}
 
                 {{#eq this "FLYKTNING" }}
@@ -79,16 +82,22 @@
                 {{#eq this "MANGLENDE_DOKUMENTASJON" }}
                     <li>
                         <p>
-                            Du har ikke sendt inn den dokumentasjonen vi har bedt om. Vi har derfor ikke nødvendig informasjon for å kunne vurdere om du har rett til supplerende stønad.
+                            Du har ikke sendt inn den dokumentasjonen vi har bedt om. Vi har derfor ikke nødvendig
+                            informasjon for å kunne vurdere om du har rett til supplerende stønad.
                         </p>
                         <p>
-                            Hvis vi mottar den dokumentasjonen vi har bedt om innen klagefristen, vil vi vurdere søknaden på ny.
+                            Hvis vi mottar den dokumentasjonen vi har bedt om innen klagefristen, vil vi vurdere
+                            søknaden på ny.
                         </p>
-                        <br/>
                     </li>
                 {{/eq}}
             {{/each}}
         </ul>
+        <span>
+            Vedtaket er gjort etter lov om supplerende stønad for personer
+            med kort botid i Norge §§ {{> supdfgen/partials/commaSeparate avslagsparagrafer}}.
+        </span>
+
         {{#if fritekst}}
             <p class="fritekst">{{fritekst}}</p>
         {{/if}}
@@ -96,9 +105,5 @@
         {{#if beregningsperioder }}
             {{> supdfgen/partials/beregning beregningsperioder }}
         {{/if}}
-
-        <span>
-            Vedtaket er gjort etter lov om supplerende stønad for personer med kort botid i Norge §§ {{> supdfgen/partials/commaSeparate avslagsparagrafer}}.
-        </span>
     </div>
 {{/supdfgen/partials/avslagBase}}
