@@ -1,0 +1,115 @@
+<h4 class="keyValueOppsummering__heading">Din formue</h4>
+<table class="keyValueOppsummering">
+    {{#gt formueVerdier.søkersFormue.verdiSekundærBoliger 0}}
+        <tr>
+            <td>Verdi på bolig, fritidsbolig eller tomt utover vanlig bolig</td>
+            <td class="keyValueOppsummering__value">{{currency_no formueVerdier.søkersFormue.verdiSekundærBoliger}}</td>
+        </tr>
+    {{/gt}}
+
+    {{#gt formueVerdier.søkersFormue.verdiSekundærKjøretøyer 0}}
+        <tr>
+            <td>Verdi på sekundære kjøretøy</td>
+            <td class="keyValueOppsummering__value">{{currency_no
+                    formueVerdier.søkersFormue.verdiSekundærKjøretøyer}}</td>
+        </tr>
+    {{/gt}}
+
+    {{#gt formueVerdier.søkersFormue.pengerIBanken 0}}
+        <tr>
+            <td>Penger du har i banken</td>
+            <td class="keyValueOppsummering__value">{{currency_no formueVerdier.søkersFormue.pengerIBanken}}</td>
+        </tr>
+    {{/gt}}
+
+    {{#gt formueVerdier.søkersFormue.depositumskonto 0}}
+        <tr>
+            <td>Depositumskonto</td>
+            <td class="keyValueOppsummering__value">{{currency_no formueVerdier.søkersFormue.depositumskonto}}</td>
+        </tr>
+    {{/gt}}
+
+    {{#gt formueVerdier.søkersFormue.pengerIKontanter 0}}
+        <tr>
+            <td>Penger i kontanter</td>
+            <td class="keyValueOppsummering__value">{{currency_no formueVerdier.søkersFormue.pengerIKontanter}}</td>
+        </tr>
+    {{/gt}}
+    {{#gt formueVerdier.søkersFormue.aksjerOgVerdiPapir 0}}
+        <tr>
+            <td>Askjer, askjefond, eller verdipapirer</td>
+            <td class="keyValueOppsummering__value">{{currency_no formueVerdier.søkersFormue.aksjerOgVerdiPapir}}</td>
+        </tr>
+    {{/gt}}
+    {{#gt formueVerdier.søkersFormue.pengerSøkerSkyldes 0}}
+        <tr>
+            <td>Penger eller verdier noen skylder deg</td>
+            <td class="keyValueOppsummering__value">{{currency_no formueVerdier.søkersFormue.pengerSøkerSkyldes}}</td>
+        </tr>
+    {{/gt}}
+</table>
+
+{{#if formueVerdier.epsFormue}}
+    <h4 class="keyValueOppsummering__heading">Ektefelle/samboers formue</h4>
+    <table class="keyValueOppsummering">
+        {{#gt formueVerdier.epsFormue.verdiSekundærBoliger 0}}
+            <tr>
+                <td>Verdi på bolig, fritidsbolig eller tomt utover vanlig bolig</td>
+                <td class="keyValueOppsummering__value">{{currency_no
+                        formueVerdier.epsFormue.verdiSekundærBoliger}}</td>
+            </tr>
+        {{/gt}}
+
+        {{#gt formueVerdier.epsFormue.verdiSekundærKjøretøyer 0}}
+            <tr>
+                <td>Verdi på sekundære kjøretøy</td>
+                <td class="keyValueOppsummering__value">{{currency_no
+                        formueVerdier.epsFormue.verdiSekundærKjøretøyer}}</td>
+            </tr>
+        {{/gt}}
+
+        {{#gt formueVerdier.epsFormue.pengerIBanken 0}}
+            <tr>
+                <td>Penger du har i banken</td>
+                <td class="keyValueOppsummering__value">{{currency_no formueVerdier.epsFormue.pengerIBanken}}</td>
+            </tr>
+        {{/gt}}
+
+        {{#gt formueVerdier.epsFormue.depositumskonto 0}}
+            <tr>
+                <td>Depositumskonto</td>
+                <td class="keyValueOppsummering__value">{{currency_no formueVerdier.epsFormue.depositumskonto}}</td>
+            </tr>
+        {{/gt}}
+
+        {{#gt formueVerdier.epsFormue.pengerIKontanter 0}}
+            <tr>
+                <td>Penger i kontanter</td>
+                <td class="keyValueOppsummering__value">{{currency_no formueVerdier.epsFormue.pengerIKontanter}}</td>
+            </tr>
+        {{/gt}}
+        {{#gt formueVerdier.epsFormue.aksjerOgVerdiPapir 0}}
+            <tr>
+                <td>Askjer, askjefond, eller verdipapirer</td>
+                <td class="keyValueOppsummering__value">{{currency_no formueVerdier.epsFormue.aksjerOgVerdiPapir}}</td>
+            </tr>
+        {{/gt}}
+        {{#gt formueVerdier.epsFormue.pengerSøkerSkyldes 0}}
+            <tr>
+                <td>Penger eller verdier noen skylder deg</td>
+                <td class="keyValueOppsummering__value">{{currency_no formueVerdier.epsFormue.pengerSøkerSkyldes}}</td>
+            </tr>
+        {{/gt}}
+    </table>
+{{/if}}
+
+<table class="keyValueOppsummering">
+    <tr>
+        <td>
+            <h4>Totalt</h4>
+        </td>
+        <td class="keyValueOppsummering__value">
+            <h4>{{currency_no formueVerdier.totalt}}</h4>
+        </td>
+    </tr>
+</table>

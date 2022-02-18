@@ -11,11 +11,7 @@
     "poststed": "Oslo"
   },
   "avslagsgrunner": [
-    "INNLAGT_PÅ_INSTITUSJON",
-    "BOR_OG_OPPHOLDER_SEG_I_NORGE",
-    "PERSONLIG_OPPMØTE",
-    "FOR_HØY_INNTEKT",
-    "MANGLENDE_DOKUMENTASJON"
+    "FORMUE"
   ],
   "avslagsparagrafer": [
     1,
@@ -66,6 +62,27 @@
       }
     }
   ],
+  "formueVerdier": {
+    "søkersFormue": {
+      "verdiSekundærBoliger": 10,
+      "verdiSekundærKjøretøyer": 10,
+      "pengerIBanken": 10,
+      "depositumskonto": 0,
+      "pengerIKontanter": 10,
+      "aksjerOgVerdiPapir": 10,
+      "pengerSøkerSkyldes": 10
+    },
+    "epsFormue": {
+      "verdiSekundærBoliger": 10,
+      "verdiSekundærKjøretøyer": 10,
+      "pengerIBanken": 10,
+      "depositumskonto": 0,
+      "pengerIKontanter": 10,
+      "aksjerOgVerdiPapir": 10,
+      "pengerSøkerSkyldes": 10
+    },
+    "totalt": 120
+  },
   "saksbehandlerNavn": "Sak Saksbehandlersen",
   "attestantNavn": "Attestant Attestantsen",
   "fritekst": "Dette er noe fritekst som saksbehandler har lagt inn."
