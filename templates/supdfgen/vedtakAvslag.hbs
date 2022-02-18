@@ -102,6 +102,10 @@
             <p class="fritekst">{{fritekst}}</p>
         {{/if}}
 
+        {{#contains_all avslagsgrunner "FORMUE"}}
+            {{> supdfgen/partials/formueTabell formueVerdier}}
+        {{/contains_all}}
+
         {{#if beregningsperioder }}
             {{> supdfgen/partials/beregning beregningsperioder }}
         {{/if}}
