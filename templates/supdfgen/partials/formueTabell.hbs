@@ -47,11 +47,12 @@
             <td class="keyValueOppsummering__value">{{currency_no formueVerdier.søkersFormue.pengerSøkerSkyldes}}</td>
         </tr>
     {{/gt}}
-</table>
 
-{{#if formueVerdier.epsFormue}}
-    <h4 class="keyValueOppsummering__heading">Ektefelle/samboers formue</h4>
-    <table class="keyValueOppsummering">
+
+
+    {{#if formueVerdier.epsFormue}}
+        <h4 class="keyValueOppsummering__heading">Ektefelle/samboers formue</h4>
+
         {{#gt formueVerdier.epsFormue.verdiSekundærBoliger 0}}
             <tr>
                 <td>Verdi på bolig, fritidsbolig eller tomt utover vanlig bolig</td>
@@ -100,10 +101,8 @@
                 <td class="keyValueOppsummering__value">{{currency_no formueVerdier.epsFormue.pengerSøkerSkyldes}}</td>
             </tr>
         {{/gt}}
-    </table>
-{{/if}}
+    {{/if}}
 
-<table class="keyValueOppsummering">
     <tr>
         <td>
             <h4>Totalt</h4>
