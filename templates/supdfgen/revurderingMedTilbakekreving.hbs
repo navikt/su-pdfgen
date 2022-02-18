@@ -1,0 +1,18 @@
+{{#> supdfgen/partials/avslagBase}}
+    <div class="mainContent">
+        <h2>Vi har vurdert den supplerende stønaden din på nytt</h2>
+        {{> supdfgen/partials/fnr personalia }}
+
+        <div class="info">
+            <p class="fritekst">Vi kommer til å kreve tilbake {{bruttoTilbakekreving}}</p>
+        </div>
+
+        <div class="info">
+            <p class="fritekst">{{fritekst}}</p>
+        </div>
+
+        {{> supdfgen/partials/beregning beregningsperioder }}
+
+    </div>
+
+{{/supdfgen/partials/avslagBase}}
