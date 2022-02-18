@@ -67,7 +67,7 @@
       "verdiSekundærBoliger": 10,
       "verdiSekundærKjøretøyer": 10,
       "pengerIBanken": 10,
-      "depositumskonto": 0,
+      "depositumskonto": 10,
       "pengerIKontanter": 10,
       "aksjerOgVerdiPapir": 10,
       "pengerSøkerSkyldes": 10
@@ -76,7 +76,7 @@
       "verdiSekundærBoliger": 10,
       "verdiSekundærKjøretøyer": 10,
       "pengerIBanken": 10,
-      "depositumskonto": 0,
+      "depositumskonto": 10,
       "pengerIKontanter": 10,
       "aksjerOgVerdiPapir": 10,
       "pengerSøkerSkyldes": 10
