@@ -1,4 +1,4 @@
-<h3 class="beregning__heading">Slik beregner vi stønaden din:</h3>
+<h3 class="keyValueOppsummering__heading">Slik beregner vi stønaden din:</h3>
 
 <p>
     {{#if satsGrunn}}
@@ -32,26 +32,26 @@
 {{/if}}
 
 {{#each beregningsperioder}}
-    <table class="beregning">
+    <table class="keyValueOppsummering">
         <tr>
             <td><b>{{capitalize periode.fraOgMed}} til {{periode.tilOgMed}}</b></td>
         </tr>
 
         <tr>
             <td>Supplerende stønad, {{sats}} sats</td>
-            <td class="beregning__beløp">{{currency_no satsbeløpPerMåned}}</td>
+            <td class="keyValueOppsummering__value">{{currency_no satsbeløpPerMåned}}</td>
         </tr>
 
         {{#if fradrag.bruker}}
             {{#each fradrag.bruker}}
                 <tr>
                     <td>{{type}}</td>
-                    <td class="beregning__beløp">- {{currency_no beløp}}</td>
+                    <td class="keyValueOppsummering__value">- {{currency_no beløp}}</td>
                 </tr>
                 {{#if utenlandskInntekt}}
                     <tr>
                         <td colspan="2">
-                            <ol class="beregning__utenlandsk">
+                            <ol class="keyValueOppsummering__keyInfo">
                                 <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no
                                         utenlandskInntekt.beløpIUtenlandskValuta}}</li>
                                 <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
@@ -66,12 +66,12 @@
             {{#each fradrag.eps.fradrag}}
                 <tr>
                     <td>{{type}} (Ektefelle/samboer)</td>
-                    <td class="beregning__beløp">- {{currency_no beløp}}</td>
+                    <td class="keyValueOppsummering__value">- {{currency_no beløp}}</td>
                 </tr>
                 {{#if utenlandskInntekt}}
                     <tr>
                         <td colspan="2">
-                            <ol class="beregning__utenlandsk">
+                            <ol class="keyValueOppsummering__keyInfo">
                                 <li>Beløp i utenlandsk valuta: {{utenlandskInntekt.valuta}} {{currency_no
                                         utenlandskInntekt.beløpIUtenlandskValuta}}</li>
                                 <li>Kurs ved beregning: {{currency_no utenlandskInntekt.kurs}}</li>
@@ -83,13 +83,13 @@
             {{#gt epsFribeløp 0}}
                 <tr>
                     <td>Fribeløp (Ektefelle/samboer)</td>
-                    <td class="beregning__beløp">{{currency_no epsFribeløp}}</td>
+                    <td class="keyValueOppsummering__value">{{currency_no epsFribeløp}}</td>
                 </tr>
             {{/gt}}
         {{/if}}
         <tr>
             <td><b>Sum per måned</b></td>
-            <td class="beregning__beløp"><b>{{currency_no ytelsePerMåned}}</b></td>
+            <td class="keyValueOppsummering__value"><b>{{currency_no ytelsePerMåned}}</b></td>
         </tr>
     </table>
     {{#if fradrag.eps.harFradragMedSumSomErLavereEnnFribeløp}}
