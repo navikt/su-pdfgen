@@ -1,0 +1,7 @@
+{{#eq this.length 1}}
+    $ {{#each this}}{{#if @index}}{{#if @last}} og {{/if}}{{#unless @last}}, {{/unless}}{{/if}}{{.}}{{/each}}
+{{/eq}}
+{{#gt this.length 1}}
+    $$ {{#each this}}{{#if @index}}{{#if @last}} og {{/if}}{{#unless @last}}, {{/unless}}{{/if}}{{.}}{{/each}}
+{{/gt}}
+
