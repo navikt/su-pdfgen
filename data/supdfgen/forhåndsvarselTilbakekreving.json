@@ -1,0 +1,16 @@
+{
+  "personalia": {
+    "dato":"01.01.2020",
+    "fødselsnummer": "12345678901",
+    "fornavn": "Tore",
+    "etternavn": "Strømøy",
+    "adresse": "en Adresse",
+    "husnummer": "4C",
+    "bruksenhet": "H102",
+    "postnummer": "0186",
+    "poststed": "Oslo"
+  },
+  "tittel": "Varsel om mulig tilbakekreving",
+  "fritekst": "Her kommer det en lang fritekst om hvorfor vi vurderer saken din på nytt.",
+  "bruttoTilbakekreving": 5000
+}

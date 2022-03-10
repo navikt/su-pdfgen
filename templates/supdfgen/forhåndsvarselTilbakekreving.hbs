@@ -1,0 +1,32 @@
+{{#> supdfgen/partials/base}}
+    <div class="mainContent">
+        <h2>Varsel om mulig tilbakekreing</h2>
+        {{> supdfgen/partials/fnr personalia }}
+
+        <p>Våre beregninger viser at du skylder oss {{bruttoTilbakekreving}} kr.</p>
+
+        <p class="fritekst">{{fritekst}}</p>
+
+        <div class="info">
+            <h3>Du kan uttale deg i saken</h3>
+            <p>
+                Før vi gjør vedtak i saken, har du rett til å uttale deg. Fristen for å uttale seg er 14 dager etter at du har mottatt dette brevet.
+                Uttalelsen bør være skriftlig. Kontakt oss gjerne på telefon 55 55 33 33 for råd og veiledning.
+            </p>
+            <p>
+                Hvis du vil sende din uttalelse pr post kan du finne forside med adresse på nav.no under «Søknad og skjema»,
+                og «Pensjon», «Supplerende stønad til ufør flyktning» og «Ettersendelse».
+            </p>
+        </div>
+
+        <div class="info">
+            <h3>Plikt til å melde fra</h3>
+            <p>
+                Du har i tidligere vedtak blitt orientert om plikten din til å melde fra om endringer i forhold som kan ha betydning for retten til eller størrelsen på ytelsen din.
+            </p>
+        </div>
+
+        {{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
+    </div>
+
+{{/supdfgen/partials/base}}

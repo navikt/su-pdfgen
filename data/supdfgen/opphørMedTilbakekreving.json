@@ -1,0 +1,70 @@
+{
+  "personalia": {
+    "dato": "01.01.2020",
+    "fødselsnummer": "12345678901",
+    "fornavn": "Tore",
+    "etternavn": "Strømøy",
+    "adresse": "en Adresse",
+    "husnummer": "4C",
+    "bruksenhet": "H102",
+    "postnummer": "0186",
+    "poststed": "Oslo"
+  },
+  "opphørsgrunner": [
+    "UFØRHET",
+    "SU_UNDER_MINSTEGRENSE",
+    "FORMUE"
+  ],
+  "avslagsparagrafer": [
+    1,
+    2,
+    5,
+    6,
+    7
+  ],
+  "harEktefelle": true,
+  "beregningsperioder": [
+    {
+      "periode": {
+        "fraOgMed": "januar 2021",
+        "tilOgMed": "desember 2021"
+      },
+      "ytelsePerMåned": "12000",
+      "satsbeløpPerMåned": "20637",
+      "epsFribeløp": 12000,
+      "fradrag": {
+        "bruker": [
+          {
+            "type": "Pensjon",
+            "beløp": 3000
+          },
+          {
+            "type": "Arbeidsinntekt",
+            "beløp": 1500
+          },
+          {
+            "type": "UtenlandskInntekt",
+            "beløp": 1000
+          }
+        ],
+        "eps": {
+          "fradrag": [
+            {
+              "type": "Arbeidsinntekt",
+              "beløp": 1500
+            }
+          ],
+          "harFradragMedSumSomErLavereEnnFribeløp": false
+        }
+      }
+    }
+  ],
+  "saksbehandlerNavn": "Sak Saksbehandlersen",
+  "attestantNavn": "Attestant Attestantsen",
+  "sats": "høy",
+  "satsBeløp": "19257",
+  "satsGjeldendeFraDato": "01.05.2020",
+  "fritekst": "Her er friteksten jeg la til.....",
+  "halvGrunnbeløp": 50000,
+  "bruttoTilbakekreving": 9999
+}
