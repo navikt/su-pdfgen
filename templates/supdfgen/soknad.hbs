@@ -461,17 +461,6 @@
         {{/if}}
 
         <tr>
-            <td>Har du mottatt sosialstønad i løpet av de siste tre månedene?</td>
-            <td>{{#if this.sosialstønadBeløp}} Ja {{else}} Nei {{/if}}</td>
-        </tr>
-        {{#if this.sosialstønadBeløp}}
-            <tr>
-                <td>Beløp i kroner for alle tre månedene (valgfri)</td>
-                <td>{{currency_no this.sosialstønadBeløp}}</td>
-            </tr>
-        {{/if}}
-
-        <tr>
             <td>Har du trygdeytelser i utlandet?</td>
             <td>{{#if this.trygdeytelseIUtlandet}} Ja {{else}} Nei {{/if}}</td>
         </tr>
@@ -661,17 +650,6 @@
                     <tr>
                         <td>Hvilke?</td>
                         <td>{{this.søktAndreYtelserIkkeBehandletBegrunnelse}}</td>
-                    </tr>
-                {{/if}}
-
-                <tr>
-                    <td>Har du mottatt sosialstønad i løpet av de siste tre månedene?</td>
-                    <td>{{#if this.sosialstønadBeløp}} Ja {{else}} Nei {{/if}}</td>
-                </tr>
-                {{#if this.sosialstønadBeløp}}
-                    <tr>
-                        <td>Beløp i kroner for alle tre månedene (valgfri)</td>
-                        <td>{{currency_no this.sosialstønadBeløp}}</td>
                     </tr>
                 {{/if}}
 
