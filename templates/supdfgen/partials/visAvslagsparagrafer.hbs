@@ -1,0 +1,5 @@
+{{#if this.[1]}}
+    §§ {{#each this}}{{#if @index}}{{#if @last}} og {{/if}}{{#unless @last}}, {{/unless}}{{/if}}{{.}}{{/each}}
+{{else}}
+    § {{#each this}}{{#if @index}}{{#if @last}} og {{/if}}{{#unless @last}}, {{/unless}}{{/if}}{{.}}{{/each}}
+{{/if}}
