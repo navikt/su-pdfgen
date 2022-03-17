@@ -1,0 +1,19 @@
+<div>
+    <h3>Oversikt</h3>
+    <p>Beregning av feilutbetaling inkludert eventuelt skatt.</p>
+    <p>Beløpet vi krever tilbake reduseres for skatt.</p>
+    <table class="tabell">
+      <tr class="tabellrad">
+        <th>Periode</th>
+        <th>Feilutbetalt beløp</th>
+        <th>Tilbakebetaling</th>
+      </tr>
+      {{#each tilbakekreving}}
+        <tr class="tabellrad">
+          <td class="tabellcol">{{periode}}</td>
+          <td class="tabellcol">{{beløp}} kr</td>
+          <td class="tabellcol">100 %</td>
+        </tr>
+      {{/each}}
+    </table>
+</div>

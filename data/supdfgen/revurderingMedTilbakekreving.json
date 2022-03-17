@@ -54,5 +54,16 @@
     "satsBeløp": 20637,
     "satsGjeldendeFraDato": "01.05.2020",
     "harFradrag": true,
-    "bruttoTilbakekreving": 9999
+    "tilbakekreving": [
+        {
+            "periode": "Januar 2022 - Februar 2022",
+            "beløp": 3000,
+        },
+        {
+            "periode": "Februar 2022 - Mars 2022",
+            "beløp": 3000,
+        }
+    ],
+    "periodeStart": "Januar 2022",
+    "periodeSlutt":  "Mars 2022"
 }
