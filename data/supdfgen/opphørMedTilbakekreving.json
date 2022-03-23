@@ -23,6 +23,9 @@
     7
   ],
   "harEktefelle": true,
+  "fritekst": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+  "saksbehandlerNavn": "Norunn Selstad",
+  "attestantNavn": "Jonny Johansen",
   "beregningsperioder": [
     {
       "periode": {
@@ -59,12 +62,21 @@
       }
     }
   ],
-  "saksbehandlerNavn": "Sak Saksbehandlersen",
-  "attestantNavn": "Attestant Attestantsen",
   "sats": "høy",
-  "satsBeløp": "19257",
+  "harEktefelle": true,
+  "satsBeløp": 20637,
   "satsGjeldendeFraDato": "01.05.2020",
-  "fritekst": "Her er friteksten jeg la til.....",
-  "halvGrunnbeløp": 50000,
-  "bruttoTilbakekreving": 9999
+  "harFradrag": true,
+  "tilbakekreving": [
+    {
+      "periode": "Januar 2022 - Februar 2022",
+      "beløp": 3000,
+    },
+    {
+      "periode": "Februar 2022 - Mars 2022",
+      "beløp": 3000,
+    }
+  ],
+  "periodeStart": "Januar 2022",
+  "periodeSlutt":  "Mars 2022"
 }

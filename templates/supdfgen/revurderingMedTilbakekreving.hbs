@@ -1,17 +1,18 @@
 {{#> supdfgen/partials/avslagBase}}
     <div class="mainContent">
-        <h2>Vi har vurdert den supplerende stønaden din på nytt</h2>
+        <h2>Du må betale tilbake supplerende stønad</h2>
         {{> supdfgen/partials/fnr personalia }}
 
-        <div class="info">
-            <p class="fritekst">Vi kommer til å kreve tilbake {{bruttoTilbakekreving}}</p>
-        </div>
+        <p>Du har fått for mye supplerende stønad utbetalt fra {{periodeStart}} til {{periodeSlutt}}.</p>
 
-        <div class="info">
-            <p class="fritekst">{{fritekst}}</p>
-        </div>
+        <h3>Hvordan har vi kommet frem til dette</h3>
+        <p class="fritekst">{{fritekst}}</p>
+        <p>Vedtaket er gjort etter reglene i lov om supplerende stønad § 13.</p>
 
-        {{> supdfgen/partials/beregning beregningsperioder }}
+        <h3>Hvordan betale tilbake pengene du skylder</h3>
+        <p>Du vil i løpet av 3-7 dager motta et krav med informasjon om hvordan du betaler tilbake det du skylder. Du finner mer informasjon på www.nav.no/innkreving.</p>
+
+        {{> supdfgen/partials/tilbakekrevingTabell tilbakekreving=tilbakekreving }}
 
     </div>
 

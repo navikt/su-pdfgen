@@ -12,5 +12,19 @@
   },
   "tittel": "Varsel om mulig tilbakekreving",
   "fritekst": "Her kommer det en lang fritekst om hvorfor vi vurderer saken din på nytt.",
-  "bruttoTilbakekreving": 5000
+  "bruttoTilbakekreving": 5000,
+  "opphør": true,
+  "dato": "1.januar 2022",
+  "periodeStart": "1. Januar 2022",
+  "periodeSlutt":  "31. Mars 2022",
+  "tilbakekreving": [
+    {
+      "periode": "Januar 2022 - Februar 2022",
+      "feilutbetalt": 3000
+    },
+    {
+      "periode": "Februar 2022 - Mars 2022",
+      "feilutbetalt": 3000
+    }
+  ]
 }

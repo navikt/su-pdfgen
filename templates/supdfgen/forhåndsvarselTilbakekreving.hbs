@@ -1,30 +1,46 @@
 {{#> supdfgen/partials/base}}
     <div class="mainContent">
-        <h2>Varsel om mulig tilbakekreing</h2>
+        {{#if opphør}}
+            <h2>Varsel om opphør og NAV vurderer å kreve tilbake feilutbetalt supplerende stønad</h2>
+        {{else}}
+            <h2>Varsel om at NAV vurderer å kreve tilbake feilutbetalt supplerende stønad</h2>
+        {{/if}}
         {{> supdfgen/partials/fnr personalia }}
 
-        <p>Våre beregninger viser at du skylder oss {{bruttoTilbakekreving}} kr.</p>
+        <p>NAV Familie- og pensjonsytelser viser til vedtak av {{dato}}, hvor det er lagt til grunn at du har fått utbetalt for mye supplerende stønad i perioden {{periodeStart}} til {{periodeSlutt}}.</p>
 
+        <p>Beløpet er {{bruttoTilbakekreving}} kroner før skatt.</p>
+
+        <p>Du finner flere detaljer om feilutbetalt beløp lenger ned i brevet.</p>
+
+        <h3>Hva har skjedd</h3>
         <p class="fritekst">{{fritekst}}</p>
 
-        <div class="info">
-            <h3>Du kan uttale deg i saken</h3>
-            <p>
-                Før vi gjør vedtak i saken, har du rett til å uttale deg. Fristen for å uttale seg er 14 dager etter at du har mottatt dette brevet.
-                Uttalelsen bør være skriftlig. Kontakt oss gjerne på telefon 55 55 33 33 for råd og veiledning.
-            </p>
-            <p>
-                Hvis du vil sende din uttalelse pr post kan du finne forside med adresse på nav.no under «Søknad og skjema»,
-                og «Pensjon», «Supplerende stønad til ufør flyktning» og «Ettersendelse».
-            </p>
-        </div>
+        <h3>Dette legger vi vekt på i vurderingen vår</h3>
+        <p>Når vi avgjør om du skal betale tilbake vurderer vi:</p>
+        <ul>
+            <li>Om du forsto eller burde forstått at beløpet du fikk utbetalt var feil</li>
+            <li>Om du har gitt riktig informasjon til NAV</li>
+            <li>Om du har gitt all informasjon til NAV i rett tid</li>
+            <li>Hvilken informasjon du har fått fra NAV, blant annet i vedtak</li>
+        </ul>
 
-        <div class="info">
-            <h3>Plikt til å melde fra</h3>
-            <p>
-                Du har i tidligere vedtak blitt orientert om plikten din til å melde fra om endringer i forhold som kan ha betydning for retten til eller størrelsen på ytelsen din.
-            </p>
-        </div>
+        <p>Selv om det er NAV som er skyld i feilutbetalingen, kan vi kreve at du betaler tilbake pengene hvis du forsto eller burde forstått at utbetalingen skyldtes en feil.</p>
+
+        <h3>Reglene for tilbakekreving</h3>
+        <p>Hvis du forsto eller burde forstått at utbetalingen som du har mottatt er gjort på feil grunnlag, skal det feilutbetalte beløpet kreves tilbakebetalt. Dette gjelder uavhengig av om det er NAV eller du som er skyld i feilutbetalingen/har forårsaket feilutbetalingen.</p>
+        <p>Dette følger av lov om supplerende stønad § 13.</p>
+        <p>Dersom NAV fatter vedtak om at du skal betale tilbake det du har fått for mye utbetalt, får du nærmere beskjed i vedtaket om hvordan tilbakebetalingen skal skje.</p>
+
+        <h3>Hvordan du går frem hvis du ønsker å uttale deg i saken</h3>
+        <p>
+            Du har rett til å uttale deg, skriftlig eller muntlig, før vi tar den endelige avgjørelsen om tilbakebetaling. Du har også som hovedregel rett til å se sakens dokumenter etter bestemmelsene i forvaltningsloven § 18. Fristen for å gi uttale er 14 dager etter at du har mottatt dette brevet.
+        </p>
+        <p>
+            Du kan uttale deg ved å logge inn på nav.no eller du kan sende et skriftlig svar sammen med vedlagte forside.
+        </p>
+
+        {{> supdfgen/partials/tilbakekrevingTabell tilbakekreving=tilbakekreving }}
 
         {{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
     </div>
