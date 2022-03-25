@@ -1,10 +1,7 @@
 {{#> supdfgen/partials/base}}
     <div class="mainContent">
-        {{#if opphør}}
-            <h2>Varsel om opphør og NAV vurderer å kreve tilbake feilutbetalt supplerende stønad</h2>
-        {{else}}
-            <h2>Varsel om at NAV vurderer å kreve tilbake feilutbetalt supplerende stønad</h2>
-        {{/if}}
+        <h2>Varsel om at NAV vurderer å kreve tilbake feilutbetalt supplerende stønad</h2>
+
         {{> supdfgen/partials/fnr personalia }}
 
         <p>NAV Familie- og pensjonsytelser viser til vedtak av {{dato}}, hvor det er lagt til grunn at du har fått utbetalt for mye supplerende stønad i perioden {{periodeStart}} til {{periodeSlutt}}.</p>
@@ -39,8 +36,6 @@
         <p>
             Du kan uttale deg ved å logge inn på nav.no eller du kan sende et skriftlig svar sammen med vedlagte forside.
         </p>
-
-        {{> supdfgen/partials/tilbakekrevingTabell tilbakekreving=tilbakekreving }}
 
         {{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
     </div>

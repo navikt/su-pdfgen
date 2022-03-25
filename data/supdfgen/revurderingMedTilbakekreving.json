@@ -56,14 +56,14 @@
     "harFradrag": true,
     "tilbakekreving": [
         {
-            "periode": "Januar 2022 - Februar 2022",
-            "beløp": 3000,
+            "periode": "1. Januar 2022 - 31. Januar 2022",
+            "beløp": "3 000"
         },
         {
-            "periode": "Februar 2022 - Mars 2022",
-            "beløp": 3000,
+            "periode": "1. Februar 2022 - 28. Februar 2022",
+            "beløp": "3 000"
         }
     ],
-    "periodeStart": "Januar 2022",
-    "periodeSlutt":  "Mars 2022"
+    "periodeStart": "1. Januar 2022",
+    "periodeSlutt":  "28. Februar 2022"
 }
