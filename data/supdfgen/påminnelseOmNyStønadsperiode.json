@@ -1,0 +1,16 @@
+{
+  "personalia": {
+    "dato": "28.10.2021",
+    "fødselsnummer": "12345678901",
+    "fornavn": "Tore",
+    "etternavn": "Strømøy",
+    "adresse": "en Adresse",
+    "husnummer": "4C",
+    "bruksenhet": "H102",
+    "postnummer": "0186",
+    "poststed": "Oslo",
+    "saksnummer": 1234
+  },
+  "utløpsdato": "31.03.2022,",
+  "halvtGrunnbeløp": 55.449
+}
