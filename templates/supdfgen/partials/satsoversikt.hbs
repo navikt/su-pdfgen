@@ -1,0 +1,34 @@
+{{#if satsoversikt}}
+    <p>Maksimal ytelse per måned (før eventuelle fratrekk) bestemmes av sivilstatus og bosituasjon. Følgende vurderinger er lagt til grunn:</p>
+    <p>
+        <table class="tabell-auto">
+            <tr class="tabellrad">
+                <th>Periode</th>
+                <th>Vurdering</th>
+                <th>Sats</th>
+                <th>Beløp</th>
+            </tr>
+            {{#each satsoversikt.perioder}}
+                <tr class="tabellrad">
+                    <td class="tabellcol">{{fraOgMed}}-{{tilOgMed}}</td>
+                    <td class="tabellcol">
+                        {{#if satsGrunn}}
+                            {{#eq satsGrunn "ENSLIG"}}
+                                Deler ikke bolig med voksne barn eller andre voksne.{{/eq}}
+                            {{#eq satsGrunn "DELER_BOLIG_MED_VOKSNE_BARN_ELLER_ANNEN_VOKSEN"}}
+                                Deler bolig med voksne barn eller andre voksne.{{/eq}}
+                            {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67"}}
+                                Ektefelle eller samboer er under 67 år og ikke ufør flyktning.{{/eq}}
+                            {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_67_ELLER_ELDRE"}}
+                                Ektefelle eller samboer er 67 år eller eldre.{{/eq}}
+                            {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67_UFØR_FLYKTNING"}}
+                                Ektefelle eller samboer under 67 år og ufør flyktning.{{/eq}}
+                        {{/if}}
+                    </td>
+                    <td class="tabellcol">{{capitalize sats}}</td>
+                    <td class="tabellcol">{{satsBeløp}}</td>
+                </tr>
+            {{/each}}
+        </table>
+    </p>
+{{/if}}

@@ -12,10 +12,6 @@
   },
   "fradato": "januar 2021",
   "tildato": "desember 2021",
-  "sats": "høy",
-  "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67",
-  "satsBeløp": 100,
-  "satsGjeldendeFraDato": "01.05.2020",
   "harEktefelle": true,
   "harFradrag": true,
   "forventetInntektStørreEnn0": true,
@@ -65,7 +61,8 @@
           "fradrag": [],
           "harFradragMedSumSomErLavereEnnFribeløp": true
         }
-      }
+      },
+      "sats": "høy"
     },
     {
       "periode": {
@@ -82,10 +79,29 @@
             "beløp": 1500
           }
         ]
-      }
+      },
+      "sats": "høy"
     }
   ],
   "saksbehandlerNavn": "Sak Saksbehandlersen",
   "attestantNavn": "Attestant Attestantsen",
-  "fritekst": "Dette er noe fritekst som saksbehandler har lagt inn."
+  "fritekst": "Dette er noe fritekst som saksbehandler har lagt inn.",
+  "satsoversikt": {
+    "perioder": [
+      {
+        "fraOgMed": "01.01.2020",
+        "tilOgMed": "31.04.2020",
+        "sats": "høy",
+        "satsBeløp": 20637,
+        "satsGrunn": "ENSLIG"
+      },
+      {
+        "fraOgMed": "01.05.2020",
+        "tilOgMed": "31.12.2020",
+        "sats": "ordinær",
+        "satsBeløp": 19250,
+        "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67"
+      }
+    ]
+  }
 }

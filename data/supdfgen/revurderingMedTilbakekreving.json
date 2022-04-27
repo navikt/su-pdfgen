@@ -46,13 +46,11 @@
                     ],
                     "harFradragMedSumSomErLavereEnnFribeløp": false
                 }
-            }
+            },
+            "sats": "høy"
         }
     ],
-    "sats": "høy",
     "harEktefelle": true,
-    "satsBeløp": 20637,
-    "satsGjeldendeFraDato": "01.05.2020",
     "harFradrag": true,
     "tilbakekreving": [
         {
@@ -65,5 +63,23 @@
         }
     ],
     "periodeStart": "1. Januar 2022",
-    "periodeSlutt":  "28. Februar 2022"
+    "periodeSlutt":  "28. Februar 2022",
+    "satsoversikt": {
+        "perioder": [
+            {
+                "fraOgMed": "01.01.2020",
+                "tilOgMed": "31.04.2020",
+                "sats": "høy",
+                "satsBeløp": 20637,
+                "satsGrunn": "ENSLIG"
+            },
+            {
+                "fraOgMed": "01.05.2020",
+                "tilOgMed": "31.12.2020",
+                "sats": "ordinær",
+                "satsBeløp": 19250,
+                "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67"
+            }
+        ]
+    }
 }

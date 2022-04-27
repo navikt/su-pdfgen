@@ -56,14 +56,30 @@
           ],
           "harFradragMedSumSomErLavereEnnFribeløp": false
         }
-      }
+      },
+      "sats": "høy"
     }
   ],
   "saksbehandlerNavn": "Sak Saksbehandlersen",
   "attestantNavn": "Attestant Attestantsen",
-  "sats": "høy",
-  "satsBeløp": "19257",
-  "satsGjeldendeFraDato": "01.05.2020",
   "fritekst": "Her er friteksten jeg la til.....",
-  "halvGrunnbeløp": 50000
+  "halvGrunnbeløp": 50000,
+  "satsoversikt": {
+    "perioder": [
+      {
+        "fraOgMed": "01.01.2020",
+        "tilOgMed": "31.04.2020",
+        "sats": "høy",
+        "satsBeløp": 20637,
+        "satsGrunn": "ENSLIG"
+      },
+      {
+        "fraOgMed": "01.05.2020",
+        "tilOgMed": "31.12.2020",
+        "sats": "ordinær",
+        "satsBeløp": 19250,
+        "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67"
+      }
+    ]
+  }
 }

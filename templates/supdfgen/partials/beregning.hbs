@@ -1,20 +1,8 @@
 <h3 class="keyValueOppsummering__heading">Slik beregner vi stønaden din:</h3>
 
+<p>{{> supdfgen/partials/satsoversikt satsoversikt }}</p>
+
 <p>
-    {{#if satsGrunn}}
-        Du får {{sats}} sats fordi
-        {{#eq satsGrunn "ENSLIG"}}du ikke deler bolig med voksne barn eller andre voksne.{{/eq}}
-        {{#eq satsGrunn "DELER_BOLIG_MED_VOKSNE_BARN_ELLER_ANNEN_VOKSEN"}}
-            du deler bolig med voksne barn eller andre voksne.{{/eq}}
-        {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67"}}din ektefelle eller samboer er under 67 år.{{/eq}}
-        {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_67_ELLER_ELDRE"}}
-            du deler bolig med ektefelle eller samboer på 67 år eller eldre.{{/eq}}
-        {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67_UFØR_FLYKTNING"}}
-            du deler bolig med ektefelle eller samboer under 67 år som er ufør flyktning.{{/eq}}
-    {{/if}}
-
-    {{capitalize sats}} sats fra {{satsGjeldendeFraDato}} er {{currency_no satsBeløp true}} kroner i måneden.
-
     {{#if harFradrag}}
         Vi har redusert stønaden fordi du {{#if harEktefelle}}  og/eller ektefelle{{/if}} har annen inntekt.
     {{/if}}
