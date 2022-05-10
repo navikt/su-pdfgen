@@ -11,16 +11,10 @@
     "poststed": "Oslo"
   },
   "opphørsgrunner": [
-    "UFØRHET",
-    "SU_UNDER_MINSTEGRENSE",
-    "FORMUE"
+    "MANGLENDE_DOKUMENTASJON"
   ],
   "avslagsparagrafer": [
-    1,
-    2,
-    5,
-    6,
-    7
+    18
   ],
   "harEktefelle": true,
   "beregningsperioder": [
@@ -81,5 +75,6 @@
         "satsGrunn": "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67"
       }
     ]
-  }
+  },
+  "opphørsdato": "20.12.2022"
 }
