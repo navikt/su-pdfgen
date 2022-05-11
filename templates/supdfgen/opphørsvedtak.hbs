@@ -15,8 +15,8 @@
         </p>
 
         <span>
-            Vedtaket er gjort etter lov om supplerende stønad for personer med kort botid i Norge {{> supdfgen/partials/visAvslagsparagrafer avslagsparagrafer}}
-            .
+            Vedtaket er gjort etter lov om supplerende stønad for personer
+            med kort botid i Norge {{> supdfgen/partials/visAvslagsparagrafer avslagsparagrafer}}.
         </span>
 
         {{#if avkortingsBeløp}}
@@ -28,15 +28,6 @@
         {{/if}}
 
         <p class="fritekst">{{fritekst}}</p>
-
-        {{#each opphørsgrunner}}
-            {{#eq this "MANGLENDE_DOKUMENTASJON" }}
-                <p>
-                    Dersom du leverer denne dokumentasjonen innen seks uker, kan vi sette i gang igjen stønaden din hvis
-                    vilkårene er oppfylte.
-                </p>
-            {{/eq}}
-        {{/each}}
 
         {{#if beregningsperioder }}
             {{> supdfgen/partials/beregning beregningsperioder }}
