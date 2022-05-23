@@ -1,0 +1,30 @@
+
+{{!--
+Denne brukes for å bli bakt inn i flyktningsstatus / oppholdstillatelseAlder partials
+--}}
+<tr>
+    <td>Er du norsk statsborger?</td>
+    <td>{{#if erNorskStatsborger}} Ja {{else}} Nei {{/if}}</td>
+</tr>
+{{#unless erNorskStatsborger}}
+    <tr>
+        <td>Har du oppholdstillatelse i Norge?</td>
+        <td>{{#if harOppholdstillatelse}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if harOppholdstillatelse}}
+        <tr>
+            <td>Er oppholdstillatelsen din permanent eller midlertidig?</td>
+            <td>{{#eq oppholdstillatelseType "MIDLERTIDIG"}} Midlertidig {{else}} Permanent {{/eq}}</td>
+        </tr>
+    {{/if}}
+{{/unless}}
+<tr>
+    <td>Har du statsborgerskap i andre land enn Norge?</td>
+    <td>{{#if statsborgerskapAndreLand}} Ja {{else}} Nei {{/if}}</td>
+</tr>
+{{#if statsborgerskapAndreLand}}
+    <tr>
+        <td>Hvilke land har du statsborgerskap i?</td>
+        <td>{{statsborgerskapAndreLandFritekst}}</td>
+    </tr>
+{{/if}}

@@ -1,0 +1,68 @@
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>For NAV</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>Saksnummer:</td>
+        <td>{{saksnummer}}</td>
+    </tr>
+    <tr>
+        <td>Søknads-id:</td>
+        <td>{{søknadsId}}</td>
+    </tr>
+    <tr>
+        <td>Søknadsdato:</td>
+        <td>{{søknadOpprettet}}</td>
+    </tr>
+    {{#eq type "DigitalSøknad"}}
+        <tr>
+            <td>Har søker møtt personlig:</td>
+            <td>{{#if harFullmektigEllerVerge}} Nei {{else}} Ja {{/if}}</td>
+        </tr>
+
+        {{#if harFullmektigEllerVerge}}
+            <tr>
+                <td>Har søker fullmektig eller verge?</td>
+                <td>{{harFullmektigEllerVerge}}</td>
+            </tr>
+        {{/if}}
+    {{/eq}}
+    {{#eq type "Papirsøknad"}}
+        <tr>
+            <td>Søknad innsendt på papir:</td>
+            <td>Ja</td>
+        </tr>
+        <tr>
+            <td>Mottatt dato:</td>
+            <td>{{mottaksdatoForSøknad}}</td>
+        </tr>
+        <tr>
+            <td>Grunn for papirinnsending:</td>
+            <td>
+                {{#eq grunnForPapirinnsending "VergeHarSøktPåVegneAvBruker"}}
+                    Verge har søkt på vegne av bruker
+                {{/eq}}
+                {{#eq grunnForPapirinnsending "MidlertidigUnntakFraOppmøteplikt"}}
+                    Midlertidig unntak fra oppmøteplikt
+                {{/eq}}
+                {{#eq grunnForPapirinnsending "Annet"}}
+                    Annet
+                {{/eq}}
+            </td>
+        </tr>
+        {{#eq grunnForPapirinnsending "Annet"}}
+            <tr>
+                <td></td>
+                <td>{{annenGrunn}}</td>
+            </tr>
+        {{/eq}}
+    {{/eq}}
+
+    </tbody>
+</table>
+

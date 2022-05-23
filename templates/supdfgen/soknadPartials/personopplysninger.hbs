@@ -1,0 +1,42 @@
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Personopplysninger</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Fødselsnummer:</td>
+            <td>{{personopplysninger.fnr}}</td>
+        </tr>
+        <tr>
+            <td>Navn:</td>
+            <td>{{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}</td>
+        </tr>
+
+
+        <tr>
+            <td>Addresse:</td>
+            <td>
+                {{#if boforhold.oppgittAdresse.adresselinje}}
+                    {{#if boforhold.oppgittAdresse.bruksenhet}}
+                        {{boforhold.oppgittAdresse.adresselinje}} {{boforhold.oppgittAdresse.bruksenhet}},
+                    {{else}}
+                        {{boforhold.oppgittAdresse.adresselinje}},
+                    {{/if}}
+                    {{boforhold.oppgittAdresse.postnummer}} {{boforhold.oppgittAdresse.poststed}}
+                {{else}}
+                    {{#eq boforhold.oppgittAdresse.grunn "HAR_IKKE_FAST_BOSTED"}}
+                        Har ikke fast bosted
+                    {{/eq}}
+                    {{#eq boforhold.oppgittAdresse.grunn "BOR_PÅ_ANNEN_ADRESSE"}}
+                        Bor på en annen adresse
+                    {{/eq}}
+                {{/if}}
+            </td>
+        </tr>
+
+    </tbody>
+</table>
