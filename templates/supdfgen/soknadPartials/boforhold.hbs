@@ -1,0 +1,68 @@
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Bo og opphold i Norge</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>Bor og oppholder du deg i Norge?</td>
+        <td>{{#if borOgOppholderSegINorge}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    <tr>
+        <td>Har du vært innlagt på institusjon de siste tre månedene?</td>
+        <td>{{#if innlagtPåInstitusjon.datoForInnleggelse}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if innlagtPåInstitusjon.datoForInnleggelse}}
+        <tr>
+            <td>Dato for innleggelse:</td>
+            <td>{{iso_to_date innlagtPåInstitusjon.datoForInnleggelse}}</td>
+        </tr>
+        <tr>
+            <td>Dato for utskrivelse:</td>
+            <td>
+                {{#if innlagtPåInstitusjon.datoForUtskrivelse}}
+                    {{iso_to_date innlagtPåInstitusjon.datoForUtskrivelse}}
+                {{else}}
+                    Fortsatt innlagt
+                {{/if}}
+            </td>
+        </tr>
+
+    {{/if}}
+    <tr>
+        <td>Deler du bolig med noen over 18 år?</td>
+        <td>{{#if delerBolig}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if delerBolig}}
+        <tr>
+            <td>Hvem deler du bolig med?</td>
+            <td>
+                {{#eq delerBoligMed "EKTEMAKE_SAMBOER"}}
+                    Ektefelle eller samboer
+                {{/eq}}
+                {{#eq delerBoligMed "VOKSNE_BARN"}}
+                    Voksne barn
+                {{/eq}}
+                {{#eq delerBoligMed "ANNEN_VOKSEN"}}
+                    Annen voksen
+                {{/eq}}
+            </td>
+        </tr>
+    {{/if}}
+
+    {{#eq delerBoligMed "EKTEMAKE_SAMBOER"}}
+        <tr>
+            <td>Fødselsnummeret til ektefelle eller samboer</td>
+            <td>{{ektefellePartnerSamboer.fnr}}</td>
+        </tr>
+        <tr>
+            <td>Er ektefelle eller samboer ufør flyktning?</td>
+            <td>{{#if ektefellePartnerSamboer.erUførFlyktning}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
+    {{/eq}}
+
+    </tbody>
+</table>

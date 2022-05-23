@@ -1,0 +1,56 @@
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Oppholdstillatelse</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>Er du norsk statsborger eller statsborger i et nordisk land?</td>
+        <td>{{#if oppholdstillatelse.erNorskStatsborger}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#unless oppholdstillatelse.erNorskStatsborger}}
+
+        <tr>
+            <td>Er du EØS-borger eller familiemedlem til en EØS-borger?</td>
+            <td>{{#if oppholdstillatelseAlder.eøsborger}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
+
+        {{#unless oppholdstillatelseAlder.eøsborger}}
+            <tr>
+                <td>Har du oppholdstillatelse i Norge?</td>
+                <td>{{#if oppholdstillatelse.harOppholdstillatelse}} Ja {{else}} Nei {{/if}}</td>
+            </tr>
+
+            {{#unless oppholdstillatelse.harOppholdstillatelse}}
+                <tr>
+                    <td>Kom du til Norge på grunn av familiegjenforening med barn, barnebarn, nevø eller niese, og fikk
+                        oppholdstillatelse med krav til underhold?
+                    </td>
+                    <td>{{#if oppholdstillatelseAlder.familiegjenforening}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+
+                <tr>
+                    <td>Er oppholdstillatelsen din permanent eller midlertidig?</td>
+                    <td>{{#eq oppholdstillatelse.oppholdstillatelseType "MIDLERTIDIG"}}
+                        Midlertidig {{else}} Permanent {{/eq}}</td>
+                </tr>
+
+            {{/unless}}
+        {{/unless}}
+    {{/unless}}
+
+    <tr>
+        <td>Har du statsborgerskap i andre land enn Norge?</td>
+        <td>{{#if oppholdstillatelse.statsborgerskapAndreLand}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if oppholdstillatelse.statsborgerskapAndreLand}}
+        <tr>
+            <td>Hvilke land har du statsborgerskap i?</td>
+            <td>{{oppholdstillatelse.statsborgerskapAndreLandFritekst}}</td>
+        </tr>
+    {{/if}}
+    </tbody>
+</table>

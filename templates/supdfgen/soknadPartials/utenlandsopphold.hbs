@@ -1,0 +1,42 @@
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Reise til utlandet</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Har du reist til utlandet de siste 90 dager?</td>
+        <td>{{#if registrertePerioder}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if registrertePerioder}}
+        {{#each registrertePerioder}}
+            <tr>
+                <td>Utreisedato</td>
+                <td>{{iso_to_date utreisedato}}</td>
+            </tr>
+            <tr>
+                <td>Innreisedato</td>
+                <td>{{iso_to_date innreisedato}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+    <tr>
+        <td>Har du planlagt å reise til utlandet i de neste 12 månedene?</td>
+        <td>{{#if planlagtePerioder}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if planlagtePerioder}}
+        {{#each planlagtePerioder}}
+            <tr>
+                <td>Utreisedato</td>
+                <td>{{iso_to_date utreisedato}}</td>
+            </tr>
+            <tr>
+                <td>Innreisedato</td>
+                <td>{{iso_to_date innreisedato}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+    </tbody>
+</table>

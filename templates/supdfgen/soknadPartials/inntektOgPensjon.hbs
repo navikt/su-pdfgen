@@ -1,0 +1,81 @@
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Din inntekt</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Forventer du å ha arbeidsinntekt fremover?</td>
+        <td>{{#if forventetInntekt}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if forventetInntekt}}
+        <tr>
+            <td>Forventet arbeidsinntekt i kroner per måned</td>
+            <td>{{currency_no forventetInntekt}}</td>
+        </tr>
+    {{/if}}
+    <tr>
+        <td>Har du andre ytelser i NAV?</td>
+        <td>{{#if andreYtelserINav}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if andreYtelserINav}}
+        <tr>
+            <td>Hvilke ytelser?</td>
+            <td>{{andreYtelserINav}}</td>
+        </tr>
+        <tr>
+            <td>Beløp i kroner per måned</td>
+            <td>{{currency_no andreYtelserINavBeløp}}</td>
+        </tr>
+    {{/if}}
+    <tr>
+        <td>Har du søkt om andre trygdeytelser som ikke er behandlet?</td>
+        <td>{{#if søktAndreYtelserIkkeBehandletBegrunnelse}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if søktAndreYtelserIkkeBehandletBegrunnelse}}
+        <tr>
+            <td>Hvilke?</td>
+            <td>{{søktAndreYtelserIkkeBehandletBegrunnelse}}</td>
+        </tr>
+    {{/if}}
+
+    <tr>
+        <td>Har du trygdeytelser i utlandet?</td>
+        <td>{{#if trygdeytelseIUtlandet}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if trygdeytelseIUtlandet}}
+        {{#each trygdeytelseIUtlandet}}
+            <tr>
+                <td>Beløp i lokal valuta per måned:</td>
+                <td>{{currency_no beløp}}</td>
+            </tr>
+            <tr>
+                <td>Valuta</td>
+                <td>{{valuta}}</td>
+            </tr>
+            <tr>
+                <td>Type ytelse</td>
+                <td>{{type}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+    <tr>
+        <td>Mottar du tjenestepensjon eller pensjon?</td>
+        <td>{{#if pensjon}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if pensjon}}
+        {{#each pensjon}}
+            <tr>
+                <td>Pensjonsgiver</td>
+                <td>{{ordning}}</td>
+            </tr>
+            <tr>
+                <td>Beløp per måned</td>
+                <td>{{currency_no beløp}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+    </tbody>
+</table>

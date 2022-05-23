@@ -1,0 +1,103 @@
+<table>
+    <thead>
+    <tr>
+        <td class="tr50"><h4>Ektefelle/samboers formue</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>Eier du en bolig?</td>
+        <td>{{#if eierBolig}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if eierBolig}}
+        <tr>
+            <td>Bor du i boligen?</td>
+            <td>{{#if borIBolig}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
+    {{/if}}
+    {{#if boligBrukesTil}}
+        <tr>
+            <td>Formuesverdi på boligen</td>
+            <td>{{currency_no verdiPåBolig}}</td>
+        </tr>
+        <tr>
+            <td>Hva brukes boligen til?</td>
+            <td>{{boligBrukesTil}}</td>
+        </tr>
+    {{/if}}
+    {{#unless eierBolig}}
+        {{#if depositumsBeløp}}
+            <tr>
+                <td>Har du en depositumskonto som leietaker?</td>
+                <td>Ja</td>
+            </tr>
+            <tr>
+                <td>Beløp på depositumskontoen</td>
+                <td>{{currency_no depositumsBeløp}}</td>
+            </tr>
+            <tr>
+                <td>Kontonummer</td>
+                <td>{{kontonummer}}</td>
+            </tr>
+        {{/if}}
+    {{/unless}}
+    <tr>
+        <td>Eier du bil, campingvogn eller andre kjøretøy?</td>
+        <td>{{#if kjøretøy}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if kjøretøy}}
+        {{#each kjøretøy}}
+            <tr>
+                <td>Registreringsnummer:</td>
+                <td>{{kjøretøyDeEier}}</td>
+            </tr>
+            <tr>
+                <td>Verdien av kjøretøyet:</td>
+                <td>{{currency_no verdiPåKjøretøy}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+    <tr>
+        <td>Har du penger på konto?</td>
+        <td>{{#if innskuddsBeløp}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if innskuddsBeløp}}
+        <tr>
+            <td>Samlet verdi i kroner</td>
+            <td>{{currency_no innskuddsBeløp}}</td>
+        </tr>
+    {{/if}}
+    <tr>
+        <td>Har du aksjer, aksjefond eller verdipapir?</td>
+        <td>{{#if verdipapirBeløp}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if verdipapirBeløp}}
+        <tr>
+            <td>Samlet verdi i kroner</td>
+            <td>{{currency_no verdipapirBeløp}}</td>
+        </tr>
+    {{/if}}
+    <tr>
+        <td>Skylder noen deg mer enn 1000 kr?</td>
+        <td>{{#if skylderNoenMegPengerBeløp}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if skylderNoenMegPengerBeløp}}
+        <tr>
+            <td>Beløp i kroner</td>
+            <td>{{currency_no skylderNoenMegPengerBeløp}}</td>
+        </tr>
+    {{/if}}
+    <tr>
+        <td>Har du mer enn 1000 kr i kontanter?</td>
+        <td>{{#if kontanterBeløp}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if kontanterBeløp}}
+        <tr>
+            <td>Beløp i kroner</td>
+            <td>{{currency_no kontanterBeløp}}</td>
+        </tr>
+    {{/if}}
+    </tbody>
+</table>
