@@ -8,7 +8,7 @@ on:
       - master
 
 env:
-  IMAGE: docker.pkg.github.com/${{ github.repository }}/su-pdfgen:${{ github.sha }}
+  IMAGE: ghcr.io/${{ github.repository }}/su-pdfgen:${{ github.sha }}
 
 jobs:
   build:
