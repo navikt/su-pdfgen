@@ -11,24 +11,49 @@
             font-size: 0.9em;
             vertical-align: top;
             word-wrap: break-word;
+            padding: 0 0.3cm 0 1cm;
         }
 
         table {
             width: 100%;
-            border: 1px black solid;
-            margin-bottom: 0.5cm;
+            border: 2px #c9c9c9 solid;
+            padding-bottom: 0.8cm;
+            margin-bottom: 0.7cm;
+            border-collapse: collapse;
         }
 
-        table thead {
-            background-color: lightblue;
+
+        tbody tr:last-child td {
+            padding-bottom: 0.8cm;
+        }
+
+        tbody tr:first-child td {
+            padding-top: 0.2cm;
+        }
+
+        thead tr th, thead tr td {
+            border-bottom: 2px #c9c9c9 solid;
+            padding: 0.3cm 1cm;
+            position: relative;
+        }
+
+        thead td img, thead th img {
+            position: absolute;
+            left: 0.25cm;
+            top: 0.3cm;
+            height: 0.5cm;
+            width: 0.5cm;
         }
 
         td h4 {
             margin: 0;
+            font-size: 110%;
+            font-weight: 500;
         }
 
         /* er i bruk*/
         .tr50 {
+            box-sizing: border-box;
             width: 50%;
         }
 
@@ -39,6 +64,7 @@
         body {
             page-break-inside: avoid;
         }
+
     </style>
     <title>Søknad</title>
 </head>
