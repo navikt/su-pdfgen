@@ -15,7 +15,13 @@
 <div class="info">
     <h3>Har du spørsmål?</h3>
     <p>
-        Du finner nyttig informasjon på <a>www.nav.no/supplerendeuf</a>.<br/>
+        Du finner nyttig informasjon på
+        {{#if erAldersbrev}}
+            <a>www.nav.no/supplerende</a>.
+        {{else}}
+            <a>www.nav.no/supplerendeuf</a>.
+        {{/if}}
+        <br/>
         Du kan også kontakte oss på 55 55 33 33.
     </p>
 </div>

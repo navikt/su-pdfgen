@@ -5,9 +5,14 @@
 
         <div class="info">
             <p>
-                Du får supplerende stønad fra {{fradato}} til og med {{tildato}} fordi du er ufør flyktning. Du kan søke på nytt i {{tildato}}.
+                Du får supplerende stønad fra {{fradato}} til og med {{tildato}} fordi du er
+                {{#if erAldersbrev}}
+                    over 67 år og har kort botid i Norge.
+                {{else}}
+                    ufør flyktning.
+                {{/if}}
+                Du kan søke på nytt i {{tildato}}.
             </p>
-
             <p>
                 Vedtaket er gjort etter lov om supplerende stønad til personer med kort botid i Norge, §§ 3, 5, 6 og 7.
             </p>
