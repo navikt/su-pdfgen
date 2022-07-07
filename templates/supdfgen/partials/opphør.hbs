@@ -68,5 +68,42 @@
                 </p>
             </li>
         {{/eq}}
+
+        {{#eq this "FLYKTNING" }}
+            <li>
+                <p>
+                    Nye opplysninger viser at du ikke er registrert som flyktning etter utlendingslova §28. Vi har
+                    derfor opphørt din stønad som ufør flyktning.
+                </p>
+            </li>
+        {{/eq}}
+
+        {{#eq this "OPPHOLDSTILLATELSE"}}
+            <li>
+                <p>
+                    Nye opplysninger viser at du ikke har lovlig opphold i Norge. Vi har derfor opphørt din stønad som
+                    ufør flyktning.
+                </p>
+            </li>
+        {{/eq}}
+
+        {{#eq this "FAST_OPPHOLD"}}
+            <li>
+                <p>
+                    Nye opplysninger viser at du ikke oppholder deg fast i Norge. Vi har derfor opphørt din stønad som
+                    ufør flyktning.
+                </p>
+            </li>
+        {{/eq}}
+
+        {{#eq this "PERSONLIG_OPPMØTE"}}
+            <li>
+                <p>
+                    Nye opplysninger viser at du ikke møtte personlig når du søkte om supplerende stønad eller ved
+                    kontrollsamtale. Vi har derfor opphørt din stønad som ufør flykting.
+                </p>
+            </li>
+        {{/eq}}
+
     {{/each}}
 </ul>
