@@ -76,5 +76,8 @@
       }
     ]
   },
-  "opphørsdato": "20.12.2022"
+  "opphørsperiode": {
+    "fraOgMed": "01.12.2022",
+    "tilOgMed": "31.12.2022"
+  }
 }
