@@ -8,7 +8,7 @@
         {{> supdfgen/partials/opphør opphørsgrunner=opphørsgrunner }}
 
         <p>
-            Stønaden din blir derfor opphørt fra {{opphørsdato}}.
+            Stønaden din blir derfor opphørt i perioden {{opphørsperiode.fraOgMed}}-{{opphørsperiode.tilOgMed}}.
             {{#if avkortingsBeløp}}
                 Du har fått {{currency_no avkortingsBeløp}} kr for mye. Ved innvilgelse av ny stønadsperiode blir
                 utbetalingen redusert hver måned til beløpet er betalt tilbake.{{/if}}
