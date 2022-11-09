@@ -1,0 +1,16 @@
+{{#> supdfgen/partials/base}}
+
+    <div class="mainContent">
+        <div>
+
+            <h2>{{tittel}}</h2>
+            <div class="preline">
+                Fødselsnummer: {{personalia.fødselsnummer}}
+            </div>
+            <p>{{fritekst}}</p>
+        </div>
+        {{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
+    </div>
+
+
+{{/supdfgen/partials/base}}

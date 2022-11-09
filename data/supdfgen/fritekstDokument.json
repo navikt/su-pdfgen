@@ -1,0 +1,17 @@
+{
+  "personalia": {
+    "dato": "01.01.2020",
+    "fødselsnummer": "12345678901",
+    "fornavn": "Tore",
+    "etternavn": "Strømøy",
+    "adresse": "en Adresse",
+    "husnummer": "4C",
+    "bruksenhet": "H102",
+    "postnummer": "0186",
+    "poststed": "Oslo"
+  },
+  "saksbehandlerNavn": "Norunn Selstad",
+  "tittel": "Jeg er fritekst-dokumentets tittel",
+  "fritekst": "Jeg er fritekst-dokumentets fritekst. Jeg er en fri tekst. Jeg føler meg fri, og har alltid vært fri. Det gir ikke mening at en fri tekst ikke er fri. Frihet er stolthet.",
+  "saksnummer": 2021
+}
