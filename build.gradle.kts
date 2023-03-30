@@ -3,7 +3,7 @@ repositories {
     mavenCentral()
 }
 plugins {
-    kotlin("jvm") version "1.6.10"
+    kotlin("jvm") version "1.8.20"
 }
 
 val junitJupiterVersion = "5.9.2"
