@@ -3,11 +3,11 @@ repositories {
     mavenCentral()
 }
 plugins {
-    kotlin("jvm") version "1.6.10"
+    kotlin("jvm") version "1.8.10"
 }
 
 val junitJupiterVersion = "5.9.3"
-val kotestVersion = "5.1.0"
+val kotestVersion = "5.5.5"
 val handlebarsVersion = "4.3.1"
 
 dependencies {
@@ -20,7 +20,7 @@ dependencies {
 }
 
 tasks.withType<Wrapper> {
-    gradleVersion = "7.4"
+    gradleVersion = "8.0.2"
 }
 
 tasks.withType<Test> {
