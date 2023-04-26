@@ -1,0 +1,38 @@
+{{#if kjøretøy}}
+    <h3>Spesifisert kjøretøy</h3>
+    {{#each this}}
+        <table>
+
+            <tbody>
+            <tr>
+                <td>Beløp:</td>
+                <td>{{> supdfgen/skattemelding/valueOrDash beløp}}</td>
+            </tr>
+            <tr>
+                <td>Registreringsnummer:</td>
+                <td>{{> supdfgen/skattemelding/valueOrDash registreringsnummer}}</td>
+            </tr>
+            <tr>
+                <td>Fabrikatnavn:</td>
+                <td>{{> supdfgen/skattemelding/valueOrDash fabrikatnavn}}</td>
+            </tr>
+            <tr>
+                <td>År for førstegangsregistrering:</td>
+                <td>{{> supdfgen/skattemelding/valueOrDash årForFørstegangsregistrering}}</td>
+            </tr>
+            <tr>
+                <td>Formuesverdi:</td>
+                <td>{{> supdfgen/skattemelding/valueOrDash formuesverdi}}</td>
+            </tr>
+            <tr>
+                <td>Antatt verdi som nytt:</td>
+                <td>{{> supdfgen/skattemelding/valueOrDash antattVerdiSomNytt}}</td>
+            </tr>
+            <tr>
+                <td>Antatt markedsverdi:</td>
+                <td>{{> supdfgen/skattemelding/valueOrDash antattMarkedsverdi}}</td>
+            </tr>
+            </tbody>
+        </table>
+    {{/each}}
+{{/if}}

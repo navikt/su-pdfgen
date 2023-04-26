@@ -1,0 +1,22 @@
+{{#if grunnlag}}
+    <h3>{{tittel}}</h3>
+    <table>
+        <thead>
+        <tr>
+            <td>Teknisk navn</td>
+            <td>Beløp</td>
+            <td>Kategori</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#each grunnlag}}
+            <tr>
+                <td>{{tekniskNavn}}</td>
+                <td>{{beløp}}</td>
+                <td>{{> supdfgen/skattemelding/valueOrDash kategori}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{/if}}
