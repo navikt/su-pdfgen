@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        td {
+            font-size: 0.9em;
+            vertical-align: top;
+            word-wrap: break-word;
+            padding: 0 0.3cm 0 1cm;
+        }
+
+        table {
+            width: 100%;
+            border: 2px #c9c9c9 solid;
+            padding-bottom: 0.8cm;
+            margin-bottom: 0.7cm;
+            border-collapse: collapse;
+        }
+
+
+        tbody tr:last-child td {
+            padding-bottom: 0.8cm;
+        }
+
+        tbody tr:first-child td {
+            padding-top: 0.2cm;
+        }
+
+        thead tr th, thead tr td {
+            border-bottom: 2px #c9c9c9 solid;
+            padding: 0.3cm 1cm;
+            position: relative;
+        }
+
+        thead td img, thead th img {
+            position: absolute;
+            left: 0.25cm;
+            top: 0.3cm;
+            height: 0.5cm;
+            width: 0.5cm;
+        }
+
+        td h4 {
+            margin: 0;
+            font-size: 110%;
+            font-weight: 500;
+        }
+
+        /* er i bruk*/
+        .tr50 {
+            box-sizing: border-box;
+            width: 50%;
+        }
+
+        .signaturHeader {
+            margin-bottom: 3em;
+        }
+
+        body {
+            page-break-inside: avoid;
+        }
+
+    </style>
+    <title>Søknad</title>
+</head>
+<body>
+<h1>Skattegrunnlag for {{fnr}}</h1>
+{{> supdfgen/skattemelding/forNav this.forNav}}
+
+{{> supdfgen/skattemelding/personopplysninger
+        personopplysninger=this.personopplysninger
+}}
+
+{{#each this.årsgrunnlag}}
+    <h2>{{år}} - {{stadie}}</h2>
+
+    {{#eq stadie "Oppgjør"}}
+    <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash oppgjørsdato}}</p>
+    {{/eq}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formue" grunnlag=formue}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formuesfradrag" grunnlag=formuesfradrag}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntekt" grunnlag=inntekt}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntektsfradrag" grunnlag=inntektsfradrag}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert verdsettingsrabatts som gir gjeldsreduksjon" grunnlag=verdsettingsrabattSomGirGjeldsreduksjon}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert oppjustering av eierinntekter" grunnlag=oppjusteringAvEierinntekter}}
+    {{> supdfgen/skattemelding/skattedelMedKategori tittel="Summert annet" grunnlag=annet}}
+    {{> supdfgen/skattemelding/spesifiseringKjøretøy kjøretøy}}
+{{/each}}
+
+<p>Beskrivelse av teknisk navn kan man finne hos <a
+        href="https://skatteetaten.github.io/api-dokumentasjon/api/spesifisertsummertskattegrunnlag?tab=Informasjonsmodell">Skatteetaten</a>
+</p>
+</body>
+</html>
