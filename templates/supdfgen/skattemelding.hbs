@@ -7,11 +7,8 @@
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
         }
 
-        td {
-            font-size: 0.9em;
-            vertical-align: top;
-            word-wrap: break-word;
-            padding: 0 0.3cm 0 1cm;
+        body {
+            page-break-inside: avoid;
         }
 
         table {
@@ -22,6 +19,24 @@
             border-collapse: collapse;
         }
 
+        thead tr th, thead tr td {
+            position: relative;
+            padding: 0.3cm 0.5cm;
+            border-bottom: 2px #c9c9c9 solid;
+        }
+
+        thead tr td h4 {
+            font-size: 110%;
+            font-weight: 500;
+            display: inline;
+        }
+
+        thead td img, thead th img {
+            position: relative;
+            margin-right: 0.1cm;
+            height: 0.5cm;
+            width: 0.5cm;
+        }
 
         tbody tr:last-child td {
             padding-bottom: 0.8cm;
@@ -31,42 +46,33 @@
             padding-top: 0.2cm;
         }
 
-        thead tr th, thead tr td {
-            border-bottom: 2px #c9c9c9 solid;
-            padding: 0.3cm 1cm;
-            position: relative;
+        td {
+            font-size: 0.9em;
+            vertical-align: top;
+            word-wrap: break-word;
+            padding: 0 0.3cm 0 0.5cm;
         }
 
-        thead td img, thead th img {
-            position: absolute;
-            left: 0.25cm;
-            top: 0.3cm;
-            height: 0.5cm;
-            width: 0.5cm;
+        .tr2 td:first-child {
+            width: 55%;
+        }
+        .tr2 td:last-child {
+            width: 45%;
         }
 
-        td h4 {
-            margin: 0;
-            font-size: 110%;
-            font-weight: 500;
+        .tr3 td:first-child {
+            width: 55%;
         }
 
-        /* er i bruk*/
-        .tr50 {
-            box-sizing: border-box;
-            width: 50%;
+        .tr3 td:nth-child(2) {
+            width: 25%;
         }
-
-        .signaturHeader {
-            margin-bottom: 3em;
-        }
-
-        body {
-            page-break-inside: avoid;
+        .tr3 td:last-child {
+            width: 20%;
         }
 
     </style>
-    <title>Søknad</title>
+    <title>Skattegrunnlag</title>
 </head>
 <body>
 <h1>Skattegrunnlag for {{fnr}}</h1>
@@ -80,7 +86,7 @@
     <h2>{{år}} - {{stadie}}</h2>
 
     {{#eq stadie "Oppgjør"}}
-    <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash oppgjørsdato}}</p>
+        <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash oppgjørsdato}}</p>
     {{/eq}}
     {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formue" grunnlag=formue}}
     {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formuesfradrag" grunnlag=formuesfradrag}}
