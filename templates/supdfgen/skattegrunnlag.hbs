@@ -7,8 +7,20 @@
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
         }
 
+        @page {
+            @bottom-right {
+                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+                font-size: 12px;
+                content: "Side " counter(page) " av " counter(pages);
+            }
+        }
+
         body {
             page-break-inside: avoid;
+        }
+
+        .pagebreak {
+            page-break-before: always;
         }
 
         table {
@@ -56,6 +68,7 @@
         .tr2 td:first-child {
             width: 55%;
         }
+
         .tr2 td:last-child {
             width: 45%;
         }
@@ -67,6 +80,7 @@
         .tr3 td:nth-child(2) {
             width: 25%;
         }
+
         .tr3 td:last-child {
             width: 20%;
         }
@@ -75,28 +89,21 @@
     <title>Skattegrunnlag</title>
 </head>
 <body>
-<h1>Skattegrunnlag for {{fnr}}</h1>
+<h1>Skattegrunnlag for {{søkers.fnr}}</h1>
 {{> supdfgen/skattemelding/forNav this.forNav}}
 
-{{> supdfgen/skattemelding/personopplysninger
-        personopplysninger=this.personopplysninger
-}}
+{{> supdfgen/skattemelding/personopplysninger this.søkers}}
+{{> supdfgen/skattemelding/årsgrunnlag this.søkers}}
 
-{{#each this.årsgrunnlag}}
-    <h2>{{år}} - {{stadie}}</h2>
 
-    {{#eq stadie "Oppgjør"}}
-        <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash oppgjørsdato}}</p>
-    {{/eq}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formue" grunnlag=formue}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formuesfradrag" grunnlag=formuesfradrag}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntekt" grunnlag=inntekt}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntektsfradrag" grunnlag=inntektsfradrag}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert verdsettingsrabatts som gir gjeldsreduksjon" grunnlag=verdsettingsrabattSomGirGjeldsreduksjon}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert oppjustering av eierinntekter" grunnlag=oppjusteringAvEierinntekter}}
-    {{> supdfgen/skattemelding/skattedelMedKategori tittel="Summert annet" grunnlag=annet}}
-    {{> supdfgen/skattemelding/spesifiseringKjøretøy kjøretøy}}
-{{/each}}
+{{#if eps}}
+    <div class="pagebreak"></div>
+    <h1>Skattegrunnlag for {{eps.fnr}}</h1>
+    {{> supdfgen/skattemelding/personopplysninger this.eps}}
+    {{> supdfgen/skattemelding/årsgrunnlag this.eps}}
+{{/if}}
+
+
 
 <p>Beskrivelse av teknisk navn kan man finne hos <a
         href="https://skatteetaten.github.io/api-dokumentasjon/api/spesifisertsummertskattegrunnlag?tab=Informasjonsmodell">Skatteetaten</a>
