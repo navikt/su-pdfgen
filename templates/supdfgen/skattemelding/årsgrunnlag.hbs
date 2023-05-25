@@ -2,14 +2,14 @@
     <h2>{{år}} - {{stadie}}</h2>
 
     {{#eq stadie "Oppgjør"}}
-        <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash oppgjørsdato}}</p>
+        <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash data.oppgjørsdato}}</p>
     {{/eq}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formue" grunnlag=formue}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formuesfradrag" grunnlag=formuesfradrag}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntekt" grunnlag=inntekt}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntektsfradrag" grunnlag=inntektsfradrag}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert verdsettingsrabatts som gir gjeldsreduksjon" grunnlag=verdsettingsrabattSomGirGjeldsreduksjon}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert oppjustering av eierinntekter" grunnlag=oppjusteringAvEierinntekter}}
-    {{> supdfgen/skattemelding/skattedelMedKategori tittel="Summert annet" grunnlag=annet}}
-    {{> supdfgen/skattemelding/spesifiseringKjøretøy kjøretøy}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formue" grunnlag=data.formue}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formuesfradrag" grunnlag=data.formuesfradrag}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntekt" grunnlag=data.inntekt}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntektsfradrag" grunnlag=data.inntektsfradrag}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert verdsettingsrabatts som gir gjeldsreduksjon" grunnlag=data.verdsettingsrabattSomGirGjeldsreduksjon}}
+    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert oppjustering av eierinntekter" grunnlag=data.oppjusteringAvEierinntekter}}
+    {{> supdfgen/skattemelding/skattedelMedKategori tittel="Summert annet" grunnlag=data.annet}}
+    {{> supdfgen/skattemelding/spesifiseringKjøretøy data}}
 {{/each}}
