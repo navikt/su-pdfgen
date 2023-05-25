@@ -89,15 +89,18 @@
     <title>Skattegrunnlag</title>
 </head>
 <body>
-<h1>Skattegrunnlag for {{søkers.fnr}}</h1>
-{{> supdfgen/skattemelding/forNav this.forNav}}
+{{#if søkers}}
+    <h1>Skattegrunnlag for {{søkers.fnr}}</h1>
+    {{> supdfgen/skattemelding/forNav this.forNav}}
 
-{{> supdfgen/skattemelding/personopplysninger this.søkers}}
-{{> supdfgen/skattemelding/årsgrunnlag this.søkers}}
+    {{> supdfgen/skattemelding/personopplysninger this.søkers}}
+    {{> supdfgen/skattemelding/årsgrunnlag this.søkers}}
+
+{{/if}}
 
 
 {{#if eps}}
-    <div class="pagebreak"></div>
+    {{#if søkers}} <div class="pagebreak"></div> {{/if}}
     <h1>Skattegrunnlag for {{eps.fnr}}</h1>
     {{> supdfgen/skattemelding/personopplysninger this.eps}}
     {{> supdfgen/skattemelding/årsgrunnlag this.eps}}
