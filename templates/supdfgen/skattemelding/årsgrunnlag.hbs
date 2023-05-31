@@ -2,7 +2,7 @@
     <h2>{{år}} - {{stadie}}</h2>
 
     {{#eq stadie "Oppgjør"}}
-        <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash data.oppgjørsdato}}</p>
+        <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash oppgjørsdato}}</p>
     {{/eq}}
     {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formue" grunnlag=formue}}
     {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formuesfradrag" grunnlag=formuesfradrag}}
