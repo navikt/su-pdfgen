@@ -16,7 +16,6 @@
       {
         "år": "2021",
         "stadie": "Oppgjør",
-        "data": {
           "oppgjørsdato": "01.05.2020",
           "kjøretøy": [
             {
@@ -52,12 +51,10 @@
               "beløp": "5 000"
             }
           ]
-        }
       },
       {
         "år": "2022",
         "stadie": "Utkast",
-        "data": {
           "oppgjørsdato": null,
           "inntekt": [
             {
@@ -89,7 +86,7 @@
             }
           ]
         }
-      }
+
     ]
   },
   "eps": null
