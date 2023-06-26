@@ -1,15 +1,17 @@
 #!/bin/bash
 
-CURRENT_PATH=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+CURRENT_PATH=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
 
-docker pull navikt/pdfgen:d84f2a198a1b05af62b87ce994f0a23e22260bca
+CONTAINER_NAME="su-pdfgen"
+
+if [ "$(docker ps -aq -f name=$CONTAINER_NAME)" ]; then
+    docker start "$CONTAINER_NAME"
+else
+docker build -t "$CONTAINER_NAME" "$CURRENT_PATH"
 docker run \
-        -v "$CURRENT_PATH"/templates:/app/templates \
-        -v "$CURRENT_PATH"/fonts:/app/fonts \
         -v "$CURRENT_PATH"/data:/app/data \
-        -v "$CURRENT_PATH"/resources:/app/resources \
         -p 8081:8080 \
         -e DISABLE_PDF_GET=false \
         -it \
-        --rm \
-        navikt/pdfgen
+        "$CONTAINER_NAME"
+fi
