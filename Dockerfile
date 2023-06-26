@@ -1,4 +1,4 @@
-FROM ghcr.io/navikt/pdfgen/pdfgen:08f2f8db6eeccc5f33fae12c267235951bb1ec56
+FROM ghcr.io/navikt/pdfgen:2.0.9
 
 COPY templates /app/templates
 COPY fonts /app/fonts
