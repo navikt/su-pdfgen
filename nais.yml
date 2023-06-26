@@ -10,9 +10,16 @@ spec:
   replicas:
     min: 2
   liveness:
-    path: /is_alive
+    path: /internal/is_alive
   readiness:
-    path: /is_alive
+    path: /internal/is_ready
+  startup:
+    path: /internal/is_alive
+    initialDelay: 10
   prometheus:
     enabled: true
-    path: /prometheus
+    path: /internal/prometheus
+  accessPolicy:
+    inbound:
+      rules:
+        - application: su-se-bakover
