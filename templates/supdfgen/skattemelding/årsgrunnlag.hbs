@@ -1,15 +1,35 @@
 {{#each årsgrunnlag}}
     <h2>{{år}} - {{stadie}}</h2>
 
-    {{#eq stadie "Oppgjør"}}
-        <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash oppgjørsdato}}</p>
+    {{#eq type "HarSkattegrunnlag"}}
+        {{#eq stadie "Oppgjør"}}
+            <p>Oppgjørsdato: {{> supdfgen/skattemelding/valueOrDash oppgjørsdato}}</p>
+        {{/eq}}
+
+        {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formue" grunnlag=formue}}
+        {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formuesfradrag" grunnlag=formuesfradrag}}
+        {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntekt" grunnlag=inntekt}}
+        {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntektsfradrag" grunnlag=inntektsfradrag}}
+        {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert verdsettingsrabatts som gir gjeldsreduksjon" grunnlag=verdsettingsrabattSomGirGjeldsreduksjon}}
+        {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert oppjustering av eierinntekter" grunnlag=oppjusteringAvEierinntekter}}
+        {{> supdfgen/skattemelding/skattedelMedKategori tittel="Summert annet" grunnlag=annet}}
+        {{> supdfgen/skattemelding/spesifiseringKjøretøy kjøretøy}}
     {{/eq}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formue" grunnlag=formue}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert formuesfradrag" grunnlag=formuesfradrag}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntekt" grunnlag=inntekt}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert inntektsfradrag" grunnlag=inntektsfradrag}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert verdsettingsrabatts som gir gjeldsreduksjon" grunnlag=verdsettingsrabattSomGirGjeldsreduksjon}}
-    {{> supdfgen/skattemelding/skattedelUtenKategori tittel="Summert oppjustering av eierinntekter" grunnlag=oppjusteringAvEierinntekter}}
-    {{> supdfgen/skattemelding/skattedelMedKategori tittel="Summert annet" grunnlag=annet}}
-    {{> supdfgen/skattemelding/spesifiseringKjøretøy kjøretøy}}
+    {{#eq type "HarIkkeSkattegrunnlag"}}
+        {{#eq grunn "NETTVERKSFEIL"}}
+            <p>Har ikke skattegrunnlag på grunn av nettverksfeil</p>
+        {{/eq}}
+        {{#eq grunn "FINNES_IKKE"}}
+            <p>Skattegrunnlaget finnes ikke for denne personen, i dette året, for dette stadiet</p>
+        {{/eq}}
+        {{#eq grunn "UKJENT_FEIL"}}
+            <p>Ukjent feil ved henting av skattegrunnlag</p>
+        {{/eq}}
+        {{#eq grunn "MANGLER_RETTIGHETER"}}
+            <p>Mangler rettigheter for at skattegrunnlaget skal hentes</p>
+        {{/eq}}
+        {{#eq grunn "PERSON_FEIL"}}
+            <p>Det skjedde en feil ved henting av person</p>
+        {{/eq}}
+    {{/eq}}
 {{/each}}
