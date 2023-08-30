@@ -15,7 +15,7 @@
             @bottom-right {
                 font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
                 font-size: 12px;
-                content: "Side "counter(page) " av "counter(pages);
+                content: "Side " counter(page) " av " counter(pages);
             }
         }
 
@@ -44,6 +44,7 @@
         .pagebreak {
             page-break-before: always;
         }
+
         .info {
             margin-bottom: 1rem;
         }
@@ -74,9 +75,11 @@
             width: 100%;
             clear: both;
         }
+
         .keyValueOppsummering__title {
             margin-bottom: 0;
         }
+
         .keyValueOppsummering__value {
             text-align: right;
         }
@@ -94,7 +97,7 @@
             word-wrap: break-word;
         }
 
-        .preline{
+        .preline {
             white-space: pre-line;
         }
 
@@ -103,36 +106,47 @@
             border-collapse: collapse;
             table-layout: fixed;
         }
+
         .tabell-auto {
             width: 100%;
             border-collapse: collapse;
             table-layout: auto;
         }
+
         .tabellcol {
             border: 1px solid black;
             padding-left: 0.2em;
             padding-right: 0.2em;
         }
+
+        .boldedText {
+            font-weight: bold
+        }
+        .listItem-minor-spaced {
+            margin-bottom: 5px;
+        }
+
+
     </style>
     <title>Supplerende stønad</title>
 </head>
 
 <body>
-    <div class="main">
-        {{#with personalia}}
+<div class="main">
+    {{#with personalia}}
         <div class="header">
             <img class="navLogo" src="{{image "Navlogo.png"}}" alt="NAV logo"/>
 
             <div class="personalia">
                 <p>{{fornavn}} {{etternavn}}</p>
                 <p>Dato: {{dato}}</p>
-                <p>Saksnummer: {{saksnummer}}</p>       
+                <p>Saksnummer: {{saksnummer}}</p>
             </div>
         </div>
-        {{/with}}
-        {{> @partial-block}}
+    {{/with}}
+    {{> @partial-block}}
 
-    </div>
+</div>
 </body>
 
 </html>
