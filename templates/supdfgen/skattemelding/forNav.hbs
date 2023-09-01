@@ -18,14 +18,20 @@
         <td>Behandlingstype:</td>
         <td>{{behandlingstype}}</td>
     </tr>
+
+    {{#not_eq behandlingsId null}}
     <tr class="tr2">
         <td>behandling-id:</td>
         <td>{{behandlingsId}}</td>
     </tr>
-    <tr class="tr2">
-        <td>Vedtaksid-id:</td>
-        <td>{{vedtaksId}}</td>
-    </tr>
+    {{/not_eq}}
+
+    {{#not_eq vedtaksId null}}
+        <tr class="tr2">
+            <td>Vedtaksid-id:</td>
+            <td>{{vedtaksId}}</td>
+        </tr>
+    {{/not_eq}}
     <tr class="tr2">
         <td>Skattegrunnlag hentet:</td>
         <td>{{hentet}}</td>
