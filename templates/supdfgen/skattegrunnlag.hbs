@@ -103,7 +103,8 @@
 
 
 {{#if eps}}
-    {{#if søkers}} <div class="pagebreak"></div> {{/if}}
+    {{#if søkers}}
+        <div class="pagebreak"></div> {{/if}}
     <h1>Skattegrunnlag for {{eps.fnr}}</h1>
     {{> supdfgen/skattemelding/personopplysninger this.eps}}
     {{> supdfgen/skattemelding/årsgrunnlag this.eps}}
@@ -112,7 +113,19 @@
 
 
 <p>Beskrivelse av teknisk navn kan man finne hos <a
-        href="https://skatteetaten.github.io/api-dokumentasjon/api/spesifisertsummertskattegrunnlag?tab=Informasjonsmodell" title="Lenke til mer detaljert beskrivelse av skattekoder">Skatteetaten</a>
+        href="https://skatteetaten.github.io/api-dokumentasjon/api/spesifisertsummertskattegrunnlag?tab=Informasjonsmodell"
+        title="Lenke til mer detaljert beskrivelse av skattekoder">Skatteetaten</a>
 </p>
+
+<br />
+<hr />
+{{#if begrunnelse}}
+    <div>
+        <h4>Begrunnelse</h4>
+        <p class="fritekst">{{begrunnelse}}</p>
+    </div>
+{{/if}}
+
+
 </body>
 </html>
