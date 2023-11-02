@@ -9,23 +9,12 @@
 
         <p>
             Stønaden din blir derfor opphørt i perioden {{opphørsperiode.fraOgMed}}-{{opphørsperiode.tilOgMed}}.
-            {{#if avkortingsBeløp}}
-                Du har fått {{currency_no avkortingsBeløp}} kr for mye. Ved innvilgelse av ny stønadsperiode blir
-                utbetalingen redusert hver måned til beløpet er betalt tilbake.{{/if}}
         </p>
 
         <span>
             Vedtaket er gjort etter lov om supplerende stønad for personer
             med kort botid i Norge {{> supdfgen/partials/visAvslagsparagrafer avslagsparagrafer}}.
         </span>
-
-        {{#if avkortingsBeløp}}
-            <p>
-                Du kan søke om ny stønadsperiode måneden etter at du har kommet tilbake til Norge. Hvis du ikke får
-                innvilget ny stønadsperiode kan det feilutbetalte beløpet kreves tilbake etter lov om supplerende stønad
-                til personer med kort botid i Norge, § 13.
-            </p>
-        {{/if}}
 
         <p class="fritekst">{{fritekst}}</p>
 
