@@ -219,19 +219,19 @@
             {{#each sorterteMåneder}}
                 <tr>
                     <td class="periode">{{periode}}</td>
-                    <td class="tall">{{bruttoBeløp}} kroner</td>
+                    <td class="tall">{{currency_no bruttoBeløp true}} kroner</td>
                     <td>{{#eq vurdering "SkalTilbakekreve"}}
                         Hele beløpet {{else}} Ingen tilbakebetaling {{/eq}}</td>
-                    <td class="tall">{{bruttoBeløp}} kroner</td>
-                    <td class="tall">{{nettoBeløpSkalBetalesTilbake}} kroner</td>
+                    <td class="tall">{{currency_no bruttoBeløp true}} kroner</td>
+                    <td class="tall">{{currency_no nettoBeløpSkalBetalesTilbake true}} kroner</td>
                 </tr>
             {{/each}}
             <tr class="sumrad">
                 <td>sum</td>
                 <td></td>
                 <td></td>
-                <td class="tall">{{sumBrutto}} kroner</td>
-                <td class="sum tall">{{sumNetto}} kroner</td>
+                <td class="tall">{{currency_no sumBrutto true}} kroner</td>
+                <td class="sum tall">{{currency_no sumNetto true}} kroner</td>
             </tr>
             </tbody>
         </table>
