@@ -11,6 +11,10 @@
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
         }
 
+        html {
+            height: 0; /* unngår blank side til slutt */
+        }
+
         @page {
             @bottom-right {
                 font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
@@ -49,7 +53,7 @@
             margin-bottom: 1rem;
         }
 
-        .shortSpacedInfo  {
+        .shortSpacedInfo {
             margin-bottom: 1rem;
         }
 
@@ -152,6 +156,72 @@
 
         .listItem-minor-spaced {
             margin-bottom: 5px;
+        }
+
+
+        @page tblpage {
+            /* sørger for at vedlegg havner på egen side */
+            margin-top: 10%;
+            size: A4 portrait;
+        }
+
+        .vedlegg {
+            /* sørger for at vedlegg havner på egen side */
+            page: tblpage;
+        }
+
+        .tilbakekrevingstabell {
+            border-collapse: collapse;
+            border-spacing: 0;
+            font-size: 12px;
+
+        }
+
+        .tilbakekrevingstabell thead {
+            background-color: #c6d9f1;
+        }
+
+        .tilbakekrevingstabell, .tilbakekrevingstabell th, .tilbakekrevingstabell td {
+            border: 1px solid #3E3832;
+        }
+
+        .tilbakekrevingstabell th, .tilbakekrevingstabell td {
+            padding: 5px 10px;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .tilbakekrevingstabell th:first-child, .tilbakekrevingstabell td:first-child {
+            width: 25mm;
+        }
+        .tilbakekrevingstabell th:nth-child(2), .tilbakekrevingstabell td:nth-child(2) {
+            width: 25mm;
+        }
+        .tilbakekrevingstabell th:nth-child(3), .tilbakekrevingstabell td:nth-child(3) {
+            width: 25mm;
+        }
+        .tilbakekrevingstabell th:nth-child(4), .tilbakekrevingstabell td:nth-child(4) {
+            width: 20mm;
+        }
+        .tilbakekrevingstabell th:last-child, .tilbakekrevingstabell td:last-child {
+            width: 30mm;
+        }
+
+        .tilbakekrevingstabell th {
+            vertical-align: top;
+        }
+
+        .tilbakekrevingstabell .sumrad {
+            border: 1px solid #3E3832;
+            border-top: 2px solid #3E3832;
+        }
+
+        .tilbakekrevingstabell .sum {
+            font-weight: 700;
+        }
+
+        .tilbakekrevingstabell .tall {
+            text-align: right;
         }
 
 

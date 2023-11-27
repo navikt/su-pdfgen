@@ -12,24 +12,26 @@
     "saksnummer": "2021"
   },
   "fritekst": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  "summertBruttoFeilutbetaling": 100,
-  "summertNettoFeilutbetaling": 100,
+  "summertBruttoFeilutbetaling": 67177,
+  "summertNettoFeilutbetaling": 67177,
   "månedsoversiktMedSum": {
     "sorterteMåneder": [
       {
-        "periode": "Januar 2023",
+        "periode": "September 2023",
         "vurdering": "SkalIkkeTilbakekreve",
-        "bruttoBeløp": 100,
-        "nettoBeløpSkalBetalesTilbake": 100
+        "bruttoBeløp": 62011,
+        "nettoBeløpSkalBetalesTilbake": 62011
       },
       {
-        "periode": "Februar 2023",
+        "periode": "Oktober 2023",
         "vurdering": "SkalTilbakekreve",
-        "bruttoBeløp": 100,
-        "nettoBeløpSkalBetalesTilbake": 100
+        "bruttoBeløp": 67177,
+        "nettoBeløpSkalBetalesTilbake": 67177
       }
     ],
-    "sumBrutto": 100,
-    "sumNetto": 100
-  }
+    "sumBrutto": 67177,
+    "sumNetto": 67177
+  },
+  "saksbehandlerNavn": "Malenia, blade of Miquella",
+  "attestantNavn": "James Eugene Raynor"
 }

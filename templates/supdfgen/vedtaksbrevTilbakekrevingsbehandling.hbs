@@ -1,44 +1,242 @@
-{{#> supdfgen/partials/avslagBase
-        extraVedtaksInfo="Du må som hovedregel begynne å betale beløpet tilbake når du får fakturaen selv om du klager på dette vedtaket. Dette følger av forvaltningsloven § 42. Hvis du får vedtak om at du ikke trengte å betale tilbake hele eller deler av beløpet du skyldte, betaler vi pengene tilbake til deg."
-}}
-    <div class="mainContent">
-        <div class="shortSpacedInfo">
-            <h3>Du må betale tilbake supplerende stønad</h3>
-            {{> supdfgen/partials/fnr personalia }}
-            <p>Du fikk varsel fra oss dato ((DATO)) om at du har fått utbetalt for mye.</p>
-            <p>Beløpet du skylder før skatt er kr ((BELØP)). Dette er hele det feilutbetalte beløpet.</p>
-            <p>Det du skal betale tilbake etter at skatten er trukket fra, kr ((BELØP ETTER SKATT))</p>
-        </div>
-        <br />
-        <div class="shortSpacedInfo">
-            <h4>Perioden fra og med ((PERIODE-FOM)) til ((PERIODE-TOM))</h4>
-            <p>((hvilke fakta))</p>
-        </div>
-        <br />
-        <div class="shortSpacedInfo">
-            <h4>Hvordan har vi kommet fram til at du må betale tilbake?</h4>
-            <p>((Fritekst?))</p>
-        </div>
-        <p>Vedtaket er gjort etter reglene i lov om supplerende stønad § 13.</p>
-        <br />
-        <div class="shortSpacedInfo">
-            <h4>Skatt og skatteoppgjør</h4>
-            <p>Skatten som er trukket fra beløpet du skal betale tilbake, er beregnet etter det du har blitt trukket i
-                skatt i gjennomsnitt per måned. Det betyr at beløpet du skal tilbakebetale etter skatt, ikke alltid er
-                likt med det beløpet du fikk inn på kontoen din.
-            </p>
-            <p>
-                NAV gir opplysninger til Skatt om skattebeløpet og om beløpet du skal betale tilbake før skatt er
-                trukket i fra. Skatt vil vurdere om det er grunnlag for å endre skatteoppgjør.
-            </p>
-        </div>
-        <br />
-        <div class="shortSpacedInfo">
-            <h4>Hordan betale tilbake pengene du skylder</h4>
-            <p>Du vil få faktura fra Skatt på det beløpet du skal betale tilbake.</p>
-            <p>På fakturaen vil det stå informasjon om nøyaktig beløp, kontonummer og forfallsdato.</p>
-            <p>Du finner mer informasjon på nav.no/innkreving.</p>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="no">
 
-{{/supdfgen/partials/avslagBase }}
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Supplerende Stønad"/>
+    <meta name="author" content="su-pdfgen"/>
+    <meta name="subject" content="Supplerende Stønad"/>
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        html {
+            height: 0; /* unngår blank side til slutt */
+        }
+
+        @page {
+            @bottom-right {
+                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+                font-size: 12px;
+                content: "Side " counter(page) " av " counter(pages);
+            }
+        }
+
+        /*
+            --------------- disse er dobbel impl med base.hbs --------------------------------------
+        */
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .navLogo {
+            height: 75px;
+            margin-bottom: 128px;
+        }
+
+        .personalia {
+            clear: both;
+            padding-bottom: 16px;
+        }
+
+        .personalia p {
+            margin: 0;
+        }
+
+        .mainContent {
+            margin-bottom: 40px;
+        }
+
+        .shortSpacedInfo {
+            margin-bottom: 1rem;
+        }
+
+        .shortSpacedInfo p {
+            padding: 0 0 3px 0;
+            margin: 0 0 3px 0;
+        }
+
+        .shortSpacedInfo h3 {
+            padding: 0 0 3px 0;
+            margin: 0 0 3px 0;
+        }
+
+        .shortSpacedInfo h4 {
+            padding: 0 0 3px 0;
+            margin: 0 0 3px 0;
+        }
+
+        h3 {
+            margin-bottom: 4px;
+        }
+
+        .hilsen {
+            margin-top: 64px;
+        }
+
+        .hilsen p {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*
+            ------- ------------------------------------------------------------- -----
+        */
+
+        @page tblpage {
+            /* sørger for at vedlegg havner på egen side */
+            margin-top: 10%;
+            size: A4 portrait;
+        }
+
+        .vedlegg {
+            /* sørger for at vedlegg havner på egen side */
+            page: tblpage;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            font-size: 12px;
+        }
+
+        table thead {
+            background-color: #c6d9f1;
+        }
+
+        table, table th, table td {
+            border: 1px solid #3E3832;
+        }
+
+        table th, table td {
+            padding: 5px 10px;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        table th:first-child, table td:first-child {
+            width: 25mm;
+        }
+
+        table th:nth-child(2), table td:nth-child(2) {
+            width: 25mm;
+        }
+
+        table th:nth-child(3), table td:nth-child(3) {
+            width: 25mm;
+        }
+
+        table th:nth-child(4), table td:nth-child(4) {
+            width: 20mm;
+        }
+
+        table th:last-child, table td:last-child {
+            width: 30mm;
+        }
+
+        table th {
+            vertical-align: top;
+        }
+
+        table .sumrad {
+            border: 1px solid #3E3832;
+            border-top: 2px solid #3E3832;
+        }
+
+        table .sum {
+            font-weight: 700;
+        }
+
+        table .tall {
+            text-align: right;
+        }
+    </style>
+    <title>Supplerende stønad</title>
+</head>
+
+<body>
+
+{{> supdfgen/partials/baseAsPartialBlock personalia }}
+
+<div class="mainContent">
+    <div class="shortSpacedInfo">
+        <h3>Du må betale tilbake supplerende stønad</h3>
+        {{> supdfgen/partials/fnr personalia }}
+        <br/>
+        <p>Du har fått for mye supplerende stønad som du må betale tilbake.</p>
+        <p>Beløpet du skylder før skatt er kr {{summertBruttoFeilutbetaling}}. Dette er hele det feilutbetalte
+            beløpet.</p>
+        <p>Det du skal betale tilbake etter at skatten er trukket fra, kr {{summertNettoFeilutbetaling}}</p>
+    </div>
+    <br/>
+    <div class="shortSpacedInfo">
+        <h4>Hvordan har vi kommet fram til at du må betale tilbake?</h4>
+        <p>{{fritekst}}</p>
+    </div>
+    <p>Vedtaket er gjort etter reglene i lov om supplerende stønad § 13.</p>
+    <br/>
+    <div class="shortSpacedInfo">
+        <h4>Skatt og skatteoppgjør</h4>
+        <p>Skatten som er trukket fra beløpet du skal betale tilbake, er beregnet etter det du har blitt trukket i
+            skatt i gjennomsnitt per måned. Det betyr at beløpet du skal tilbakebetale etter skatt, ikke alltid er
+            likt med det beløpet du fikk inn på kontoen din.
+        </p>
+        <p>
+            NAV gir opplysninger til Skatt om skattebeløpet og om beløpet du skal betale tilbake før skatt er
+            trukket i fra. Skatt vil vurdere om det er grunnlag for å endre skatteoppgjør.
+        </p>
+    </div>
+    <br/>
+    <div class="shortSpacedInfo">
+        <h4>Hordan betale tilbake pengene du skylder</h4>
+        <p>Du vil få faktura fra Skatt på det beløpet du skal betale tilbake.</p>
+        <p>På fakturaen vil det stå informasjon om nøyaktig beløp, kontonummer og forfallsdato.</p>
+        <p>Du finner mer informasjon på nav.no/innkreving.</p>
+    </div>
+</div>
+<div>
+    {{> supdfgen/partials/fellesInfo
+            extraVedtaksInfoForKlage="Du må som hovedregel begynne å betale beløpet tilbake når du får fakturaen selv om du klager på dette vedtaket. Dette følger av forvaltningsloven § 42. Hvis du får vedtak om at du ikke trengte å betale tilbake hele eller deler av beløpet du skyldte, betaler vi pengene tilbake til deg."
+    }}
+    {{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn attestant=attestantNavn }}
+</div>
+
+{{#with månedsoversiktMedSum}}
+    <div class="vedlegg">
+        <h4>Vedlegg: Oversikt over feilutbetalingen</h4>
+        <table>
+            <thead>
+            <tr>
+                <th class="periode">Periode</th>
+                <th>Feilutbetalt beløp</th>
+                <th>Tilbakebetaling</th>
+                <th>Beløp før skatt</th>
+                <th>Beløp du skal betale tilbake etter at skatt er trukket fra</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each sorterteMåneder}}
+                <tr>
+                    <td class="periode">{{periode}}</td>
+                    <td class="tall">{{bruttoBeløp}} kroner</td>
+                    <td>{{#eq vurdering "SkalTilbakekreve"}}
+                        Hele beløpet {{else}} Ingen tilbakebetaling {{/eq}}</td>
+                    <td class="tall">{{bruttoBeløp}} kroner</td>
+                    <td class="tall">{{nettoBeløpSkalBetalesTilbake}} kroner</td>
+                </tr>
+            {{/each}}
+            <tr class="sumrad">
+                <td>sum</td>
+                <td></td>
+                <td></td>
+                <td class="tall">{{sumBrutto}} kroner</td>
+                <td class="sum tall">{{sumNetto}} kroner</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{{/with}}
+
+</body>
+</html>
