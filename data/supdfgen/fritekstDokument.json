@@ -2,8 +2,8 @@
   "personalia": {
     "dato": "01.01.2020",
     "fødselsnummer": "12345678901",
-    "fornavn": "Tore",
-    "etternavn": "Strømøy",
+    "fornavn": "Leeroy",
+    "etternavn": "Jenkins",
     "adresse": "en Adresse",
     "husnummer": "4C",
     "bruksenhet": "H102",
@@ -11,7 +11,7 @@
     "poststed": "Oslo",
     "saksnummer": "2021"
   },
-  "saksbehandlerNavn": "Norunn Selstad",
+  "saksbehandlerNavn": "Malenia, blade of Miquella",
   "tittel": "Jeg er fritekst-dokumentets tittel",
   "fritekst": "Jeg er fritekst-dokumentets fritekst. Jeg er en fri tekst. Jeg føler meg fri, og har alltid vært fri. Det gir ikke mening at en fri tekst ikke er fri. Frihet er stolthet.",
   "saksnummer": 2021
