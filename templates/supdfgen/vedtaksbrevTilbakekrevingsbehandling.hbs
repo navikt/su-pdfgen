@@ -6,155 +6,12 @@
     <meta name="description" content="Supplerende Stønad"/>
     <meta name="author" content="su-pdfgen"/>
     <meta name="subject" content="Supplerende Stønad"/>
-    <style>
-        * {
-            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-        }
 
-        html {
-            height: 0; /* unngår blank side til slutt */
-        }
+    {{#block 'supdfgen/css/baseStyles' }}{{/block}}
+    {{#block 'supdfgen/css/vedleggStyles' }}{{/block}}
 
-        @page {
-            @bottom-right {
-                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-                font-size: 12px;
-                content: "Side " counter(page) " av " counter(pages);
-            }
-        }
-
-        /*
-            --------------- disse er dobbel impl med base.hbs --------------------------------------
-        */
-        .header {
-            margin-bottom: 40px;
-        }
-
-        .navLogo {
-            height: 75px;
-            margin-bottom: 128px;
-        }
-
-        .personalia {
-            clear: both;
-            padding-bottom: 16px;
-        }
-
-        .personalia p {
-            margin: 0;
-        }
-
-        .mainContent {
-            margin-bottom: 40px;
-        }
-
-        .shortSpacedInfo {
-            margin-bottom: 1rem;
-        }
-
-        .shortSpacedInfo p {
-            padding: 0 0 3px 0;
-            margin: 0 0 3px 0;
-        }
-
-        .shortSpacedInfo h3 {
-            padding: 0 0 3px 0;
-            margin: 0 0 3px 0;
-        }
-
-        .shortSpacedInfo h4 {
-            padding: 0 0 3px 0;
-            margin: 0 0 3px 0;
-        }
-
-        h3 {
-            margin-bottom: 4px;
-        }
-
-        .hilsen {
-            margin-top: 64px;
-        }
-
-        .hilsen p {
-            padding: 0;
-            margin: 0;
-        }
-
-        /*
-            ------- ------------------------------------------------------------- -----
-        */
-
-        @page tblpage {
-            /* sørger for at vedlegg havner på egen side */
-            margin-top: 10%;
-            size: A4 portrait;
-        }
-
-        .vedlegg {
-            /* sørger for at vedlegg havner på egen side */
-            page: tblpage;
-        }
-
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-            font-size: 12px;
-        }
-
-        table thead {
-            background-color: #c6d9f1;
-        }
-
-        table, table th, table td {
-            border: 1px solid #3E3832;
-        }
-
-        table th, table td {
-            padding: 5px 10px;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        table th:first-child, table td:first-child {
-            width: 25mm;
-        }
-
-        table th:nth-child(2), table td:nth-child(2) {
-            width: 25mm;
-        }
-
-        table th:nth-child(3), table td:nth-child(3) {
-            width: 25mm;
-        }
-
-        table th:nth-child(4), table td:nth-child(4) {
-            width: 20mm;
-        }
-
-        table th:last-child, table td:last-child {
-            width: 30mm;
-        }
-
-        table th {
-            vertical-align: top;
-        }
-
-        table .sumrad {
-            border: 1px solid #3E3832;
-            border-top: 2px solid #3E3832;
-        }
-
-        table .sum {
-            font-weight: 700;
-        }
-
-        table .tall {
-            text-align: right;
-        }
-    </style>
     <title>Supplerende stønad</title>
 </head>
-
 <body>
 
 {{> supdfgen/partials/baseAsPartialBlock personalia }}
@@ -208,11 +65,11 @@
         <table>
             <thead>
             <tr>
-                <th class="periode">Periode</th>
-                <th>Feilutbetalt beløp</th>
-                <th>Tilbakebetaling</th>
-                <th>Beløp før skatt</th>
-                <th>Beløp du skal betale tilbake etter at skatt er trukket fra</th>
+                <th class="spacing-m">Periode</th>
+                <th class="spacing-m">Feilutbetalt beløp</th>
+                <th class="spacing-m">Tilbakebetaling</th>
+                <th class="spacing-s">Beløp før skatt</th>
+                <th class="spacing-l">Beløp du skal betale tilbake etter at skatt er trukket fra</th>
             </tr>
             </thead>
             <tbody>
@@ -223,7 +80,7 @@
                     <td>{{#eq vurdering "SkalTilbakekreve"}}
                         Hele beløpet {{else}} Ingen tilbakebetaling {{/eq}}</td>
                     <td class="tall">{{currency_no bruttoBeløp true}} kroner</td>
-                    <td class="tall">{{currency_no nettoBeløpSkalBetalesTilbake true}} kroner</td>
+                    <td class="tall ">{{currency_no nettoBeløpSkalBetalesTilbake true}} kroner</td>
                 </tr>
             {{/each}}
             <tr class="sumrad">

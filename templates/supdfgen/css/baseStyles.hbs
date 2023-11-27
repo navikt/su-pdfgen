@@ -1,0 +1,65 @@
+<style>
+    * {
+        font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+    }
+
+    html {
+        height: 0; /* unngår blank side til slutt */
+    }
+
+    @page {
+        @bottom-right {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            font-size: 12px;
+            content: "Side " counter(page) " av " counter(pages);
+        }
+    }
+
+    .header {
+        margin-bottom: 40px;
+    }
+
+    .navLogo {
+        height: 75px;
+        margin-bottom: 128px;
+    }
+
+    .personalia {
+        clear: both;
+        padding-bottom: 16px;
+    }
+
+    .personalia p {
+        margin: 0;
+    }
+
+    .mainContent {
+        margin-bottom: 40px;
+    }
+
+    .info {
+        margin-bottom: 2rem;
+    }
+
+    .shortSpacedInfo {
+        margin-bottom: 1rem;
+    }
+
+    .shortSpacedInfo p, .shortSpacedInfo h3, .shortSpacedInfo h4 {
+        padding: 0 0 3px 0;
+        margin: 0 0 3px 0;
+    }
+
+    h3 {
+        margin-bottom: 4px;
+    }
+
+    .hilsen {
+        margin-top: 64px;
+    }
+
+    .hilsen p {
+        padding: 0;
+        margin: 0;
+    }
+</style>

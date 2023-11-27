@@ -8,7 +8,7 @@ Templatene vil bruke flettedata fra json-fil med samme navn som template i `data
 
 ## Hjelpefunksjoner
 
-https://github.com/navikt/pdfgen/blob/master/src/main/kotlin/no/nav/pdfgen/template/Helpers.kt
+https://github.com/navikt/pdfgen-core/blob/main/src/main/kotlin/no/nav/pdfgen/core/template/Helpers.kt
 
 ### Stor forbokstav
 

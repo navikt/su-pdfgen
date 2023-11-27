@@ -1,6 +1,100 @@
-{{#> supdfgen/partials/base}}
-    <div class="mainContent">
-        NYTT BREV
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Supplerende Stønad"/>
+    <meta name="author" content="su-pdfgen"/>
+    <meta name="subject" content="Supplerende Stønad"/>
+
+    {{#block 'supdfgen/css/baseStyles' }}{{/block}}
+    {{#block 'supdfgen/css/vedleggStyles' }}{{/block}}
+
+    <title>Supplerende stønad</title>
+</head>
+<body>
+{{> supdfgen/partials/baseAsPartialBlock personalia }}
+
+<div class="mainContent">
+    <h2>Varsel om at NAV vurderer å kreve tilbake feilutbetalt supplerende stønad</h2>
+    {{> supdfgen/partials/fnr personalia }}
+    <p>Du har fått utbetalt for mye supplerende stønad. Vi vurderer å kreve tilbake dette beløpet.</p>
+    <p>Beløpet er {{bruttoTilbakekreving}} kroner før skatt.</p>
+    <p>Du finner flere detaljer om feilutbetalt beløp lenger ned i brevet.</p>
+
+    <div class="info">
+        <h4>Hva har skjedd</h4>
+        <p class="fritekst">{{fritekst}}</p>
     </div>
 
-{{/supdfgen/partials/base}}
+    <div class="info">
+        <h4>Dette legger vi vekt på i vurderingen vår</h4>
+        <p>Når vi avgjør om du skal betale tilbake vurderer vi:</p>
+        <ul>
+            <li>Om du forsto eller burde forstått at beløpet du fikk utbetalt var feil</li>
+            <li>Om du har gitt riktig informasjon til NAV</li>
+            <li>Om du har gitt all informasjon til NAV i rett tid</li>
+            <li>Hvilken informasjon du har fått fra NAV, blant annet i vedtak</li>
+        </ul>
+        <p>Selv om det er NAV som er skyld i feilutbetalingen, kan vi kreve at du betaler tilbake pengene hvis du forsto
+            eller burde forstått at utbetalingen skyldtes en feil.</p>
+    </div>
+
+    <div class="info">
+        <h4>Reglene for tilbakekreving</h4>
+        <p>
+            Hvis du forsto eller burde forstått at utbetalingen du har mottatt er gjort på feil grunnlag, skal det
+            feilutbetalte beløpet kreves tilbakebetalt. Dette gjelder uavhengig av om det er NAV eller du som er skyld i
+            feilutbetalingen/har forårsaket feilutbetalingen.
+        </p>
+        <p>Dette følger av lov om supplerende stønad § 13.</p>
+        <p>Dersom NAV fatter vedtak om at du skal betale tilbake det du har fått for mye utbetalt, får du beskjed i
+            vedtaket
+            om hvordan tilbakebetalingen skal skje.</p>
+    </div>
+
+    <div class="info">
+        <h4>Dette gjør du hvis du ønsker å uttale deg i saken</h4>
+        <p>Du har rett til å uttale deg, skriftlig eller muntlig, før vi tar den endelige avgjørelsen om
+            tilbakebetaling.
+            Fristen for å gi uttale er 14 dager etter at du har mottatt dette brevet.</p>
+        <p>Du har rett til å se sakens dokumenter etter bestemmelsene i forvaltningsloven § 18.</p>
+    </div>
+
+    <div class="info">
+        <p>Slik kan du uttale deg:</p>
+        <ul>
+            <li>Logg deg inn på nav.no eller</li>
+            <li>Send et skriftlig svar</li>
+            <li>Du kan få hjelp ved å ringe 55 55 33 33 eller henvende deg til NAV-kontoret ditt</li>
+        </ul>
+        <p>
+            Hvis du vil sende skriftlig svar, må du bruke forsiden fra <a
+                href="https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar">https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar</a>
+        </p>
+    </div>
+</div>
+
+{{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
+
+<div class="vedlegg">
+    <h4>Vedlegg: Beregning av feilutbetalt beløp</h4>
+    <table>
+        <thead>
+        <tr>
+            <th class="spacing-xxl">Periode</th>
+            <th class="spacing-xxl">Beløp vi krever tilbake</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each beregningFeilutbetaltBeløp}}
+            <tr>
+                <td>{{periode}}</td>
+                <td class="tall">{{currency_no beløp true}} kr</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

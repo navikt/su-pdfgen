@@ -1,0 +1,70 @@
+{{!-- styles som skal gjelde dersom du skal vise vedlegg --}}
+<style>
+    @page tblpage {
+        /* sørger for at vedlegg havner på egen side */
+        margin-top: 10%;
+        size: A4 portrait;
+    }
+
+    .vedlegg {
+        /* sørger for at vedlegg havner på egen side */
+        page: tblpage;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: 12px;
+    }
+
+    table thead {
+        background-color: #c6d9f1;
+    }
+
+    table, table th, table td {
+        border: 1px solid #3E3832;
+    }
+
+    table th, table td {
+        padding: 5px 10px;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    table th {
+        vertical-align: top;
+    }
+
+    table .sumrad {
+        border: 1px solid #3E3832;
+        border-top: 2px solid #3E3832;
+    }
+
+    table .sum {
+        font-weight: 700;
+    }
+
+    table .tall {
+        text-align: right;
+    }
+
+    .spacing-s {
+        width: 20mm;
+    }
+
+    .spacing-m {
+        width: 25mm;
+    }
+
+    .spacing-l {
+        width: 30mm;
+    }
+
+    .spacing-xl {
+        width: 35mm;
+    }
+
+    .spacing-xxl {
+        width: 40mm;
+    }
+</style>
