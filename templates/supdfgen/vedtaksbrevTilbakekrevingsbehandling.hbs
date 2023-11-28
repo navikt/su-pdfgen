@@ -22,9 +22,9 @@
         {{> supdfgen/partials/fnr personalia }}
         <br/>
         <p>Du har fått for mye supplerende stønad som du må betale tilbake.</p>
-        <p>Beløpet du skylder før skatt er kr {{summertBruttoFeilutbetaling}}. Dette er hele det feilutbetalte
+        <p>Beløpet du skylder før skatt er kr {{månedsoversiktMedSum.sumBruttoSkalTilbakekreve}}. Dette er hele det feilutbetalte
             beløpet.</p>
-        <p>Det du skal betale tilbake etter at skatten er trukket fra, kr {{summertNettoFeilutbetaling}}</p>
+        <p>Det du skal betale tilbake etter at skatten er trukket fra, kr {{månedsoversiktMedSum.sumNettoSkalTilbakekreve}}</p>
     </div>
     <br/>
     <div class="shortSpacedInfo">
@@ -79,16 +79,16 @@
                     <td class="tall">{{currency_no bruttoBeløp true}} kroner</td>
                     <td>{{#eq vurdering "SkalTilbakekreve"}}
                         Hele beløpet {{else}} Ingen tilbakebetaling {{/eq}}</td>
-                    <td class="tall">{{currency_no bruttoBeløp true}} kroner</td>
-                    <td class="tall ">{{currency_no nettoBeløpSkalBetalesTilbake true}} kroner</td>
+                    <td class="tall">{{currency_no bruttoSkalTilbakekreve true}} kroner</td>
+                    <td class="tall ">{{currency_no nettoSkalTilbakekreve true}} kroner</td>
                 </tr>
             {{/each}}
             <tr class="sumrad">
                 <td>sum</td>
                 <td></td>
                 <td></td>
-                <td class="tall">{{currency_no sumBrutto true}} kroner</td>
-                <td class="sum tall">{{currency_no sumNetto true}} kroner</td>
+                <td class="tall">{{currency_no sumBruttoSkalTilbakekreve true}} kroner</td>
+                <td class="sum tall">{{currency_no sumNettoSkalTilbakekreve true}} kroner</td>
             </tr>
             </tbody>
         </table>
