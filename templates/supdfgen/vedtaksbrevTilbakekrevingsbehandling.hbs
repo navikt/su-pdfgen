@@ -65,18 +65,18 @@
         <table>
             <thead>
             <tr>
-                <th class="spacing-m">Periode</th>
+                <th class="spacing-l">Periode</th>
                 <th class="spacing-m">Feilutbetalt beløp</th>
-                <th class="spacing-m">Tilbakebetaling</th>
+                <th class="spacing-l">Tilbakebetaling</th>
                 <th class="spacing-s">Beløp før skatt</th>
-                <th class="spacing-l">Beløp du skal betale tilbake etter at skatt er trukket fra</th>
+                <th class="spacing-xl">Beløp du skal betale tilbake etter at skatt er trukket fra</th>
             </tr>
             </thead>
             <tbody>
             {{#each sorterteMåneder}}
                 <tr>
                     <td class="periode">{{periode}}</td>
-                    <td class="tall">{{currency_no bruttoBeløp true}} kroner</td>
+                    <td class="tall">{{currency_no bruttoSkalTilbakekreve true}} kroner</td>
                     <td>{{#eq vurdering "SkalTilbakekreve"}}
                         Hele beløpet {{else}} Ingen tilbakebetaling {{/eq}}</td>
                     <td class="tall">{{currency_no bruttoSkalTilbakekreve true}} kroner</td>

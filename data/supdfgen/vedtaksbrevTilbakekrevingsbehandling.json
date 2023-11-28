@@ -17,13 +17,13 @@
       {
         "periode": "01.01.2023 - 31.01.2023",
         "vurdering": "SkalIkkeTilbakekreve",
-        "bruttoBeløp": 62011,
+        "bruttoSkalTilbakekreve": 62011,
         "nettoSkalTilbakekreve": 62011
       },
       {
         "periode": "01.02.2023 - 28.02.2023",
         "vurdering": "SkalTilbakekreve",
-        "bruttoBeløp": 67177,
+        "bruttoSkalTilbakekreve": 67177,
         "nettoSkalTilbakekreve": 67177
       }
     ],
