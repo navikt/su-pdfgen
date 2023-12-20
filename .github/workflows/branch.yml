@@ -12,10 +12,14 @@ on:
 env:
   IMAGE: ghcr.io/${{ github.repository }}/su-pdfgen:${{ github.sha }}
 
+permissions: {}
+
 jobs:
   build:
     name: Build and push Docker container
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v3
