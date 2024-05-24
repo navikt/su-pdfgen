@@ -8,7 +8,7 @@ plugins {
 
 val junitJupiterVersion = "5.10.2"
 val kotestVersion = "5.9.0"
-val handlebarsVersion = "4.3.1"
+val handlebarsVersion = "4.4.0"
 
 dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
