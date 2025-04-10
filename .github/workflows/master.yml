@@ -40,8 +40,6 @@ jobs:
           team: supstonad
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
-  outputs:
-    image: ${{ steps.docker-build-push.outputs.image }}
 
   deploy_to_dev:
     name: Deploy to dev
@@ -57,7 +55,6 @@ jobs:
         env:
           CLUSTER: dev-fss
           RESOURCE: nais.yml
-          VAR: image=${{ needs.build.outputs.image }}
 
   generate-draft-release:
     name: Generate/update draft release
