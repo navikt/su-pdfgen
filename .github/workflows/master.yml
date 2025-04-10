@@ -7,7 +7,7 @@ on:
     branches:
       - master
 
-permissions: {}
+permissions: { }
 
 jobs:
   build:
@@ -41,6 +41,13 @@ jobs:
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
+      - name: Export image reference
+        run: echo "image=${{ steps.docker-build-push.outputs.image }}" >> $GITHUB_OUTPUT
+        id: export-image
+
+    outputs:
+      image: ${{ steps.export-image.outputs.image }}
+
   deploy_to_dev:
     name: Deploy to dev
     needs: build
@@ -55,6 +62,7 @@ jobs:
         env:
           CLUSTER: dev-fss
           RESOURCE: nais.yml
+          VAR: image=${{ needs.build.outputs.image }}
 
   generate-draft-release:
     name: Generate/update draft release
