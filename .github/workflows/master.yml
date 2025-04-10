@@ -7,9 +7,6 @@ on:
     branches:
       - master
 
-env:
-  IMAGE: ghcr.io/${{ github.repository }}/su-pdfgen:${{ github.sha }}
-
 permissions: {}
 
 jobs:
@@ -19,6 +16,7 @@ jobs:
     permissions:
       packages: 'write'
       contents: 'read'
+      id-token: 'write'  # needed for push-image
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
@@ -35,12 +33,16 @@ jobs:
           distribution: 'temurin'
       - name: test and build
         run: ./gradlew test build
-      - uses: actions/checkout@v4
       - name: Build and push docker image to GAR
         uses: nais/docker-build-push@v0
+        env:
+          ACTIONS_RUNTIME_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
         id: docker-build-push
         with:
+          docker_context: .
           team: supstonad
+          tag: ${{ env.NEW_VERSION }}
+          image_suffix: ${{ github.workflow }}
           identity_provider: "${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}"
           project_id: "${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}"
 
