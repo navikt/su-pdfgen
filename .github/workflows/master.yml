@@ -55,7 +55,7 @@ jobs:
         env:
           CLUSTER: dev-fss
           RESOURCE: nais.yml
-          VAR: image=${{ needs.build-push-docker-image.outputs.image }}
+          VAR: image=${{ needs.build.outputs.image }}
 
   generate-draft-release:
     name: Generate/update draft release
