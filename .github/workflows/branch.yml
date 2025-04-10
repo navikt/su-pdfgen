@@ -9,9 +9,6 @@ on:
       - '!master'   # excludes master
       - '!main'     # excludes main (will probably replace master)
 
-env:
-  IMAGE: ghcr.io/${{ github.repository }}/su-pdfgen:${{ github.sha }}
-
 permissions: {}
 
 jobs:

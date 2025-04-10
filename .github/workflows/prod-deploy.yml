@@ -4,10 +4,6 @@ on:
   release:
     types: [published]
 
-
-env:
-  IMAGE: ghcr.io/${{ github.repository }}/su-pdfgen:${{ github.sha }}
-
 permissions: {}
 
 jobs:
