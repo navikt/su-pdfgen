@@ -38,8 +38,8 @@ jobs:
         id: docker-build-push
         with:
           team: supstonad
-          identity_provider: "${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}"
-          project_id: "${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}"
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
   deploy_to_dev:
     name: Deploy to dev
