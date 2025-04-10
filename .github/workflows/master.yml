@@ -35,16 +35,14 @@ jobs:
         run: ./gradlew test build
       - name: Build and push docker image to GAR
         uses: nais/docker-build-push@v0
-        env:
-          ACTIONS_RUNTIME_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
         id: docker-build-push
         with:
           docker_context: .
           team: supstonad
           tag: ${{ env.GITHUB_REF_SLUG }}
           image_suffix: ${{ github.workflow }}
-          identity_provider: "${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}"
-          project_id: "${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}"
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
   deploy_to_dev:
     name: Deploy to dev
