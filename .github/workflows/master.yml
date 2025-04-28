@@ -40,8 +40,6 @@ jobs:
         id: docker-build-push
         with:
           team: supstonad
-          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
       - name: Print docker tag
         run: echo 'Docker-tag er ${{ build.docker-build-push.outputs.image }} ' >> $GITHUB_STEP_SUMMARY
 
