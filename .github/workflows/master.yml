@@ -40,8 +40,6 @@ jobs:
         id: docker-build-push
         with:
           team: supstonad
-      - name: Print docker tag
-        run: echo 'Docker-tag er ${{ build.docker-build-push.outputs.image }} ' >> $GITHUB_STEP_SUMMARY
 
   deploy_to_dev:
     name: Deploy to dev
