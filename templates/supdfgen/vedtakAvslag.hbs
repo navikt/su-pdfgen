@@ -40,30 +40,38 @@
                     <li>Du skal oppholde deg utenfor Norge i mer enn 90 dager.</li>
                 {{/eq}}
 
+                {{#eq this "FAMILIEGJENFORENING"}}
+                    <li>
+                        Du har fått oppholdstillatelse i Norge på grunn av familiegjenforening med barn, barnebarn, nevø
+                        eller niese.
+                        I det første vedtaket ditt om oppholdstillatelse ble det stilt krav til at den du søkte
+                        gjenforening med, skulle forsørge deg.
+                        Selv om dette familiemedlemmet ikke lenger forsørger deg, har du likevel ikke rett til
+                        supplerende stønad.
+                    </li>
+                {{/eq}}
+
                 {{#eq this "ALDERSPENSJON_FOLKETRYGDEN"}}
-                    <li>Du har ikke fått vedtak om alderspensjon, som er et krav for å kunne få rett til supplerende
-                        stønad. Dersom du ikke har søkt om alderspensjon, kan du kontakte Nav for å få vurdert om det er
+                    <li>
+                        Du har ikke fått vedtak om alderspensjon fra folketrygden, som er et krav for å kunne få rett
+                        til supplerende stønad.
+                        Dersom du ikke har søkt om alderspensjon, kan du kontakte Nav for å få vurdert om det er
                         aktuelt.
                     </li>
                 {{/eq}}
 
                 {{#eq this "ALDERSPENSJON_ANDRE_NORSKE_PENSJONSORDNINGER"}}
-                    <li>Du er registrert som medlem i en tjenestepensjonsordning. Vi har ikke mottatt informasjon om at du
-                        har fått vedtak fra denne ordningen. Du må ha utnyttet retten til alle pensjoner i Norge og
-                        utlandet, da det er et krav for å få rett til supplerende stønad.
+                    <li>
+                        Du er registrert som medlem i en tjenestepensjonsordning. Vi har ikke mottatt informasjon om at
+                        du har fått vedtak fra denne ordningen. Du må ha utnyttet retten til alle pensjoner i Norge og
+                        utlandet for å få rett til supplerende stønad.
                     </li>
                 {{/eq}}
 
                 {{#eq this "ALDERSPENSJON_UTENLANDSKE_PENSJONSORDNINGER"}}
-                    <li>Du har ikke fått vedtak om pensjon fra utlandet, som er et krav for å kunne få rett til
-                        supplerende stønad.
-                    </li>
-                {{/eq}}
-
-                {{#eq this "FAMILIEGJENFORENING"}}
-                    <li>Din første oppholdstillatelse som gav grunnlag for permanent oppholdstillatelse i Norge, ble
-                        gitt på grunn av familiegjenforening med barn, barnebarn, nevø eller niese. Det
-                        var krav om underhold, og du har derfor ikke rett til supplerende stønad.
+                    <li>
+                        Du har ikke fått vedtak om pensjon fra utlandet, som er et krav for å få rett til supplerende
+                        stønad.
                     </li>
                 {{/eq}}
 
@@ -139,13 +147,6 @@
                         Du kan søke om supplerende stønad på nytt når du er innvilget varig oppholdsrett i Norge.
                     </p>
                 {{/if}}
-            {{/eq}}
-
-            {{#eq this "FAMILIEGJENFORENING"}}
-                <p>Selv om familiemedlemmet ditt ikke lenger sørger for ditt underhold, har du fremdeles ikke rett til
-                    supplerende stønad. Du kan ta kontakt med ditt lokale Nav-kontor for vurdering om du har rett til
-                    økonomisk sosialhjelp.
-                </p>
             {{/eq}}
         {{/each}}
 
