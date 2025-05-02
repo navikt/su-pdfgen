@@ -41,14 +41,15 @@
 
         <p>Formue er eiendommer, kontanter, innskudd i norske eller utenlandske banker, omsettelige aksjer,
             obligasjoner, andeler i verdipapirfond, andre omsettelige verdipapirer og utestående fordringer. Har du
-            gjeld, er ikke dette med i vurderingen vår. Egen primærbolig og en bil regnes ikke som formue.</p>
+            gjeld, er ikke dette med i vurderingen vår. Egen primærbolig og en bil (to biler hvis du har
+            samboer/ektefelle) regnes ikke som formue. </p>
 
         <p>Du må opplyse om all formue og inntekt i Norge og utlandet. Hvis du ikke opplyser om formuen eller inntekten
             din, kan du få penger du ikke har rett til. Da stopper vi stønaden din og vi krever tilbake penger du ikke
             skulle fått.</p>
     </div>
 
-    <div class="pagebreak" />
+    <div class="pagebreak"/>
     <div class="info">
         <h3>Hvis du har, eller får, ektefelle eller samboer</h3>
         <p>Du må opplyse om all formue og inntekt i Norge og utlandet også for ektefellen eller samboeren din. Formuen
@@ -86,15 +87,25 @@
             du kontakte Skatteetaten.</p>
     </div>
 
-    <div class="info">
-        <h3>Honnørkort</h3>
-        <p>Du har rett til honnørrabatt på offentlig kommunikasjon når du reiser i Norge. Hvis du ikke allerede har
-            honnørkortet, vil du få dette kortet i posten.</p>
-    </div>
+    {{#eq sakstype "UFØRE"}}
+        <div class="info">
+            <h3>Honnørkort</h3>
+            <p>Du har rett til honnørrabatt på offentlig kommunikasjon når du reiser i Norge. Hvis du ikke allerede har
+                honnørkortet, vil du få dette kortet i posten.</p>
+        </div>
+    {{/eq}}
 
     <div class="info">
         <h3>Kontakt oss</h3>
-        <p>Du finner mer informasjon på <a title="Lenke til nav.no">www.nav.no</a>. Her kan du sende melding eller spørsmål til oss. Hvis du
-            trenger tolkebistand så kan du kontakte oss på telefon 55 55 33 33 for å bestille timeavtale.</p>
+        <p>Du finner mer informasjon på <a title="Lenke til nav.no">www.nav.no</a>. Her kan du sende melding eller
+            spørsmål til oss.
+            Hvis du trenger tolkebistand så kan du kontakte oss på telefon
+            {{#if erAldersbrev}}
+                55 55 33 34
+            {{else}}
+                55 55 33 33
+            {{/if}}
+            for å bestille timeavtale.
+        </p>
     </div>
 </div>
