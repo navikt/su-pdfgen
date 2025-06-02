@@ -18,6 +18,5 @@ jobs:
       -  uses: nais/deploy/actions/deploy@v2
          env:
            VAR: image=europe-north1-docker.pkg.dev/nais-management-233d/supstonad/su-pdfgen:${{ github.sha }}
-           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
            CLUSTER: prod-fss
            RESOURCE: nais.yml
