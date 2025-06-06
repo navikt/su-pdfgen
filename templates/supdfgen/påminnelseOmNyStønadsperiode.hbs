@@ -11,7 +11,14 @@
             <p class="boldedText">Dette må du gjøre</p>
             <p>Slik bestiller du time for møte:</p>
             <ul>
-                <li>Ring til Nav på tlf. 55 55 33 33 for å bestille time.</li>
+                <li>Ring til Nav på tlf.
+                    {{#if erAldersbrev}}
+                        55 55 33 34
+                    {{else}}
+                        55 55 33 33
+                    {{/if}}
+                    for å bestille time.
+                </li>
                 <li>Si fra til oss hvis du trenger tolk på møtet.</li>
             </ul>
         </div>
@@ -41,10 +48,10 @@
         </div>
 
 
-        <br />
+        <br/>
         <div class="info">
             <p>Med hilsen</p>
-            <p >Nav Familie-og pensjonsytelser Ålesund</p>
+            <p>Nav Familie-og pensjonsytelser Ålesund</p>
         </div>
     </div>
 {{/supdfgen/partials/base}}

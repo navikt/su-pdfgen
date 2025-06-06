@@ -66,7 +66,13 @@
         <ul>
             <li>Logg deg inn på nav.no eller</li>
             <li>Send et skriftlig svar</li>
-            <li>Du kan få hjelp ved å ringe 55 55 33 33 eller henvende deg til Nav-kontoret ditt</li>
+            <li>Du kan få hjelp ved å ringe
+                {{#if erAldersbrev}}
+                    55 55 33 34
+                {{else}}
+                    55 55 33 33
+                {{/if}}
+                eller henvende deg til Nav-kontoret ditt</li>
         </ul>
         <p>
             Hvis du vil sende skriftlig svar, må du bruke forsiden fra <a
