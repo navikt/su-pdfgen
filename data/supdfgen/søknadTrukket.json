@@ -12,5 +12,6 @@
     "saksnummer": "2021"
   },
   "datoSøknadOpprettet": "01.08.2020",
-  "trukketDato": "03.08.2020"
+  "trukketDato": "03.08.2020",
+  "erAldersbrev": false
 }

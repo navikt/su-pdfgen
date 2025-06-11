@@ -23,5 +23,6 @@
       "bruttoSkalTilbakekreve": 3000
     }
   ],
-  "saksbehandlerNavn": "Malenia, blade of Miquella"
+  "saksbehandlerNavn": "Malenia, blade of Miquella",
+  "erAldersbrev": false
 }

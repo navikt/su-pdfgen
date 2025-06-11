@@ -11,5 +11,6 @@
     "poststed": "Oslo",
     "saksnummer": 1234
   },
-  "utløpsdato": "31.03.2022"
+  "utløpsdato": "31.03.2022",
+  "erAldersbrev": false
 }
