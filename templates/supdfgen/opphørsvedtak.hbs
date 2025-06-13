@@ -3,18 +3,24 @@
         <h3>Vedtak om opphør av supplerende stønad</h3>
         {{> supdfgen/partials/fnr personalia }}
 
-        <p>Vi har opphørt fordi:</p>
+        {{#contains_all opphørsgrunner "FAMILIEGJENFORENING"}}
+            <p>
+                Vi har opphørt stønaden din fordi oppholdstillatelsen din ikke gir deg rett til supplerende stønad.
+            </p>
+        {{else}}
+            <p>Vi har opphørt fordi:</p>
 
-        {{> supdfgen/partials/opphør opphørsgrunner=opphørsgrunner }}
+            {{> supdfgen/partials/opphør opphørsgrunner=opphørsgrunner }}
 
-        <p>
-            Stønaden din blir opphørt i perioden {{opphørsperiode.fraOgMed}}-{{opphørsperiode.tilOgMed}}.
-        </p>
+            <p>
+                Stønaden din blir opphørt i perioden {{opphørsperiode.fraOgMed}}-{{opphørsperiode.tilOgMed}}.
+            </p>
 
-        <span>
+            <span>
             Vedtaket er gjort etter lov om supplerende stønad for personer
             med kort botid i Norge {{> supdfgen/partials/visAvslagsparagrafer avslagsparagrafer}}.
-        </span>
+            </span>
+        {{/contains_all}}
 
         <p class="fritekst">{{fritekst}}</p>
 
