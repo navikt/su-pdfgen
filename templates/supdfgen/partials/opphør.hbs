@@ -4,7 +4,7 @@
             <li>
                 <p>
                     Vi har mottatt opplysninger om at uføretrygden din er opphørt etter paragrafene 12-4 til
-                    12-7. Vi har derfor opphørt din supplerende stønad som ufør flyktning.
+                    12-7.
                 </p>
             </li>
         {{/eq}}
@@ -13,12 +13,11 @@
             {{#if harEktefelle}}
                 <li>
                     Nye opplysninger viser at inntekten du og ektefellen/samboeren din har til sammen er for
-                    høy. Vi har derfor opphørt din supplerende stønad som ufør flyktning.
+                    høy.
                 </li>
             {{else}}
                 <li>
-                    Nye opplysninger viser at du har for høy inntekt. Vi har derfor opphørt din supplerende
-                    stønad som ufør flyktning.
+                    Nye opplysninger viser at du har for høy inntekt.
                 </li>
             {{/if}}
         {{/eq}}
@@ -26,16 +25,14 @@
             <li>
                 <p>
                     Ny beregning av stønaden viser at den er for lav til at den kan utbetales.
-                    Vi kan ikke utbetale stønad som er under to prosent av den høyeste stønadssatsen. Vi har
-                    derfor opphørt din supplerende stønad som ufør flyktning.
+                    Vi kan ikke utbetale stønad som er under to prosent av den høyeste stønadssatsen.
                 </p>
             </li>
         {{/eq}}
         {{#eq this "UTENLANDSOPPHOLD" }}
             <li>
                 <p>
-                    Nye opplysninger viser at du har vært eller planlegger å være mer enn 90 dager i utlandet.
-                    Vi har derfor opphørt din supplerende stønad som ufør flyktning.
+                    Vi har opphørt fordi du har vært eller planlagt å være mer enn 90 dager i utlandet.
                 </p>
             </li>
         {{/eq}}
@@ -44,18 +41,20 @@
                 <li>
                     <p> Nye opplysninger viser at formuen du og ektefellen/samboeren din har til sammen er mer
                         enn halvparten av folketrygdens grunnbeløp.
-                        For tiden er dette {{halvGrunnbeløp}} kroner. Vi har derfor opphørt din supplerende
-                        stønad som ufør flyktning.
+                        For tiden er dette {{halvGrunnbeløp}} kroner.
                     </p>
+                    <p> Hvis formuen blir mindre, kan du søke om supplerende stønad på nytt.
+                        Du kan ikke gi bort formuen for å få rett til supplerende stønad.
+                        Derfor må du dokumentere hva formuen er brukt til hvis du søker på nytt.</p>
                 </li>
             {{else}}
                 <li>
-                    <p>Nye opplysninger viser at formuen din er mer enn halvparten av grunnbeløpet, som for
-                        tiden er {{halvGrunnbeløp}} kroner. Vi har derfor opphørt din supplerende stønad som
-                        ufør flyktning.</p>
-                    <p> Hvis formuen din blir mindre, kan du søke om supplerende stønad på nytt.
-                        Du kan ikke gi bort formuen din for å få rett til supplerende stønad.
-                        Derfor må du dokumentere hva du har brukt formuen til hvis du søker på nytt.</p>
+                    <p>Nye opplysninger viser at formuen din er mer enn halvparten av folketrygdens grunnbeløp, som for
+                        tiden er {{halvGrunnbeløp}} kroner.
+                    </p>
+                    <p> Hvis formuen blir mindre, kan du søke om supplerende stønad på nytt.
+                        Du kan ikke gi bort formuen for å få rett til supplerende stønad.
+                        Derfor må du dokumentere hva formuen er brukt til hvis du søker på nytt.</p>
                 </li>
             {{/if}}
         {{/eq}}
@@ -80,8 +79,7 @@
         {{#eq this "OPPHOLDSTILLATELSE"}}
             <li>
                 <p>
-                    Nye opplysninger viser at du ikke har lovlig opphold i Norge. Vi har derfor opphørt din stønad som
-                    ufør flyktning.
+                    Nye opplysninger viser at du ikke har lovlig opphold i Norge.
                 </p>
             </li>
         {{/eq}}
@@ -89,8 +87,7 @@
         {{#eq this "BOR_OG_OPPHOLDER_SEG_I_NORGE"}}
             <li>
                 <p>
-                    Nye opplysninger viser at du ikke oppholder deg fast i Norge. Vi har derfor opphørt din stønad som
-                    ufør flyktning.
+                    Nye opplysninger viser at du ikke oppholder deg fast i Norge.
                 </p>
             </li>
         {{/eq}}
@@ -99,7 +96,7 @@
             <li>
                 <p>
                     Nye opplysninger viser at du ikke møtte personlig når du søkte om supplerende stønad eller ved
-                    kontrollsamtale. Vi har derfor opphørt din stønad som ufør flykting.
+                    kontrollsamtale.
                 </p>
             </li>
         {{/eq}}
@@ -107,7 +104,15 @@
         {{#eq this "INNLAGT_PÅ_INSTITUSJON"}}
             <li>
                 <p>
-                    Nye opplysninger viser at du er innlagt på institusjon. Vi har derfor opphørt din stønad som ufør flykting.
+                    Nye opplysninger viser at du er innlagt på institusjon.
+                </p>
+            </li>
+        {{/eq}}
+
+        {{#eq this "ALDERSPENSJON"}}
+            <li>
+                <p>
+                    Du har ikke fullt ut benyttet deg av retten til pensjon fra folketrygden eller andre norske eller utenlandske ordninger.
                 </p>
             </li>
         {{/eq}}
