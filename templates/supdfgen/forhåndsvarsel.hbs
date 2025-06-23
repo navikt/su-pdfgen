@@ -22,7 +22,13 @@
             </p>
             <p>
                 Hvis du vil sende din uttalelse pr post kan du finne forside med adresse på nav.no under «Søknad og skjema»,
-                og «Pensjon», «Supplerende stønad til ufør flyktning» og «Ettersendelse».
+                og «Pensjon»,
+                {{#if erAldersbrev}}
+                    «Supplerende stønad til personer over 67 år med kort botid i Norge»
+                {{else}}
+                    «Supplerende stønad til ufør flyktning»
+                {{/if}}
+                og «Ettersendelse».
             </p>
         </div>
 
