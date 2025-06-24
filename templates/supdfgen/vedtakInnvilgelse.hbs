@@ -6,11 +6,11 @@
         <div>
             <p>
                 Du får supplerende stønad fra {{fradato}} til og med {{tildato}} fordi du er
-                {{#if erAldersbrev}}
+                {{#eq sakstype "ALDER"}}
                     over 67 år og har kort botid i Norge.
                 {{else}}
                     ufør flyktning.
-                {{/if}}
+                {{/eq}}
                 Du kan søke på nytt i {{tildato}}.
             </p>
             <p>
