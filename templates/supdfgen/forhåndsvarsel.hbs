@@ -12,22 +12,22 @@
             <p>
                 Før vi gjør vedtak i saken, har du rett til å uttale deg. Fristen for å uttale seg er 14 dager etter at du har mottatt dette brevet.
                 Uttalelsen bør være skriftlig. Kontakt oss gjerne på telefon
-                {{#if erAldersbrev}}
+                {{#eq sakstype "ALDER"}}
                     55 55 33 34
                 {{else}}
                     55 55 33 33
-                {{/if}}
+                {{/eq}}
                 for råd og veiledning.
                 Du har også som hovedregel rett til å se sakens dokumenter etter bestemmelsene i forvaltningsloven § 18.
             </p>
             <p>
                 Hvis du vil sende din uttalelse pr post kan du finne forside med adresse på nav.no under «Søknad og skjema»,
                 og «Pensjon»,
-                {{#if erAldersbrev}}
+                {{#eq sakstype "ALDER"}}
                     «Supplerende stønad til personer over 67 år med kort botid i Norge»
                 {{else}}
                     «Supplerende stønad til ufør flyktning»
-                {{/if}}
+                {{/eq}}
                 og «Ettersendelse».
             </p>
         </div>

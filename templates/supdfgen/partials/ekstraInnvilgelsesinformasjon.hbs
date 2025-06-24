@@ -1,11 +1,11 @@
 <div>
     <div class="pagebreak"/>
     <h2>Viktig informasjon om supplerende stønad til deg som er
-        {{#if erAldersbrev}}
+        {{#eq sakstype "ALDER"}}
             over 67 år og har kort botid i Norge
         {{else}}
             ufør flyktning
-        {{/if}}</h2>
+        {{/eq}}</h2>
 
     <div class="info">
         <h3>Du må møte på ditt lokale Nav-kontor</h3>
@@ -100,11 +100,11 @@
         <p>Du finner mer informasjon på <a title="Lenke til nav.no">www.nav.no</a>. Her kan du sende melding eller
             spørsmål til oss.
             Hvis du trenger tolkebistand så kan du kontakte oss på telefon
-            {{#if erAldersbrev}}
+            {{#eq sakstype "ALDER"}}
                 55 55 33 34
             {{else}}
                 55 55 33 33
-            {{/if}}
+            {{/eq}}
             for å bestille timeavtale.
         </p>
     </div>

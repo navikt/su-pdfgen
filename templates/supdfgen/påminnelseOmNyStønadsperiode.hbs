@@ -12,11 +12,11 @@
             <p>Slik bestiller du time for møte:</p>
             <ul>
                 <li>Ring til Nav på tlf.
-                    {{#if erAldersbrev}}
+                    {{#eq sakstype "ALDER"}}
                         55 55 33 34
                     {{else}}
                         55 55 33 33
-                    {{/if}}
+                    {{/eq}}
                     for å bestille time.
                 </li>
                 <li>Si fra til oss hvis du trenger tolk på møtet.</li>
