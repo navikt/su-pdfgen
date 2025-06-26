@@ -2,27 +2,48 @@
     <div class="mainContent">
         <h2>Du må søke supplerende stønad på nytt</h2>
 
-        <p>
-            Alle som får supplerende stønad, må søke på nytt en gang i året. Den supplerende stønaden din
-            stopper {{utløpsdato}}. Du må bestille time hos Nav nå for å søke på nytt.
-        </p>
+        {{#if uføreSomFyller67}}
+            <p>
+                Din supplerende stønad stopper {{utløpsdato}} fordi du har fylt 67 år og dermed ikke lenger har rett til
+                supplerende stønad som ufør flyktning.
+                <br/><br/>
+                Du må bestille time hos Nav så snart som mulig for å søke på nytt. Du må nå søke om supplerende stønad
+                for
+                personer over 67 år med kort botid i Norge.
+                <br/><br/>
+                Vi minner om at du må ha et vedtak – enten innvilgelse eller avslag – om alderspensjon fra folketrygden
+                for å kunne få supplerende stønad.
+            </p>
+            <div class="info">
+                <p class="boldedText">Dette må du gjøre</p>
+                <ul>
+                    <li>Søk om alderspensjon fra folketrygden, hvis ikke du allerede har fått vedtak</li>
+                    <li>Ring til Nav på tlf. 55 55 33 34 for å bestille time.</li>
+                    <li>Si fra til oss hvis du trenger tolk på møtet.</li>
+                </ul>
+            </div>
+        {{else}}
+            <p>
+                Alle som får supplerende stønad, må søke på nytt en gang i året. Den supplerende stønaden din
+                stopper {{utløpsdato}}. Du må bestille time hos Nav nå for å søke på nytt.
+            </p>
 
-        <div class="info">
-            <p class="boldedText">Dette må du gjøre</p>
-            <p>Slik bestiller du time for møte:</p>
-            <ul>
-                <li>Ring til Nav på tlf.
-                    {{#if erAldersbrev}}
-                        55 55 33 34
-                    {{else}}
-                        55 55 33 33
-                    {{/if}}
-                    for å bestille time.
-                </li>
-                <li>Si fra til oss hvis du trenger tolk på møtet.</li>
-            </ul>
-        </div>
-
+            <div class="info">
+                <p class="boldedText">Dette må du gjøre</p>
+                <p>Slik bestiller du time for møte:</p>
+                <ul>
+                    <li>Ring til Nav på tlf.
+                        {{#eq sakstype "ALDER"}}
+                            55 55 33 34
+                        {{else}}
+                            55 55 33 33
+                        {{/eq}}
+                        for å bestille time.
+                    </li>
+                    <li>Si fra til oss hvis du trenger tolk på møtet.</li>
+                </ul>
+            </div>
+        {{/if}}
 
         <div class="info">
             <p>Når du kommer til Nav-kontoret, må du ha med deg:</p>
