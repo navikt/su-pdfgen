@@ -2,15 +2,15 @@
     <h3>Har du spørsmål?</h3>
     <p>
         Du finner nyttig informasjon på
-        {{#if erAldersbrev}}
+        {{#eq sakstype "ALDER"}}
             <a title="Lenke til mer informasjon om supplerende stønad for personer over 67 år med kort botid i Norge">www.nav.no/supplerende-stonad-over-67</a>.
         {{else}}
             <a title="Lenke til mer informasjon om supplerende stønad for uføre flykninger under 67 år">www.nav.no/supplerende-stonad-flyktninger</a>.
-        {{/if}}
+        {{/eq}}
     </p>
-    {{#if erAldersbrev}}
+    {{#eq sakstype "ALDER"}}
         <p>Du kan også kontakte oss på 55 55 33 34.</p>
     {{else}}
         <p>Du kan også kontakte oss på 55 55 33 33.</p>
-    {{/if}}
+    {{/eq}}
 </div>

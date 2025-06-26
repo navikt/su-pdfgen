@@ -24,11 +24,11 @@
 
         <h2>Har du spørsmål?</h2>
         <p> Du finner nyttig informasjon på
-            {{#if erAldersbrev}}
+            {{#eq sakstype "ALDER"}}
                 <a title="Lenke til mer informasjon om supplerende stønad for personer over 67 år med kort botid i Norge">www.nav.no/supplerende-stonad-over-67</a>.
             {{else}}
                 <a title="Lenke til mer informasjon om supplerende stønad for uføre flykninger under 67 år">nav.no/supplerende-stonad-flyktninger</a>.
-            {{/if}}
+            {{/eq}}
         </p>
 
         <p> Kontakt gjerne Nav Klageinstans på nav.no eller på telefon 21 07 17 30.
