@@ -12,5 +12,6 @@
     "saksnummer": 1234
   },
   "utløpsdato": "31.03.2022",
-  "sakstype": "UFØRE"
+  "sakstype": "UFØRE",
+  "uføreSomFyller67": true
 }
