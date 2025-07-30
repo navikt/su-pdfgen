@@ -76,8 +76,16 @@
             </li>
         </ul>
         <p>
-            Hvis du vil sende skriftlig svar, må du bruke forsiden fra <a
-                href="https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar">https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar</a>
+            Hvis du vil sende skriftlig svar, må du bruke forsiden fra
+            {{#eq sakstype "UFØRE"}}
+            <a href="https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar">
+                https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar
+            </a>
+            {{else}}
+                <a href="https://www.nav.no/ettersende#supplerende-stonad-for-personer-over-67-ar-med-kort-botid-i-norge">
+                    https://www.nav.no/ettersende#supplerende-stonad-for-personer-over-67-ar-med-kort-botid-i-norge
+                </a>
+            {{/eq}}
         </p>
     </div>
 </div>
