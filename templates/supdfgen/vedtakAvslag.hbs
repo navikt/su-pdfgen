@@ -19,9 +19,7 @@
 
                 {{#eq this "OPPHOLDSTILLATELSE" }}
                     {{#eq sakstype "ALDER"}}
-                        <li>Du har ikke varig lovlig opphold i Norge. Registreringsbevis for EØS-borgere gir ikke
-                            grunnlag for varig oppholdsrett i Norge. Det er et krav at du har varig oppholdsrett for å
-                            kunne få rett til supplerende stønad.
+                        <li>Du har ikke varig lovlig opphold i Norge.
                         </li>
                     {{else}}
                         <li>Du har ikke lovlig opphold i Norge.</li>
@@ -137,17 +135,6 @@
             Vedtaket er gjort etter lov om supplerende stønad for personer
             med kort botid i Norge {{> supdfgen/partials/visAvslagsparagrafer avslagsparagrafer}}.
         </span>
-
-        {{#each avslagsgrunner}}
-            {{#eq this "OPPHOLDSTILLATELSE"}}
-                {{#eq sakstype "ALDER"}}
-                    <p>Personer med registreringsbevis kan søke om varig oppholdsrett etter fem års botid i Norge.
-                        Retten til supplerende stønad kan tidligst oppnås når du har fått vedtak om varig oppholdsrett.
-                        Du kan søke om supplerende stønad på nytt når du er innvilget varig oppholdsrett i Norge.
-                    </p>
-                {{/eq}}
-            {{/eq}}
-        {{/each}}
 
         {{#if fritekst}}
             <p class="fritekst">{{fritekst}}</p>
