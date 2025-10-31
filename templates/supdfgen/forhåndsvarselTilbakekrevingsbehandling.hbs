@@ -18,14 +18,19 @@
 <div class="mainContent">
     <h2>Varsel om at Nav vurderer å kreve tilbake feilutbetalt supplerende stønad</h2>
     {{> supdfgen/partials/fnr personalia }}
-    <p>Du har fått utbetalt for mye supplerende stønad. Vi vurderer å kreve tilbake dette beløpet.</p>
-    <p>Beløpet er {{sumBruttoSkalTilbakekreve}} kroner før skatt.</p>
-    <p>Du finner flere detaljer om feilutbetalt beløp lenger ned i brevet.</p>
 
-    <div class="info">
-        <h4>Hva har skjedd</h4>
+    {{#if kravgrunnlag}}
+        <p>Du har fått utbetalt for mye supplerende stønad. Vi vurderer å kreve tilbake dette beløpet.</p>
+        <p>Beløpet er {{kravgrunnlag.sumBruttoSkalTilbakekreve}} kroner før skatt.</p>
+        <p>Du finner flere detaljer om feilutbetalt beløp lenger ned i brevet.</p>
+
+        <div class="info">
+            <h4>Hva har skjedd</h4>
+            <p class="fritekst">{{fritekst}}</p>
+        </div>
+    {{else}}
         <p class="fritekst">{{fritekst}}</p>
-    </div>
+    {{/if}}
 
     <div class="info">
         <h4>Dette legger vi vekt på i vurderingen vår</h4>
@@ -78,9 +83,9 @@
         <p>
             Hvis du vil sende skriftlig svar, må du bruke forsiden fra
             {{#eq sakstype "UFØRE"}}
-            <a href="https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar">
-                https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar
-            </a>
+                <a href="https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar">
+                    https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar
+                </a>
             {{else}}
                 <a href="https://www.nav.no/ettersende#supplerende-stonad-for-personer-over-67-ar-med-kort-botid-i-norge">
                     https://www.nav.no/ettersende#supplerende-stonad-for-personer-over-67-ar-med-kort-botid-i-norge
@@ -92,24 +97,26 @@
 
 {{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
 
-<div class="vedlegg">
-    <h4>Vedlegg: Beregning av feilutbetalt beløp</h4>
-    <table>
-        <thead>
-        <tr>
-            <th class="spacing-xxl">Periode</th>
-            <th class="spacing-xxl">Feilutbetalt beløp</th>
-        </tr>
-        </thead>
-        <tbody>
-        {{#each beregningFeilutbetaltBeløp}}
+{{#if kravgrunnlag}}
+    <div class="vedlegg">
+        <h4>Vedlegg: Beregning av feilutbetalt beløp</h4>
+        <table>
+            <thead>
             <tr>
-                <td>{{periode}}</td>
-                <td class="tall">{{currency_no bruttoSkalTilbakekreve true}} kr</td>
+                <th class="spacing-xxl">Periode</th>
+                <th class="spacing-xxl">Feilutbetalt beløp</th>
             </tr>
-        {{/each}}
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+            {{#each kravgrunnlag.beregningFeilutbetaltBeløp}}
+                <tr>
+                    <td>{{periode}}</td>
+                    <td class="tall">{{currency_no bruttoSkalTilbakekreve true}} kr</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+{{/if}}
 </body>
 </html>
