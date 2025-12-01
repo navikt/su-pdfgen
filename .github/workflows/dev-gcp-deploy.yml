@@ -1,4 +1,4 @@
-name: Manuell deploy til prod
+name: Manuell deploy til dev gcp
 
 on:
   workflow_dispatch:
