@@ -1,13 +1,15 @@
 name: Manuell deploy til dev gcp
 
 on:
+  release:
+    types: [published]
   workflow_dispatch:
 
 
 permissions: {}
 
 jobs:
-  deploy_to_prod:
+  deploy_to_dev:
     name: Deploy to dev gcp
     runs-on: ubuntu-latest
     permissions:
@@ -20,3 +22,17 @@ jobs:
            VAR: image=europe-north1-docker.pkg.dev/nais-management-233d/supstonad/su-pdfgen:${{ github.sha }}
            CLUSTER: dev-gcp
            RESOURCE: nais.yml
+
+  deploy_to_prod:
+    name: Deploy to prod gcp
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # needed for push-image
+    steps:
+      - uses: actions/checkout@v4
+      - uses: nais/deploy/actions/deploy@v2
+        env:
+          VAR: image=europe-north1-docker.pkg.dev/nais-management-233d/supstonad/su-pdfgen:${{ github.sha }}
+          CLUSTER: prod-gcp
+          RESOURCE: nais.yml

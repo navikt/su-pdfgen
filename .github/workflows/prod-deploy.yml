@@ -2,7 +2,7 @@ name: Manuell deploy til prod
 
 on:
   release:
-    types: [published]
+    types: []
 
 permissions: {}
 
