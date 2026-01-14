@@ -22,12 +22,12 @@ jobs:
       - name: deploy to dev
         uses: nais/deploy/actions/deploy@v2
         env:
-          CLUSTER: dev-fss
+          CLUSTER: dev-gcp
           RESOURCE: alerts.yml
           VAR: SLACK_ALERTS_CHANNEL=#su_alerts_dev,LOGS_URL=https://logs.adeo.no/goto/09fc370f3dd8c515ff304f273e583a81
       - name: deploy to prod
         uses: nais/deploy/actions/deploy@v2
         env:
-          CLUSTER: prod-fss
+          CLUSTER: prod-gcp
           RESOURCE: alerts.yml
           VAR: SLACK_ALERTS_CHANNEL=#su_alerts,LOGS_URL=https://logs.adeo.no/goto/2c8fbf8203f9d500a465b41c11ab1d6d
