@@ -1,10 +1,13 @@
-name: Manuell deploy til dev gcp
+name: Manuell deploy
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
-
+    inputs:
+      deploy_prod:
+        description: 'Deploy to production'
+        type: boolean
+        required: false
+        default: false
 
 permissions: {}
 
@@ -24,7 +27,8 @@ jobs:
            RESOURCE: nais.yml
 
   deploy_to_prod:
-    name: Deploy to prod gcp
+    name: Deploy to prod
+    if: ${{ inputs.deploy_prod == true && github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
