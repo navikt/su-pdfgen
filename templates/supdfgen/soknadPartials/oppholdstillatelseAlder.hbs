@@ -8,6 +8,12 @@
 
     <tbody>
     <tr>
+        <td>Kom du til Norge på grunn av familiegjenforening med barn, barnebarn, nevø eller niese, og fikk
+            oppholdstillatelse med krav til underhold?
+        </td>
+        <td>{{#if oppholdstillatelseAlder.familiegjenforening}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    <tr>
         <td>Er du norsk statsborger eller statsborger i et nordisk land?</td>
         <td>{{#if oppholdstillatelse.erNorskStatsborger}} Ja {{else}} Nei {{/if}}</td>
     </tr>
@@ -25,12 +31,6 @@
 
 
         {{#if oppholdstillatelse.harOppholdstillatelse}}
-            <tr>
-                <td>Kom du til Norge på grunn av familiegjenforening med barn, barnebarn, nevø eller niese, og fikk
-                    oppholdstillatelse med krav til underhold?
-                </td>
-                <td>{{#if oppholdstillatelseAlder.familiegjenforening}} Ja {{else}} Nei {{/if}}</td>
-            </tr>
 
             <tr>
                 <td>Er oppholdstillatelsen din permanent eller midlertidig?</td>
