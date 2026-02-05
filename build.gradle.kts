@@ -7,7 +7,7 @@ plugins {
 }
 
 val junitJupiterVersion = "5.11.4"
-val kotestVersion = "5.9.1"
+val kotestVersion = "6.1.3"
 val handlebarsVersion = "4.4.0"
 
 dependencies {
