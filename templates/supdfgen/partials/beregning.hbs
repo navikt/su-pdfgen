@@ -4,7 +4,7 @@
 
 <p>
     {{#if harFradrag}}
-        Vi har redusert stønaden fordi du {{#if harEktefelle}}  og/eller ektefelle{{/if}} har annen inntekt.
+        Vi har redusert stønaden din med inntekt og andre fradrag.
     {{/if}}
 </p>
 
@@ -30,7 +30,7 @@
         {{#if fradrag.bruker}}
             {{#each fradrag.bruker}}
                 <tr>
-                    <td>{{type}}</td>
+                    <td>{{#eq type "Sosialstønad"}}Fradrag for utbetalt sosialstønad{{else}}{{type}}{{/eq}}</td>
                     <td class="keyValueOppsummering__value">-{{currency_no beløp}}</td>
                 </tr>
                 {{#if utenlandskInntekt}}
