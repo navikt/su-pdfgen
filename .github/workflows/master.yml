@@ -1,8 +1,6 @@
 name: Bygg og deploy ved push til master
 
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the master branch
   push:
     branches:
       - master
@@ -46,7 +44,6 @@ jobs:
   deploy_to_dev:
     name: Deploy to dev
     needs: build
-    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -59,14 +56,18 @@ jobs:
           RESOURCE: nais.yml
           VAR: image=${{ needs.build.outputs.image }}
 
-  generate-draft-release:
-    name: Generate/update draft release
+  deploy_to_prod:
+    needs: deploy_to_dev
+    name: Deploy to prod
     runs-on: ubuntu-latest
     permissions:
-      contents: 'write' # needed to create/edit releases
-      pull-requests: 'write' # needed to add labels to pull requests
+      contents: read
+      id-token: write # needed for push-image
     steps:
-      # Drafts your next Release notes as Pull Requests are merged into "master"
-      - uses: release-drafter/release-drafter@v6
+      - uses: actions/checkout@v4
+      - uses: nais/deploy/actions/deploy@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VAR: image=europe-north1-docker.pkg.dev/nais-management-233d/supstonad/su-pdfgen:${{ github.sha }}
+          CLUSTER: prod-gcp
+          RESOURCE: nais.yml
+
