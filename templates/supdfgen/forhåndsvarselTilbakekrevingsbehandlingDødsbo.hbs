@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Supplerende Stønad"/>
+    <meta name="author" content="su-pdfgen"/>
+    <meta name="subject" content="Supplerende Stønad"/>
+
+    {{#block 'supdfgen/css/baseStyles' }}{{/block}}
+    {{#block 'supdfgen/css/vedleggStyles' }}{{/block}}
+
+    <title>Supplerende stønad</title>
+</head>
+<body>
+{{> supdfgen/partials/baseAsPartialBlock personalia }}
+
+<div class="mainContent">
+    <h2>Vi vurderer om boet må betale tilbake supplerende stønad</h2>
+
+    <p>
+        Avdøde {{personalia.fornavn}} {{personalia.etternavn}} har fått utbetalt
+        {{currency_no kravgrunnlag.sumBruttoSkalTilbakekreve true}} kroner for mye
+        supplerende stønad fra og med {{fraOgMed}} til og med {{tilOgMed}}.
+    </p>
+
+    <p>
+        Før vi avgjør om dette beløpet skal betales tilbake, har boet rett til å uttale seg. Dette må boet gjøre
+        innen 14 dager etter at boet har fått dette varselet.
+    </p>
+    <p>
+        Dette er kun et varsel om at vi vurderer å kreve tilbake det feilutbetalte beløpet. Det er ikke et vedtak om
+        tilbakekreving.
+    </p>
+    <p>
+        Hvis vi vedtar at boet må betale tilbake hele eller deler av det feilutbetalte beløpet, trekker vi fra
+        skatten på beløpet vi krever tilbake.
+    </p>
+
+    <div class="info">
+        <h4>Hva som har skjedd</h4>
+        <p class="fritekst">{{fritekst}}</p>
+    </div>
+
+    <div class="info">
+        <h4>Reglene for tilbakekreving</h4>
+        <p>
+            Hvis mottakeren av feilutbetalingen forsto eller burde forstått at utbetalingen som han har mottatt er
+            gjort på feil grunnlag, skal det feilutbetalte beløpet kreves tilbakebetalt. Når mottakeren er død, blir
+            det avgjørende for spørsmålet om tilbakekreving hva dødsboet forsto eller burde forstått på det tidspunktet
+            det fikk tilgang til avdødes post og bankkontoer.
+        </p>
+        <p>Dette følger av lov om supplerende stønad § 13.</p>
+    </div>
+
+    <div class="info">
+        <h4>Slik uttaler boet seg</h4>
+        <p>
+            Dødsboet har rett til å uttale seg, skriftlig eller muntlig, før vi tar den endelige avgjørelsen om
+            tilbakebetaling. Fristen for å gi uttale er 14 dager etter at boet har mottatt dette brevet.
+        </p>
+        <p>
+            Kontakt oss gjerne på telefon
+            {{#eq sakstype "ALDER"}}
+                55 55 33 34
+            {{else}}
+                55 55 33 33
+            {{/eq}}.
+            Dødsboet kan også uttale seg muntlig ved fremmøte hos det
+            lokale Nav-kontoret, eller det kan sende et skriftlig svar sammen med vedlagte forside.
+        </p>
+    </div>
+
+    <div class="info">
+        <h4>Hva skjer videre i saken?</h4>
+        <p>
+            Vi vil vurdere saken og sende boet et vedtak. Hvis boet må betale tilbake hele eller deler av beløpet, får
+            boet beskjed i vedtaket om hvordan tilbakebetalingen skal skje.
+        </p>
+    </div>
+
+    <div class="info">
+        <h4>Boet har rett til innsyn</h4>
+        <p>
+            Boet har som hovedregel rett til å se dokumentene i saken etter reglene i forvaltningsloven § 18.
+        </p>
+    </div>
+
+    <div class="info">
+        <h4>Har boet spørsmål?</h4>
+        <p>
+            Kontakt oss gjerne på nav.no eller på telefon
+            {{#eq sakstype "ALDER"}}
+                55 55 33 34
+            {{else}}
+                55 55 33 33
+            {{/eq}}.
+            Hvis boet oppgir fødselsnummeret til avdøde når
+            de tar kontakt med Nav, kan vi lettere gi rask og god hjelp.
+        </p>
+    </div>
+</div>
+
+{{> supdfgen/partials/hilsen saksbehandler=saksbehandlerNavn }}
+
+{{#if kravgrunnlag}}
+    <div class="vedlegg">
+        <h4>Vedlegg: Beregning av feilutbetalt beløp</h4>
+        <table>
+            <thead>
+            <tr>
+                <th class="spacing-xxl">Periode</th>
+                <th class="spacing-xxl">Feilutbetalt beløp</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each kravgrunnlag.beregningFeilutbetaltBeløp}}
+                <tr>
+                    <td>{{periode}}</td>
+                    <td class="tall">{{currency_no bruttoSkalTilbakekreve true}} kr</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+{{/if}}
+</body>
+</html>
