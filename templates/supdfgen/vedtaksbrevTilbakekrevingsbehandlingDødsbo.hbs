@@ -20,19 +20,19 @@
     <div class="shortSpacedInfo">
         <h3>Boet må betale tilbake supplerende stønad</h3>
         {{> supdfgen/partials/fnr personalia }}
-        <p>Vi viser til forhåndsvarselet vårt av {{varselDato}}.</p>
         <p>
-            Vi har kommet frem til at for mye utbetalt supplerende stønad fra og med {{fraOgMed}} til og
-            med {{tilOgMed}} skal
-            kreves tilbakebetalt/delvis tilbakebetalt. Boet skal betale tilbake
-            {{currency_no månedsoversiktMedSum.sumNettoSkalTilbakekreve true}} kroner etter at skatten er trukket
-            fra.
+            Vi har kommet frem til at for mye utbetalt supplerende stønad må betales tilbake.
+            Beløpet boet skylder før skatt er {{currency_no månedsoversiktMedSum.sumBruttoSkalTilbakekreve true}}.
+            Boet skal betale tilbake {{currency_no månedsoversiktMedSum.sumNettoSkalTilbakekreve true}} etter
+            at skatten er trukket fra.
         </p>
         <p>Beløpet som er trukket i skatt får vi tilbake fra Skatteetaten.</p>
-        <p>Vedtaket er gjort etter lov om supplerende stønad til personer med kort botid i Norge (sul) § 13.</p>
-        <p>
-            Nedenfor følger en oversikt over periodene med feilutbetalinger og feilutbetalt beløp inkludert skatt.
-        </p>
+        <p>Nedenfor følger en oversikt over periodene med feilutbetalinger og feilutbetalt beløp inkludert skatt.</p>
+    </div>
+
+    <div class="shortSpacedInfo">
+        <h4>Hvordan har vi kommet fram til at boet må betale tilbake?</h4>
+        <p class="fritekst">{{fritekst}}</p>
     </div>
 
     <div class="shortSpacedInfo">
@@ -41,11 +41,6 @@
             Vi gir opplysninger til Skatteetaten om dette vedtaket. Skatteetaten fastsetter det endelige
             skattebeløpet, og vil vurdere om det er grunnlag for å endre skatteoppgjøret ditt.
         </p>
-    </div>
-
-    <div class="shortSpacedInfo">
-        <h4>Hvordan har vi kommet fram til at boet må betale tilbake?</h4>
-        <p class="fritekst">{{fritekst}}</p>
     </div>
 
     <div class="shortSpacedInfo">
