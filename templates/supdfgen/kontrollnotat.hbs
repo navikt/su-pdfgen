@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Kontrollnotat</title>
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        td {
+            font-size: 0.9em;
+            vertical-align: top;
+            word-wrap: break-word;
+            padding: 0 0.3cm 0 1cm;
+        }
+
+        table {
+            width: 100%;
+            border: 2px #c9c9c9 solid;
+            padding-bottom: 0.8cm;
+            margin-bottom: 0.7cm;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+{{! Fiks pdf ordentlig neste pr --}}
+<body>
+    <h1>Kontrollnotat</h1>
+    <p><strong>Navn:</strong> {{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}</p>
+    <p><strong>Saksnummer:</strong> {{saksnummer}}</p>
+    <p><strong>Dato:</strong> {{dagensDatoOgTidspunkt}}</p>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>Personlig oppmøte</td>
+                <td>{{kontrollnotatInnhold.personligOppmøte}}</td>
+            </tr>
+            <tr>
+                <td>Fullmakt og legeerklæring</td>
+                <td>{{kontrollnotatInnhold.fullmaktOgLegeerklæring}}</td>
+            </tr>
+            </tbody>
+        </table>
+        </body>
+    </html>
