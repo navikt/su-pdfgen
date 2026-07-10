@@ -96,29 +96,17 @@
             <thead>
                 <tr>
                     <td colspan="2">
-                        <h4>Oppmøte</h4>
+                        <h4>Personlig oppmøte</h4>
                     </td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td class="tr50">
-                        <strong>Personlog oppmøte</strong>
+                        <strong>Har bruker møtt personlig?</strong>
                     </td>
                     <td class="tr50">
-                        {{#if personlogOppmøte}}
-                            Ja
-                        {{else}}
-                            Nei
-                        {{/if}}
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>Fullmakt og legeerklæring</strong>
-                    </td>
-                    <td>
-                        {{#if fullmaktOgLegeerklæring}}
+                        {{#if personligOppmøte}}
                             Ja
                         {{else}}
                             Nei
@@ -128,17 +116,40 @@
             </tbody>
         </table>
     <table>
+                <thead>
+                    <tr>
+                        <td colspan="2">
+                            <h4>Fullmakt og legeerklæring</h4>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tr50">
+                            <strong>Foreligger det fullmakt og legeerklæring som bekrefter at sykdom gjør at bruker ikke kan møte personlig?</strong>
+                        </td>
+                        <td class="tr50">
+                            {{#if fullmaktOgLegeerklæring}}
+                                Ja
+                            {{else}}
+                                Nei
+                            {{/if}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    <table>
         <thead>
             <tr>
                 <td colspan="2">
-                    <h4>Pass</h4>
+                    <h4>Kontroll av reisedokumenter</h4>
                 </td>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td class="tr50">
-                    <strong>Originalt pass fremvist</strong>
+                    <strong>Har bruker framvist originalt pass og eventuelle andre originale reisedokumenter?</strong>
                 </td>
                 <td class="tr50">
                     {{#if originaltPass}}
@@ -150,7 +161,7 @@
             </tr>
             <tr>
                 <td>
-                    <strong>Passet er gyldig</strong>
+                    <strong>Er det nye stempler i passet siden forrige møte?</strong>
                 </td>
                 <td>
                     {{#if gyldigPass}}
@@ -166,14 +177,14 @@
     <thead>
         <tr>
             <td colspan="2">
-                <h4>Utenlandsopphold</h4>
+                <h4>Reise til utlandet</h4>
             </td>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td class="tr50">
-                <strong>Har vært utenlands</strong>
+                <strong>Har bruker vært utenlands siden siste møte?</strong>
             </td>
             <td class="tr50">
                 {{#if harVærtUtenlands}}
@@ -199,20 +210,9 @@
             </td>
         </tr>
     {{/if}}
-    </tbody>
-</table>
-<table>
-    <thead>
-        <tr>
-            <td colspan="2">
-                <h4>Planlagte utenlandsreiser</h4>
-            </td>
-        </tr>
-    </thead>
-    <tbody>
         <tr>
             <td class="tr50">
-                <strong>Har planer om utenlandsreise</strong>
+                <strong>Har bruker planer om å reise utenlands?</strong>
             </td>
             <td class="tr50">
                 {{#if harPlanerOmUtenlandsreise}}
@@ -228,8 +228,8 @@
                 <strong>Planlagte reisedatoer</strong>
             </td>
             <td>
-                {{#if planlagteUtenlandsreisedatoer}}
-                    {{#each planlagteUtenlandsreisedatoer}}
+                {{#if planlagteUtenlandsreiseDatoer}}
+                    {{#each planlagteUtenlandsreiseDatoer}}
                      <div>{{this}}</div>
                      {{/each}}
                 {{else}}
@@ -240,7 +240,7 @@
 
    <tr>
         <td>
-            <strong>Reisedokumentasjon fremvist</strong>
+            <strong>Har bruker fått beskjed om at reisedokumenter, billetter/boardingpass må tas vare på?</strong>
         </td>
         <td>
             {{#if reiseDokumentasjon}}
@@ -258,14 +258,14 @@
     <thead>
         <tr>
             <td colspan="2">
-                <h4>Andre opplysninger</h4>
+                <h4>Økonomisk situasjon</h4>
             </td>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td class="tr50">
-                <strong>Økonomisk situasjon</strong>
+                <strong>Er det endringer i den økonomiske situasjonen for bruker eller ektefelle/partner/samboer?</strong>
             </td>
             <td class="tr50">
                 {{#if økonomiskSituasjon}}
@@ -275,11 +275,23 @@
                 {{/if}}
             </td>
         </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
         <tr>
-            <td>
-                <strong>Andre forhold</strong>
+            <td colspan="2">
+                <h4>Andre forhold</h4>
             </td>
-            <td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="tr50">
+                <strong>Er det endringer i andre forhold av betydning for stønaden (f.eks. sivilstand, institusjonsopphold, oppholdstillatelse)?</strong>
+            </td>
+            <td class="tr50">
                 {{#if andreForhold}}
                     Ja
                 {{else}}
@@ -287,18 +299,30 @@
                 {{/if}}
             </td>
         </tr>
-    <tr>
-        <td>
-            <strong>Skatteopplysninger gjennomgått</strong>
-        </td>
-        <td>
-            {{#if skatteOpplysninger}}
-                Ja
-            {{else}}
-                Nei
-            {{/if}}
-        </td>
-    </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <td colspan="2">
+                <h4>Skatteopplysninger</h4>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="tr50">
+                <strong>Er siste skattemelding og grunnlag for skatt for bruker og eventuell ektefelle/partner/samboer levert?</strong>
+            </td>
+            <td class="tr50">
+                {{#if skatteOpplysninger}}
+                    Ja
+                {{else}}
+                    Nei
+                {{/if}}
+            </td>
+        </tr>
     </tbody>
 </table>
 
