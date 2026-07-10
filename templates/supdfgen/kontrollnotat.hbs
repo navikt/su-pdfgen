@@ -8,40 +8,359 @@
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
         }
 
-        td {
-            font-size: 0.9em;
-            vertical-align: top;
-            word-wrap: break-word;
-            padding: 0 0.3cm 0 1cm;
-        }
+     td {
+         font-size: 0.9em;
+         vertical-align: top;
+         word-wrap: break-word;
+         padding: 0 0.3cm 0 1cm;
+     }
 
-        table {
-            width: 100%;
-            border: 2px #c9c9c9 solid;
-            padding-bottom: 0.8cm;
-            margin-bottom: 0.7cm;
-            border-collapse: collapse;
+     table {
+         width: 100%;
+         border: 2px #c9c9c9 solid;
+         padding-bottom: 0.8cm;
+         margin-bottom: 0.7cm;
+         border-collapse: collapse;
+     }
+     tbody tr:last-child td {
+             padding-bottom: 0.8cm;
+         }
+
+     tbody tr:first-child td {
+         padding-top: 0.2cm;
+     }
+
+     thead tr th, thead tr td {
+         border-bottom: 2px #c9c9c9 solid;
+         padding: 0.3cm 1cm;
+         position: relative;
+     }
+
+     td h4 {
+             margin: 0;
+             font-size: 110%;
+             font-weight: 500;
+         }
+
+
+     .tr50 {
+         box-sizing: border-box;
+         width: 50%;
+     }
+
+     .signaturHeader {
+             margin-bottom: 3em;
+         }
+
+      body {
+            page-break-inside: avoid;
         }
     </style>
+    <title>Kontrollnotat</title>
 </head>
-{{! Fiks pdf ordentlig neste pr --}}
+
 <body>
     <h1>Kontrollnotat</h1>
-    <p><strong>Navn:</strong> {{navn.fornavn}} {{navn.mellomnavn}} {{navn.etternavn}}</p>
-    <p><strong>Saksnummer:</strong> {{saksnummer}}</p>
-    <p><strong>Dato:</strong> {{dagensDatoOgTidspunkt}}</p>
 
     <table>
+        <thead>
+            <tr>
+                <td colspan="2"><h4>Kontrollnotat</h4></td>
+            </tr>
+        </thead>
         <tbody>
             <tr>
-                <td>Personlig oppmøte</td>
-                <td>{{kontrollnotatInnhold.personligOppmøte}}</td>
-            </tr>
-            <tr>
-                <td>Fullmakt og legeerklæring</td>
-                <td>{{kontrollnotatInnhold.fullmaktOgLegeerklæring}}</td>
-            </tr>
+                <td class="tr50">
+                    <strong>Navn:</strong><br/>
+                    {{navn.fornavn}}
+                    {{#if navn.mellomnavn}}{{navn.mellomnavn}}{{/if}}
+                    {{navn.etternavn}}
+        </td>
+        <td class="tr50">
+            <strong>Saksnummer:</strong><br/>
+            {{saksnummer}}
+        </td>
+        </tr>
+    <tr>
+        <td class="tr50">
+            <strong>Dato og tidspunkt:</strong><br/>
+            {{dagensDatoOgTidspunkt}}
+            </td>
+        <td class="tr50"></td>
+        </tr>
+    </tbody>
+    </table>
+
+    {{#with kontrollnotat}}
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="2">
+                        <h4>Personlig oppmøte</h4>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tr50">
+                        <strong>Har bruker møtt personlig?</strong>
+                    </td>
+                    <td class="tr50">
+                        {{#if personligOppmøte}}
+                            Ja
+                        {{else}}
+                            Nei
+                        {{/if}}
+                    </td>
+                </tr>
             </tbody>
         </table>
+    <table>
+                <thead>
+                    <tr>
+                        <td colspan="2">
+                            <h4>Fullmakt og legeerklæring</h4>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tr50">
+                            <strong>Foreligger det fullmakt og legeerklæring som bekrefter at sykdom gjør at bruker ikke kan møte personlig?</strong>
+                        </td>
+                        <td class="tr50">
+                            {{#if fullmaktOgLegeerklæring}}
+                                Ja
+                            {{else}}
+                                Nei
+                            {{/if}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="2">
+                    <h4>Kontroll av reisedokumenter</h4>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tr50">
+                    <strong>Har bruker framvist originalt pass og eventuelle andre originale reisedokumenter?</strong>
+                </td>
+                <td class="tr50">
+                    {{#if originaltPass}}
+                        Ja
+                    {{else}}
+                        Nei
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Er det nye stempler i passet siden forrige møte?</strong>
+                </td>
+                <td>
+                    {{#if gyldigPass}}
+                        Ja
+                    {{else}}
+                        Nei
+                    {{/if}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<table>
+    <thead>
+        <tr>
+            <td colspan="2">
+                <h4>Reise til utlandet</h4>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="tr50">
+                <strong>Har bruker vært utenlands siden siste møte?</strong>
+            </td>
+            <td class="tr50">
+                {{#if harVærtUtenlands}}
+                    Ja
+                {{else}}
+                    Nei
+                {{/if}}
+            </td>
+        </tr>
+    {{#if harVærtUtenlands}}
+        <tr>
+            <td>
+                <strong>Registrerte utenlandsopphold</strong>
+            </td>
+            <td>
+                {{#if utenlandsoppholdDatoer}}
+                 {{#each utenlandsoppholdDatoer}}
+                     <div>{{this}}</div>
+                    {{/each}}
+                {{else}}
+                    <div>Ingen registrerte utenlandsopphold</div>
+                {{/if}}
+            </td>
+        </tr>
+    {{/if}}
+        <tr>
+            <td class="tr50">
+                <strong>Har bruker planer om å reise utenlands?</strong>
+            </td>
+            <td class="tr50">
+                {{#if harPlanerOmUtenlandsreise}}
+                    Ja
+                {{else}}
+                    Nei
+                {{/if}}
+            </td>
+        </tr>
+    {{#if harPlanerOmUtenlandsreise}}
+        <tr>
+            <td>
+                <strong>Planlagte reisedatoer</strong>
+            </td>
+            <td>
+                {{#if planlagteUtenlandsreiseDatoer}}
+                    {{#each planlagteUtenlandsreiseDatoer}}
+                     <div>{{this}}</div>
+                     {{/each}}
+                {{else}}
+                    <div>Ingen datoer registrert</div>
+                   {{/if}}
+            </td>
+        </tr>
+
+   <tr>
+        <td>
+            <strong>Har bruker fått beskjed om at reisedokumenter, billetter/boardingpass må tas vare på?</strong>
+        </td>
+        <td>
+            {{#if reiseDokumentasjon}}
+                Ja
+            {{else}}
+                Nei
+            {{/if}}
+        </td>
+    </tr>
+    {{/if}}
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <td colspan="2">
+                <h4>Økonomisk situasjon</h4>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="tr50">
+                <strong>Er det endringer i den økonomiske situasjonen for bruker eller ektefelle/partner/samboer?</strong>
+            </td>
+            <td class="tr50">
+                {{#if økonomiskSituasjon}}
+                    Ja
+                {{else}}
+                    Nei
+                {{/if}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <td colspan="2">
+                <h4>Andre forhold</h4>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="tr50">
+                <strong>Er det endringer i andre forhold av betydning for stønaden (f.eks. sivilstand, institusjonsopphold, oppholdstillatelse)?</strong>
+            </td>
+            <td class="tr50">
+                {{#if andreForhold}}
+                    Ja
+                {{else}}
+                    Nei
+                {{/if}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <td colspan="2">
+                <h4>Skatteopplysninger</h4>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="tr50">
+                <strong>Er siste skattemelding og grunnlag for skatt for bruker og eventuell ektefelle/partner/samboer levert?</strong>
+            </td>
+            <td class="tr50">
+                {{#if skatteOpplysninger}}
+                    Ja
+                {{else}}
+                    Nei
+                {{/if}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <td>
+                <h4>Kommentar</h4>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="fritekst">
+                {{#if fritekst}}
+                    {{fritekst}}
+                {{else}}
+                    Ingen kommentar registrert
+                {{/if}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+{{/with}}
+
+  <div>
+      <p class="signaturHeader">
+          Signatur,
+          {{navn.fornavn}}
+
+          {{#if navn.mellomnavn}}
+              {{navn.mellomnavn}}
+          {{/if}}
+          {{navn.etternavn}},
+          {{dagensDatoOgTidspunkt}}
+      </p>
+      <p>--------------------------------------------------</p>
+    </div>
+
         </body>
     </html>
