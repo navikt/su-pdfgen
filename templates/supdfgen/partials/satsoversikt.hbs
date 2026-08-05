@@ -14,19 +14,19 @@
                     <td class="tabellcol">
                         {{#if satsGrunn}}
                             {{#eq satsGrunn "ENSLIG"}}
-                                Deler ikke bolig med voksne barn eller andre voksne.{{/eq}}
+                                Deler ikke bolig med voksne barn eller andre voksne{{/eq}}
                             {{#eq satsGrunn "DELER_BOLIG_MED_VOKSNE_BARN_ELLER_ANNEN_VOKSEN"}}
-                                Deler bolig med voksne barn eller andre voksne.{{/eq}}
+                                Deler bolig med voksne barn eller andre voksne{{/eq}}
                             {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67"}}
-                                Ektefelle eller samboer er under 67 år og ikke ufør flyktning.{{/eq}}
+                                Ektefelle eller samboer er under 67 år og ikke ufør flyktning{{/eq}}
                             {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_67_ELLER_ELDRE"}}
-                                Ektefelle eller samboer er 67 år eller eldre.{{/eq}}
+                                Ektefelle eller samboer er 67 år eller eldre{{/eq}}
                             {{#eq satsGrunn "DELER_BOLIG_MED_EKTEMAKE_SAMBOER_UNDER_67_UFØR_FLYKTNING"}}
-                                Ektefelle eller samboer under 67 år og ufør flyktning.{{/eq}}
+                                Ektefelle eller samboer under 67 år og ufør flyktning{{/eq}}
                         {{/if}}
                     </td>
                     <td class="tabellcol">{{capitalize sats}}</td>
-                    <td class="tabellcol">{{satsBeløp}}</td>
+                    <td class="tabellcol">{{currency_no satsBeløp}} kr</td>
                 </tr>
             {{/each}}
         </table>
