@@ -39,7 +39,6 @@ jobs:
         with:
           team: supstonad
           salsa: true
-          tag: ${{ github.sha }}
 
   deploy_to_dev:
     name: Deploy to dev
