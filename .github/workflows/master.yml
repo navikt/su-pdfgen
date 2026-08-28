@@ -18,7 +18,7 @@ jobs:
       contents: 'read'
       id-token: 'write'  # needed for push-image
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/cache@v4
         with:
           path: |
@@ -48,7 +48,7 @@ jobs:
       contents: read
       id-token: write # needed for push-image
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: nais/deploy/actions/deploy@v2
         env:
           CLUSTER: dev-gcp
@@ -63,7 +63,7 @@ jobs:
       contents: read
       id-token: write # needed for push-image
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: nais/deploy/actions/deploy@v2
         env:
           VAR: image=europe-north1-docker.pkg.dev/nais-management-233d/supstonad/su-pdfgen:${{ github.sha }}
