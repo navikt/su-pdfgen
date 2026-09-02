@@ -14,7 +14,7 @@
         <td>{{#if oppholdstillatelseAlder.familiegjenforening}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     <tr>
-        <td>Er du norsk statsborger eller statsborger i et nordisk land?</td>
+        <td>Er du norsk statsborger eller statsborger i et annet nordisk land?</td>
         <td>{{#if oppholdstillatelse.erNorskStatsborger}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#unless oppholdstillatelse.erNorskStatsborger}}
@@ -42,7 +42,7 @@
     {{/unless}}
 
     <tr>
-        <td>Har du statsborgerskap i andre land enn Norge?</td>
+        <td>Har du statsborgerskap i andre land?</td>
         <td>{{#if oppholdstillatelse.statsborgerskapAndreLand}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if oppholdstillatelse.statsborgerskapAndreLand}}

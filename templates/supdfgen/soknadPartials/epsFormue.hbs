@@ -8,18 +8,18 @@
 
     <tbody>
     <tr>
-        <td>Eier du en bolig?</td>
+        <td>Eier ektefelle/samboer en bolig?</td>
         <td>{{#if eierBolig}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if eierBolig}}
         <tr>
-            <td>Bor du i boligen?</td>
+            <td>Bor ektefelle/samboer i boligen?</td>
             <td>{{#if borIBolig}} Ja {{else}} Nei {{/if}}</td>
         </tr>
     {{/if}}
     {{#if boligBrukesTil}}
         <tr>
-            <td>Formuesverdi på boligen</td>
+            <td>Boligens formueverdi</td>
             <td>{{currency_no verdiPåBolig}} kr</td>
         </tr>
         <tr>
@@ -27,24 +27,34 @@
             <td>{{boligBrukesTil}}</td>
         </tr>
     {{/if}}
+    <tr>
+        <td>Eier ektefelle/samboer andre eiendommer i Norge eller i andre land?</td>
+        <td>{{#if verdiPåEiendom}} Ja {{else}} Nei {{/if}}</td>
+    </tr>
+    {{#if verdiPåEiendom}}
+        <tr>
+            <td>Eiendommenes samlede verdi</td>
+            <td>{{currency_no verdiPåEiendom}} kr</td>
+        </tr>
+        <tr>
+            <td>Hva brukes eiendommene til?</td>
+            <td>{{eiendomBrukesTil}}</td>
+        </tr>
+    {{/if}}
     {{#unless eierBolig}}
+        <tr>
+            <td>Har ektefelle/samboer depositumskonto som leietaker?</td>
+            <td>{{#if depositumsBeløp}} Ja {{else}} Nei {{/if}}</td>
+        </tr>
         {{#if depositumsBeløp}}
             <tr>
-                <td>Har du en depositumskonto som leietaker?</td>
-                <td>Ja</td>
-            </tr>
-            <tr>
-                <td>Beløp på depositumskontoen</td>
+                <td>Beløpet på depositumskontoen</td>
                 <td>{{currency_no depositumsBeløp}} kr</td>
-            </tr>
-            <tr>
-                <td>Kontonummer</td>
-                <td>{{kontonummer}}</td>
             </tr>
         {{/if}}
     {{/unless}}
     <tr>
-        <td>Eier du bil, campingvogn eller andre kjøretøy?</td>
+        <td>Eier ektefelle/samboer bil, campingvogn eller andre kjøretøy?</td>
         <td>{{#if kjøretøy}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if kjøretøy}}
@@ -60,42 +70,42 @@
         {{/each}}
     {{/if}}
     <tr>
-        <td>Har du penger på konto?</td>
+        <td>Har ektefelle/samboer penger på konto?</td>
         <td>{{#if innskuddsBeløp}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if innskuddsBeløp}}
         <tr>
-            <td>Samlet verdi i kroner</td>
+            <td>Hvor mye penger er det på konto?</td>
             <td>{{currency_no innskuddsBeløp}} kr</td>
         </tr>
     {{/if}}
     <tr>
-        <td>Har du aksjer, aksjefond eller verdipapir?</td>
+        <td>Har ektefelle/samboer aksjer, aksjefond eller verdipapir?</td>
         <td>{{#if verdipapirBeløp}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if verdipapirBeløp}}
         <tr>
-            <td>Samlet verdi i kroner</td>
+            <td>Hvor mye penger er dette verdt?</td>
             <td>{{currency_no verdipapirBeløp}} kr</td>
         </tr>
     {{/if}}
     <tr>
-        <td>Skylder noen deg mer enn 1000 kr?</td>
+        <td>Skylder noen ektefelle/samboer mer enn 1000 kr?</td>
         <td>{{#if skylderNoenMegPengerBeløp}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if skylderNoenMegPengerBeløp}}
         <tr>
-            <td>Beløp i kroner</td>
+            <td>Hvor mye skylder de ektefelle/samboer?</td>
             <td>{{currency_no skylderNoenMegPengerBeløp}} kr</td>
         </tr>
     {{/if}}
     <tr>
-        <td>Har du mer enn 1000 kr i kontanter?</td>
+        <td>Har ektefelle/samboer mer enn 1000 kroner i kontanter?</td>
         <td>{{#if kontanterBeløp}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if kontanterBeløp}}
         <tr>
-            <td>Beløp i kroner</td>
+            <td>Hvor mye penger har ektefelle/samboer?</td>
             <td>{{currency_no kontanterBeløp}} kr</td>
         </tr>
     {{/if}}
