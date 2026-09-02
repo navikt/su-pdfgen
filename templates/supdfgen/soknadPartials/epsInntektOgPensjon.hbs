@@ -7,17 +7,17 @@
     </thead>
     <tbody>
     <tr>
-        <td>Forventer du å ha arbeidsinntekt fremover?</td>
+        <td>Forventer ektefelle/samboer å ha arbeidsinntekt fremover?</td>
         <td>{{#if forventetInntekt}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if forventetInntekt}}
         <tr>
-            <td>Forventet arbeidsinntekt i kroner per måned</td>
+            <td>Hvor mye regner ektefelle/samboer med å tjene i måneden?</td>
             <td>{{currency_no forventetInntekt}} kr</td>
         </tr>
     {{/if}}
     <tr>
-        <td>Har du andre ytelser i Nav?</td>
+        <td>Har ektefelle/samboer andre ytelser fra NAV?</td>
         <td>{{#if andreYtelserINav}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if andreYtelserINav}}
@@ -26,12 +26,12 @@
             <td>{{andreYtelserINav}}</td>
         </tr>
         <tr>
-            <td>Beløp i kroner per måned</td>
+            <td>Hvor mye penger får ektefelle/samboer utbetalt i måneden?</td>
             <td>{{currency_no andreYtelserINavBeløp}} kr</td>
         </tr>
     {{/if}}
     <tr>
-        <td>Har du søkt om andre trygdeytelser som ikke er behandlet?</td>
+        <td>Har ektefelle/samboer søkt om trygdeytelser som de ikke har fått svar på?</td>
         <td>{{#if søktAndreYtelserIkkeBehandletBegrunnelse}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if søktAndreYtelserIkkeBehandletBegrunnelse}}
@@ -42,7 +42,7 @@
     {{/if}}
 
     <tr>
-        <td>Har du trygdeytelser i utlandet?</td>
+        <td>Har ektfelle/samboer trygdeytelser fra andre land?</td>
         <td>{{#if trygdeytelseIUtlandet}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if trygdeytelseIUtlandet}}
@@ -63,7 +63,7 @@
     {{/if}}
 
     <tr>
-        <td>Mottar du tjenestepensjon eller pensjon?</td>
+        <td>Får ektefelle/samboer tjenestepensjon eller pensjon som ikke er fra NAV?</td>
         <td>{{#if pensjon}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if pensjon}}
