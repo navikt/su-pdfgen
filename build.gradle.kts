@@ -6,7 +6,7 @@ plugins {
     kotlin("jvm") version "2.1.10"
 }
 
-val junitJupiterVersion = "5.11.4"
+val junitJupiterVersion = "6.1.3"
 val kotestVersion = "6.2.4"
 val handlebarsVersion = "4.4.0"
 
