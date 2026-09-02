@@ -12,12 +12,12 @@
     </tr>
     {{#if forventetInntekt}}
         <tr>
-            <td>Forventet arbeidsinntekt i kroner per måned</td>
+            <td>Hvor mye regner du med å tjene i måneden?</td>
             <td>{{currency_no forventetInntekt}} kr</td>
         </tr>
     {{/if}}
     <tr>
-        <td>Har du andre ytelser i Nav?</td>
+        <td>Har du andre ytelser i NAV?</td>
         <td>{{#if andreYtelserINav}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if andreYtelserINav}}
@@ -26,12 +26,12 @@
             <td>{{andreYtelserINav}}</td>
         </tr>
         <tr>
-            <td>Beløp i kroner per måned</td>
+            <td>Hvor mye penger får du utbetalt i måneden?</td>
             <td>{{currency_no andreYtelserINavBeløp}} kr</td>
         </tr>
     {{/if}}
     <tr>
-        <td>Har du søkt om andre trygdeytelser som ikke er behandlet?</td>
+        <td>Har du søkt om trygdeytelser som du ikke har fått svar på?</td>
         <td>{{#if søktAndreYtelserIkkeBehandletBegrunnelse}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if søktAndreYtelserIkkeBehandletBegrunnelse}}
@@ -42,7 +42,7 @@
     {{/if}}
 
     <tr>
-        <td>Har du trygdeytelser i utlandet?</td>
+        <td>Har du trygdeytelser fra andre land?</td>
         <td>{{#if trygdeytelseIUtlandet}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if trygdeytelseIUtlandet}}
@@ -62,7 +62,7 @@
         {{/each}}
     {{/if}}
     <tr>
-        <td>Mottar du tjenestepensjon eller pensjon?</td>
+        <td>Får du tjenestepensjon eller pensjon som ikke er fra NAV?</td>
         <td>{{#if pensjon}} Ja {{else}} Nei {{/if}}</td>
     </tr>
     {{#if pensjon}}

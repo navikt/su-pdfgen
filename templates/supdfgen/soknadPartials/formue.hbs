@@ -19,7 +19,7 @@
         {{/if}}
         {{#if boligBrukesTil}}
             <tr>
-                <td>Formuesverdi på boligen</td>
+                <td>Boligens formueverdi</td>
                 <td>{{currency_no verdiPåBolig}} kr</td>
             </tr>
             <tr>
@@ -28,12 +28,12 @@
             </tr>
         {{/if}}
         <tr>
-            <td>Eier du andre eiendommer i Norge eller utlandet?</td>
+            <td>Eier du andre eiendommer i Norge eller i andre land?</td>
             <td>{{#if verdiPåEiendom}} Ja {{else}} Nei {{/if}}</td>
         </tr>
         {{#if verdiPåEiendom}}
             <tr>
-                <td>Samlet formuesverdi av eiendommene</td>
+                <td>Eiendommenes samlede verdi</td>
                 <td>{{currency_no verdiPåEiendom}}</td>
             </tr>
             <tr>
@@ -42,11 +42,11 @@
             </tr>
         {{/if}}
         {{#unless eierBolig}}
+            <tr>
+                <td>Har du en depositumskonto som leietaker?</td>
+                <td>{{#if depositumsBeløp}} Ja {{else}} Nei {{/if}}</td>
+            </tr>
             {{#if depositumsBeløp}}
-                <tr>
-                    <td>Har du en depositumskonto som leietaker?</td>
-                    <td>Ja</td>
-                </tr>
                 <tr>
                     <td>Beløp på depositumskontoen</td>
                     <td>{{currency_no depositumsBeløp}} kr</td>
@@ -75,7 +75,7 @@
         </tr>
         {{#if innskuddsBeløp}}
             <tr>
-                <td>Samlet verdi i kroner</td>
+                <td>Hvor mye penger er det på konto?</td>
                 <td>{{currency_no innskuddsBeløp}} kr</td>
             </tr>
         {{/if}}
@@ -85,7 +85,7 @@
         </tr>
         {{#if verdipapirBeløp}}
             <tr>
-                <td>Samlet verdi i kroner</td>
+                <td>Hvor mye penger er dette verdt?</td>
                 <td>{{currency_no verdipapirBeløp}} kr</td>
             </tr>
         {{/if}}
@@ -95,7 +95,7 @@
         </tr>
         {{#if skylderNoenMegPengerBeløp}}
             <tr>
-                <td>Beløp i kroner</td>
+                <td>Hvor mye skylder de deg?</td>
                 <td>{{currency_no skylderNoenMegPengerBeløp}} kr</td>
             </tr>
         {{/if}}
@@ -105,7 +105,7 @@
         </tr>
         {{#if skylderNoenMegPengerBeløp}}
             <tr>
-                <td>Beløp i kroner</td>
+                <td>Hvor mye penger har du?</td>
                 <td>{{currency_no kontanterBeløp}} kr</td>
             </tr>
         {{/if}}
