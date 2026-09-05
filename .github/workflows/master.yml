@@ -19,7 +19,7 @@ jobs:
       id-token: 'write'  # needed for push-image
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: |
             ~/.gradle/caches
