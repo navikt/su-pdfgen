@@ -20,6 +20,3 @@ Eksempel `#currency(data.satsBeløp, true)`
 
 Boolean-parameteret angir om beløpet skal avrundes til heltall, altså uten desimaler/øre. Merk at det ikke skjer noen avrunding,
 desimalene/ørene fjernes bare.
-
-### Docker hub tags
-https://hub.docker.com/r/navikt/pdfgen/tags
