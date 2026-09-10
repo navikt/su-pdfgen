@@ -8,15 +8,15 @@ Templatene vil bruke flettedata fra json-fil med samme navn som template i `data
 
 ## Hjelpefunksjoner
 
-https://github.com/navikt/pdfgen-core/blob/main/src/main/kotlin/no/nav/pdfgen/core/template/Helpers.kt
+Typst-hjelpere ligger i `templates/supdfgen/lib.typinc`. Flettedata leses med `#let data = json("/data/supdfgen/<template>.json")`.
 
 ### Stor forbokstav
 
-Eksempel `{{capitalize sats}}`
+Eksempel `#capitalize(data.sats)`
 
 ### Kronebeløp
 
-Eksempel `{{currency_no satsBeløp true}}`
+Eksempel `#currency(data.satsBeløp, true)`
 
 Boolean-parameteret angir om beløpet skal avrundes til heltall, altså uten desimaler/øre. Merk at det ikke skjer noen avrunding,
 desimalene/ørene fjernes bare.
