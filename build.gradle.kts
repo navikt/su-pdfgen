@@ -8,7 +8,6 @@ plugins {
 
 val junitJupiterVersion = "5.11.4"
 val kotestVersion = "6.2.4"
-val handlebarsVersion = "4.4.0"
 
 dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
@@ -16,7 +15,6 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
 
-    implementation("com.github.jknack:handlebars:$handlebarsVersion")
 }
 
 tasks.withType<Wrapper> {
