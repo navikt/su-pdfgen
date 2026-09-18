@@ -1,0 +1,17 @@
+{
+  "personalia": {
+    "dato": "01.01.2026",
+    "fødselsnummer": "12345678901",
+    "fornavn": "Planet",
+    "etternavn": "Planetus",
+    "adresse": "Melkeveien",
+    "husnummer": "20",
+    "bruksenhet": "H108",
+    "postnummer": "9807",
+    "poststed": "Uranus",
+    "saksnummer": "2021"
+  },
+  "sakstype": "ALDER",
+  "alderspensjonØktMåned": "september 2026",
+  "fraOgMedMåned": "01.10.2026"
+}
