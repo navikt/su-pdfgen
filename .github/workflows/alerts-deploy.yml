@@ -20,13 +20,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: deploy to dev
-        uses: nais/deploy/actions/deploy@v2
+        uses: nais/deploy/actions/deploy@v3
         env:
           CLUSTER: dev-gcp
           RESOURCE: alerts.yml
           VAR: SLACK_ALERTS_CHANNEL=#su_alerts_dev,LOGS_URL=https://logs.adeo.no/goto/09fc370f3dd8c515ff304f273e583a81
       - name: deploy to prod
-        uses: nais/deploy/actions/deploy@v2
+        uses: nais/deploy/actions/deploy@v3
         env:
           CLUSTER: prod-gcp
           RESOURCE: alerts.yml
