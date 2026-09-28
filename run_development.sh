@@ -10,7 +10,7 @@ docker run \
         --name "$CONTAINER_NAME" \
         -v "$CURRENT_PATH"/data:/app/data \
         -p 8081:8080 \
-        -e DISABLE_PDF_GET=false \
+        -e DEV_MODE=true \
         -it \
         --rm \
         "$CONTAINER_NAME"

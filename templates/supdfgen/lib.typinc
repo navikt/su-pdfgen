@@ -1,0 +1,36 @@
+#let get(value, path) = {
+  if value == none { return none }
+  let result = value
+  for key in path.split(".") {
+    result = if type(result) == dictionary { result.at(key, default: none) } else { none }
+    if result == none { break }
+  }
+  result
+}
+#let currency(value, truncate: false) = {
+  if value == none { return "" }
+  let deler = str(value).split(".")
+  let siffer = deler.first().clusters()
+  let grupper = ()
+  let slutt = siffer.len()
+  while slutt > 3 {
+    grupper.push(siffer.slice(slutt - 3, slutt).join())
+    slutt -= 3
+  }
+  grupper.push(siffer.slice(0, slutt).join())
+  // grupperes med hardt mellomrom slik at beløp ikke deles over flere linjer
+  let heltall = grupper.rev().join("\u{00A0}")
+  if truncate { return heltall }
+  let desimaler = if deler.len() > 1 { (deler.at(1) + "00").clusters().slice(0, 2).join() } else { "00" }
+  heltall + "," + desimaler
+}
+#let capitalize(value) = {
+  if value == none { return "" }
+  let bokstaver = lower(str(value)).clusters()
+  if bokstaver.len() == 0 { return "" }
+  upper(bokstaver.first()) + bokstaver.slice(1).join()
+}
+#let date_no(value) = { if value == none { return "" }; let parts = str(value).split("T").at(0).split("-"); if parts.len() == 3 { parts.at(2) + "." + parts.at(1) + "." + parts.at(0) } else { str(value) } }
+#let items(value) = if type(value) == array { value } else { () }
+#let truthy(value) = value != none and value != false and value != "" and value != ()
+#let contains_all(values, target) = items(values).all(value => value == target)
