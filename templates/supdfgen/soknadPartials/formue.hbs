@@ -103,7 +103,7 @@
             <td>Har du mer enn 1000 kr i kontanter?</td>
             <td>{{#if kontanterBeløp}} Ja {{else}} Nei {{/if}}</td>
         </tr>
-        {{#if skylderNoenMegPengerBeløp}}
+        {{#if kontanterBeløp}}
             <tr>
                 <td>Hvor mye penger har du?</td>
                 <td>{{currency_no kontanterBeløp}} kr</td>
