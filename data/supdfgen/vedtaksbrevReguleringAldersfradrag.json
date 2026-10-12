@@ -12,7 +12,7 @@
     "saksnummer": "2021"
   },
   "sakstype": "ALDER",
-  "FraOgMedMåned": "september 2026",
+  "alderEndretFraOgMed": "september 2026",
   "fraOgMed": "01.10.2026",
   "beregningsperioder": [
     {
