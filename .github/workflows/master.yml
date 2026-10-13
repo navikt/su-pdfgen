@@ -12,7 +12,7 @@ jobs:
     name: Build and push Docker container
     outputs:
       image: ${{ steps.docker-build-push.outputs.image }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       packages: 'write'
       contents: 'read'
@@ -43,7 +43,7 @@ jobs:
   deploy_to_dev:
     name: Deploy to dev
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
       id-token: write # needed for push-image
@@ -58,7 +58,7 @@ jobs:
   deploy_to_prod:
     needs: [build, deploy_to_dev]
     name: Deploy to prod
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
       id-token: write # needed for push-image
