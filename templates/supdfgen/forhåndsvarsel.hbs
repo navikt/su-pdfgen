@@ -1,5 +1,5 @@
 {{#> supdfgen/partials/base}}
-    <div class="mainContent">
+    <div class="mainContentUtenMarg">
         <h2>Varsel om at vi vil ta opp din supplerende stønad til ny vurdering</h2>
         {{> supdfgen/partials/fnr personalia }}
 
@@ -17,10 +17,15 @@
         <div class="info">
             <p>Slik kan du uttale deg:</p>
             <p>
-                Du kan gi tilbakemelding via Nav sin nettside <a href="https://www.nav.no/melde"> https://www.nav.no/melde </a>.
                <ul>
-                 <li>Velg tema «Pensjon» og aktuell tjeneste.</li>
-                 <li>Send en skriftlig uttalelse ved å bruke vedlagte forside (Ettersendelse til søknad uføre eller alder) eller du kan sende inn uttalelsen i tjenesten <a href="https://www.nav.no/ettersende"> https://www.nav.no/ettersende</a>.</li>
+                 <li>Du kan gi tilbakemelding via Nav sin nettside <a href="https://www.nav.no/melde"> https://www.nav.no/melde </a>. Velg tema «Pensjon» og aktuell tjeneste.</li>
+                 <li>Send en skriftlig uttalelse ved å bruke vedlagte forside
+                     {{#eq sakstype "UFØRE"}}
+                        (Ettersendelse til Søknad om supplerende stønad til ufør flyktning)
+                     {{else}}
+                        (Ettersendelse til Søknad om supplerende stønad til personer med kort botid i Norge)
+                     {{/eq}}
+                     eller du kan sende inn uttalelsen i tjenesten <a href="https://www.nav.no/ettersende"> https://www.nav.no/ettersende</a>.</li>
                </ul>
             </p>
         </div>
