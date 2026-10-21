@@ -1,5 +1,5 @@
 {{#> supdfgen/partials/base}}
-    <div class="mainContent">
+    <div class="mainContentUtenMarg">
         <h2>Varsel om at vi vil ta opp din supplerende stønad til ny vurdering</h2>
         {{> supdfgen/partials/fnr personalia }}
 
@@ -11,27 +11,25 @@
             <h3>Du kan uttale deg i saken</h3>
             <p>
                 Før vi gjør vedtak i saken, har du rett til å uttale deg. Fristen for å uttale seg er 14 dager etter at du har mottatt dette brevet.
-                Uttalelsen bør være skriftlig. Kontakt oss gjerne på telefon
-                {{#eq sakstype "ALDER"}}
-                    55 55 33 34
-                {{else}}
-                    55 55 33 33
-                {{/eq}}
-                for råd og veiledning.
-                Du har også som hovedregel rett til å se sakens dokumenter etter bestemmelsene i forvaltningsloven § 18.
-            </p>
-            <p>
-                Hvis du vil sende din uttalelse pr post kan du finne forside med adresse på nav.no under «Søknad og skjema»,
-                og «Pensjon»,
-                {{#eq sakstype "ALDER"}}
-                    «Supplerende stønad til personer over 67 år med kort botid i Norge»
-                {{else}}
-                    «Supplerende stønad til ufør flyktning»
-                {{/eq}}
-                og «Ettersendelse».
+                Uttalelsen bør være skriftlig. Du har også som hovedregel rett til å se sakens dokumenter etter bestemmelsene i forvaltningsloven § 18.
             </p>
         </div>
-
+        <div class="info">
+            <p>Slik kan du uttale deg:</p>
+            <p>
+               <ul>
+                 <li>Du kan gi tilbakemelding via Nav sin nettside <a href="https://www.nav.no/melde"> https://www.nav.no/melde </a>. Velg tema «Pensjon» og aktuell tjeneste.</li>
+                 <li>Send en skriftlig uttalelse ved å bruke vedlagte forside
+                     {{#eq sakstype "UFØRE"}}
+                        (Ettersendelse til Søknad om supplerende stønad til ufør flyktning)
+                     {{else}}
+                        (Ettersendelse til Søknad om supplerende stønad til personer med kort botid i Norge)
+                     {{/eq}}
+                     eller du kan sende inn uttalelsen i tjenesten <a href="https://www.nav.no/ettersende"> https://www.nav.no/ettersende</a>.</li>
+               </ul>
+            </p>
+        </div>
+        <p>Du kan få hjelp ved å ringe 55 55 33 34 eller henvende deg til Nav-kontoret ditt.</p>
         <div class="info">
             <h3>Plikt til å melde fra</h3>
             <p>
