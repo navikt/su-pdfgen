@@ -69,28 +69,17 @@
     <div class="info">
         <p>Slik kan du uttale deg:</p>
         <ul>
-            <li>Logg deg inn på nav.no eller</li>
-            <li>Send et skriftlig svar</li>
-            <li>Du kan få hjelp ved å ringe
-                {{#eq sakstype "ALDER"}}
-                    55 55 33 34
-                {{else}}
-                    55 55 33 33
-                {{/eq}}
-                eller henvende deg til Nav-kontoret ditt
-            </li>
+            <li>Du kan gi tilbakemelding via Nav sin nettside <a href="https://www.nav.no/melde"> https://www.nav.no/melde </a>. Velg tema «Pensjon» og aktuell tjeneste.</li>
+            <li>Send et skriftlig svar ved å bruke vedlagte forside
+                {{#eq sakstype "UFØRE"}}
+                    (Ettersendelse til Søknad om supplerende stønad til ufør flyktning)
+                 {{else}}
+                    (Ettersendelse til Søknad om supplerende stønad til personer med kort botid i Norge)
+                 {{/eq}}
+                 eller du kan sende inn dokumentasjon i tjenesten <a href="https://www.nav.no/ettersende"> https://www.nav.no/ettersende</a>.</li>
         </ul>
         <p>
-            Hvis du vil sende skriftlig svar, må du bruke forsiden fra
-            {{#eq sakstype "UFØRE"}}
-                <a href="https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar">
-                    https://www.nav.no/ettersende#supplerende-stonad-for-ufore-flyktninger-under-67-ar
-                </a>
-            {{else}}
-                <a href="https://www.nav.no/ettersende#supplerende-stonad-for-personer-over-67-ar-med-kort-botid-i-norge">
-                    https://www.nav.no/ettersende#supplerende-stonad-for-personer-over-67-ar-med-kort-botid-i-norge
-                </a>
-            {{/eq}}
+          Du kan få hjelp ved å ringe 55 55 33 34 eller henvende deg til Nav-kontoret ditt.
         </p>
     </div>
 </div>
