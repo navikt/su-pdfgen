@@ -4,6 +4,8 @@ CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 CONTAINER_NAME="su-pdfgen"
 
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
 docker build -t "$CONTAINER_NAME" "$CURRENT_PATH"
 
 docker run \
