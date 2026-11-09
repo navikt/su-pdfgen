@@ -5,18 +5,18 @@
             Fødselsnummer: {{personalia.fødselsnummer}}
         </div>
 
-        <p>Vi har mottatt klagen din på vedtaket om supplerende stønad {{vedtakDato}}, og kommet
-            frem til at det ikke endres. Nav Klageinstans skal derfor vurdere saken din på nytt.</p>
-
-        <p>Informasjon om saksbehandlingstid finner du på nav.no.</p>
-
-        <h2>Dette har vi lagt vekt på i vurderingen vår</h2>
-        <p>Vi viser til vedtak av {{vedtakDato}} og klagen din på dette vedtaket som vi mottok
-            {{klageDato}}.</p>
-
-        <div class="preline"> {{fritekst}} </div>
-
        {{#if dødsbo}}
+        <p>Vi har mottatt klage på vedtaket om supplerende stønad {{vedtakDato}}, og kommet
+                   frem til at det ikke endres. Nav Klageinstans skal derfor vurdere saken på nytt.</p>
+
+               <p>Informasjon om saksbehandlingstid finner boet på nav.no.</p>
+
+               <h2>Dette har vi lagt vekt på i vurderingen vår</h2>
+               <p>Vi viser til vedtak av {{vedtakDato}} og klagen på dette vedtaket som vi mottok
+                   {{klageDato}}.</p>
+
+               <div class="preline"> {{fritekst}} </div>
+
             <p>Har boet nye opplysninger eller ønsker å komme med en uttalelse, kontakt Nav Klageinstans på nav.no eller på telefon 21 07 17 30.</p>
             <h2>Boet har rett til innsyn</h2>
             På <a title="Lenke til din side på nav.no">www.nav.no/minside</a> kan boet se dokumentene i saken til den avdøde.
@@ -30,6 +30,16 @@
                         Boet kan også kontakte Nav Klageinstans på telefon 21 07 17 30.
                     </p>
         {{else}}
+         <p>Vi har mottatt klagen din på vedtaket om supplerende stønad {{vedtakDato}}, og kommet
+                    frem til at det ikke endres. Nav Klageinstans skal derfor vurdere saken din på nytt.</p>
+
+                <p>Informasjon om saksbehandlingstid finner du på nav.no.</p>
+
+                <h2>Dette har vi lagt vekt på i vurderingen vår</h2>
+                <p>Vi viser til vedtak av {{vedtakDato}} og klagen din på dette vedtaket som vi mottok
+                    {{klageDato}}.</p>
+
+                <div class="preline"> {{fritekst}} </div>
              <p>Har du nye opplysninger eller ønsker å uttale deg, kontakt Nav Klageinstans på nav.no eller på telefon 21 07 17 30.</p>
             <h2>Du har rett til innsyn</h2>
             På <a title="Lenke til din side på nav.no">www.nav.no/minside</a> kan du se dokumentene i saken din.
