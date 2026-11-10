@@ -1,16 +1,28 @@
 <div class="shortSpacedInfo">
-    <h3>Har du spørsmål?</h3>
-    <p>
-        Du finner nyttig informasjon på
-        {{#eq sakstype "ALDER"}}
-            <a title="Lenke til mer informasjon om supplerende stønad for personer over 67 år med kort botid i Norge">www.nav.no/supplerende-stonad-over-67</a>.
-        {{else}}
-            <a title="Lenke til mer informasjon om supplerende stønad for uføre flykninger under 67 år">www.nav.no/supplerende-stonad-flyktninger</a>.
-        {{/eq}}
-    </p>
-    {{#eq sakstype "ALDER"}}
-        <p>Du kan også kontakte oss på 55 55 33 34.</p>
+    {{#if dødsbo }}
+        <h3>Har boet spørsmål?</h3>
+            <p>
+                Boet finner nyttig informasjon på
+                    <a title="Lenke til nav">www.nav.no</a>.
+            </p>
+           <p> Hvis boet ikke finner svar på spørsmålet, kontakt oss gjerne via kanalene
+               som oppgis på <a title="Lenke til nav kontakt">www.nav.no/kontaktoss.</a>
+               Boet kan også kontakte Nav Klageinstans på telefon 21 07 17 30.
+           </p>
     {{else}}
-        <p>Du kan også kontakte oss på 55 55 33 33.</p>
-    {{/eq}}
+        <h3>Har du spørsmål?</h3>
+        <p>
+            Du finner nyttig informasjon på
+            {{#eq sakstype "ALDER"}}
+                <a title="Lenke til mer informasjon om supplerende stønad for personer over 67 år med kort botid i Norge">www.nav.no/supplerende-stonad-over-67</a>.
+            {{else}}
+                <a title="Lenke til mer informasjon om supplerende stønad for uføre flykninger under 67 år">www.nav.no/supplerende-stonad-flyktninger</a>.
+            {{/eq}}
+        </p>
+        {{#eq sakstype "ALDER"}}
+            <p>Du kan også kontakte oss på 55 55 33 34.</p>
+        {{else}}
+            <p>Du kan også kontakte oss på 55 55 33 33.</p>
+        {{/eq}}
+    {{/if}}
 </div>

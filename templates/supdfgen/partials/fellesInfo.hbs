@@ -1,19 +1,37 @@
 <div class="shortSpacedInfo">
-    <h3>Du har rett til å klage</h3>
-    <p>
-        Du kan klage innen 6 uker fra den datoen du mottok vedtaket. Du finner skjema og informasjon på <a
-            title="Lenke til klageskjema">www.nav.no/klage</a>.
-    </p>
-    {{#if extraVedtaksInfoForKlage}}
-        <p>{{extraVedtaksInfoForKlage}}</p>
+    {{#if dødsbo }}
+     <h3>Boet har rett til å klage</h3>
+        <p>
+           Boet kan klage innen 6 uker fra den datoen boet mottok vedtaket. Du finner skjema og informasjon på <a
+                title="Lenke til klageskjema">www.nav.no/klage</a>.
+        </p>
+        {{#if extraVedtaksInfoForKlage}}
+            <p>{{extraVedtaksInfoForKlage}}</p>
+        {{/if}}
+    {{else}}
+        <h3>Du har rett til å klage</h3>
+        <p>
+            Du kan klage innen 6 uker fra den datoen du mottok vedtaket. Du finner skjema og informasjon på <a
+                title="Lenke til klageskjema">www.nav.no/klage</a>.
+        </p>
+        {{#if extraVedtaksInfoForKlage}}
+            <p>{{extraVedtaksInfoForKlage}}</p>
+        {{/if}}
     {{/if}}
 </div>
 
 <div class="shortSpacedInfo">
-    <h3>Du har rett til innsyn</h3>
-    <p>
-        På <a title="Lenke til din side på nav.no">www.nav.no/minside</a> kan du se dokumentene i saken din.
-    </p>
+    {{#if dødsbo}}
+         <h3>Boet har rett til innsyn</h3>
+            <p>
+                På <a title="Lenke til din side på nav.no">www.nav.no/minside</a> kan boet se dokumentene i saken til den avdøde.
+            </p>
+    {{else}}
+        <h3>Du har rett til innsyn</h3>
+        <p>
+            På <a title="Lenke til din side på nav.no">www.nav.no/minside</a> kan du se dokumentene i saken din.
+        </p>
+    {{/if}}
 </div>
 
 {{> supdfgen/partials/harDuSpørsmål }}
